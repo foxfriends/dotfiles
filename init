@@ -1,0 +1,28 @@
+#!/bin/bash
+
+cd $(dirname $0)
+
+check () {
+    command -v "$1" > /dev/null 2>&1
+}
+
+dot_config () {
+    ln -sfT "$(pwd)/$1" "$HOME/.config/$1"
+}
+
+check broot && dot_config broot
+check fish && dot_config fish
+check flashfocus && dot_config flashfocus
+check hunter && dot_config hunter
+check joshuto && dot_config joshuto
+check kak && dot_config kak
+check kitty && dot_config kitty
+check mako && dot_config mako
+check nvim && dot_config nvim
+check ranger && dot_config ranger
+check rofi && dot_config rofi
+check sway && dot_config sway
+check tig && dot_config tig
+check tmux && dot_config tmux
+check waybar && dot_config waybar
+ln -sf "$(pwd)/git/.gitconfig.current" "$HOME/.gitconfig"
