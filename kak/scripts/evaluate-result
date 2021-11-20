@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+session="$1"
+client="$2"
+f=$(mktemp)
+eval $3 "$f"
+
+printf %s\\n "
+evaluate-commands -try-client '${client}' %{ 
+    $(< $f)
+}
+" | kak -p "${session}"
+
+rm -f "$f"

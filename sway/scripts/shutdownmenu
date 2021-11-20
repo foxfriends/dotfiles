@@ -1,0 +1,16 @@
+#!/bin/sh
+opts="suspend\nlogout\nshutdown\nrestart"
+case $(echo $opts | rofi -dmenu -p 'quit') in
+    suspend)
+        systemctl suspend
+        ;;
+    logout)
+        swaymsg exit
+        ;;
+    shutdown)
+        shutdown now
+        ;;
+    restart)
+        reboot
+        ;;
+esac

@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+for a in "$@"; do
+    printf "%s" "$a" | sed -e "s/'/'\\\\''/g; 1s/^/'/; \$s/\$/'/" | tr -d '\n'
+    printf ' '
+done

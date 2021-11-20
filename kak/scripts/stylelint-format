@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+require 'json'
+
+JSON.parse(ARGF.read).each do |file|
+    path = file["source"]
+    file["warnings"].each do |warning|
+        line, column, severity, text = warning.values_at 'line', 'column', 'severity', 'text'
+        puts "#{path}:#{line}:#{column}: #{severity}: #{text}"
+    end
+end

@@ -1,0 +1,1 @@
+../../../system/tools/doc.kak

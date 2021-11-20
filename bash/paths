@@ -1,0 +1,39 @@
+#!/bin/bash
+
+if [ -d "$HOME/.local/bin" ] ; then
+    export PATH="$HOME/.local/bin:$PATH"
+fi
+
+if [ -d "$HOME/.bin" ] ; then
+    export PATH="$HOME/.bin:$PATH"
+fi
+
+if [ -d "$HOME/bin" ] ; then
+    export PATH="$HOME/bin:$PATH"
+fi
+
+if [ -d "$HOME/code/go" ] ; then
+    export GOPATH="$HOME/code/go"
+    export PATH="$PATH:$GOPATH/bin"
+fi
+
+if [ -d "$HOME/.perl5/bin" ]; then
+    export PATH="$HOME/.perl5/bin:$PATH"
+    export PERL5LIB="$HOME/.perl5/lib/perl5:$PERL5LIB"
+    export PERL_LOCAL_LIB_ROOT="$HOME/.perl5:$PERL_LOCAL_LIB_ROOT"
+    export PERL_MB_OPT="--install_base \"$HOME/.perl5\""
+    export PERL_MM_OPT="INSTALL_BASE=$HOME/.perl5"
+fi
+
+if type fnm > /dev/null; then
+    eval "$(fnm completions)"
+    eval "$(fnm env)"
+fi
+
+if [ -f /home/cam/.config/broot/launcher/bash/br ] ; then
+    source /home/cam/.config/broot/launcher/bash/br
+fi
+
+if [ -d "$HOME/.rvm/bin" ] ; then
+    export PATH="$PATH:$HOME/.rvm/bin"
+fi

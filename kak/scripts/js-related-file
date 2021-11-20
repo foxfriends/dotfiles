@@ -1,0 +1,9 @@
+#!/bin/bash
+
+filename=$1
+
+if echo "$filename" | grep '\.spec\.js$' > /dev/null 2>&1; then
+    echo "$filename" | sed 's/\.spec\.js$/.js/'
+else
+    echo "$filename" | sed 's/\.js$/.spec.js/'
+fi

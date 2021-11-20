@@ -1,0 +1,23 @@
+# some handy programs
+alias icat="kitty +kitten icat"
+alias vi=nvim
+alias top=htop
+
+alias tree="git log --graph --abbrev-commit --decorate --format=format:'%C(bold 11)%h%C(reset)%C(bold green)%d%C(reset) %C(white)%s%C(reset) %C(dim 15)%an%C(reset)'"
+
+# enable colors in grep by default
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# replace ls with exa
+alias ls='exa'
+alias ll='exa -lg --git'
+alias la='exa -alg --git'
+alias lt='exa -T'
+alias llt='exa -lT'
+alias l='exa'
+
+# Some typos I often make
+alias clearls="clear; ls"
+alias sgit="git"

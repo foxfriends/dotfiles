@@ -1,0 +1,50 @@
+[selection]
+fg = "yellow"
+bold = true
+
+[selection.prefix]
+prefix = "*  "
+size = 2
+
+[executable]
+fg = "green"
+
+[regular]
+fg = "white"
+
+[directory]
+fg = "blue"
+
+[link]
+fg = "cyan"
+
+[socket]
+fg = "cyan"
+
+[ext]
+bmp = { fg = "yellow" }
+jpg = { fg = "yellow" }
+jpeg = { fg = "yellow" }
+png = { fg = "yellow" }
+svg = { fg = "yellow" }
+gif = { fg = "yellow" }
+
+wav = { fg = "magenta" }
+flac = { fg = "magenta" }
+mp3 = { fg = "magenta" }
+avi = { fg = "magenta" }
+avi = { fg = "magenta" }
+m3u = { fg = "magenta" }
+mp4 = { fg = "magenta" }
+mkv = { fg = "magenta" }
+m4a = { fg = "magenta" }
+ts = { fg = "magenta" }
+webm = { fg = "magenta" }
+wmv = { fg = "magenta" }
+
+7z = { fg = "red" }
+zip = { fg = "red" }
+bz2 = { fg = "red" }
+gz = { fg = "red" }
+xz = { fg = "red" }
+rar = { fg = "red" }

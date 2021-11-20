@@ -1,0 +1,1 @@
+../../../system/filetype/python.kak

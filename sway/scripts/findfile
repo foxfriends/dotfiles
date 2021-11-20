@@ -1,0 +1,5 @@
+#!/bin/sh
+
+cd
+file=$(fd | rofi -dmenu -p open)
+xdg-open $file

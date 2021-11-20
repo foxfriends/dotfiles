@@ -1,0 +1,142 @@
+snippet_support = false
+verbosity = 2
+
+[server]
+# exit session if no requests were received during given period in seconds
+# works only in unix sockets mode (-s/--session)
+# set to 0 to disable
+timeout = 1800 # seconds = 30 minutes
+
+[language.rust]
+filetypes = ["rust"]
+roots = ["Cargo.toml"]
+command = "rls"
+
+[language.crystal]
+filetypes = ["crystal"]
+roots = ["shard.yml"]
+command = "scry"
+
+[language.deno]
+filetypes = ["typescript", "javascript"]
+roots = [".git"]
+command = "deno"
+args = ["lsp"]
+
+[language.deno.settings]
+enable = true
+lint = true
+
+[language.javascript]
+filetypes = ["javascript"]
+roots = ["package.json"]
+command = "typescript-language-server"
+args = ["--stdio"]
+
+[language.typescript]
+filetypes = ["typescript"]
+roots = ["package.json", "tsconfig.json"]
+command = "typescript-language-server"
+args = ["--stdio"]
+
+[language.json]
+filetypes = ["json"]
+roots = ["package.json"]
+command = "json-languageserver"
+args = ["--stdio"]
+
+[language.css]
+filetypes = ["css"]
+roots = ["package.json"]
+command = "css-languageserver"
+args = ["--stdio"]
+
+# [language.html]
+# filetypes = ["html"]
+# roots = ["package.json"]
+# command = "html-languageserver"
+# args = ["--stdio"]
+
+[language.html]
+filetypes = ["html"]
+roots = ["package.json"]
+command = "svelteserver"
+args = ["--stdio"]
+
+[language.ocaml]
+filetypes = ["ocaml"]
+roots = ["Makefile", "opam", "*.opam"]
+command = "ocaml-language-server"
+args = ["--stdio"]
+
+[language.reason]
+filetypes = ["reason"]
+roots = ["package.json", "Makefile", ".git", ".hg"]
+command = "ocaml-language-server"
+args = ["--stdio"]
+
+[language.python]
+filetypes = ["python"]
+roots = ["requirements.txt", "setup.py", ".git", ".hg"]
+command = "pyls"
+offset_encoding = "utf-8"
+
+[language.c_cpp]
+filetypes = ["c", "cpp"]
+roots = ["compile_commands.json", ".cquery"]
+command = "cquery"
+args = ["--init={\"cacheDirectory\":\"/tmp/cquery\",\"highlight\":{\"enabled\":true}}"]
+
+[language.haskell]
+filetypes = ["haskell", "literate-haskell"]
+roots = ["Setup.hs", "stack.yaml", "*.cabal"]
+command = "haskell-language-server-wrapper"
+args = ["--lsp"]
+
+[language.go]
+filetypes = ["go"]
+roots = ["Gopkg.toml", "go.mod", ".git", ".hg"]
+command = "gopls"
+offset_encoding = "utf-8"
+
+[language.bash]
+filetypes = ["sh"]
+roots = [".git", ".hg"]
+command = "bash-language-server"
+args = ["start"]
+
+[language.dart]
+filetypes = ["dart"]
+roots = ["pubspec.yaml", ".git"]
+command = "dart_language_server"
+
+[language.d]
+filetypes = ["d", "di"]
+roots = [".git", "dub.sdl", "dub.json"]
+command = "dls"
+
+[language.php]
+filetypes = ["php"]
+roots = [".htaccess", "composer.json"]
+command = "intelephense"
+args = ["--stdio"]
+
+[language.php.settings]
+storagePath = "/tmp/intelephense"
+
+[language.nim]
+filetypes = ["nim"]
+roots = ["*.nimble", ".git"]
+command = "nimlsp"
+
+[language.elm]
+filetypes = ["elm"]
+roots = ["elm.json"]
+command = "elm-language-server"
+args = ["--stdio"]
+
+[language.elm.settings]
+runtime = "node"
+elmPath = "elm"
+elmFormatPath = "elm-format"
+elmTestPath = "elm-test"

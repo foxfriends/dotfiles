@@ -1,0 +1,196 @@
+
+###############################################################
+# This configuration file lets you
+# - define new commands
+# - change the shortcut or triggering keys of built-in verbs
+# - change the colors
+# - set default values for flags
+# - set special behaviors on specific paths
+#
+# Configuration documentation is available at
+#     https://dystroy.org/broot
+###############################################################
+
+###############################################################
+# Default flags
+# You can set up flags you want broot to start with by
+# default, for example `default_flags="ihp"` if you usually want
+# to see hidden and gitignored files and the permissions (then
+# if you don't want the hidden files you can launch `br -H`)
+# A popular flag is the `g` one which displays git related info.
+#
+default_flags = "g"
+
+###############################################################
+# Special paths
+# If some paths must be handled specially, uncomment (and change
+# this section as per the examples
+#
+# [special-paths]
+# "/media/slow-backup-disk" = "no-enter"
+# "/home/dys/useless" = "hide"
+# "/home/dys/my-link-I-want-to-explore" = "enter"
+
+###############################################################
+# Date/Time format
+# If you want to change the format for date/time, uncomment the
+# following line and change it according to
+# https://docs.rs/chrono/0.4.11/chrono/format/strftime/index.html
+#
+# date_time_format = "%Y/%m/%d %R"
+
+###############################################################
+# Whether to mark the selected line with a triangle
+#
+# show_selection_mark = true
+
+###############################################################
+# Column order
+# cols_order, if specified, must be a permutation of the following
+# array. You should keep the name at the end as it has a variable
+# length.
+#
+# cols_order = [
+# 	"mark",
+# 	"git",
+# 	"branch",
+# 	"permission",
+# 	"date",
+# 	"size",
+# 	"count",
+# 	"name",
+# ]
+
+###############################################################
+# True Colors
+# If this parameter isn't set, broot tries to automatically
+# determine whether true colors (24 bits) are available.
+# As this process is unreliable, you may uncomment this setting
+# and set it to false or true if you notice the colors in
+# previewed images are too off.
+true_colors = true
+
+###############################################################
+# Verbs and shortcuts
+# You can define your own commands which would be applied to
+# the selection.
+#
+# Exemple 1: launching `tail -n` on the selected file (leaving broot)
+# [[verbs]]
+# name = "tail_lines"
+# invocation = "tl {lines_count}"
+# execution = "tail -f -n {lines_count} {file}"
+#
+# Exemple 2: creating a new file without leaving broot
+[[verbs]]
+name = "touch"
+invocation = "touch {new_file}"
+execution = "touch {directory}/{new_file}"
+leave_broot = false
+
+# If $EDITOR isn't set on your computer, you should either set it using
+#  something similar to
+#   export EDITOR=nvim #  or just replace it with your editor of choice in the 'execution'
+#  pattern.
+#  If your editor is able to open a file on a specific line, use {line}
+#   so that you may jump directly at the right line from a preview.
+# Example:
+#  execution = "nvim +{line} {file}"
+
+[[verbs]]
+invocation = "edit"
+shortcut = "e"
+execution = "edit! -existing {file} {line}"
+leave_broot = true
+from_shell = true
+
+[[verbs]]
+invocation = "create {subpath}"
+execution = "edit! {directory}/{subpath}"
+leave_broot = true
+from_shell = true
+
+# Here's an example of a shorctut bringing you to your home directory
+[[verbs]]
+invocation = "home"
+key = "~"
+execution = ":focus ~"
+
+# A popular set of shorctuts for going up and down:
+#
+[[verbs]]
+key = "ctrl-h"
+execution = ":parent"
+[[verbs]]
+key = "ctrl-l"
+execution = ":focus"
+[[verbs]]
+key = "left"
+execution = ":parent"
+[[verbs]]
+key = "right"
+execution = ":focus"
+apply_to = "directory"
+[[verbs]]
+key = "right"
+execution = "edit! -existing {file}"
+apply_to = "file"
+leave_broot = true
+from_shell = true
+[[verbs]]
+key = "enter"
+execution = "edit! -existing {file}"
+apply_to = "file"
+leave_broot = true
+from_shell = true
+[[verbs]]
+key = "ctrl-j"
+execution = ":line_down"
+[[verbs]]
+key = "ctrl-k"
+execution = ":line_up"
+[[verbs]]
+key = "ctrl-d"
+execution = ":page_down"
+[[verbs]]
+key = "pagedown"
+execution = ":page_down"
+[[verbs]]
+key = "ctrl-u"
+execution = ":page_up"
+[[verbs]]
+key = "pageup"
+execution = ":page_up"
+[[verbs]]
+key = "home"
+execution = ":select_first"
+[[verbs]]
+key = "end"
+execution = ":select_last"
+
+# If you develop using git, you might like to often switch
+# to the "git status" filter:
+[[verbs]]
+key = "ctrl-g"
+execution = ":toggle_git_status"
+
+# You can reproduce the bindings of Norton Commander
+# on copying or moving to the other panel:
+#
+# [[verbs]]
+# key = "F5"
+# execution = ":copy_to_panel"
+#
+# [[verbs]]
+# key = "F6"
+# execution = ":move_to_panel"
+
+###############################################################
+# File Extension Colors
+#
+# uncomment and modify the next section if you want to color
+# file name depending on their extension
+#
+# [ext-colors]
+# png = "rgb(255, 128, 75)"
+# rs = "yellow"

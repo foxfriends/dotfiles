@@ -1,0 +1,1 @@
+../../../system/filetype/protobuf.kak

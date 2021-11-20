@@ -1,0 +1,16 @@
+#! /bin/sh
+
+dow=$(date +%u)
+case $dow in
+    1) col=red ;;
+    2) col=orange ;;
+    3) col=yellow ;;
+    4) col=green ;;
+    5) col=blue ;;
+    6) col=pink ;;
+    7) col=white ;;
+esac
+
+swaybg -i ~/.config/sway/desktop/$col.jpg -m fill &
+new=$!
+ps -x | grep [s]waybg | awk '{$1=$1};1' | cut -d' ' -f1 | grep -v $new | xargs kill -1

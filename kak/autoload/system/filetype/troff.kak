@@ -1,0 +1,1 @@
+../../../system/filetype/troff.kak

@@ -1,0 +1,1 @@
+../../../system/filetype/awk.kak

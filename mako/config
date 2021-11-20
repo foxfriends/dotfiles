@@ -1,0 +1,15 @@
+max-visible=5
+sort=-time
+layer=overlay
+anchor=top-right
+font='JetBrainsMono Nerd Font 12
+background-color=#282c34
+text-color=#abb2bf
+margin=16
+padding=16
+border-color=#c678dd
+border-radius=0
+border-size=2
+default-timeout=7000
+width=460
+icons=1

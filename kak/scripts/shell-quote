@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+printf "%s" "$@" | sed -e "s/'/'\\\\''/g; 1s/^/'/; \$s/\$/'/"

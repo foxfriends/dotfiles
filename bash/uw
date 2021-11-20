@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# school things, to be removed at the end of school!
+function ssh-school {
+  if (( $# > 0 )); then
+    ssh -Y "ckeldrid@ubuntu1604-00$1.student.cs.uwaterloo.ca"
+  else
+    ssh -Y ckeldrid@linux.student.cs.uwaterloo.ca
+  fi
+}
+function scp-school {
+  scp "$1" "ckeldrid@linux.student.cs.uwaterloo.ca:$2"
+}
+function scp-back {
+  scp "ckeldrid@linux.student.cs.uwaterloo.ca:$1" "$2"
+}
+

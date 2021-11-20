@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set +e
+f=$1
+shift
+g=$(mktemp)
+ranger --choosefile="$g" $@
+file=$(< $g)
+if [ -n file ]; then
+    printf "edit! -existing '%s'" "$file" > "$f"
+fi
+rm "$g"
