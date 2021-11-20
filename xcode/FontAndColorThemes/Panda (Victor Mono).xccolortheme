@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>DVTConsoleDebuggerInputTextColor</key>
+	<string>0.65098 0.698039 0.752941 1</string>
+	<key>DVTConsoleDebuggerInputTextFont</key>
+	<string>VictorMono-Medium - 12.0</string>
+	<key>DVTConsoleDebuggerOutputTextColor</key>
+	<string>0.65098 0.698039 0.752941 1</string>
+	<key>DVTConsoleDebuggerOutputTextFont</key>
+	<string>VictorMono-MediumOblique - 12.0</string>
+	<key>DVTConsoleDebuggerPromptTextColor</key>
+	<string>0.984314 0.0196078 0.352941 1</string>
+	<key>DVTConsoleDebuggerPromptTextFont</key>
+	<string>VictorMono-Medium - 12.0</string>
+	<key>DVTConsoleExectuableInputTextColor</key>
+	<string>0.65098 0.698039 0.752941 1</string>
+	<key>DVTConsoleExectuableInputTextFont</key>
+	<string>VictorMono-Medium - 12.0</string>
+	<key>DVTConsoleExectuableOutputTextColor</key>
+	<string>0.65098 0.698039 0.752941 1</string>
+	<key>DVTConsoleExectuableOutputTextFont</key>
+	<string>VictorMono-MediumOblique - 12.0</string>
+	<key>DVTConsoleTextBackgroundColor</key>
+	<string>0.164706 0.172549 0.176471 1</string>
+	<key>DVTConsoleTextInsertionPointColor</key>
+	<string>0.321569 0.545098 1 1</string>
+	<key>DVTConsoleTextSelectionColor</key>
+	<string>0.215686 0.231373 0.254902 1</string>
+	<key>DVTDebuggerInstructionPointerColor</key>
+	<string>0.454902 0.45098 0.411765 1</string>
+	<key>DVTFontAndColorVersion</key>
+	<integer>1</integer>
+	<key>DVTFontSizeModifier</key>
+	<integer>-5</integer>
+	<key>DVTLineSpacing</key>
+	<real>0.92000001668930054</real>
+	<key>DVTMarkupTextBackgroundColor</key>
+	<string>0.220706 0.235137 0.264 1</string>
+	<key>DVTMarkupTextBorderColor</key>
+	<string>0.283049 0.296326 0.32288 1</string>
+	<key>DVTMarkupTextCodeFont</key>
+	<string>Monaco - 8.0</string>
+	<key>DVTMarkupTextEmphasisColor</key>
+	<string>0.65098 0.698039 0.752941 1</string>
+	<key>DVTMarkupTextEmphasisFont</key>
+	<string>.SFNS-RegularItalic - 12.0</string>
+	<key>DVTMarkupTextInlineCodeColor</key>
+	<string>0.65098 0.698039 0.752941 0.7</string>
+	<key>DVTMarkupTextLinkColor</key>
+	<string>0.823529 0.580392 0.364706 1</string>
+	<key>DVTMarkupTextLinkFont</key>
+	<string>.SFNS-Regular - 12.0</string>
+	<key>DVTMarkupTextNormalColor</key>
+	<string>0.65098 0.698039 0.752941 1</string>
+	<key>DVTMarkupTextNormalFont</key>
+	<string>.SFNS-Regular - 12.0</string>
+	<key>DVTMarkupTextOtherHeadingColor</key>
+	<string>0.65098 0.698039 0.752941 0.5</string>
+	<key>DVTMarkupTextOtherHeadingFont</key>
+	<string>.SFNS-Regular - 16.8</string>
+	<key>DVTMarkupTextPrimaryHeadingColor</key>
+	<string>0.65098 0.698039 0.752941 1</string>
+	<key>DVTMarkupTextPrimaryHeadingFont</key>
+	<string>.SFNS-Regular - 28.8</string>
+	<key>DVTMarkupTextSecondaryHeadingColor</key>
+	<string>0.65098 0.698039 0.752941 1</string>
+	<key>DVTMarkupTextSecondaryHeadingFont</key>
+	<string>.SFNS-Regular - 21.6</string>
+	<key>DVTMarkupTextStrongColor</key>
+	<string>0.65098 0.698039 0.752941 1</string>
+	<key>DVTMarkupTextStrongFont</key>
+	<string>.SFNS-Bold - 12.0</string>
+	<key>DVTScrollbarMarkerAnalyzerColor</key>
+	<string>0.403922 0.372549 1 1</string>
+	<key>DVTScrollbarMarkerBreakpointColor</key>
+	<string>0.290196 0.290196 0.968627 1</string>
+	<key>DVTScrollbarMarkerDiffColor</key>
+	<string>0.556863 0.556863 0.556863 1</string>
+	<key>DVTScrollbarMarkerDiffConflictColor</key>
+	<string>0.968627 0.290196 0.290196 1</string>
+	<key>DVTScrollbarMarkerErrorColor</key>
+	<string>0.968627 0.290196 0.290196 1</string>
+	<key>DVTScrollbarMarkerRuntimeIssueColor</key>
+	<string>0.643137 0.509804 1 1</string>
+	<key>DVTScrollbarMarkerWarningColor</key>
+	<string>0.937255 0.717647 0.34902 1</string>
+	<key>DVTSourceTextBackground</key>
+	<string>0.123584 0.129359 0.132309 1</string>
+	<key>DVTSourceTextBlockDimBackgroundColor</key>
+	<string>0.5 0.5 0.5 1</string>
+	<key>DVTSourceTextCurrentLineHighlightColor</key>
+	<string>0.144704 0.156442 0.172483 1</string>
+	<key>DVTSourceTextInsertionPointColor</key>
+	<string>0.321569 0.545098 1 1</string>
+	<key>DVTSourceTextInvisiblesColor</key>
+	<string>0.454902 0.45098 0.411765 1</string>
+	<key>DVTSourceTextSelectionColor</key>
+	<string>0.16332 0.175299 0.195186 1</string>
+	<key>DVTSourceTextSyntaxColors</key>
+	<dict>
+		<key>xcode.syntax.attribute</key>
+		<string>0.988118 0.350745 0.651581 1</string>
+		<key>xcode.syntax.character</key>
+		<string>0.152487 0.986004 0.811051 1</string>
+		<key>xcode.syntax.comment</key>
+		<string>0.329856 0.343017 0.398676 1</string>
+		<key>xcode.syntax.comment.doc</key>
+		<string>0.329856 0.343017 0.398676 1</string>
+		<key>xcode.syntax.comment.doc.keyword</key>
+		<string>0.988118 0.350745 0.651581 1</string>
+		<key>xcode.syntax.declaration.other</key>
+		<string>0.37044 0.69892 0.9988 1</string>
+		<key>xcode.syntax.declaration.type</key>
+		<string>0.994819 0.75727 0.514359 1</string>
+		<key>xcode.syntax.identifier.class</key>
+		<string>0.994819 0.75727 0.514359 1</string>
+		<key>xcode.syntax.identifier.class.system</key>
+		<string>0.994819 0.75727 0.514359 1</string>
+		<key>xcode.syntax.identifier.constant</key>
+		<string>0.993101 0.665253 0.351005 1</string>
+		<key>xcode.syntax.identifier.constant.system</key>
+		<string>0.993101 0.665253 0.351005 1</string>
+		<key>xcode.syntax.identifier.function</key>
+		<string>0.222403 0.588136 0.969026 1</string>
+		<key>xcode.syntax.identifier.function.system</key>
+		<string>0.37044 0.69892 0.9988 1</string>
+		<key>xcode.syntax.identifier.macro</key>
+		<string>0.990255 0.514548 0.705522 1</string>
+		<key>xcode.syntax.identifier.macro.system</key>
+		<string>0.990255 0.514548 0.705522 1</string>
+		<key>xcode.syntax.identifier.type</key>
+		<string>0.994819 0.75727 0.514359 1</string>
+		<key>xcode.syntax.identifier.type.system</key>
+		<string>0.994819 0.75727 0.514359 1</string>
+		<key>xcode.syntax.identifier.variable</key>
+		<string>0.98615 0.0208568 0.353883 1</string>
+		<key>xcode.syntax.identifier.variable.system</key>
+		<string>0.98615 0.0208568 0.353883 1</string>
+		<key>xcode.syntax.keyword</key>
+		<string>0.988118 0.350745 0.651581 1</string>
+		<key>xcode.syntax.mark</key>
+		<string>0.87806 0.878034 0.878048 1</string>
+		<key>xcode.syntax.markup.code</key>
+		<string>0.990255 0.514548 0.705522 1</string>
+		<key>xcode.syntax.number</key>
+		<string>0.993101 0.665253 0.351005 1</string>
+		<key>xcode.syntax.plain</key>
+		<string>0.87806 0.878034 0.878048 1</string>
+		<key>xcode.syntax.preprocessor</key>
+		<string>0.990255 0.514548 0.705522 1</string>
+		<key>xcode.syntax.string</key>
+		<string>0.152487 0.986004 0.811051 1</string>
+		<key>xcode.syntax.url</key>
+		<string>0.990255 0.514548 0.705522 1</string>
+	</dict>
+	<key>DVTSourceTextSyntaxFonts</key>
+	<dict>
+		<key>xcode.syntax.attribute</key>
+		<string>VictorMono-Medium - 13.0</string>
+		<key>xcode.syntax.character</key>
+		<string>VictorMono-Medium - 13.0</string>
+		<key>xcode.syntax.comment</key>
+		<string>VictorMono-MediumItalic - 13.0</string>
+		<key>xcode.syntax.comment.doc</key>
+		<string>VictorMono-MediumOblique - 13.0</string>
+		<key>xcode.syntax.comment.doc.keyword</key>
+		<string>VictorMono-MediumOblique - 13.0</string>
+		<key>xcode.syntax.declaration.other</key>
+		<string>VictorMono-Medium - 13.0</string>
+		<key>xcode.syntax.declaration.type</key>
+		<string>VictorMono-Medium - 13.0</string>
+		<key>xcode.syntax.identifier.class</key>
+		<string>VictorMono-Medium - 13.0</string>
+		<key>xcode.syntax.identifier.class.system</key>
+		<string>VictorMono-Medium - 13.0</string>
+		<key>xcode.syntax.identifier.constant</key>
+		<string>VictorMono-Medium - 13.0</string>
+		<key>xcode.syntax.identifier.constant.system</key>
+		<string>VictorMono-Medium - 13.0</string>
+		<key>xcode.syntax.identifier.function</key>
+		<string>VictorMono-Medium - 13.0</string>
+		<key>xcode.syntax.identifier.function.system</key>
+		<string>VictorMono-Medium - 13.0</string>
+		<key>xcode.syntax.identifier.macro</key>
+		<string>VictorMono-Medium - 13.0</string>
+		<key>xcode.syntax.identifier.macro.system</key>
+		<string>VictorMono-Medium - 13.0</string>
+		<key>xcode.syntax.identifier.type</key>
+		<string>VictorMono-Medium - 13.0</string>
+		<key>xcode.syntax.identifier.type.system</key>
+		<string>VictorMono-Medium - 13.0</string>
+		<key>xcode.syntax.identifier.variable</key>
+		<string>VictorMono-Medium - 13.0</string>
+		<key>xcode.syntax.identifier.variable.system</key>
+		<string>VictorMono-Medium - 13.0</string>
+		<key>xcode.syntax.keyword</key>
+		<string>VictorMono-Medium - 13.0</string>
+		<key>xcode.syntax.mark</key>
+		<string>VictorMono-BoldOblique - 13.0</string>
+		<key>xcode.syntax.markup.code</key>
+		<string>VictorMono-Medium - 13.0</string>
+		<key>xcode.syntax.number</key>
+		<string>VictorMono-Medium - 13.0</string>
+		<key>xcode.syntax.plain</key>
+		<string>VictorMono-Medium - 13.0</string>
+		<key>xcode.syntax.preprocessor</key>
+		<string>VictorMono-Medium - 13.0</string>
+		<key>xcode.syntax.string</key>
+		<string>VictorMono-Medium - 13.0</string>
+		<key>xcode.syntax.url</key>
+		<string>VictorMono-Medium - 13.0</string>
+	</dict>
+</dict>
+</plist>

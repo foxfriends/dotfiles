@@ -1,0 +1,19 @@
+'.source.cpp':
+  'header guard':
+    'prefix': 'head'
+    'body': """
+    #ifndef $1
+    #define $1
+
+    #endif
+    """
+'.text.tex':
+  'document':
+    'prefix': 'document'
+    'body': """
+    \\\\documentclass[11pt,a4paper]{${1:article}}
+
+    \\\\begin{document}
+    $2
+    \\\\end{document}
+    """

@@ -1,0 +1,163 @@
+"*":
+  "arduino-upload": {}
+  "atom-ide-ui":
+    use: {}
+  "atom-package-deps":
+    ignored: []
+  "autoclose-html": {}
+  "autocomplete-racer":
+    hyperclick: {}
+  "code-peek":
+    ignoredPaths: [
+      "node_modules"
+    ]
+  core:
+    allowPendingPaneItems: false
+    automaticallyUpdate: false
+    closeEmptyWindows: false
+    customFileTypes:
+      "source.ini": [
+        ".hgrc"
+        ".buckconfig"
+        ".flowconfig"
+      ]
+      "source.json": [
+        "BUCK.autodeps"
+      ]
+      "source.python": [
+        "BUCK"
+      ]
+    disabledPackages: [
+      "markdown-preview"
+      "linter"
+      "vim-mode-plus"
+      "tree-view"
+      "atom-ide-ui"
+      "atom-typescript"
+      "hyperclick"
+      "ide-flowtype"
+    ]
+    ignoredNames: [
+      ".git"
+      "._*"
+      ".class"
+      ".o"
+      ".d"
+    ]
+    packagesWithKeymapsDisabled: [
+      "goto-definition"
+    ]
+    projectHome: "/home/cam/code/"
+    telemetryConsent: "limited"
+  editor:
+    fontFamily: "Fira Code"
+    invisibles: {}
+    nonWordCharacters: "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-…。，"
+    preferredLineLength: 100
+    showInvisibles: true
+    tabLength: 2
+    tabType: "soft"
+  "exception-reporting":
+    userId: "3c06fa62-dc73-c538-c016-d87640d0ebd6"
+  "go-plus":
+    config: {}
+  "goto-definition": {}
+  hex:
+    bytesPerLine: 4
+  hyperclick:
+    linuxTriggerKeys: "metaKey"
+  "ide-flowtype":
+    customFlowPath: {}
+  "ide-haskell":
+    autoHideOutput: true
+  "ide-rust":
+    rlsToolchain: "stable"
+  "language-babel": {}
+  "language-elm":
+    elmOraclePath: "/home/cam/code/nvm/versions/node/v8.6.0/bin/elm-oracle"
+  latex:
+    opener: "pdf-view"
+  "latex-completions": {}
+  linter:
+    lintOnChange: false
+    lintOnChangeInterval: 0
+    lintPreviewTabs: false
+  "linter-gcc":
+    execPath: "/home/cam/sys161/bin/cs350-gcc"
+    gccDefaultCppFlags: "-c -Wall -std=c++14 -fsyntax-only"
+    gccErrorLimit: -1
+  "linter-markdown":
+    detectIgnore: false
+  "linter-scalac":
+    compileAllClassesOnLint: true
+    compileClassesToClasspath: true
+  "linter-ui-default":
+    panelHeight: 110
+  "markdown-preview-plus":
+    enableLatexRenderingByDefault: true
+    useLazyHeaders: false
+  minimap: {}
+  nuclide:
+    "atom-ide-code-format":
+      formatOnType: false
+    "atom-ide-outline-view": {}
+    "nuclide-distraction-free-mode": {}
+    "nuclide-file-tree":
+      autoExpandSingleChild: false
+      showOpenFiles: false
+      showUncommittedChanges: false
+    "nuclide-health":
+      analyticsTimeout: 60
+      viewTimeout: 60
+    "nuclide-home":
+      showHome: false
+    "nuclide-terminal":
+      fontFamily: "Fira Code"
+    use: {}
+  platomformio:
+    verboseUpload: false
+  racer:
+    racerBinPath: "/home/cam/.cargo/bin/racer"
+    rustSrcPath: "/home/cam/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
+  "run-in-terminal":
+    launchers: "webpack.config.js webpack, package.json npm start"
+    terminal: "/usr/bin/gnome-terminal"
+    terminal_exec_arg: "-e"
+    use_exec_working_directory: false
+  script:
+    cwdBehavior: "Directory of the script"
+    stopOnRerun: true
+  "spell-check":
+    grammars: [
+      "source.asciidoc"
+      "source.gfm"
+      "text.git-commit"
+      "text.plain"
+      "text.plain.null-grammar"
+      "text.tex.latex"
+    ]
+  "terminal-plus":
+    core: {}
+    toggles:
+      autoClose: true
+  "tree-view":
+    alwaysOpenExisting: true
+  welcome:
+    showOnStartup: false
+  wordcount:
+    alwaysOn: true
+".c.source":
+  editor:
+    tabLength: 4
+".js.jsx.source":
+  editor:
+    nonWordCharacters: "/\\()\"':,.;<>~!@#%^&*|+=[]{}`?-…"
+".kotlin.source":
+  editor:
+    tabLength: 4
+".reason.source":
+  editor:
+    preferredLineLength: 110
+".source.swift":
+  editor:
+    tabLength: 4

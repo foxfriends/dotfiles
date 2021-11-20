@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+if [ -z "$SWAYSOCK" ]; then
+    echo 'Sway not detected'
+    exit 1
+fi
+
+$@ &
+id=""
+
+while [ -z $id ]; do
+    id=$(swaymsg -t subscribe '[ "window" ]' | jq 'select(.change == "new") | .container.id')
+done
+
+swaymsg [ con_id=$id ] floating enable, resize set 50 ppt 80 ppt, border pixel 2

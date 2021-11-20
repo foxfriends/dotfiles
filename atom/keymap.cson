@@ -1,0 +1,4 @@
+'atom-workspace atom-text-editor:not([mini])':
+  'ctrl-alt-f': 'token-navigation:fuzzySearch'
+  'ctrl-alt-n': 'token-navigation:nextToken'
+  'ctrl-alt-shift-n': 'token-navigation:previousToken'
