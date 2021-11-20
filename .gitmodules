@@ -1,0 +1,3 @@
+[submodule "syncat/style"]
+	path = syncat/style
+	url = git@github.com:foxfriends/syncat-themes.git

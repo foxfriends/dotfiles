@@ -25,4 +25,5 @@ check sway && dot_config sway
 check tig && dot_config tig
 check tmux && dot_config tmux
 check waybar && dot_config waybar
+check syncat && dot_config syncat
 ln -sf "$(pwd)/git/.gitconfig.current" "$HOME/.gitconfig"
