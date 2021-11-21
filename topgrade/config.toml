@@ -1,0 +1,8 @@
+assume_yes = true
+no_retry = true
+cleanup = true
+
+[git]
+repos = ["~/.dotfiles"]
+predefined_repos = false
+arguments = "--rebase --autostash"
