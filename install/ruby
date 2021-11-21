@@ -1,0 +1,7 @@
+#!/bin/bash
+set -e
+curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash
+export PATH="$PATH:$HOME/.rbenv/bin"
+latest=$(rbenv install -L | grep '^[0-9.]*$' | tail -n 1)
+rbenv install "$latest"
+rbenv global "$latest"

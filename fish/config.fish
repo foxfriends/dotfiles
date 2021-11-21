@@ -12,6 +12,8 @@ addpath "$HOME/.local/bin"
 addpath "$HOME/.deno/bin"
 addpath "$HOME/.cabal/bin"
 addpath "$HOME/.ghcup/bin"
+addpath "$HOME/.rbenv/bin"
+addpath "$HOME/.pyenv/bin"
 addpath "$HOME/.gem/bin"
 
 set -x GEM_HOME "$HOME/.gem"
