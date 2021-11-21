@@ -1,0 +1,9 @@
+#!/bin/bash
+set -e
+cd $(dirname $0)
+if [ $(uname) == 'Darwin' ]; then
+    check brew || ./brew
+    brew install gh
+elif check apt; then
+    sudo apt install gh
+fi
