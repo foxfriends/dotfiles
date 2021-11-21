@@ -2,13 +2,16 @@
 
 cd $(dirname $0)
 
-check () {
-    command -v "$1" > /dev/null 2>&1
-}
-
 dot_config () {
     ln -sfT "$(pwd)/$1" "$HOME/.config/$1"
 }
+
+dotfile () {
+    ln -sf "$(pwd)/$1" "$HOME"
+}
+
+ln -sfT "$(pwd)/bin" "$HOME/.bin"
+export PATH="$PATH:$HOME/.bin"
 
 check broot && dot_config broot
 check fish && dot_config fish
@@ -23,8 +26,7 @@ check ranger && dot_config ranger
 check rofi && dot_config rofi
 check sway && dot_config sway
 check tig && dot_config tig
-check tmux && dot_config tmux
 check waybar && dot_config waybar
 check syncat && dot_config syncat
-ln -sfT "$(pwd)/bin" "$HOME/.bin"
 ln -sf "$(pwd)/git/.gitconfig.current" "$HOME/.gitconfig"
+check tmux && dotfile tmux/.tmux.conf
