@@ -53,7 +53,7 @@ if status --is-interactive
   command -q lesspipe; and eval (env SHELL=/bin/sh lesspipe)
 end
 
-# Local stuff can be put in ~/.config.fish
+# Local additons can be put in ~/.config.fish
 test -f "$HOME/.config.fish"; and source "$HOME/.config.fish"
 
 set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME
