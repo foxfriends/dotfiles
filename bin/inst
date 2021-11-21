@@ -1,0 +1,2 @@
+#!/bin/bash
+"$HOME/.dotfiles/install/$1"
