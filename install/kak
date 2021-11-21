@@ -1,0 +1,10 @@
+#!/bin/bash
+
+cd $(dirname $0)
+mkdir -p "$HOME/.local"
+cd "$HOME/.local"
+test -d kakoune || git clone git@github.com:mawww/kakoune.git
+cd kakoune
+git pull
+make
+PREFIX="$HOME/.local" make install
