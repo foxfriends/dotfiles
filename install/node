@@ -1,0 +1,6 @@
+#!/bin/bash
+cd $(dirname $0)
+check fnm || ./fnm
+latest=$(fnm list-remote | tail -n 1)
+fnm install "$latest"
+fnm default "$latest"
