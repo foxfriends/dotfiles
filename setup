@@ -6,10 +6,6 @@ dot_config () {
     ln -sfT "$(pwd)/$1" "$HOME/.config/$1"
 }
 
-dotfile () {
-    ln -sf "$(pwd)/$1" "$HOME"
-}
-
 ln -sfT "$(pwd)/bin" "$HOME/.bin"
 export PATH="$PATH:$HOME/.bin"
 
@@ -29,4 +25,5 @@ check tig && dot_config tig
 check waybar && dot_config waybar
 check syncat && dot_config syncat
 ln -sf "$(pwd)/git/.gitconfig.current" "$HOME/.gitconfig"
-check tmux && dotfile tmux/.tmux.conf
+ln -sf "$(pwd)/git/.bashrc" "$HOME/.bashrc"
+ln -sf "$(pwd)/tmux/tmux.conf" "$HOME/.tmux.conf"
