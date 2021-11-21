@@ -1,0 +1,5 @@
+#!/bin/bash
+set -e
+cd $(dirname $0)
+check cargo || ./rust
+cargo install pazi
