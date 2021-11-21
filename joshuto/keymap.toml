@@ -21,7 +21,7 @@ keys = [ "q" ]
 command = "force_quit"
 keys = [ "Q" ]
 [[mapcommand]]
-command = "reload_dir_list"
+command = "reload_dirlist"
 keys = [ "R" ]
 [[mapcommand]]
 command = "toggle_hidden"
@@ -36,13 +36,13 @@ keys = [ "backtab" ]
 
 [[mapcommand]]
 command = "cursor_move_up"
-keys = [ "up" ]
+keys = [ "arrow_up" ]
 [[mapcommand]]
 command = "cursor_move_up"
 keys = [ "k" ]
 [[mapcommand]]
 command = "cursor_move_down"
-keys = [ "down" ]
+keys = [ "arrow_down" ]
 [[mapcommand]]
 command = "cursor_move_down"
 keys = [ "j" ]
@@ -66,24 +66,24 @@ command = "cursor_move_page_down"
 keys = [ "page_down" ]
 
 [[mapcommand]]
-command = "open_file"
-keys = [ "right" ]
+command = "open"
+keys = [ "arrow_right" ]
 [[mapcommand]]
-command = "open_file"
+command = "open"
 keys = [ "l" ]
 [[mapcommand]]
-command = "open_file"
+command = "open"
 keys = [ "\n" ]
 [[mapcommand]]
-command = "open_file_with"
+command = "open_with"
 keys = [ "r" ]
 
 [[mapcommand]]
-command = "console cd"
+command = ":cd"
 keys = [ "c", "d" ]
 [[mapcommand]]
 command = "cd .."
-keys = [ "left" ]
+keys = [ "arrow_left" ]
 [[mapcommand]]
 command = "cd .."
 keys = [ "h" ]
@@ -98,7 +98,7 @@ keys = [ "y", "y" ]
 command = "paste_files"
 keys = [ "p", "p" ]
 [[mapcommand]]
-command = "paste_files --overwrite"
+command = "paste_files --overwrite=true"
 keys = [ "p", "o" ]
 [[mapcommand]]
 command = "delete_files"
@@ -108,8 +108,12 @@ command = "delete_files"
 keys = [ "delete" ]
 
 [[mapcommand]]
-command = "console touch "
+command = ":touch "
 keys = [ "insert" ]
+
+[[mapcommand]]
+command = ":touch "
+keys = [ "f", "t" ]
 
 [[mapcommand]]
 command = "rename_append"
@@ -119,14 +123,14 @@ command = "rename_prepend"
 keys = [ "A" ]
 
 [[mapcommand]]
-command = "select_files --toggle"
+command = "select --toggle=true"
 keys = [ " " ]
 [[mapcommand]]
-command = "select_files --toggle --all"
+command = "select --toggle=true --all=true"
 keys = [ "t" ]
 
 [[mapcommand]]
-command = "console search "
+command = ":search "
 keys = [ "/" ]
 [[mapcommand]]
 command = "search_next"
@@ -143,13 +147,16 @@ command = "set_mode"
 keys = [ "=" ]
 
 [[mapcommand]]
-command = "console"
+command = ":"
 keys = [ ";" ]
 [[mapcommand]]
-command = "console mkdir "
+command = ":"
+keys = [ ":" ]
+[[mapcommand]]
+command = ":mkdir "
 keys = [ "m", "k" ]
 [[mapcommand]]
-command = "console rename "
+command = ":rename "
 keys = [ "c", "w" ]
 
 [[mapcommand]]
