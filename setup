@@ -28,3 +28,4 @@ check waybar && dot_config waybar
 ln -sf "$(pwd)/git/.gitconfig.current" "$HOME/.gitconfig"
 ln -sf "$(pwd)/bash/.bashrc" "$HOME/.bashrc"
 ln -sf "$(pwd)/tmux/tmux.conf" "$HOME/.tmux.conf"
+ln -sfT "$(pwd)/fonts" "$HOME/.fonts"
