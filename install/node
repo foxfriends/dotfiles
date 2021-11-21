@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 cd $(dirname $0)
 check fnm || ./fnm
 latest=$(fnm list-remote | tail -n 1)
