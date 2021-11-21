@@ -2,6 +2,21 @@
 
 set -q skin; or set -Ux skin onedark
 
+function addpath --description "add a directory to the PATH"
+  test -d "$argv[1]"; and set -ag fish_user_paths "$argv[1]"
+end
+
+addpath "$HOME/.bin"
+addpath "$HOME/.cargo/bin"
+addpath "$HOME/.local/bin"
+addpath "$HOME/.deno/bin"
+addpath "$HOME/.cabal/bin"
+addpath "$HOME/.ghcup/bin"
+addpath "$HOME/.gem/bin"
+
+set -x GEM_HOME "$HOME/.gem"
+set -a LD_LIBRARY_PATH "/usr/local/lib"
+
 if status --is-interactive
   reskin $skin
   command -q pazi; and source (pazi init fish |psub)
