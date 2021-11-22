@@ -1,4 +1,5 @@
 /plugins
+!/plugins/plug.kak
 /system
 /notes
 /todo
