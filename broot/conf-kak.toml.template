@@ -227,7 +227,7 @@ git_status_ignored = "${theme_rgb_color_comment} none"
 git_status_other = "${theme_rgb_color_comment} none"
 git_status_current = "ansi(15) none"
 
-char_match = "none none underlined"
+char_match = "${theme_rgb_color_highlight} none"
 
 status_error = "${theme_rgb_color_bgdefault} ${theme_rgb_color_error}"
 
