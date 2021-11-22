@@ -49,7 +49,7 @@ bind r source-file ~/.tmux.conf
 
 #    
 
-scripts="$HOME/.dotfiles/tmux/scripts"
+scripts="$PWD/scripts"
 set -g status-style fg=#${theme_tmux_status},bg=#${theme_tmux_bgstatus}
 set -g status-interval 1
 set -g status-left-length 100

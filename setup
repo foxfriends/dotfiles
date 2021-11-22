@@ -3,10 +3,10 @@
 cd $(dirname $0)
 
 dot_config () {
-    ln -sfT "$(pwd)/$1" "$HOME/.config/$1"
+    ln -sfh "$(pwd)/$1" "$HOME/.config/$1"
 }
 
-ln -sfT "$(pwd)/bin" "$HOME/.bin"
+ln -sfh "$(pwd)/bin" "$HOME/.bin"
 export PATH="$PATH:$HOME/.bin"
 export SKIN=${SKIN:-onedark}
 
@@ -14,11 +14,11 @@ export SKIN=${SKIN:-onedark}
 variables=$(cat "themes/$SKIN" | grep '^export' | sed 's/^export \([^=]*\).*/$\1/')
 for file in $(find . -name '*.template' -type f); do
     cd "$(dirname "$file")"
-    envsubst "$variables" < "$(basename "$file")" > "$(basename "${file%.template}")"
+    envsubst "$variables \$PWD" < "$(basename "$file")" > "$(basename "${file%.template}")"
     cd - >/dev/null
 done
 
-test -d "./syncat/style/$SKIN" && ln -sfT "./$SKIN" "./syncat/style/active"
+test -d "./syncat/style/$SKIN" && ln -sfh "./$SKIN" "./syncat/style/active"
 check broot && dot_config broot
 check fish && dot_config fish
 check flashfocus && dot_config flashfocus
@@ -38,4 +38,6 @@ check waybar && dot_config waybar
 ln -sf "$(pwd)/git/.gitconfig" "$HOME/.gitconfig"
 ln -sf "$(pwd)/bash/.bashrc" "$HOME/.bashrc"
 ln -sf "$(pwd)/tmux/.tmux.conf" "$HOME/.tmux.conf"
-ln -sfT "$(pwd)/fonts" "$HOME/.fonts"
+ln -sfh "$(pwd)/fonts" "$HOME/.fonts"
+
+chmod +x ./tmux/scripts/tmux-status-left
