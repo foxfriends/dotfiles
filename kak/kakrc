@@ -78,3 +78,8 @@ hook -group kks global KakBegin .* %{
     check-cmd kks
     eval %sh{ kks init }
 }
+
+hook -group pastel global KakBegin .* %{
+    require-module pastel
+    map global user c ': enter-user-mode pastel<ret>' -docstring 'pastel'
+}
