@@ -118,3 +118,5 @@ PS1="$(prompt)"
 
 # Local additions can be put in .bashrc.local
 [ -f "$HOME/.bashrc.local" ] && . "$HOME/.bashrc.local"
+
+source /Users/cam/.config/broot/launcher/bash/br

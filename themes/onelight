@@ -1,20 +1,20 @@
 # base 16
-theme_black=383a42
-theme_light_black=a0a1a7
-theme_red=e45649
-theme_light_red=b33022
-theme_green=50a14f
-theme_light_green=50a14f
-theme_yellow=c18401
-theme_light_yellow=e08026
-theme_blue=248be0
-theme_light_blue=375670
-theme_magenta=c678dd
-theme_light_magenta=a626a4
-theme_cyan=0997b4
-theme_light_cyan=0997b4
-theme_white=d4d4d4
-theme_light_white=fafafa
+export theme_black=383a42
+export theme_light_black=a0a1a7
+export theme_red=e45649
+export theme_light_red=b33022
+export theme_green=50a14f
+export theme_light_green=50a14f
+export theme_yellow=c18401
+export theme_light_yellow=e08026
+export theme_blue=248be0
+export theme_light_blue=375670
+export theme_magenta=c678dd
+export theme_light_magenta=a626a4
+export theme_cyan=0997b4
+export theme_light_cyan=0997b4
+export theme_white=d4d4d4
+export theme_light_white=fafafa
 
 # ANSI codes
 export theme_ansi_bg=37
@@ -40,6 +40,14 @@ export theme_color_variable=$theme_red
 export theme_color_name=$theme_red
 export theme_color_meta=$theme_cyan
 
+# file pickers
+export theme_file_directory=$theme_blue
+export theme_file_executable=$theme_green
+export theme_file_link=$theme_cyan
+export theme_file_perm_r=$theme_yellow
+export theme_file_perm_w=$theme_red
+export theme_file_perm_x=$theme_green
+
 # prompt
 export theme_prompt_code=$theme_color_error
 export theme_prompt_host=$theme_magenta
@@ -63,10 +71,13 @@ export theme_tmux_vcs=$theme_white
 export theme_tmux_bgvcs=$theme_prompt_vcs
 
 # git
-theme_addition_background=e8f0e6
-theme_addition_foreground=c3ddbf
-theme_addition=$theme_green
-theme_deletion_background=f7e4e0
-theme_deletion_foreground=ecb8ac
-theme_deletion=$theme_red
-git_syntax_theme=OneHalfLight
+export theme_addition_background=e8f0e6
+export theme_addition_foreground=c3ddbf
+export theme_addition=$theme_green
+export theme_deletion_background=f7e4e0
+export theme_deletion_foreground=ecb8ac
+export theme_deletion=$theme_red
+export theme_git_modification=$theme_yellow
+export theme_git_syntax_theme=OneHalfLight
+
+eval $(env | grep '^theme' | sed 's/\([a-fA-F0-9]\{6\}\)$/"$(pastel format rgb \1)"/ ; s/theme_/export theme_rgb_/')

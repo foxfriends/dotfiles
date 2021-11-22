@@ -11,7 +11,7 @@ export PATH="$PATH:$HOME/.bin"
 export SKIN=${SKIN:-onedark}
 
 . "themes/$SKIN"
-variables=$(cat "themes/$SKIN" | grep '^export' | sed 's/^export \([^=]*\).*/$\1/')
+variables=$(cat "themes/$SKIN" | grep '^export' | sed 's/^export \([^=]*\).*/$\1/ ; P ; s/theme_/theme_rgb_/')
 for file in $(find . -name '*.template' -type f); do
     cd "$(dirname "$file")"
     envsubst "$variables \$PWD" < "$(basename "$file")" > "$(basename "${file%.template}")"

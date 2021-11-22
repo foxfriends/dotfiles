@@ -1,4 +1,4 @@
-# base 16
+# base 16 (hex)
 export theme_black=282c34
 export theme_light_black=3e4452
 export theme_red=e06c75
@@ -40,6 +40,14 @@ export theme_color_variable=$theme_red
 export theme_color_name=$theme_red
 export theme_color_meta=$theme_cyan
 
+# file pickers
+export theme_file_directory=$theme_blue
+export theme_file_executable=$theme_green
+export theme_file_link=$theme_cyan
+export theme_file_perm_r=$theme_yellow
+export theme_file_perm_w=$theme_red
+export theme_file_perm_x=$theme_green
+
 # prompt
 export theme_prompt_code=$theme_color_error
 export theme_prompt_host=$theme_magenta
@@ -69,4 +77,7 @@ export theme_git_addition=$theme_green
 export theme_git_deletion_background=3c333b
 export theme_git_deletion_foreground=634249
 export theme_git_deletion=$theme_red
+export theme_git_modification=$theme_yellow
 export theme_git_syntax_theme=OneHalfDark
+
+eval $(env | grep '^theme' | sed 's/\([a-fA-F0-9]\{6\}\)$/"$(pastel format rgb \1)"/ ; s/theme_/export theme_rgb_/')
