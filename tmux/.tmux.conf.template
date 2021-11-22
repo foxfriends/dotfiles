@@ -50,12 +50,12 @@ bind r source-file ~/.tmux.conf
 #    
 
 scripts="$HOME/.dotfiles/tmux/scripts"
-set -g status-style fg=white,bg=brightblack
+set -g status-style fg=#${theme_tmux_status},bg=#${theme_tmux_bgstatus}
 set -g status-interval 1
 set -g status-left-length 100
 set -g status-right-length 100
 set -g status-left '#($scripts/tmux-status-left #{pane_current_path})'
-set -g status-right '#[fg=cyan,bg=default]#[fg=black,bg=cyan] %Y-%m-%d  %a %l:%M:%S %p '
+set -g status-right '#[fg=#${theme_tmux_time},bg=#${theme_tmux_bgstatus}]#[fg=#${theme_tmux_bgstatus},bg=#${theme_tmux_time}] %Y-%m-%d  %a %l:%M:%S %p '
 
-set -g pane-border-style fg=brightwhite
-set -g pane-active-border-style fg=green
+set -g pane-border-style fg=#${theme_tmux_border}
+set -g pane-active-border-style fg=#${theme_tmux_active}

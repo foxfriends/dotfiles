@@ -1,0 +1,72 @@
+# base 16
+theme_black=383a42
+theme_light_black=a0a1a7
+theme_red=e45649
+theme_light_red=b33022
+theme_green=50a14f
+theme_light_green=50a14f
+theme_yellow=c18401
+theme_light_yellow=e08026
+theme_blue=248be0
+theme_light_blue=375670
+theme_magenta=c678dd
+theme_light_magenta=a626a4
+theme_cyan=0997b4
+theme_light_cyan=0997b4
+theme_white=d4d4d4
+theme_light_white=fafafa
+
+# ANSI codes
+export theme_ansi_bg=37
+export theme_ansi_fg=40
+
+# semantic mappings
+export theme_color_default=$theme_black
+export theme_color_bgdefault=$theme_light_white
+export theme_color_highlight=$theme_blue
+export theme_color_bghighlight=$theme_light_white
+export theme_color_keyword=$theme_magenta
+export theme_color_function=$theme_blue
+export theme_color_builtin=$theme_cyan
+export theme_color_string=$theme_green
+export theme_color_constant=$theme_light_yellow
+export theme_color_value=$theme_light_yellow
+export theme_color_type=$theme_yellow
+export theme_color_comment=$theme_light_black
+export theme_color_placeholder=$theme_light_black
+export theme_color_error=$theme_light_red
+export theme_color_escape=$theme_cyan
+export theme_color_variable=$theme_red
+export theme_color_name=$theme_red
+export theme_color_meta=$theme_cyan
+
+# prompt
+export theme_prompt_code=$theme_color_error
+export theme_prompt_host=$theme_magenta
+export theme_prompt_tab=$theme_cyan
+export theme_prompt_user=$theme_yellow
+export theme_prompt_vcs=$theme_light_yellow
+
+# tmux
+export theme_tmux_active=$theme_green
+export theme_tmux_border=$theme_light_black
+export theme_tmux_status=$theme_color_default
+export theme_tmux_bgstatus=$theme_color_bghighlight
+export theme_tmux_time=$theme_cyan
+export theme_tmux_session=$theme_white
+export theme_tmux_bgsession=$theme_blue
+export theme_tmux_user=$theme_white
+export theme_tmux_bguser=$theme_prompt_user
+export theme_tmux_host=$theme_white
+export theme_tmux_bghost=$theme_prompt_host
+export theme_tmux_vcs=$theme_white
+export theme_tmux_bgvcs=$theme_prompt_vcs
+
+# git
+theme_addition_background=e8f0e6
+theme_addition_foreground=c3ddbf
+theme_addition=$theme_green
+theme_deletion_background=f7e4e0
+theme_deletion_foreground=ecb8ac
+theme_deletion=$theme_red
+git_syntax_theme=OneHalfLight

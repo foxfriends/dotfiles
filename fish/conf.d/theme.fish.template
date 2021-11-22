@@ -1,0 +1,46 @@
+if test "$TERM" = "linux"
+  echo -en "\e]P0${theme_black}" # black
+  echo -en "\e]P8${theme_light_black}" # light black
+  echo -en "\e]P1${theme_red}" # red
+  echo -en "\e]P9${theme_light_red}" # light red
+  echo -en "\e]P2${theme_green}" # green
+  echo -en "\e]PA${theme_light_green}" # light green
+  echo -en "\e]P3${theme_yellow}" # yellow
+  echo -en "\e]PB${theme_light_yellow}" # light yellow
+  echo -en "\e]P4${theme_blue}" # blue
+  echo -en "\e]PC${theme_light_blue}" # light blue
+  echo -en "\e]P5${theme_magenta}" # magenta
+  echo -en "\e]PD${theme_light_magenta}" # light magenta
+  echo -en "\e]P6${theme_cyan}" # cyan
+  echo -en "\e]PE${theme_light_cyan}" # light cyan
+  echo -en "\e]P7${theme_white}" # white
+  echo -en "\e]PF${theme_light_white}" # light white
+  echo -en '\e[${theme_ansi_bg};1;${theme_ansi_fg}m\e[8]'
+  clear # for background artifacting
+end
+
+set -xg fish_color_autosuggestion ${theme_color_placeholder}
+set -xg fish_color_cancel ${theme_color_default}
+set -xg fish_color_command ${theme_color_function}
+set -xg fish_color_comment ${theme_color_comment}
+set -xg fish_color_cwd ${theme_color_string}
+set -xg fish_color_cwd_root ${theme_color_string}
+set -xg fish_color_end ${theme_color_comment}
+set -xg fish_color_error ${theme_color_error}
+set -xg fish_color_escape ${theme_color_escape}
+set -xg fish_color_history_current --bold
+set -xg fish_color_match --background=${theme_color_meta}
+set -xg fish_color_normal ${theme_color_default}
+set -xg fish_color_operator ${theme_color_default}
+set -xg fish_color_param ${theme_color_value}
+set -xg fish_color_quote ${theme_color_string}
+set -xg fish_color_redirection ${theme_color_meta}
+set -xg fish_color_search_match ${theme_color_highlight}
+set -xg fish_color_selection ${theme_color_default} '--background=${theme_color_bghighlight}'
+set -xg fish_color_valid_path --underline
+
+set -xg fish_color_host ${theme_prompt_host}
+set -xg fish_color_status ${theme_prompt_code}
+set -xg fish_color_user ${theme_prompt_user}
+set -xg fish_color_vcs ${theme_prompt_vcs}
+set -xg fish_color_tab ${theme_prompt_tab}

@@ -8,7 +8,17 @@ dot_config () {
 
 ln -sfT "$(pwd)/bin" "$HOME/.bin"
 export PATH="$PATH:$HOME/.bin"
+export SKIN=${SKIN:-onedark}
 
+. "themes/$SKIN"
+variables=$(cat "themes/$SKIN" | grep '^export' | sed 's/^export \([^=]*\).*/$\1/')
+for file in $(find . -name '*.template' -type f); do
+    cd "$(dirname "$file")"
+    envsubst "$variables" < "$(basename "$file")" > "$(basename "${file%.template}")"
+    cd - >/dev/null
+done
+
+test -d "./syncat/style/$SKIN" && ln -sfT "./$SKIN" "./syncat/style/active"
 check broot && dot_config broot
 check fish && dot_config fish
 check flashfocus && dot_config flashfocus
@@ -25,7 +35,7 @@ check tig && dot_config tig
 check topgrade && dot_config topgrade
 check syncat && dot_config syncat
 check waybar && dot_config waybar
-ln -sf "$(pwd)/git/.gitconfig.current" "$HOME/.gitconfig"
+ln -sf "$(pwd)/git/.gitconfig" "$HOME/.gitconfig"
 ln -sf "$(pwd)/bash/.bashrc" "$HOME/.bashrc"
 ln -sf "$(pwd)/tmux/.tmux.conf" "$HOME/.tmux.conf"
 ln -sfT "$(pwd)/fonts" "$HOME/.fonts"

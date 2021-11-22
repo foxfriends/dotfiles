@@ -3,7 +3,7 @@
 set -q skin; or set -Ux skin onedark
 
 function addpath --description "add a directory to the PATH"
-  test -d "$argv[1]"; and set -ag fish_user_paths "$argv[1]"
+  test -d "$argv[1]"; and fish_add_path "$argv[1]"
 end
 
 addpath "$HOME/.bin"
@@ -20,7 +20,6 @@ set -x GEM_HOME "$HOME/.gem"
 set -a LD_LIBRARY_PATH "/usr/local/lib"
 
 if status --is-interactive
-  reskin $skin
   command -q pazi; and source (pazi init fish |psub)
   command -q rbenv; and source (rbenv init -|psub)
   command -q pyenv; and source (pyenv init -|psub)

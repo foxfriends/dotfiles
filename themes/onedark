@@ -1,0 +1,72 @@
+# base 16
+export theme_black=282c34
+export theme_light_black=3e4452
+export theme_red=e06c75
+export theme_light_red=be5046
+export theme_green=98c378
+export theme_light_green=98c379
+export theme_yellow=e5c07b
+export theme_light_yellow=d19a66
+export theme_blue=61afef
+export theme_light_blue=61afef
+export theme_magenta=c678dd
+export theme_light_magenta=c678dd
+export theme_cyan=56b6c2
+export theme_light_cyan=56b6c2
+export theme_white=abb2bf
+export theme_light_white=5c6370
+
+# ANSI codes
+export theme_ansi_bg=40
+export theme_ansi_fg=37
+
+# semantic mappings
+export theme_color_default=$theme_white
+export theme_color_bgdefault=$theme_black
+export theme_color_highlight=$theme_yellow
+export theme_color_bghighlight=$theme_light_black
+export theme_color_keyword=$theme_magenta
+export theme_color_function=$theme_blue
+export theme_color_builtin=$theme_cyan
+export theme_color_string=$theme_green
+export theme_color_constant=$theme_light_yellow
+export theme_color_value=$theme_light_yellow
+export theme_color_type=$theme_yellow
+export theme_color_comment=$theme_light_white
+export theme_color_placeholder=$theme_light_white
+export theme_color_error=$theme_light_red
+export theme_color_escape=$theme_cyan
+export theme_color_variable=$theme_red
+export theme_color_name=$theme_red
+export theme_color_meta=$theme_cyan
+
+# prompt
+export theme_prompt_code=$theme_color_error
+export theme_prompt_host=$theme_magenta
+export theme_prompt_tab=$theme_cyan
+export theme_prompt_user=$theme_yellow
+export theme_prompt_vcs=$theme_light_yellow
+
+# tmux
+export theme_tmux_active=$theme_green
+export theme_tmux_border=$theme_light_white
+export theme_tmux_status=$theme_color_default
+export theme_tmux_bgstatus=$theme_color_bghighlight
+export theme_tmux_time=$theme_cyan
+export theme_tmux_session=$theme_black
+export theme_tmux_bgsession=$theme_blue
+export theme_tmux_user=$theme_black
+export theme_tmux_bguser=$theme_prompt_user
+export theme_tmux_host=$theme_black
+export theme_tmux_bghost=$theme_prompt_host
+export theme_tmux_vcs=$theme_black
+export theme_tmux_bgvcs=$theme_prompt_vcs
+
+# git
+export theme_git_addition_background=343b3c
+export theme_git_addition_foreground=4a5a4b
+export theme_git_addition=$theme_green
+export theme_git_deletion_background=3c333b
+export theme_git_deletion_foreground=634249
+export theme_git_deletion=$theme_red
+export theme_git_syntax_theme=OneHalfDark

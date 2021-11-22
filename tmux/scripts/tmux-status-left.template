@@ -1,0 +1,31 @@
+#!/bin/bash
+
+pushd $1
+
+function start () {
+    prevcolor=$2
+    color=$2
+    printf '#[fg=%s,bg=%s] ' $1 $2
+}
+
+function transition () {
+    prevcolor=$color
+    color=$1
+    printf ' #[fg=%s,bg=%s]#[fg=%s] ' $prevcolor $color $2
+}
+
+start "#${theme_tmux_session}" "#${theme_tmux_bgsession}"
+printf '#S'
+
+transition "#${theme_tmux_bguser}" "#${theme_tmux_user}"
+printf '%s' "$(whoami)"
+
+transition "#${theme_tmux_bghost}" "#${theme_tmux_host}"
+printf '#h'
+
+if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+  transition "#${theme_tmux_bgvcs}" "#${theme_tmux_vcs}"
+  printf ' %s' "$(git branch | grep \* | cut -d ' ' -f2-)"
+fi
+
+transition "#${theme_tmux_bgstatus}" "#${theme_tmux_status}"

@@ -1,0 +1,29 @@
+[user]
+	email = cameldridge@gmail.com
+	name = Cameron Eldridge
+[core]
+	editor = kak
+	pager = delta
+	attributesFile = "${PWD}/.gitattributes"
+[diff]
+	colorMoved = default
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	features = side-by-side line-numbers decorations
+	plus-style = "syntax #${theme_git_addition_background}"
+	plus-emph-style = "syntax #${theme_git_addition_foreground}"
+	line-numbers-plus-style = #${theme_git_addition}
+	minus-style = "syntax #${theme_git_deletion_background}"
+	minus-emph-style = "syntax #${theme_git_deletion_foreground}"
+	line-numbers-minus-style = #${theme_git_deletion}
+	syntax-theme = ${theme_git_syntax_theme}
+[pull]
+	rebase = false
+[alias]
+	graph = "log --graph --oneline"
+[fetch]
+	prune = true
+	pruneTags = true
+[init]
+	defaultBranch = main
