@@ -1,0 +1,20 @@
+if [ "$TERM" = "linux" ]; then
+  echo -en "\e]P0${theme_black}" # black
+  echo -en "\e]P8${theme_light_black}" # light black
+  echo -en "\e]P1${theme_red}" # red
+  echo -en "\e]P9${theme_light_red}" # light red
+  echo -en "\e]P2${theme_green}" # green
+  echo -en "\e]PA${theme_light_green}" # light green
+  echo -en "\e]P3${theme_yellow}" # yellow
+  echo -en "\e]PB${theme_light_yellow}" # light yellow
+  echo -en "\e]P4${theme_blue}" # blue
+  echo -en "\e]PC${theme_light_blue}" # light blue
+  echo -en "\e]P5${theme_magenta}" # magenta
+  echo -en "\e]PD${theme_light_magenta}" # light magenta
+  echo -en "\e]P6${theme_cyan}" # cyan
+  echo -en "\e]PE${theme_light_cyan}" # light cyan
+  echo -en "\e]P7${theme_white}" # white
+  echo -en "\e]PF${theme_light_white}" # light white
+  echo -en '\e[${theme_ansi_bg};1;${theme_ansi_fg}m\e[8]'
+  clear # for background artifacting
+fi
