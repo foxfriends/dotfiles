@@ -23,6 +23,7 @@ export theme_ansi_fg=37
 # semantic mappings
 export theme_color_default=$theme_white
 export theme_color_bgdefault=$theme_black
+export theme_color_divider=$theme_light_black
 export theme_color_highlight=$theme_yellow
 export theme_color_bghighlight=$theme_light_black
 export theme_color_keyword=$theme_magenta
