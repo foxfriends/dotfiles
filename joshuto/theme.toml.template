@@ -1,0 +1,50 @@
+[selection]
+fg = "${theme_rgb_color_highlight}"
+bold = true
+
+[selection.prefix]
+prefix = "*  "
+size = 2
+
+[executable]
+fg = "${theme_rgb_file_executable}"
+
+[regular]
+fg = "${theme_rgb_color_default}"
+
+[directory]
+fg = "${theme_rgb_file_directory}"
+
+[link]
+fg = "${theme_rgb_file_link}"
+
+[socket]
+fg = "${theme_rgb_file_socket}"
+
+[ext]
+bmp = { fg = "${theme_rgb_file_image}" }
+jpg = { fg = "${theme_rgb_file_image}" }
+jpeg = { fg = "${theme_rgb_file_image}" }
+png = { fg = "${theme_rgb_file_image}" }
+svg = { fg = "${theme_rgb_file_image}" }
+gif = { fg = "${theme_rgb_file_image}" }
+
+wav = { fg = "${theme_rgb_file_media}" }
+flac = { fg = "${theme_rgb_file_media}" }
+mp3 = { fg = "${theme_rgb_file_media}" }
+avi = { fg = "${theme_rgb_file_media}" }
+avi = { fg = "${theme_rgb_file_media}" }
+m3u = { fg = "${theme_rgb_file_media}" }
+mp4 = { fg = "${theme_rgb_file_media}" }
+mkv = { fg = "${theme_rgb_file_media}" }
+m4a = { fg = "${theme_rgb_file_media}" }
+ts = { fg = "${theme_rgb_file_media}" }
+webm = { fg = "${theme_rgb_file_media}" }
+wmv = { fg = "${theme_rgb_file_media}" }
+
+7z = { fg = "${theme_rgb_file_archive}" }
+zip = { fg = "${theme_rgb_file_archive}" }
+bz2 = { fg = "${theme_rgb_file_archive}" }
+gz = { fg = "${theme_rgb_file_archive}" }
+xz = { fg = "${theme_rgb_file_archive}" }
+rar = { fg = "${theme_rgb_file_archive}" }
