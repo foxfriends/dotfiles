@@ -77,16 +77,7 @@ export theme_color_host=$theme_magenta
 export theme_color_user=$theme_yellow
 export theme_color_vcs=$theme_light_yellow
 export theme_color_tab=$theme_cyan
-
-# tmux
-export theme_tmux_session=$theme_black
-export theme_tmux_bgsession=$theme_blue
-export theme_tmux_user=$theme_black
-export theme_tmux_bguser=$theme_color_user
-export theme_tmux_host=$theme_black
-export theme_tmux_bghost=$theme_color_host
-export theme_tmux_vcs=$theme_black
-export theme_tmux_bgvcs=$theme_color_vcs
+export theme_color_session=$theme_blue
 
 # git
 export theme_git_addition_background=343b3c

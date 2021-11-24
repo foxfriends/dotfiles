@@ -14,18 +14,18 @@ function transition () {
     printf ' #[fg=%s,bg=%s]#[fg=%s] ' $prevcolor $color $2
 }
 
-start "#${theme_tmux_session}" "#${theme_tmux_bgsession}"
+start "#${theme_color_bgdefault}" "#${theme_color_session}"
 printf '#S'
 
-transition "#${theme_tmux_bguser}" "#${theme_tmux_user}"
+transition "#${theme_color_user}" "#${theme_color_bgdefault}"
 printf '%s' "$(whoami)"
 
-transition "#${theme_tmux_bghost}" "#${theme_tmux_host}"
+transition "#${theme_color_host}" "#${theme_color_bgdefault}"
 printf '#h'
 
 if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
-  transition "#${theme_tmux_bgvcs}" "#${theme_tmux_vcs}"
+  transition "#${theme_color_vcs}" "#${theme_color_bgdefault}"
   printf ' %s' "$(git branch | grep \* | cut -d ' ' -f2-)"
 fi
 
-transition "#${theme_tmux_bgstatus}" "#${theme_tmux_status}"
+transition "#${theme_color_bgstatus}" "#${theme_color_status}"
