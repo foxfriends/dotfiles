@@ -5,6 +5,7 @@
 	editor = kak
 	pager = delta
 	attributesFile = "${PWD}/.gitattributes"
+	hooksPath = "${PWD}/hooks"
 [diff]
 	colorMoved = default
 [interactive]
