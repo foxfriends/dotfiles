@@ -53,8 +53,9 @@ alias global Wqa write-all-quit
 alias global WQa write-all-quit
 alias global WQA write-all-quit
 
-hook global BufWritePost .* "git show-diff"
-hook global BufCreate .* "git show-diff"
+define-command -docstring 'set buffer filetype <type>' -params 1 sf %{
+    set buffer filetype %arg{1}
+}
 
 hook -group kks global KakBegin .* %{
     require-module detection

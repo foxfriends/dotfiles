@@ -9,3 +9,12 @@ provide-module sk %{
         evaluate-result "run () { cd '%sh{pwd}'; file=$(%opt{findcmd} | sk --preview ""%opt{previewcmd} {}""); if [ -n $file ]; then printf 'edit! -existing %%s\\n' ""$file""; fi; } && run "
     }
 }
+
+provide-module fuzzyfinder-sk %{
+    require-module sk
+    alias global fuzzyfind sk
+}
+
+hook -group sk global KakBegin .* %{
+    require-module sk
+}

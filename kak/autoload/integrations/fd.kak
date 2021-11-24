@@ -4,5 +4,7 @@
 provide-module find-fd %{
     require-module detection
     check-cmd fd
+
     set-option global findcmd 'fd -t f'
+    alias global fd find
 }

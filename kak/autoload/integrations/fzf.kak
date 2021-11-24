@@ -9,3 +9,12 @@ provide-module fzf %{
         evaluate-result "run () { cd '%sh{pwd}'; file=$(%opt{findcmd} | fzf --preview ""%opt{previewcmd} {}""); if [ -n $file ]; then printf 'edit! -existing %%s\\n' ""$file""; fi; } && run "
     }
 }
+
+provide-module fuzzyfind-fzf %{
+    require-module fzf
+    alias global fuzzyfind fzf
+}
+
+hook -group fzf global KakBegin .* %{
+    require-module fzf
+}

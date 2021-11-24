@@ -1,15 +1,9 @@
 # https://sw.kovidgoyal.net/kitty/index.html
 # ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 
-define-command -hidden is-kitty %{
-    # ensure that we're running on kitty
-    evaluate-commands %sh{
-        [ "$TERM" = "xterm-kitty" ] || echo 'fail kitty not detected'
-    }
-}
-
 provide-module kitty %{
-    is-kitty
+    # ensure that we're running on kitty
+    evaluate-commands %sh{ [ "$TERM" = "xterm-kitty" ] || echo 'fail kitty not detected' }
 
     define-command kitty -params .. -shell-completion -docstring 'kitty' %{
         nop %sh{
@@ -58,11 +52,27 @@ provide-module kitty %{
         }
     }
 
-    define-command kitty-new-horizontal -params 1.. -shell-completion %{
+    define-command kitty-splith -params 1.. -shell-completion %{
         at-kitty launch --no-response --location vsplit --cwd "%sh{pwd}" %arg{@}
     }
 
-    define-command kitty-new-vertical -params 1.. -shell-completion %{
+    define-command kitty-splitv -params 1.. -shell-completion %{
         at-kitty launch --no-response --location hsplit --cwd "%sh{pwd}" %arg{@}
     }
+}
+
+provide-module windowing-kitty %{
+    require-module kitty
+    alias global terminal       kitty-new
+    alias global terminal-popup kitty-new-tab
+    alias global terminal-tab   kitty-new-tab
+    alias global terminal-left  kitty-splith
+    alias global terminal-right kitty-splith
+    alias global terminal-above kitty-splitv
+    alias global terminal-below kitty-splitv
+    alias global focus          kitty-focus
+}
+
+hook -group kitty global KakBegin .* %{
+    require-module kitty
 }

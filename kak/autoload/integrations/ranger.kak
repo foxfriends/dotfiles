@@ -12,3 +12,12 @@ provide-module ranger %{
         evaluate-result "run() { ""%val{config}/scripts/ranger"" ""$1"" ""%reg{i}""; } && run"
     }
 }
+
+provide-module filemanager-ranger %{
+    require-module ranger
+    alias global filemanager ranger
+}
+
+hook -group ranger global KakBegin .* %{
+    require-module ranger
+}

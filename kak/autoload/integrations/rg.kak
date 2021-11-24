@@ -6,4 +6,5 @@ provide-module grep-rg %{
     check-cmd rg
 
     set-option global grepcmd 'rg --vimgrep'
+    alias global rg grep
 }

@@ -1,7 +1,3 @@
-# Tool: grep
-# ‾‾‾‾‾‾‾‾‾‾
-# grep performs searching in files.
-
 declare-option -docstring "modules which implement a grep provider" \
     str-list grep_providers 'grep-rg' 'grep-grep'
 

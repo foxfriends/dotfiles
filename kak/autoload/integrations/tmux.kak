@@ -1,15 +1,8 @@
 # http://tmux.github.io/
 # ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 
-define-command -hidden is-tmux %{
-    # ensure we're running under tmux
-    evaluate-commands %sh{
-        [ -n "$TMUX" ] || echo 'fail tmux not detected'
-    }
-}
-
 provide-module tmux %{
-    is-tmux
+    evaluate-commands %sh{ [ -n "$TMUX" ] || echo 'fail tmux not detected' }
 
     define-command tmux -params 1.. -shell-completion -docstring 'tmux' %{
         nop %sh{
@@ -19,28 +12,28 @@ provide-module tmux %{
     }
 
     define-command tmux-new-up -shell-completion -params 1.. -docstring '
-    tmux-terminal-vertical <program> [<arguments>]: create a new terminal as a tmux pane
+    tmux-terminal-up <program> [<arguments>]: create a new terminal as a tmux pane
     The current pane is split into two, top and bottom
     The program passed as argument will be executed in the new terminal' %{
         tmux split-window -vb "%sh{""$kak_config/scripts/quote-all"" ""$@""}"
     }
 
     define-command tmux-new-down -shell-completion -params 1.. -docstring '
-    tmux-terminal-vertical <program> [<arguments>]: create a new terminal as a tmux pane
+    tmux-terminal-down <program> [<arguments>]: create a new terminal as a tmux pane
     The current pane is split into two, top and bottom
     The program passed as argument will be executed in the new terminal' %{
         tmux split-window -v "%sh{""$kak_config/scripts/quote-all"" ""$@""}"
     }
 
     define-command tmux-new-right -params 1.. -shell-completion -docstring '
-    tmux-terminal-horizontal <program> [<arguments>]: create a new terminal as a tmux pane
+    tmux-terminal-right <program> [<arguments>]: create a new terminal as a tmux pane
     The current pane is split into two, left and right
     The program passed as argument will be executed in the new terminal' %{
         tmux split-window -h "%sh{""$kak_config/scripts/quote-all"" ""$@""}"
     }
 
     define-command tmux-new-left -params 1.. -shell-completion -docstring '
-    tmux-terminal-horizontal <program> [<arguments>]: create a new terminal as a tmux pane
+    tmux-terminal-left <program> [<arguments>]: create a new terminal as a tmux pane
     The current pane is split into two, left and right
     The program passed as argument will be executed in the new terminal' %{
         tmux split-window -hb "%sh{""$kak_config/scripts/quote-all"" ""$@""}"
@@ -73,4 +66,21 @@ provide-module tmux %{
             fi
         }
     }
+}
+
+provide-module windowing-tmux %{
+    require-module tmux
+
+    alias global terminal       tmux-new
+    alias global terminal-popup tmux-popup
+    alias global terminal-tab   tmux-new
+    alias global terminal-left  tmux-new-left
+    alias global terminal-right tmux-new-right
+    alias global terminal-above tmux-new-up
+    alias global terminal-below tmux-new-down
+    alias global focus          tmux-focus
+}
+
+hook -group tmux global KakBegin .* %{
+    require-module tmux
 }

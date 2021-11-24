@@ -14,3 +14,12 @@ provide-module joshuto %{
         evaluate-result "run() { ""%val{config}/scripts/joshuto"" ""$1"" --path '%reg{i}'; } && run"
     }
 }
+
+provide-module filemanager-joshuto %{
+    require-module joshuto
+    alias global filemanager joshuto
+}
+
+hook -group joshuto global KakBegin .* %{
+    require-module joshuto
+}
