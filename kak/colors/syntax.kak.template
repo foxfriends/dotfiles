@@ -1,0 +1,88 @@
+## code
+face global value rgb:${theme_color_constant}
+face global type rgb:${theme_color_type}
+face global variable rgb:${theme_color_variable}
+face global identifier rgb:${theme_color_variable}
+face global field rgb:${theme_color_variable}
+face global string rgb:${theme_color_string}
+face global keyword rgb:${theme_color_keyword}
+face global operator rgb:${theme_color_operator}
+face global attribute rgb:${theme_color_keyword}
+face global comment rgb:${theme_color_comment}+i
+face global doc_comment rgb:${theme_color_comment}+b
+face global meta rgb:${theme_color_meta}
+face global builtin rgb:${theme_color_builtin}
+face global function rgb:${theme_color_function}
+face global module rgb:${theme_color_name}+i
+
+## markup
+face global title rgb:${theme_color_title}+b
+face global header rgb:${theme_color_title}+b
+face global bold rgb:${theme_color_strong}+b
+face global italic rgb:${theme_color_emphasis}+i
+face global mono rgb:${theme_color_string}
+face global block rgb:${theme_color_builtin}
+face global link rgb:${theme_color_link}
+face global bullet rgb:${theme_color_keyword}
+face global list rgb:${theme_color_keyword}
+
+## Cursor
+face global NormalCursor default,rgb:${theme_color_bghighlight}+b
+face global InsertCursor rgb:${theme_color_bgcursor},rgb:${theme_color_cursor}+b
+hook global ModeChange '.*:insert' %{ face window PrimaryCursor @InsertCursor }
+hook global ModeChange '.*:normal' %{ face window PrimaryCursor @NormalCursor }
+
+## builtin
+face global Default rgb:${theme_color_default},rgb:${theme_color_bgdefault}
+face global PrimarySelection default,rgb:${theme_color_bghighlight2}+b
+face global SecondarySelection default,rgb:${theme_color_bghighlight2}+i
+face global PrimaryCursor @NormalCursor
+face global PrimaryCursorEol rgb:${theme_color_bgcursor},rgb:${theme_color_cursor}+f@PrimaryCursor
+face global SecondaryCursor default,rgb:${theme_color_bghighlight}+i
+face global SecondaryCursorEol rgb:${theme_color_bghighlight}+f@SecondaryCursor
+face global LineNumbers rgb:${theme_color_placeholder},rgb:${theme_color_bgdefault}
+face global LineNumberCursor rgb:${theme_color_highlight},rgb:${theme_color_bgdefault}
+face global MenuForeground rgb:${theme_color_bghighlight},rgb:${theme_color_highlight}+b
+face global MenuBackground rgb:${theme_color_bgdefault},rgb:${theme_color_default}
+face global MenuInfo rgb:${theme_color_bghighlight}
+face global Information rgb:${theme_color_bghighlight},rgb:${theme_color_highlight}
+face global Error rgb:${theme_color_bgdefault},rgb:${theme_color_variable}
+face global StatusLine rgb:${theme_color_default},rgb:${theme_color_bghighlight}
+face global StatusLineMode rgb:${theme_color_default}
+face global StatusLineInfo rgb:${theme_color_default}
+face global StatusLineValue rgb:${theme_color_default}
+face global StatusCursor rgb:${theme_color_bgdefault},rgb:${theme_color_default}
+face global Prompt rgb:${theme_color_function}
+face global MatchingChar default,rgb:${theme_color_bghighlight}
+face global Reference default+u
+face global BufferPadding rgb:${theme_color_bghighlight},rgb:${theme_color_bgdefault}
+face global Whitespace rgb:${theme_color_bghighlight}+f
+
+## LSP
+face global DiagnosticError default+u
+face global DiagnosticWarning default+u
+
+## powerline
+define-command -hidden powerline-theme-custom %{
+    set-option global powerline_color00 rgb:${theme_color_bgdefault}        # fg: bufname
+    set-option global powerline_color03 rgb:${theme_color_path}             # bg: bufname
+    set-option global powerline_color02 rgb:${theme_color_bgdefault}        # fg: git
+    set-option global powerline_color04 rgb:${theme_color_vcs}              # bg: git
+    set-option global powerline_color05 rgb:${theme_color_bgdefault}        # fg: position
+    set-option global powerline_color01 rgb:${theme_color_variable}         # bg: position
+    set-option global powerline_color06 rgb:${theme_color_bgdefault}        # fg: line-column
+    set-option global powerline_color09 rgb:${theme_color_variable}         # bg: line-column
+    set-option global powerline_color07 rgb:${theme_color_default}          # fg: mode-info
+    set-option global powerline_color08 rgb:${theme_color_bghighlight}      # bg: mode-info
+    set-option global powerline_color10 rgb:${theme_color_bgdefault}        # fg: filetype
+    set-option global powerline_color11 rgb:${theme_color_type}             # bg: filetype
+    set-option global powerline_color13 rgb:${theme_color_bgdefault}        # fg: client
+    set-option global powerline_color12 rgb:${theme_color_user}             # bg: client
+    set-option global powerline_color15 rgb:${theme_color_bgdefault}        # fg: session
+    set-option global powerline_color14 rgb:${theme_color_host}             # bg: session
+    set-option global powerline_color19 rgb:${theme_color_bgdefault}        # fg: unicode
+    set-option global powerline_color18 rgb:${theme_color_escape}           # bg: unicode
+
+    declare-option -hidden str powerline_next_bg rgb:${theme_color_bghighlight}
+    declare-option -hidden str powerline_base_bg rgb:${theme_color_bghighlight}
+}

@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # base 16
 export theme_black=383a42
 export theme_light_black=a0a1a7
@@ -20,27 +22,45 @@ export theme_light_white=fafafa
 export theme_ansi_bg=37
 export theme_ansi_fg=40
 
-# semantic mappings
+# UI
 export theme_color_default=$theme_black
 export theme_color_bgdefault=$theme_light_white
+export theme_color_divider=$theme_white
 export theme_color_highlight=$theme_blue
 export theme_color_bghighlight=$theme_light_white
+export theme_color_error=$theme_light_red
+export theme_color_status=$theme_color_default
+export theme_color_bgstatus=$theme_color_bghighlight
+export theme_color_date=$theme_cyan
+export theme_color_cursor=$theme_color_default
+export theme_color_bgcursor=$theme_color_bgdefault
+export theme_color_bghighlight2=e5e5e5
+export theme_color_placeholder=$theme_light_black
+
+# code
 export theme_color_keyword=$theme_magenta
+export theme_color_operator=$theme_magenta
 export theme_color_function=$theme_blue
 export theme_color_builtin=$theme_cyan
 export theme_color_string=$theme_green
+export theme_color_path=$theme_green
 export theme_color_constant=$theme_light_yellow
 export theme_color_value=$theme_light_yellow
 export theme_color_type=$theme_yellow
 export theme_color_comment=$theme_light_black
-export theme_color_placeholder=$theme_light_black
-export theme_color_error=$theme_light_red
 export theme_color_escape=$theme_cyan
 export theme_color_variable=$theme_red
 export theme_color_name=$theme_red
 export theme_color_meta=$theme_cyan
+export theme_color_invisible=$theme_color_bghighlight
 
-# file pickers
+# markup
+export theme_color_title=$theme_red
+export theme_color_emphasis=$theme_yellow
+export theme_color_strong=$theme_magenta
+export theme_color_link=$theme_cyan
+
+# shell
 export theme_file_directory=$theme_blue
 export theme_file_executable=$theme_green
 export theme_file_link=$theme_cyan
@@ -53,26 +73,20 @@ export theme_file_perm_w=$theme_red
 export theme_file_perm_x=$theme_green
 
 # prompt
-export theme_prompt_code=$theme_color_error
-export theme_prompt_host=$theme_magenta
-export theme_prompt_tab=$theme_cyan
-export theme_prompt_user=$theme_yellow
-export theme_prompt_vcs=$theme_light_yellow
+export theme_color_host=$theme_magenta
+export theme_color_user=$theme_yellow
+export theme_color_vcs=$theme_light_yellow
+export theme_color_tab=$theme_cyan
 
 # tmux
-export theme_tmux_active=$theme_green
-export theme_tmux_border=$theme_light_black
-export theme_tmux_status=$theme_color_default
-export theme_tmux_bgstatus=$theme_color_bghighlight
-export theme_tmux_time=$theme_cyan
 export theme_tmux_session=$theme_white
 export theme_tmux_bgsession=$theme_blue
 export theme_tmux_user=$theme_white
-export theme_tmux_bguser=$theme_prompt_user
+export theme_tmux_bguser=$theme_color_user
 export theme_tmux_host=$theme_white
-export theme_tmux_bghost=$theme_prompt_host
+export theme_tmux_bghost=$theme_color_host
 export theme_tmux_vcs=$theme_white
-export theme_tmux_bgvcs=$theme_prompt_vcs
+export theme_tmux_bgvcs=$theme_color_vcs
 
 # git
 export theme_addition_background=e8f0e6
