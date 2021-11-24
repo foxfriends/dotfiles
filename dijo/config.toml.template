@@ -1,9 +1,0 @@
-[look]
-true_chr = "✓"
-false_chr = "×"
-future_chr = "·"
-
-[colors]
-reached = "#${theme_color_success}"
-todo = "#${theme_color_emphasis}"
-inactive = "#${theme_color_placeholder}"
