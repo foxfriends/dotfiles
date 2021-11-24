@@ -28,7 +28,6 @@ export theme_color_bgdefault=$theme_black
 export theme_color_divider=$theme_light_black
 export theme_color_highlight=$theme_yellow
 export theme_color_bghighlight=$theme_light_black
-export theme_color_error=$theme_light_red
 export theme_color_status=$theme_white
 export theme_color_bgstatus=$theme_light_black
 export theme_color_date=$theme_cyan
@@ -38,6 +37,10 @@ export theme_color_bghighlight2=2f383b
 export theme_color_placeholder=$theme_light_white
 export theme_color_overlay=$theme_black
 export theme_color_bgoverlay=$theme_white
+
+export theme_color_success=$theme_green
+export theme_color_warning=$theme_yellow
+export theme_color_error=$theme_red
 
 # code
 export theme_color_keyword=$theme_magenta

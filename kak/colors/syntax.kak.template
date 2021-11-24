@@ -29,24 +29,30 @@ face global list rgb:${theme_color_keyword}
 ## Cursor
 face global NormalCursor default,rgb:${theme_color_bghighlight}+b
 face global InsertCursor rgb:${theme_color_bgcursor},rgb:${theme_color_cursor}+b
-hook global ModeChange '.*:insert' %{ face window PrimaryCursor @InsertCursor }
-hook global ModeChange '.*:normal' %{ face window PrimaryCursor @NormalCursor }
+hook global ModeChange '.*:insert' %{ 
+    face window PrimaryCursor @InsertCursor 
+    face window PrimaryCursorEol @InsertCursor
+}
+hook global ModeChange '.*:normal' %{ 
+    face window PrimaryCursor @NormalCursor
+    face window PrimaryCursorEol @NormalCursor
+}
 
 ## builtin
 face global Default rgb:${theme_color_default},rgb:${theme_color_bgdefault}
 face global PrimarySelection default,rgb:${theme_color_bghighlight2}+b
 face global SecondarySelection default,rgb:${theme_color_bghighlight2}+i
 face global PrimaryCursor @NormalCursor
-face global PrimaryCursorEol rgb:${theme_color_bgcursor}+f@PrimaryCursor
+face global PrimaryCursorEol @PrimaryCursor
 face global SecondaryCursor default,rgb:${theme_color_bghighlight}+i
-face global SecondaryCursorEol rgb:${theme_color_bghighlight}+f@SecondaryCursor
+face global SecondaryCursorEol @SecondaryCursor
 face global LineNumbers rgb:${theme_color_placeholder},rgb:${theme_color_bgdefault}
 face global LineNumberCursor rgb:${theme_color_highlight},rgb:${theme_color_bgdefault}
 face global MenuForeground rgb:${theme_color_bghighlight},rgb:${theme_color_highlight}+b
 face global MenuBackground rgb:${theme_color_overlay},rgb:${theme_color_bgoverlay}
 face global MenuInfo rgb:${theme_color_bghighlight}
 face global Information rgb:${theme_color_bghighlight},rgb:${theme_color_highlight}
-face global Error rgb:${theme_color_bgdefault},rgb:${theme_color_variable}
+face global Error rgb:${theme_color_bgdefault},rgb:${theme_color_error}
 face global StatusLine rgb:${theme_color_default},rgb:${theme_color_bghighlight}
 face global StatusLineMode rgb:${theme_color_default}
 face global StatusLineInfo rgb:${theme_color_default}
@@ -55,12 +61,12 @@ face global StatusCursor rgb:${theme_color_bgdefault},rgb:${theme_color_default}
 face global Prompt rgb:${theme_color_function}
 face global MatchingChar default,rgb:${theme_color_bghighlight}
 face global Reference default+u
-face global BufferPadding rgb:${theme_color_bghighlight},rgb:${theme_color_bgdefault}
-face global Whitespace rgb:${theme_color_bghighlight}+f
+face global BufferPadding rgb:${theme_color_invisible},rgb:${theme_color_bgdefault}
+face global Whitespace rgb:${theme_color_invisible}+f
 
 ## LSP
-face global DiagnosticError default+u
-face global DiagnosticWarning default+u
+face global DiagnosticError default,default,rgb:${theme_color_error}+u
+face global DiagnosticWarning default,default,rgb:${theme_color_warning}+u
 
 ## powerline
 define-command -hidden powerline-theme-custom %{
