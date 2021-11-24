@@ -1,9 +1,20 @@
 # plugins
 source "%val{config}/plugins.kak"
 
+set global ui_options ncurses_set_title=false
+
 # visuals
 colorscheme syntax
-add-highlighter global/ number-lines -separator ' │ ' -hlcursor
+
+declare-option -hidden bool lines_relative false
+add-highlighter global/lines number-lines -separator ' │ ' -hlcursor
+hook global -group lines GlobalSetOption lines_relative=true %{
+    add-highlighter -override global/lines number-lines -separator ' │ ' -hlcursor -relative
+}
+hook global -group lines GlobalSetOption lines_relative=false %{
+    add-highlighter -override global/lines number-lines -separator ' │ ' -hlcursor
+}
+
 add-highlighter global/ show-matching
 add-highlighter global/ show-whitespaces -lf '¬' -spc '·' -nbsp '␣' -tab '⇥'
 
@@ -15,6 +26,7 @@ map global insert <s-tab> '<esc><i'
 # swap leader to <space>
 map global normal , <space>
 map global normal <space> ,
+map global insert <c-space> '<esc>,'
 
 # get hover info
 map global insert <c-a> '<a-;>: lsp-hover<ret>'
@@ -24,22 +36,13 @@ map global normal <c-a> ': lsp-hover<ret>'
 map global insert <a-backspace> '<esc>b<a-d>i'
 map global insert <a-del> '<esc>w<a-d>i'
 
+map global normal v ':enter-user-mode modes<ret>'
+
 # word movement with arrow keys in insert mode
 map global normal <a-right> 'w'
 map global normal <a-left> 'b'
 map global insert <a-right> '<a-;>w'
 map global insert <a-left> '<a-;>b'
-
-# user mode commands
-map global user z ': w<ret>' -docstring 'save'
-map global user w ': trim-eol<ret>' -docstring 'trim-eol'
-map global user l ': enter-user-mode lsp<ret>' -docstring 'lsp'
-map global user k ': enter-user-mode windowing<ret>' -docstring 'windowing'
-map global user f ': format<ret>' -docstring 'format'
-map global user g ': enter-user-mode git<ret>' -docstring 'git'
-map global user p ': fuzzyfind<ret>' -docstring 'fuzzy find'
-map global user '\' ': browse<ret>' -docstring 'browse files'
-map global user / ': comment-line<ret>'
 
 # alias for old habits
 alias global wqa write-all-quit
@@ -50,28 +53,8 @@ alias global Wqa write-all-quit
 alias global WQa write-all-quit
 alias global WQA write-all-quit
 
-map global goto s '<esc>: open-related<ret>' -docstring 'cycle related files (existing)'
-map global goto S '<esc>: open-related-new<ret>' -docstring 'cycle related files (create)'
-map global goto L l -docstring 'l'
-map global goto H h -docstring 'h'
-map global goto J j -docstring 'j'
-map global goto K k -docstring 'k'
-
-declare-user-mode git
-map global git a ': git add<ret>' -docstring 'add current file'
-map global git A ': git add --all<ret>' -docstring 'add all files'
-map global git c ': git commit<ret>' -docstring 'commit'
-map global git s ': git status<ret>' -docstring 'status'
-map global git j ': git next-hunk<ret>' -docstring 'goto next hunk'
-map global git k ': git prev-hunk<ret>' -docstring 'goto previous hunk'
-map global git h ': merge-take-ours<ret>' -docstring 'take first merge conflict option'
-map global git l ': merge-take-theirs<ret>' -docstring 'take second merge conflict option'
-map global git m ': merge-next-conflict<ret>' -docstring 'next merge conflict'
-map global git i ': gh issue list -a foxfriends<ret>' -docstring 'list issues'
-
 hook global BufWritePost .* "git show-diff"
 hook global BufCreate .* "git show-diff"
-set global ui_options ncurses_set_title=false
 
 hook -group kks global KakBegin .* %{
     require-module detection
