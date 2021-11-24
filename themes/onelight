@@ -27,7 +27,7 @@ export theme_color_default=$theme_black
 export theme_color_bgdefault=$theme_light_white
 export theme_color_divider=$theme_white
 export theme_color_highlight=$theme_blue
-export theme_color_bghighlight=$theme_light_white
+export theme_color_bghighlight=$theme_white
 export theme_color_error=$theme_light_red
 export theme_color_status=$theme_color_default
 export theme_color_bgstatus=$theme_color_bghighlight
@@ -36,6 +36,8 @@ export theme_color_cursor=$theme_color_default
 export theme_color_bgcursor=$theme_color_bgdefault
 export theme_color_bghighlight2=e5e5e5
 export theme_color_placeholder=$theme_light_black
+export theme_color_overlay=$theme_black
+export theme_color_bgoverlay=$theme_white
 
 # code
 export theme_color_keyword=$theme_magenta
@@ -80,12 +82,12 @@ export theme_color_tab=$theme_cyan
 export theme_color_session=$theme_blue
 
 # git
-export theme_addition_background=e8f0e6
-export theme_addition_foreground=c3ddbf
-export theme_addition=$theme_green
-export theme_deletion_background=f7e4e0
-export theme_deletion_foreground=ecb8ac
-export theme_deletion=$theme_red
+export theme_git_addition_background=e8f0e6
+export theme_git_addition_foreground=c3ddbf
+export theme_git_addition=$theme_green
+export theme_git_deletion_background=f7e4e0
+export theme_git_deletion_foreground=ecb8ac
+export theme_git_deletion=$theme_red
 export theme_git_modification=$theme_yellow
 export theme_git_syntax_theme=OneHalfLight
 

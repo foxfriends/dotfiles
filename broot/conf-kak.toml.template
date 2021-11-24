@@ -194,6 +194,7 @@ execution = ":toggle_git_status"
 # [ext-colors]
 # png = "rgb(255, 128, 75)"
 # rs = "yellow"
+
 ###############################################################
 # Skin
 # If you want to change the colors of broot,
@@ -204,6 +205,8 @@ execution = ":toggle_git_status"
 [skin]
 default = "${theme_rgb_color_default} ${theme_rgb_color_bgdefault} / ${theme_rgb_color_default} ${theme_rgb_color_bgdefault}"
 tree = "${theme_rgb_color_comment} none / ${theme_rgb_color_comment} none"
+input = "${theme_rgb_color_status} ${theme_rgb_color_bgstatus}"
+selected_line = "none ${theme_rgb_color_bghighlight}"
 
 file = "none none / none none"
 directory = "${theme_rgb_file_directory} none bold / ${theme_rgb_file_directory} none bold"
@@ -231,24 +234,24 @@ char_match = "${theme_rgb_color_highlight} none"
 
 status_error = "${theme_rgb_color_bgdefault} ${theme_rgb_color_error}"
 
+status_job = "${theme_rgb_color_status} ${theme_rgb_color_bgstatus}"
+status_normal = "${theme_rgb_color_status} ${theme_rgb_color_bgstatus}"
+status_italic = "${theme_rgb_color_status} ${theme_rgb_color_bgstatus} italic"
+status_bold = "${theme_rgb_color_status} ${theme_rgb_color_bgstatus} bold"
+status_code = "${theme_rgb_color_status} ${theme_rgb_color_bgstatus}"
+status_ellipsis = "${theme_rgb_color_status} ${theme_rgb_color_bgstatus}"
+
+dates = "${theme_rgb_color_date} none"
+
 # not really configured properly, mostly because I don't know where it shows up:
 pruning = "gray(12) none italic"
 count = "yellow none"
-dates = "darkcyan none"
 sparse = "ansi(214) none"
 content_extract = "ansi(29) none"
 content_match = "ansi(34) none"
-selected_line = "none gray(5) / none gray(4)"
 file_error = "red none"
 flag_label = "ansi(15) none"
 flag_value = "grey none"
-input = "ansi(15) none / gray(15) gray(2)"
-status_job = "ansi(220) gray(5)"
-status_normal = "grey gray(3)"
-status_italic = "grey gray(3) italic"
-status_bold = "grey gray(3) bold"
-status_code = "ansi(15) gray(3)"
-status_ellipsis = "grey grey(3)"
 purpose_normal = "ansi(15) gray(2)"
 purpose_italic = "ansi(15) gray(2) italic"
 purpose_bold = "ansi(15) gray(2) bold"

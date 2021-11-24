@@ -36,6 +36,8 @@ export theme_color_cursor=$theme_color_default
 export theme_color_bgcursor=$theme_color_bgdefault
 export theme_color_bghighlight2=2f383b
 export theme_color_placeholder=$theme_light_white
+export theme_color_overlay=$theme_black
+export theme_color_bgoverlay=$theme_white
 
 # code
 export theme_color_keyword=$theme_magenta

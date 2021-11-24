@@ -37,13 +37,13 @@ face global Default rgb:${theme_color_default},rgb:${theme_color_bgdefault}
 face global PrimarySelection default,rgb:${theme_color_bghighlight2}+b
 face global SecondarySelection default,rgb:${theme_color_bghighlight2}+i
 face global PrimaryCursor @NormalCursor
-face global PrimaryCursorEol rgb:${theme_color_bgcursor},rgb:${theme_color_cursor}+f@PrimaryCursor
+face global PrimaryCursorEol rgb:${theme_color_bgcursor}+f@PrimaryCursor
 face global SecondaryCursor default,rgb:${theme_color_bghighlight}+i
 face global SecondaryCursorEol rgb:${theme_color_bghighlight}+f@SecondaryCursor
 face global LineNumbers rgb:${theme_color_placeholder},rgb:${theme_color_bgdefault}
 face global LineNumberCursor rgb:${theme_color_highlight},rgb:${theme_color_bgdefault}
 face global MenuForeground rgb:${theme_color_bghighlight},rgb:${theme_color_highlight}+b
-face global MenuBackground rgb:${theme_color_bgdefault},rgb:${theme_color_default}
+face global MenuBackground rgb:${theme_color_overlay},rgb:${theme_color_bgoverlay}
 face global MenuInfo rgb:${theme_color_bghighlight}
 face global Information rgb:${theme_color_bghighlight},rgb:${theme_color_highlight}
 face global Error rgb:${theme_color_bgdefault},rgb:${theme_color_variable}
