@@ -23,6 +23,7 @@
 	rebase = false
 [alias]
 	graph = "log --graph --oneline"
+    c = "!${PWD}/fuzzy-checkout"
 [fetch]
 	prune = true
 	pruneTags = true
