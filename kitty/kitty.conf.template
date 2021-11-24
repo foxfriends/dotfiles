@@ -403,59 +403,51 @@ macos_option_as_alt yes
 # COLORS
 #########################################################
 
-## Dark mode is default:
-
-# The foreground color
-foreground #abb2bf
-# The background color
-background #282c34
+foreground #${theme_color_default}
+background #${theme_color_bgdefault}
 background_opacity 1.0
 
-# The foreground for selections
-selection_foreground #FFFFFF
-# The background for selections
-selection_background #444444
+selection_foreground #${theme_color_highlight}
+selection_background #${theme_color_bghighlight}
 
 # The color and style for highlighting URLs on mouse-over. url_style can be one of:
 # none, single, double, curly
-detect_urls no
-url_color #cf4516
+url_color #${theme_color_link}
 url_style single
 
-# The color for the border of the active window
-active_border_color #4b5263
-# The color for the border of inactive windows
-inactive_border_color #abb2bf
+active_border_color #${theme_color_highlight}
+inactive_border_color #${theme_color_divider}
+
 # Tab bar colors and styles
-active_tab_foreground #abb2bf
-active_tab_background #282c34
-inactive_tab_foreground #5c6370
-inactive_tab_background #282c34
+active_tab_foreground #${theme_color_default}
+active_tab_background #${theme_color_bgdefault}
+inactive_tab_foreground #${theme_color_placeholder}
+inactive_tab_background #${theme_color_bgdefault}
 
 # The cursor color
-cursor           #abb2bf
+cursor   #${theme_color_cursor}
 
 # black
-color0   #282c34
-color8   #3e4452
+color0   #${theme_black}
+color8   #${theme_light_black}
 # red
-color1   #e06c75
-color9   #be5046
+color1   #${theme_red}
+color9   #${theme_light_red}
 # green
-color2   #98c379
-color10  #98c379
+color2   #${theme_green}
+color10  #${theme_light_green}
 # yellow
-color3   #e5c07b
-color11  #d19a66
+color3   #${theme_yellow}
+color11  #${theme_light_yellow}
 # blue
-color4   #61afef
-color12  #375670
+color4   #${theme_blue}
+color12  #${theme_light_blue}
 # magenta
-color5   #c678dd
-color13  #c678dd
+color5   #${theme_magenta}
+color13  #${theme_light_magenta}
 # cyan
-color6   #56b6c2
-color14  #56b6c2
+color6   #${theme_cyan}
+color14  #${theme_light_cyan}
 # white
-color7   #abb2bf
-color15  #5c6370
+color7   #${theme_white}
+color15  #${theme_light_white}
