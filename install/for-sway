@@ -1,0 +1,6 @@
+#!/bin/bash
+./for-linux
+./rofi
+./mako
+./pulseaudio
+./flashfocus
