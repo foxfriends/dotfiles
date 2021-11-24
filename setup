@@ -41,6 +41,7 @@ check tig && dot_config tig
 check topgrade && dot_config topgrade
 check syncat && dot_config syncat
 check waybar && dot_config waybar
+check dijo && dot_config dijo
 ln -sf "$(pwd)/git/.gitconfig" "$HOME/.gitconfig"
 ln -sf "$(pwd)/bash/.bashrc" "$HOME/.bashrc"
 ln -sf "$(pwd)/tmux/.tmux.conf" "$HOME/.tmux.conf"
