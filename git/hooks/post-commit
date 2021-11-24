@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-dijo -c 'track-up commits'
+check dijo && dijo -c 'track-up commits'
