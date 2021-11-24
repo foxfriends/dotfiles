@@ -1,31 +1,36 @@
+#!/bin/bash
+
 prompt() {
-    red='\033[0;31m'
+    local last_status=$?
+    local red='\033[0;31m'
+    PS1=''
 
-    last_status=$?
-    if [ $last_status != 0 ]; then
-        printf '%s[%s] ' $red $last_status
+    if [ $last_status -ne 0 ]; then
+        PS1+=$(printf '%s[%s] ' $red $last_status)
     fi
 
-    yellow='\033[0;33m'
-    printf '%s%s ' $yellow "$(whoami)"
+    local yellow='\033[0;33m'
+    PS1+=$(printf '%s%s ' $yellow "$(whoami)")
 
-    purple='\033[0;35m'
-    printf '%s%s' $purple "$(hostname)"
+    local purple='\033[0;35m'
+    PS1+=$(printf '%s%s' $purple "$(hostname)")
 
-    orange='\033[0;93m'
+    local orange='\033[0;93m'
     if git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
-        printf ' %s %s' $orange "$(git branch | grep \* | cut -d ' ' -f2-)"
+        PS1+=$(printf ' %s %s' $orange "$(git branch | grep \* | cut -d ' ' -f2-)")
     fi
 
-    green='\033[0;32m'
-    printf ' %s%s' $green "$(pwd)"
+    local green='\033[0;32m'
+    PS1+=$(printf ' %s%s' $green "$(pwd)")
 
-    normal='\033[0m'
+    local normal='\033[0m'
     if [ $(id -u) -eq 0 ]; then
-        printf '%s# ' $normal
+        PS1+=$(printf '%s# ' $normal)
     else
-        printf '%s> ' $normal
+        PS1+=$(printf '%s> ' $normal)
     fi
 }
 
-PS1="$(prompt)"
+PROMPT_COMMAND=prompt
+
+# PS1="$(prompt)"
