@@ -3,4 +3,4 @@
 	url = git@github.com:foxfriends/syncat-themes.git
 [submodule "kak/plugins/plug.kak"]
 	path = kak/plugins/plug.kak
-	url = https://github.com/andreyorst/plug.kak.git
+	url = git@github.com:andreyorst/plug.kak
