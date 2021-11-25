@@ -2,20 +2,25 @@
 
 cd $(dirname $0)
 
+# Some reason Linux `ln` and Mac `ln` don't support the same flags...
 if [ $(uname) == 'Darwin' ]; then
     lndir="ln -sfh"
 else
     lndir="ln -sfT"
 fi
 
-dot_config () {
-    $lndir "$(pwd)/$1" "$HOME/.config/$1"
-}
-
+# Set up bin directory, which must be set up first
 $lndir "$(pwd)/bin" "$HOME/.bin"
 export PATH="$PATH:$HOME/.bin"
 export SKIN=${SKIN:-onedark}
 
+# If another executable is passed, we call it now.
+# This is intended to be one of the install/for-* scripts.
+if [ -x "$1" ]; then
+    $1
+fi
+
+# Expand templates with theme variables
 . "themes/$SKIN"
 variables=$(cat "themes/$SKIN" | grep '^export' | sed 's/^export \([^=]*\).*/$\1/ ; P ; s/theme_/theme_rgb_/')
 for file in $(find . -name '*.template' -type f); do
@@ -23,6 +28,14 @@ for file in $(find . -name '*.template' -type f); do
     envsubst "$variables \$PWD" < "$(basename "$file")" > "$(basename "${file%.template}")"
     cd - >/dev/null
 done
+
+# Make executable any templated scripts that need to be executable
+chmod +x ./tmux/scripts/tmux-status-left
+
+# Then link configs for all of the installed programs
+dot_config () {
+    $lndir "$(pwd)/$1" "$HOME/.config/$1"
+}
 
 test -d "./syncat/style/$SKIN" && $lndir "./$SKIN" "./syncat/style/active"
 check broot && dot_config broot
@@ -42,9 +55,8 @@ check topgrade && dot_config topgrade
 check syncat && dot_config syncat
 check waybar && dot_config waybar
 check dijo && dot_config dijo
+check tmux && ln -sf "$(pwd)/tmux/.tmux.conf" "$HOME/.tmux.conf"
+
 ln -sf "$(pwd)/git/.gitconfig" "$HOME/.gitconfig"
 ln -sf "$(pwd)/bash/.bashrc" "$HOME/.bashrc"
-ln -sf "$(pwd)/tmux/.tmux.conf" "$HOME/.tmux.conf"
 $lndir "$(pwd)/fonts" "$HOME/.fonts"
-
-chmod +x ./tmux/scripts/tmux-status-left
