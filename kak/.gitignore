@@ -1,2 +1,4 @@
+plugins/*
+!plugins/plug.kak
 system
 colors/syntax.kak
