@@ -1,0 +1,24 @@
+#!/bin/bash
+cd $(dirname $0)
+./brew
+./broot
+./exa
+./fd
+./fnm
+./gh
+./joshuto
+./kak
+./paper
+./pastel
+./python
+./syncat
+./rg
+./ruby
+./rust
+./sk
+./syncat
+./tldr
+./tmux
+./topgrade
+./viu
+./z

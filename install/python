@@ -1,7 +1,10 @@
 #!/bin/bash
 set -e
-curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
-PATH="$PATH:$HOME/.pyenv/bin"
+if [ ! -d "$HOME/.pyenv" ]; then
+    curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
+    PATH="$PATH:$HOME/.pyenv/bin"
+fi
+pyenv update
 latest=$(pyenv install --list | grep '^ *[0-9.]*$' | tail -n 1 | sed 's/ *//')
-pyenv install "$latest"
+pyenv install -s "$latest"
 pyenv global "$latest"
