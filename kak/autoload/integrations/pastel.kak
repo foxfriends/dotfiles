@@ -6,5 +6,7 @@ provide-module pastel %{
     check-cmd pastel
 
     declare-user-mode pastel
-    map global pastel f '|pastel format ' -docstring 'color format'
+    map global pastel f '|pastel format' -docstring 'format'
+    map global pastel h '|pastel format hex<ret>' -docstring 'to hex'
+    map global pastel r '|pastel format rgb<ret>' -docstring 'to rgb'
 }
