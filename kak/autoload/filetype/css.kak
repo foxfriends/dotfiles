@@ -16,6 +16,13 @@ hook global BufCreate .*[.](css) %{
 hook global WinSetOption filetype=css %[
     require-module css
 
+    try {
+        require-module detection
+        check-cmd stylelint
+        set buffer lintcmd 'run() { cat "$1" | stylelint --formatter json --stdin --stdin-filename "$kak_buffile" | "${kak_config}/scripts/stylelint-format"; } && run'
+        lint-enable
+    }
+
     hook window ModeChange pop:insert:.* -group css-trim-indent  css-trim-indent
     hook window InsertChar \n -group css-indent css-indent-on-new-line
     hook window InsertChar \} -group css-indent css-indent-on-closing-curly-brace

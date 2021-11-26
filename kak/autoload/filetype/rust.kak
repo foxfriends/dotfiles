@@ -19,10 +19,14 @@ hook global WinSetOption filetype=rust %[
     try {
         require-module detection
         check-cmd rustfmt
+        set-option buffer formatcmd 'rustfmt'
+    }
 
-        hook global BufSetOption filetype=rust %{
-            set-option buffer formatcmd 'rustfmt'
-        }
+    try {
+        require-module detection
+        check-cmd clippy-driver
+        set-option buffer lintcmd 'cargo clippy'
+        lint-enable
     }
 
     hook window ModeChange pop:insert:.* -group rust-trim-indent rust-trim-indent

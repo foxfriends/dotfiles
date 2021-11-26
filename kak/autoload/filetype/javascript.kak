@@ -24,6 +24,8 @@ hook global WinSetOption filetype=(javascript|typescript) %{
         check-cmd eslint
         check-file %sh{echo "$(npm root -g)/eslint-formatter-kakoune/index.js"}
         set buffer formatcmd 'eslint -f "$(npm root -g)/eslint-formatter-kakoune/index.js" --stdin --stdin-filename "$kak_buffile" --fix-to-stdout'
+        set buffer lintcmd 'run() { cat "$1" | eslint -f "$(npm root -g)/eslint-formatter-kakoune/index.js" --stdin --stdin-filename "$kak_buffile"; } && run'
+        lint-enable
     }
 
     hook window ModeChange pop:insert:.* -group "%val{hook_param_capture_1}-trim-indent" javascript-trim-indent
