@@ -1,72 +1,72 @@
 ## code
-face global value rgb:${theme_color_constant}
-face global type rgb:${theme_color_type}
-face global variable rgb:${theme_color_variable}
-face global identifier rgb:${theme_color_variable}
-face global field rgb:${theme_color_variable}
-face global string rgb:${theme_color_string}
-face global keyword rgb:${theme_color_keyword}
-face global operator rgb:${theme_color_operator}
-face global attribute rgb:${theme_color_keyword}
-face global comment rgb:${theme_color_comment}+i
-face global doc_comment rgb:${theme_color_comment}+b
-face global meta rgb:${theme_color_meta}
-face global builtin rgb:${theme_color_builtin}
-face global function rgb:${theme_color_function}
-face global module rgb:${theme_color_name}+i
+set-face global value rgb:${theme_color_constant}
+set-face global type rgb:${theme_color_type}
+set-face global variable rgb:${theme_color_variable}
+set-face global identifier rgb:${theme_color_variable}
+set-face global field rgb:${theme_color_variable}
+set-face global string rgb:${theme_color_string}
+set-face global keyword rgb:${theme_color_keyword}
+set-face global operator rgb:${theme_color_operator}
+set-face global attribute rgb:${theme_color_keyword}
+set-face global comment rgb:${theme_color_comment}+i
+set-face global doc_comment rgb:${theme_color_comment}+b
+set-face global meta rgb:${theme_color_meta}
+set-face global builtin rgb:${theme_color_builtin}
+set-face global function rgb:${theme_color_function}
+set-face global module rgb:${theme_color_name}+i
 
 ## markup
-face global title rgb:${theme_color_title}+b
-face global header rgb:${theme_color_title}+b
-face global bold rgb:${theme_color_strong}+b
-face global italic rgb:${theme_color_emphasis}+i
-face global mono rgb:${theme_color_string}
-face global block rgb:${theme_color_builtin}
-face global link rgb:${theme_color_link}
-face global bullet rgb:${theme_color_keyword}
-face global list rgb:${theme_color_keyword}
+set-face global title rgb:${theme_color_title}+b
+set-face global header rgb:${theme_color_title}+b
+set-face global bold rgb:${theme_color_strong}+b
+set-face global italic rgb:${theme_color_emphasis}+i
+set-face global mono rgb:${theme_color_string}
+set-face global block rgb:${theme_color_builtin}
+set-face global link rgb:${theme_color_link}
+set-face global bullet rgb:${theme_color_keyword}
+set-face global list rgb:${theme_color_keyword}
 
 ## Cursor
-face global NormalCursor default,rgb:${theme_color_bghighlight}+b
-face global InsertCursor rgb:${theme_color_bgcursor},rgb:${theme_color_cursor}+b
+set-face global NormalCursor default,rgb:${theme_color_bghighlight}+b
+set-face global InsertCursor rgb:${theme_color_bgcursor},rgb:${theme_color_cursor}+b
 hook global ModeChange '.*:insert' %{ 
-    face window PrimaryCursor @InsertCursor 
-    face window PrimaryCursorEol @InsertCursor
+    set-face window PrimaryCursor @InsertCursor 
+    set-face window PrimaryCursorEol @InsertCursor
 }
 hook global ModeChange '.*:normal' %{ 
-    face window PrimaryCursor @NormalCursor
-    face window PrimaryCursorEol @NormalCursor
+    set-face window PrimaryCursor @NormalCursor
+    set-face window PrimaryCursorEol @NormalCursor
 }
 
 ## builtin
-face global Default rgb:${theme_color_default},rgb:${theme_color_bgdefault}
-face global PrimarySelection default,rgb:${theme_color_bghighlight2}+b
-face global SecondarySelection default,rgb:${theme_color_bghighlight2}+i
-face global PrimaryCursor @NormalCursor
-face global PrimaryCursorEol @PrimaryCursor
-face global SecondaryCursor default,rgb:${theme_color_bghighlight}+i
-face global SecondaryCursorEol @SecondaryCursor
-face global LineNumbers rgb:${theme_color_placeholder},rgb:${theme_color_bgdefault}
-face global LineNumberCursor rgb:${theme_color_highlight},rgb:${theme_color_bgdefault}
-face global MenuForeground rgb:${theme_color_bghighlight},rgb:${theme_color_highlight}+b
-face global MenuBackground rgb:${theme_color_overlay},rgb:${theme_color_bgoverlay}
-face global MenuInfo rgb:${theme_color_bghighlight}
-face global Information rgb:${theme_color_bghighlight},rgb:${theme_color_highlight}
-face global Error rgb:${theme_color_bgdefault},rgb:${theme_color_error}
-face global StatusLine rgb:${theme_color_default},rgb:${theme_color_bghighlight}
-face global StatusLineMode rgb:${theme_color_default}
-face global StatusLineInfo rgb:${theme_color_default}
-face global StatusLineValue rgb:${theme_color_default}
-face global StatusCursor rgb:${theme_color_bgdefault},rgb:${theme_color_default}
-face global Prompt rgb:${theme_color_function}
-face global MatchingChar default,rgb:${theme_color_bghighlight}
-face global Reference default+u
-face global BufferPadding rgb:${theme_color_invisible},rgb:${theme_color_bgdefault}
-face global Whitespace rgb:${theme_color_invisible}+f
+set-face global Default rgb:${theme_color_default},rgb:${theme_color_bgdefault}
+set-face global PrimarySelection default,rgb:${theme_color_bghighlight2}+b
+set-face global SecondarySelection default,rgb:${theme_color_bghighlight2}+i
+set-face global PrimaryCursor @NormalCursor
+set-face global PrimaryCursorEol @PrimaryCursor
+set-face global SecondaryCursor default,rgb:${theme_color_bghighlight}+i
+set-face global SecondaryCursorEol @SecondaryCursor
+set-face global LineNumbers rgb:${theme_color_placeholder},rgb:${theme_color_bgdefault}
+set-face global LineNumberCursor rgb:${theme_color_highlight},rgb:${theme_color_bgdefault}
+set-face global MenuForeground rgb:${theme_color_bghighlight},rgb:${theme_color_highlight}+b
+set-face global MenuBackground rgb:${theme_color_overlay},rgb:${theme_color_bgoverlay}
+set-face global MenuInfo rgb:${theme_color_bghighlight}
+set-face global Information rgb:${theme_color_bghighlight},rgb:${theme_color_highlight}
+set-face global Error rgb:${theme_color_bgdefault},rgb:${theme_color_error}
+set-face global StatusLine rgb:${theme_color_default},rgb:${theme_color_bghighlight}
+set-face global StatusLineMode rgb:${theme_color_default}
+set-face global StatusLineInfo rgb:${theme_color_default}
+set-face global StatusLineValue rgb:${theme_color_default}
+set-face global StatusCursor rgb:${theme_color_bgdefault},rgb:${theme_color_default}
+set-face global Prompt rgb:${theme_color_function}
+set-face global MatchingChar default,rgb:${theme_color_bghighlight}
+set-face global Reference default+u
+set-face global BufferPadding rgb:${theme_color_invisible},rgb:${theme_color_bgdefault}
+set-face global Whitespace rgb:${theme_color_invisible}+f
 
 ## LSP
-face global DiagnosticError default,default,rgb:${theme_color_error}+u
-face global DiagnosticWarning default,default,rgb:${theme_color_warning}+u
+set-face global DiagnosticError default,default,rgb:${theme_color_error}+u
+set-face global DiagnosticWarning default,default,rgb:${theme_color_warning}+u
 
 ## powerline
 define-command -hidden powerline-theme-custom %{
