@@ -41,7 +41,9 @@ plug 'kakounedotcom/prelude.kak' %{
 } plug "ul/kak-lsp" do %{
     cargo install --locked --force --path .
 } noload config %{
-    eval %sh{kak-lsp --config "${kak_config}/kak-lsp.toml" --kakoune -s $kak_session}
+    evaluate-commands %sh{
+        kak-lsp --config "${kak_config}/kak-lsp.toml" --kakoune -s $kak_session
+}
 
     hook global WinSetOption filetype=(rust|haskell|literate-haskell|javascript|typescript|html) %{
         lsp-enable-window
