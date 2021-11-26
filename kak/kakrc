@@ -1,7 +1,7 @@
 # plugins
 source "%val{config}/plugins.kak"
 
-set global ui_options ncurses_set_title=false
+set-option global ui_options ncurses_set_title=false
 
 # visuals
 colorscheme syntax
@@ -19,8 +19,8 @@ add-highlighter global/ show-matching
 add-highlighter global/ show-whitespaces -lf '¬' -spc '·' -nbsp '␣' -tab '⇥'
 
 # tabulation
-set global tabstop 4
-set global indentwidth 4
+set-option global tabstop 4
+set-option global indentwidth 4
 map global insert <s-tab> '<esc><i'
 
 # swap leader to <space>
@@ -53,8 +53,8 @@ alias global Wqa write-all-quit
 alias global WQa write-all-quit
 alias global WQA write-all-quit
 
-define-command -docstring 'set buffer filetype <type>' -params 1 sf %{
-    set buffer filetype %arg{1}
+define-command -docstring 'set-option buffer filetype <type>' -params 1 sf %{
+    set-option buffer filetype %arg{1}
 }
 
 hook -group kks global KakBegin .* %{
