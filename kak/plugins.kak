@@ -32,6 +32,7 @@ plug 'kakounedotcom/prelude.kak' %{
     map global modes s ':enter-user-mode selectors<ret>' -docstring 'selectors'
     map global insert <a-s> '<esc>:enter-user-mode selectors<ret>' -docstring 'selectors'
     map global normal <a-s> '<esc>:enter-user-mode selectors<ret>' -docstring 'selectors'
+    trigger-user-hook plugin-loaded=delapouite/kakoune-text-objects
 } plug 'delapouite/kakoune-mirror' %{
     map global normal "'" ': enter-user-mode -lock mirror<ret>'
     hook global BufSetOption filetype=markdown %{
