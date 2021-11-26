@@ -4,6 +4,7 @@ set-face global type rgb:${theme_color_type}
 set-face global variable rgb:${theme_color_variable}
 set-face global identifier rgb:${theme_color_variable}
 set-face global field rgb:${theme_color_variable}
+set-face global interpolation rgb:${theme_color_interpolation}
 set-face global string rgb:${theme_color_string}
 set-face global keyword rgb:${theme_color_keyword}
 set-face global operator rgb:${theme_color_operator}

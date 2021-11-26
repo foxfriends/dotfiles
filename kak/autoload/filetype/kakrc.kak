@@ -72,17 +72,19 @@ provide-module kak %§
         join() { sep=$2; eval set -- $1; IFS="$sep"; echo "$*"; }
 
         # Add the language's grammar to the static completion list
-        printf %s\\n "declare-option str-list kak_static_words $(join "${keywords} ${attributes} ${types} ${values}" ' ')'"
+        printf '%s\n' "declare-option str-list kak_static_words $(join "${keywords} ${attributes} ${types} ${values}" ' ')'"
 
         # Highlight keywords (which are always surrounded by whitespace)
-        printf '%s\n' "add-highlighter shared/kakrc/code/keywords regex (?:\s|\A)\K($(join "${keywords}" '|'))(?:(?=\s)|\z) 0:keyword
-                       add-highlighter shared/kakrc/code/attributes regex (?:\s|\A)\K($(join "${attributes}" '|'))(?:(?=\s)|\z) 0:builtin
+        printf '%s\n' "add-highlighter shared/kakrc/code/keywords regex (?:\s|\A)\K($(join "${keywords}" '|'))(?:(?=\s)|\z) 0:builtin
+                       add-highlighter shared/kakrc/code/attributes regex (?:\s|\A)\K($(join "${attributes}" '|'))(?:(?=\s)|\z) 0:attribute
                        add-highlighter shared/kakrc/code/types regex (?:\s|\A)\K($(join "${types}" '|'))(?:(?=\s)|\z) 0:type
                        add-highlighter shared/kakrc/code/values regex (?:\s|\A)\K($(join "${values}" '|'))(?:(?=\s)|\z) 0:value"
     }
 
     add-highlighter shared/kakrc/code/colors regex \b(rgb:[0-9a-fA-F]{6}|rgba:[0-9a-fA-F]{8})\b 0:value
     add-highlighter shared/kakrc/code/numbers regex \b\d+\b 0:value
+
+    add-highlighter shared/kakrc/code/flags regex (?:\s|\A)-[\w\d-]+\b 0:value
 
     add-highlighter shared/kakrc/double_string/fill fill string
     add-highlighter shared/kakrc/double_string/escape regex '""' 0:default+b

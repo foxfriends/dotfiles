@@ -61,7 +61,7 @@ hook -group typescript-highlight global WinSetOption filetype=typescript %{
 }
 
 
-provide-module javascript %§
+provide-module javascript_impl %§
     # Commands
     # ‾‾‾‾‾‾‾‾
 
@@ -131,7 +131,7 @@ provide-module javascript %§
         add-highlighter "shared/%arg{1}/literal/string"          default-region group
         add-highlighter "shared/%arg{1}/literal/string/"         fill string
         add-highlighter "shared/%arg{1}/literal/interpolation"   region -recurse \{ \$\{   \}  regions
-        add-highlighter "shared/%arg{1}/literal/interpolation/"          default-region fill field
+        add-highlighter "shared/%arg{1}/literal/interpolation/"          default-region fill interpolation
         add-highlighter "shared/%arg{1}/literal/interpolation/content"   region -recurse \{ \$\{\K   (?=\})  ref %arg{1}
         add-highlighter "shared/%arg{1}/code/" regex \b(document|this|window|global|module)\b 1:field
         add-highlighter "shared/%arg{1}/code/" regex \b(false|null|true|undefined)\b 1:value
