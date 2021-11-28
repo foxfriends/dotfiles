@@ -1,6 +1,6 @@
 #!/bin/bash
 
-prompt() {
+_prompt() {
     local last_status=$?
     local red='\033[0;31m'
     PS1=''
@@ -21,7 +21,7 @@ prompt() {
     fi
 
     local green='\033[0;32m'
-    PS1+=$(printf ' %s%s' $green "$(pwd)")
+    PS1+=$(printf ' %s%s' $green "$(pwd | sed "s#^$HOME#~#")")
 
     local normal='\033[0m'
     if [ $(id -u) -eq 0 ]; then
@@ -31,6 +31,4 @@ prompt() {
     fi
 }
 
-PROMPT_COMMAND=prompt
-
-# PS1="$(prompt)"
+PROMPT_COMMAND=_prompt
