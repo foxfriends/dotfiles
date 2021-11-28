@@ -1,6 +1,15 @@
 #!/bin/bash
+
+if check sk; then
+    fzfcmd=sk
+elif check fzf; then
+    fzfcmd=fzf
+fi
+
 if [ "$1" = '-' ]; then
     git checkout -
+elif [ -z "$@" ]; then
+    git checkout
 else
-    git branch | sed 's/^[* ]*//' | fzf -1 -0 -q "$@" | xargs git checkout
+    git branch | sed 's/^[* ]*//' | $fzfcmd -1 -0 -q "$@" | xargs git checkout
 fi
