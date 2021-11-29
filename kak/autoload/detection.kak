@@ -40,4 +40,18 @@ provide-module detection %{
             done
         }
     }
+
+    define-command find-in-parent -params 2 %{
+        evaluate-commands %sh{
+            target="$1"
+            here="$2"
+            while [ "$here" != '/' -a "$here" != '.' ]; do
+                if [ -f "$here/$target" ]; then
+                    return
+                fi
+                here=$(dirname "$here")
+            done
+            echo "fail ${target}: file not found in this directory or any parent"
+        }
+    }
 }

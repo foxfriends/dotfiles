@@ -1,0 +1,1 @@
+deno lint --json "$1" | jq -r '.diagnostics | map("\(.filename):\(.range.start.line):\(.range.start.col): warning:\(.message) (\(.code))")[]'

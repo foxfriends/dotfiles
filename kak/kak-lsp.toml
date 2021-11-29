@@ -19,7 +19,7 @@ command = "scry"
 
 [language.deno]
 filetypes = ["typescript", "javascript"]
-roots = [".git"]
+roots = ["run.json"]
 command = "deno"
 args = ["lsp"]
 

@@ -14,19 +14,34 @@ hook global BufCreate .*[.](ts)x? %{
     set buffer indentwidth 2
 }
 
-# Initialization
-# ‾‾‾‾‾‾‾‾‾‾‾‾‾‾
-hook global WinSetOption filetype=(javascript|typescript) %{
-    require-module javascript
-
+define-command -hidden js-set-deno %{
     try {
-        require-module detection
+        check-cmd deno
+        find-in-parent run.json %sh{dirname "$kak_buffile"}
+        set buffer formatcmd 'deno fmt -'
+        set buffer lintcmd "%val{config}/scripts/deno-lint"
+        lint-enable
+    }
+}
+
+define-command -hidden js-set-node %{
+    try {
         check-cmd eslint
         check-file %sh{echo "$(npm root -g)/eslint-formatter-kakoune/index.js"}
+        find-in-parent package.json %sh{dirname "$kak_buffile"}
         set buffer formatcmd 'eslint -f "$(npm root -g)/eslint-formatter-kakoune/index.js" --stdin --stdin-filename "$kak_buffile" --fix-to-stdout'
         set buffer lintcmd 'run() { cat "$1" | eslint -f "$(npm root -g)/eslint-formatter-kakoune/index.js" --stdin --stdin-filename "$kak_buffile"; } && run'
         lint-enable
     }
+}
+
+# Initialization
+# ‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+hook global WinSetOption filetype=(javascript|typescript) %{
+    require-module %val{hook_param_capture_1}
+
+    try %{ js-set-node }
+    try %{ js-set-deno }
 
     hook window ModeChange pop:insert:.* -group "%val{hook_param_capture_1}-trim-indent" javascript-trim-indent
     hook window InsertChar .* -group "%val{hook_param_capture_1}-indent" javascript-indent-on-char
@@ -35,9 +50,6 @@ hook global WinSetOption filetype=(javascript|typescript) %{
     hook -once -always window WinSetOption filetype=.* "
         remove-hooks window %val{hook_param_capture_1}-.+
     "
-}
-
-hook global WinSetOption filetype=(javascript|typescript) %{
 }
 
 hook -group javascript-load-languages global WinSetOption filetype=javascript %{
@@ -59,7 +71,6 @@ hook -group typescript-highlight global WinSetOption filetype=typescript %{
     add-highlighter window/typescript ref typescript
     hook -once -always window WinSetOption filetype=.* %{ remove-highlighter window/typescript }
 }
-
 
 provide-module javascript_impl %§
     # Commands
