@@ -5,8 +5,12 @@ define-command trim-eol -docstring 'trim whitespace from end of lines' %{
 }
 
 define-command toggle-relative-lines -docstring 'toggle relative line numbers' %{
-    set global lines_relative %sh{
-        ([ "$kak_opt_lines_relative" == 'false' ] && echo true) || echo false
+    set-option global lines_relative %sh{
+        if [ "$kak_opt_lines_relative" = 'false' ]; then
+            echo true
+        else
+            echo false
+        fi
     }
 }
 
