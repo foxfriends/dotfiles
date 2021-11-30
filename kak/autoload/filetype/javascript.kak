@@ -18,7 +18,7 @@ define-command -hidden js-set-deno %{
     try {
         check-cmd deno
         find-in-parent run.json %sh{dirname "$kak_buffile"}
-        set buffer formatcmd 'deno fmt -'
+        set buffer formatcmd "%val{config}/scripts/deno-fmt"
         set buffer lintcmd "%val{config}/scripts/deno-lint"
         lint-enable
     }

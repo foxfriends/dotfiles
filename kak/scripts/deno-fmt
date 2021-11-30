@@ -1,6 +1,6 @@
 #!/bin/bash
 config=""
-here=$(dirname "$1")
+here=$PWD
 while [ "$here" != '.' -a "$here" != '/' ]; do
     if [ -f "$here/deno.json" ]; then
         config="--config $here/deno.json"
@@ -12,4 +12,4 @@ while [ "$here" != '.' -a "$here" != '/' ]; do
     here=$(dirname "$here")
 done
 
-deno lint $config --json "$1" | jq -r '.diagnostics | map("\(.filename):\(.range.start.line):\(.range.start.col): warning:\(.message) (\(.code))")[]'
+deno fmt $config -
