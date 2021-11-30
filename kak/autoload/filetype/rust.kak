@@ -16,13 +16,13 @@ hook global BufCreate .*[.](rust|rs) %{
 hook global WinSetOption filetype=rust %[
     require-module rust
 
-    try {
+    try %{
         require-module detection
         check-cmd rustfmt
         set-option buffer formatcmd 'rustfmt'
     }
 
-    try {
+    try %{
         require-module detection
         check-cmd clippy-driver
         set-option buffer lintcmd 'cargo clippy'
