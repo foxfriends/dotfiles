@@ -47,7 +47,7 @@ plug 'kakounedotcom/prelude.kak' %{
 }
 
     hook global WinSetOption filetype=(rust|haskell|literate-haskell|javascript|typescript|html) %{
-        try { lsp-enable-window }
+        lsp-enable-window
     }
     set-option global lsp_diagnostic_line_warning_sign "⚠"
 } \
