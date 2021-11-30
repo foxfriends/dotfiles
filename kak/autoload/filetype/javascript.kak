@@ -201,7 +201,7 @@ provide-module typescript %{
 
     # Highlighting specific to TypeScript
     # ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
-    add-highlighter shared/typescript/code/ regex \b(array|boolean|date|number|object|regexp|string|symbol)\b 0:type
+    add-highlighter shared/typescript/code/ regex \b(array|boolean|date|number|object|regexp|string|symbol|bigint)\b 0:type
 
     # Keywords grabbed from https://github.com/Microsoft/TypeScript/issues/2536
     add-highlighter shared/typescript/code/ regex \b(as|constructor|declare|enum|from|implements|interface|module|namespace|package|private|protected|public|readonly|static|type)\b 0:keyword

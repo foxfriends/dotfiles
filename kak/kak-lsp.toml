@@ -23,7 +23,7 @@ roots = ["run.json"]
 command = "deno"
 args = ["lsp"]
 
-[language.deno.settings]
+[language.deno.settings.deno]
 enable = true
 lint = true
 
