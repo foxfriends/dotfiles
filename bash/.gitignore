@@ -1,2 +1,3 @@
 .bashrc
 conf.d/theme.bash
+conf.d/prompt.bash

@@ -6,7 +6,7 @@ better than others, depending on how recently I used/updated each program.
 ## Setup
 
 1.  Clone the repo somewhere (I ususally put it in `$HOME/.dotfiles`).
-2.  Run `./setup for-linux` or `./setup for-mac` and it will (hopefully) set
+2.  Run `./setup install/for-linux` or `./setup install/for-mac` and it will (hopefully) set
     itself up and install all sorts of things. You can skip the install step
     by just running `./setup` with no parameter.
 
@@ -37,7 +37,8 @@ Colours listed in the theme file are expected to be written in hex format (witho
 In addition to the theme variables listed out in the theme file, for compatibility with
 programs which prefer other formats, each colours is converted to RGB format
 (e.g. `rgb(#, #, #)`) using [pastel][] and made available as a corresponding variable
-named `theme_rgb_*`. For this reason, ensure at least the `pastel` command is installed.
+named `theme_rgb_*`. For this reason, ensure at least the `pastel` command is installed
+(so I suppose a minimal initial install of these configs would be `./setup install/pastel`).
 
 [pastel]: https://github.com/sharkdp/pastel
 
