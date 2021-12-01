@@ -1,6 +1,6 @@
 #!/bin/bash
 config=""
-here=$PWD
+here=$1
 while [ "$here" != '.' -a "$here" != '/' ]; do
     if [ -f "$here/deno.json" ]; then
         config="--config $here/deno.json"
