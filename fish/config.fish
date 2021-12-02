@@ -17,7 +17,7 @@ addpath "$HOME/.pyenv/bin"
 addpath "$HOME/.gem/bin"
 
 set -x GEM_HOME "$HOME/.gem"
-set -a LD_LIBRARY_PATH "/usr/local/lib"
+set -ax LD_LIBRARY_PATH "/usr/local/lib"
 
 if status --is-interactive
   command -q pazi; and source (pazi init fish |psub)
