@@ -16,6 +16,10 @@ addpath "$HOME/.rbenv/bin"
 addpath "$HOME/.pyenv/bin"
 addpath "$HOME/.gem/bin"
 
+if test -x /opt/homebrew/bin/brew
+  eval (/opt/homebrew/bin/brew shellenv)
+end
+
 set -x GEM_HOME "$HOME/.gem"
 set -ax LD_LIBRARY_PATH "/usr/local/lib"
 
