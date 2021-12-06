@@ -8,6 +8,14 @@ hook global BufCreate .*[.](py) %{
     set-option buffer filetype python
 }
 
+hook global BufCreate .*(Pipfile) %{
+    set-option buffer filetype toml
+}
+
+hook global BufCreate .*Pipfile.lock %{
+    set-option buffer filetype json
+}
+
 # Initialization
 # ‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 
