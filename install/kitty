@@ -1,4 +1,24 @@
 #!/bin/bash
+# NOTE: I feel like this is a particularly brittle installer...
+# At least it stands as a reminder of how I installed it once
+# Refer also to: https://github.com/kovidgoyal/kitty/issues/4042
 set -e
 cd $(dirname $0)
-curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+if arch | grep -q 'arm'; then
+    ./python
+    if [ "$(uname)" = 'Darwin' ]; then
+        ./brew
+        brew install librsync
+        brew install harfbuzz
+        brew install lcms2
+    fi
+    cd ~/.local
+    if [ ! -d kitty ]; then
+        git clone https://github.com/kovidgoyal/kitty
+    fi
+    cd kitty
+    LDFLAGS=-L/opt/homebrew/lib python3 setup.py kitty.app --extra-include-dirs /opt/homebrew/Cellar/librsync/2.3.2/include
+    ln -s ./launcher/kitty ../bin/
+else
+    curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+fi

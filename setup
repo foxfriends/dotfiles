@@ -13,6 +13,7 @@ fi
 $lndir "$(pwd)/bin" "$HOME/.bin"
 export PATH="$PATH:$HOME/.bin"
 export SKIN=${SKIN:-onedark}
+export FONT_SIZE=${FONT_SIZE:-14}
 
 # If another executable is passed, we call it now.
 # This is intended to be one of the install/for-* scripts.
@@ -25,7 +26,7 @@ fi
 variables=$(cat "themes/$SKIN" | grep '^export' | sed 's/^export \([^=]*\).*/$\1/ ; P ; s/theme_/theme_rgb_/')
 for file in $(find . -name '*.template' -type f); do
     cd "$(dirname "$file")"
-    envsubst "$variables \$PWD" < "$(basename "$file")" > "$(basename "${file%.template}")"
+    envsubst "$variables \$PWD \$FONT_SIZE" < "$(basename "$file")" > "$(basename "${file%.template}")"
     cd - >/dev/null
 done
 
