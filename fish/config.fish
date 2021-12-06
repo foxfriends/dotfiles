@@ -14,10 +14,12 @@ addpath "$HOME/.cabal/bin"
 addpath "$HOME/.ghcup/bin"
 addpath "$HOME/.rbenv/bin"
 addpath "$HOME/.pyenv/bin"
+addpath "$HOME/.pyenv/shims"
 addpath "$HOME/.gem/bin"
 
 if test -x /opt/homebrew/bin/brew
   eval (/opt/homebrew/bin/brew shellenv)
+  set -ax LD_LIBRARY_PATH "/opt/homebrew/lib"
 end
 
 set -x GEM_HOME "$HOME/.gem"
