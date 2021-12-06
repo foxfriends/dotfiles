@@ -47,6 +47,10 @@ template file is located at the time of generation. This means that the variable
 will not function as expected when running any generated scripts. To reference the
 current directory at runtime, I suggest using `$(pwd)` instead.
 
+The variable `FONT_SIZE` will also be replaced with whatever is set on the command line
+when running `./setup`, defaulting to 14. This variable is not set in themes, as its value
+is more related to the computer/monitor that the system is being set up for.
+
 ## Notice
 
 Note that some of the files here are actually not mine (most notably the fonts)
