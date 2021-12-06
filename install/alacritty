@@ -1,0 +1,15 @@
+#!/bin/bash
+set -e
+cd $(dirname $0)
+./rust
+if [ "$(uname)" = 'Darwin' ]; then
+    cd ~/.local
+    if [ ! -d alacritty ]; then
+        git clone git@github.com:alacritty/alacritty
+    fi
+    cd alacritty
+    make app
+    cp -r target/release/osx/Alacritty.app /Applications/
+else
+    cargo install alacritty
+fi
