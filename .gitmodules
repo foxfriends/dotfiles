@@ -4,3 +4,9 @@
 [submodule "kak/plugins/plug.kak"]
 	path = kak/plugins/plug.kak
 	url = git@github.com:andreyorst/plug.kak
+[submodule "fonts/Spectral"]
+	path = fonts/Spectral
+	url = https://github.com/productiontype/Spectral.git
+[submodule "fonts/InriaFonts"]
+	path = fonts/InriaFonts
+	url = https://github.com/BlackFoundryCom/InriaFonts
