@@ -6,11 +6,11 @@ provide-module sk %{
     check-cmd sk
 
     define-command -docstring "use sk to find and open a file" sk %{
-        evaluate-result "run () { cd '%sh{pwd}'; file=$(%opt{findcmd} | sk --preview ""%opt{previewcmd} {}""); if [ -n $file ]; then printf 'edit! -existing %%s\\n' ""$file""; fi; } && run "
+        evaluate-result "run () { cd '%sh{pwd}'; file=$(%opt{findcmd} | sk --preview ""%opt{previewcmd} {}""); if [ -n ""$file"" ]; then printf 'edit! -existing %%s' ""$file"" > $1; fi; } && run"
     }
 }
 
-provide-module fuzzyfinder-sk %{
+provide-module fuzzyfind-sk %{
     require-module sk
     alias global fuzzyfind sk
 }

@@ -2,8 +2,9 @@
 
 session="$1"
 client="$2"
+shift 2
 f=$(mktemp)
-eval $3 "$f"
+eval $@ $f
 
 printf %s\\n "
 evaluate-commands -try-client '${client}' %{ 
