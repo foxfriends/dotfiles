@@ -3,7 +3,7 @@
 cd $(dirname $0)
 
 # Some reason Linux `ln` and Mac `ln` don't support the same flags...
-if [ $(uname) == 'Darwin' ]; then
+if [ "$(uname)" == 'Darwin' ]; then
     lndir="ln -sfh"
 else
     lndir="ln -sfT"
@@ -38,7 +38,8 @@ dot_config () {
     $lndir "$(pwd)/$1" "$HOME/.config/$1"
 }
 
-test -d "./syncat/style/$SKIN" && $lndir "./$SKIN" "./syncat/style/active"
+$lndir ./base ./syncat/style/active
+test -d "./syncat/style/$SKIN" && ln -sf "./$SKIN/colours.syncat" "./syncat/style/colours.syncat"
 check broot && dot_config broot
 check fish && dot_config fish
 check flashfocus && dot_config flashfocus
@@ -53,7 +54,11 @@ check rofi && dot_config rofi
 check sway && dot_config sway
 check tig && dot_config tig
 check topgrade && dot_config topgrade
-check syncat && dot_config syncat
+if [ "$(uname)" == 'Darwin' ]; then
+    check syncat && $lndir "$(pwd)/syncat" "$HOME/Library/Preferences/com.cameldridge.syncat"
+else
+    check syncat && dot_config syncat
+fi
 check waybar && dot_config waybar
 check alacritty && dot_config alacritty
 check tmux && ln -sf "$(pwd)/tmux/.tmux.conf" "$HOME/.tmux.conf"
