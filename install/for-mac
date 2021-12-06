@@ -4,10 +4,12 @@ cd $(dirname $0)
 ./broot
 ./exa
 ./fd
+./fish
 ./fnm
 ./gh
 ./joshuto
 ./kak
+./kitty
 ./paper
 ./pastel
 ./python

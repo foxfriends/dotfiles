@@ -1,0 +1,4 @@
+#!/bin/bash
+set -e
+cd $(dirname $0)
+curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin

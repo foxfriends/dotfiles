@@ -1,0 +1,10 @@
+#!/bin/bash
+set -e
+cd $(dirname $0)
+if [ $(uname) == 'Darwin' ]; then
+    brew install fish
+else
+    sudo add-apt-repository ppa:fish-shell/release-3
+    sudo apt-get update
+    sudo apt install fish
+fi
