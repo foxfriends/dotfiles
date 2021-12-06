@@ -56,6 +56,11 @@ provide-module python %§
     add-highlighter shared/python/docstring/ default-region fill documentation
     add-highlighter shared/python/docstring/ region '(>>>|\.\.\.) \K'    (?=''')|(?=""") ref python
 
+    add-highlighter shared/python/code/function     regex \b([a-z_][a-zA-Z_0-9]*)\s*(?=\() 1:function
+    add-highlighter shared/python/code/function_def regex \b(fn\s+)([a-z_][a-zA-Z_0-9]*) 2:function
+    add-highlighter shared/python/code/classname    regex \b([A-Z_][a-zA-Z_0-9]*) 1:type
+    add-highlighter shared/python/code/self    regex \b(self)\b 1:variable
+
     evaluate-commands %sh{
         # Grammar
         values="True False None inf"
@@ -141,11 +146,6 @@ provide-module python %§
     add-highlighter shared/python/code/ regex (?<=[\w\s\d\)\]'"_])(<=|<<|>>|>=|<>?|>|!=|==|\||\^|&|\+|-|\*\*?|//?|%|~) 0:operator
     add-highlighter shared/python/code/ regex (?<=[\w\s\d'"_])((?<![=<>!]):?=(?![=])|[+*-]=) 0:builtin
     add-highlighter shared/python/code/ regex ^\h*(?:from|import)\h+(\S+) 1:module
-
-    add-highlighter shared/python/code/function     regex \b([a-z_][a-zA-Z_0-9]*)\s*(?=\() 1:function
-    add-highlighter shared/python/code/function_def regex \b(fn\s+)([a-z_][a-zA-Z_0-9]*) 2:function
-    add-highlighter shared/python/code/classname    regex \b([A-Z_][a-zA-Z_0-9]*) 1:type
-    add-highlighter shared/python/code/self    regex \b(self)\b 1:variable
 
     # Commands
     # ‾‾‾‾‾‾‾‾
