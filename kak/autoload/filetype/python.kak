@@ -38,8 +38,8 @@ provide-module python %§
     add-highlighter shared/python/triple_string region -match-capture ("""|''') (?<!\\)(?:\\\\)*("""|''') fill string
     add-highlighter shared/python/double_string region '"'   (?<!\\)(\\\\)*"  fill string
     add-highlighter shared/python/single_string region "'"   (?<!\\)(\\\\)*'  fill string
-    add-highlighter shared/python/documentation region '##'  '$'              fill documentation
-    add-highlighter shared/python/comment       region '#'   '$'              fill comment
+    add-highlighter shared/python/documentation region '##'  '$'              ref doc_comment
+    add-highlighter shared/python/comment       region '#'   '$'              ref comment
 
     # Integer formats
     add-highlighter shared/python/code/ regex '(?i)\b0b[01]+l?\b' 0:value
@@ -53,7 +53,7 @@ provide-module python %§
     # Imaginary formats
     add-highlighter shared/python/code/ regex '\b\d+\+\d+[jJ]\b' 0:value
 
-    add-highlighter shared/python/docstring/ default-region fill documentation
+    add-highlighter shared/python/docstring/ default-region ref doc_comment
     add-highlighter shared/python/docstring/ region '(>>>|\.\.\.) \K'    (?=''')|(?=""") ref python
 
     add-highlighter shared/python/code/function     regex \b([a-z_][a-zA-Z_0-9]*)\s*(?=\() 1:function
