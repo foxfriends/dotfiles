@@ -15,6 +15,7 @@ set-face global meta rgb:${theme_color_meta}
 set-face global builtin rgb:${theme_color_builtin}
 set-face global function rgb:${theme_color_function}
 set-face global module rgb:${theme_color_name}+i
+set-face global error rgb:${theme_color_error}
 
 ## markup
 set-face global title rgb:${theme_color_title}+b
