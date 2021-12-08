@@ -3,12 +3,12 @@
 	name = Cameron Eldridge
 [core]
 	editor = kak
-	pager = delta
+	pager = diff-so-fancy | less --tabs=4 -RFX
 	attributesFile = "${PWD}/.gitattributes"
 [diff]
 	colorMoved = default
 [interactive]
-	diffFilter = delta --color-only
+	diffFilter = diff-so-fancy --patch
 [delta]
 	features = side-by-side line-numbers decorations
 	plus-style = "syntax #${theme_git_addition_background}"
