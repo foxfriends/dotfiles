@@ -1,6 +1,6 @@
-#! /usr/bin/env fish
+#!/usr/bin/env fish
 
-set -x SHELL (which fish)
+set -x SHELL (status fish-path)
 set -q skin; or set -Ux skin onedark
 
 function addpath --description "add a directory to the PATH"
@@ -59,11 +59,17 @@ if status --is-interactive
   alias grep='grep --color=auto'
   alias fgrep='fgrep --color=auto'
   alias egrep='egrep --color=auto'
-  
+
   command -q lesspipe; and eval (env SHELL=/bin/sh lesspipe)
 end
 
-# Local additons can be put in ~/.config.fish
-test -f "$HOME/.config.fish"; and source "$HOME/.config.fish"
+# Local additons can be put in additional configuration directories
+if set -q fish_user_configs
+  for dir in $fish_user_configs
+    if test -d "$dir"
+      source "$dir/config.fish"
+    end
+  end
+end
 
 set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME
