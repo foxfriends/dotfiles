@@ -1,5 +1,6 @@
 #! /usr/bin/env fish
 
+set -x SHELL (which fish)
 set -q skin; or set -Ux skin onedark
 
 function addpath --description "add a directory to the PATH"
