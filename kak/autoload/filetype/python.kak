@@ -143,7 +143,7 @@ provide-module python %§
             add-highlighter shared/python/code/ regex '\b($(join "${meta}" '|'))\b' 0:meta
             add-highlighter shared/python/code/ regex '\b($(join "${attributes}" '|'))\b' 0:attribute
             add-highlighter shared/python/code/ regex '\bdef\s+($(join "${methods}" '|'))\b' 1:function
-            add-highlighter shared/python/code/ regex '\b($(join "${exceptions}" '|'))\b' 0:function
+            add-highlighter shared/python/code/ regex '\b($(join "${exceptions}" '|'))\b' 0:type
             add-highlighter shared/python/code/ regex '\b($(join "${keywords} ${soft_keywords}" '|'))\b' 0:keyword
             add-highlighter shared/python/code/ regex '\b($(join "${functions}" '|'))\b\(' 1:builtin
             add-highlighter shared/python/code/ regex '\b($(join "${types}" '|'))\b' 0:type
