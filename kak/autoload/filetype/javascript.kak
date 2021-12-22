@@ -133,7 +133,7 @@ provide-module javascript_impl %§
         }
 
         add-highlighter "shared/%arg{1}/literal"       region "`"  (?<!\\)(\\\\)*`         regions
-        add-highlighter "shared/%arg{1}/jsx"           region -recurse (?<![\w<])<[a-zA-Z][\w:.-]* (?<![\w<])<[a-zA-Z][\w:.-]*(?!\hextends)(?=[\s/>])(?!>\()) (</.*?>|/>) regions
+        add-highlighter "shared/%arg{1}/jsx"           region -recurse (?<![\w<])(<[a-zA-Z][\w:.-]*|<>) (?<![\w<])(<[a-zA-Z][\w:.-]*(?!\hextends)(?=[\s/>])(?!>\())|<>) (</.*?>|/>) regions
         add-highlighter "shared/%arg{1}/division"      region '[\w\)\]]\K(/|(\h+/\h+))' '(?=\w)' group # Help Kakoune to better detect /…/ literals
 
         # Regular expression flags are: g → global match, i → ignore case, m → multi-lines, u → unicode, y → sticky
@@ -154,7 +154,7 @@ provide-module javascript_impl %§
         # We inline a small XML highlighter here since it anyway need to recurse back up to the starting highlighter.
         # To make things simple we assume that jsx is always enabled.
 
-        add-highlighter "shared/%arg{1}/jsx/tag"  region -recurse <  <(?=[/a-zA-Z]) (?<!=)> regions
+        add-highlighter "shared/%arg{1}/jsx/tag"  region -recurse <  <(?=[/a-zA-Z>]) (?<!=)> regions
         add-highlighter "shared/%arg{1}/jsx/expr" region -recurse \{ \{             \}      ref %arg{1}
 
         add-highlighter "shared/%arg{1}/jsx/tag/base" default-region group
@@ -163,8 +163,9 @@ provide-module javascript_impl %§
         add-highlighter "shared/%arg{1}/jsx/tag/expr" region -recurse \{ \{   \}           group
 
         add-highlighter "shared/%arg{1}/jsx/tag/base/" regex (\w+) 1:attribute
-        add-highlighter "shared/%arg{1}/jsx/tag/base/" regex </?([\w-$]+) 1:keyword
-        add-highlighter "shared/%arg{1}/jsx/tag/base/" regex (</?|/?>) 0:meta
+        add-highlighter "shared/%arg{1}/jsx/tag/base/" regex </?([\w-$_]+) 1:keyword
+        add-highlighter "shared/%arg{1}/jsx/tag/base/" regex </?([A-Z][\w$_]+) 1:type
+        add-highlighter "shared/%arg{1}/jsx/tag/base/" regex (</?|/?>) 0:keyword
 
         add-highlighter "shared/%arg{1}/jsx/tag/expr/"   ref %arg{1}
 
