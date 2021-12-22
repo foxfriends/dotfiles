@@ -162,10 +162,10 @@ provide-module javascript_impl %§
         add-highlighter "shared/%arg{1}/jsx/tag/single_string" region =\K' (?<!\\)(\\\\)*' fill string
         add-highlighter "shared/%arg{1}/jsx/tag/expr" region -recurse \{ \{   \}           group
 
-        add-highlighter "shared/%arg{1}/jsx/tag/base/" regex (\w+) 1:attribute
-        add-highlighter "shared/%arg{1}/jsx/tag/base/" regex </?([\w-$_]+) 1:keyword
+        add-highlighter "shared/%arg{1}/jsx/tag/base/" regex (\w+) 1:value
+        add-highlighter "shared/%arg{1}/jsx/tag/base/" regex </?([\w-$_]+) 1:identifier
         add-highlighter "shared/%arg{1}/jsx/tag/base/" regex </?([A-Z][\w$_]+) 1:type
-        add-highlighter "shared/%arg{1}/jsx/tag/base/" regex (</?|/?>) 0:keyword
+        add-highlighter "shared/%arg{1}/jsx/tag/base/" regex (</?|/?>) 0:text
 
         add-highlighter "shared/%arg{1}/jsx/tag/expr/"   ref %arg{1}
 
