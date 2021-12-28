@@ -1,1 +1,0 @@
-../../../system/filetype/sh.kak
