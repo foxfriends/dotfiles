@@ -67,8 +67,8 @@ set-face global BufferPadding rgb:${theme_color_invisible},rgb:${theme_color_bgd
 set-face global Whitespace rgb:${theme_color_invisible}+f
 
 ## LSP
-set-face global DiagnosticError default,default,rgb:${theme_color_error}+u
-set-face global DiagnosticWarning default,default,rgb:${theme_color_warning}+u
+set-face global DiagnosticError default,default,rgb:${theme_color_error}+c
+set-face global DiagnosticWarning default,default,rgb:${theme_color_warning}+c
 
 ## powerline
 define-command -hidden powerline-theme-custom %{
