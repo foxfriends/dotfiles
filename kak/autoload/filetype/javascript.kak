@@ -133,7 +133,7 @@ provide-module javascript_impl %§
         }
 
         add-highlighter "shared/%arg{1}/literal"       region "`"  (?<!\\)(\\\\)*`         regions
-        add-highlighter "shared/%arg{1}/jsx"           region -recurse (?<![\w<])<[a-zA-Z][\w:.-]* (?<![\w<])<[a-zA-Z][\w:.-]*(?!\hextends)(?=[\s/>])(?!>\()) (</.*?>|/>) regions
+        add-highlighter "shared/%arg{1}/jsx"           region -recurse (?<![\w<])(<[a-zA-Z$_][\w$:.-]*|<>) (?<![\w<])(<[a-zA-Z$_][\w$:.-]*(?!\hextends)(?=[\s/>])(?!>\())|<>) (</.*?>|/>) regions
         add-highlighter "shared/%arg{1}/division"      region '[\w\)\]]\K(/|(\h+/\h+))' '(?=\w)' group # Help Kakoune to better detect /…/ literals
 
         # Regular expression flags are: g → global match, i → ignore case, m → multi-lines, u → unicode, y → sticky
@@ -154,7 +154,7 @@ provide-module javascript_impl %§
         # We inline a small XML highlighter here since it anyway need to recurse back up to the starting highlighter.
         # To make things simple we assume that jsx is always enabled.
 
-        add-highlighter "shared/%arg{1}/jsx/tag"  region -recurse <  <(?=[/a-zA-Z]) (?<!=)> regions
+        add-highlighter "shared/%arg{1}/jsx/tag"  region -recurse <  <(?=[/a-zA-Z$_>-]) (?<!=)> regions
         add-highlighter "shared/%arg{1}/jsx/expr" region -recurse \{ \{             \}      ref %arg{1}
 
         add-highlighter "shared/%arg{1}/jsx/tag/base" default-region group
@@ -162,25 +162,27 @@ provide-module javascript_impl %§
         add-highlighter "shared/%arg{1}/jsx/tag/single_string" region =\K' (?<!\\)(\\\\)*' fill string
         add-highlighter "shared/%arg{1}/jsx/tag/expr" region -recurse \{ \{   \}           group
 
-        add-highlighter "shared/%arg{1}/jsx/tag/base/" regex (\w+) 1:attribute
-        add-highlighter "shared/%arg{1}/jsx/tag/base/" regex </?([\w-$]+) 1:keyword
-        add-highlighter "shared/%arg{1}/jsx/tag/base/" regex (</?|/?>) 0:meta
+        add-highlighter "shared/%arg{1}/jsx/tag/base/" regex (\w+) 1:value
+        add-highlighter "shared/%arg{1}/jsx/tag/base/" regex </?([\w_-]+) 1:identifier
+        add-highlighter "shared/%arg{1}/jsx/tag/base/" regex </?([A-Z$_][\w$_]+) 1:type
+        add-highlighter "shared/%arg{1}/jsx/tag/base/" regex (</?|/?>) 0:text
 
         add-highlighter "shared/%arg{1}/jsx/tag/expr/"   ref %arg{1}
 
-        add-highlighter "shared/%arg{1}/code/" regex ((#|\b)[$a-z_][$a-zA-Z0-9_]*)\b(?:\s*\() 1:function
-        add-highlighter "shared/%arg{1}/code/" regex \b([A-Z][$a-zA-Z0-9_]*)\b 1:type
+        add-highlighter "shared/%arg{1}/code/" regex ((#|\b)[a-z_][$a-zA-Z0-9_]*)\b(?:\s*\() 1:function
+        add-highlighter "shared/%arg{1}/code/" regex ([#]?[$_][$_0-9]*[a-z][$a-zA-Z0-9_]*)\b(?:\s*\() 1:function
+        add-highlighter "shared/%arg{1}/code/" regex (?<![$])\b([A-Z][$a-zA-Z0-9_]*)\b 1:type
+        add-highlighter "shared/%arg{1}/code/" regex (?<![\w_0-9])([$_][$_0-9]*[A-Z][$a-zA-Z0-9_]*)\b 1:type
+
         add-highlighter "shared/%arg{1}/code/" regex \b(Array|Boolean|Date|Function|Number|Object|RegExp|String|Symbol)\b 0:meta
         add-highlighter "shared/%arg{1}/code/" regex [<>*/+\-=%^!~~|&?:]+ 0:keyword
         add-highlighter "shared/%arg{1}/code/" regex (#?[$a-zA-Z_][$a-zA-Z0-9_]*)\b: 1:field
-        # add-highlighter "shared/%arg{1}/code/" regex ([$a-zA-Z_][$a-zA-Z0-9_]*)\. 1:variable
-        # add-highlighter "shared/%arg{1}/code/" regex \.([$a-zA-Z_][$a-zA-Z0-9_]*) 1:variable
 
         # Keywords are collected at
         # https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords
         # https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get
         # https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/set
-        add-highlighter "shared/%arg{1}/code/" regex (^|[^.]|\.\.\.)\b(async|await|break|case|catch|class|const|continue|debugger|default|delete|do|else|export|extends|finally|for|from|function|get|if|import|in|instanceof|let|new|of|return|set|static|super|switch|throw|try|typeof|var|void|while|with|yield)\b 2:keyword
+        add-highlighter "shared/%arg{1}/code/" regex (^|[^.$]|\.\.\.)\b(async|await|break|case|catch|class|const|continue|debugger|default|delete|do|else|export|extends|finally|for|from|function|get|if|import|in|instanceof|let|new|of|return|set|static|super|switch|throw|try|typeof|var|void|while|with|yield)\b 2:keyword
     ~
 
     define-command -hidden javascript-load-languages %{
