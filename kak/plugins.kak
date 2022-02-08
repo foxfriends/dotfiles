@@ -39,17 +39,19 @@ plug 'kakounedotcom/prelude.kak' %{
         map buffer mirror * 'a*<esc>i*<esc>H<a-;>' -docstring '*surround*'
         map buffer mirror _ 'a_<esc>i_<esc>H<a-;>' -docstring '_surround_'
     }
-} plug "ul/kak-lsp" do %{
+} plug "kak-lsp/kak-lsp" do %{
     cargo install --locked --force --path .
-} noload config %{
-    evaluate-commands %sh{
-        kak-lsp --config "${kak_config}/kak-lsp.toml" --kakoune -s $kak_session
-}
+} config %{
+    set-option global lsp_diagnostic_line_warning_sign "⚠"
+
+    define-command lsp-restart -docstring 'restart lsp server' %{ lsp-stop; lsp-start }
 
     hook global WinSetOption filetype=(rust|haskell|literate-haskell|javascript|typescript|html|python) %{
+        echo -debug "Enabling LSP for %opt{filetype}"
         lsp-enable-window
     }
-    set-option global lsp_diagnostic_line_warning_sign "⚠"
+
+    hook global KakEnd .* lsp-exit
 } \
 plug 'https://gitlab.com/Screwtapello/kakoune-cargo' \
 plug 'occivink/kakoune-vertical-selection'
