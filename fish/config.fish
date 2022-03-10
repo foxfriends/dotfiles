@@ -41,7 +41,7 @@ if status --is-interactive
   end
   if command -q fd
     set -x FZF_DEFAULT_COMMAND 'fd --type f'
-    set -x SKIM_DEFAULT_COMMAND 'fd --type f'
+    set -x SKIM_DEFAULT_COMMAND "fd --type f -E '*.snap'"
   end
 
   command -q aws aws-mfa-secure; and alias aws="aws-mfa-secure session"
