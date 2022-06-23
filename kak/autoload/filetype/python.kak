@@ -24,6 +24,11 @@ hook global WinSetOption filetype=python %{
 
     set-option window static_words %opt{python_static_words}
 
+    try {
+        check-cmd pipenv
+        set buffer formatcmd "pipenv run black --stdin-filename '%val{buffile}' -"
+    }
+
     hook window InsertChar \n -group python-insert python-insert-on-new-line
     hook window InsertChar \n -group python-indent python-indent-on-new-line
     # cleanup trailing whitespaces on current line insert end
