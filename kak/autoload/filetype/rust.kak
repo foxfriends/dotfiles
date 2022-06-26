@@ -1,7 +1,7 @@
-# http://rust-lang.org
-# ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+# https://rust-lang.org
+# ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 #
-# This plugin is a replacement for the built in rc/filetype/rust.kak with improve syntax highlighting.
+# This plugin is a replacement for the built in rc/filetype/rust.kak with improved syntax highlighting.
 
 # Detection
 # ‾‾‾‾‾‾‾‾‾
