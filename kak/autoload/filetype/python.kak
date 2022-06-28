@@ -24,16 +24,16 @@ hook global WinSetOption filetype=python %{
 
     set-option window static_words %opt{python_static_words}
 
-    try {
-        check-cmd pipenv
-        set buffer formatcmd "pipenv run black --stdin-filename '%val{buffile}' -"
-    }
-
     hook window InsertChar \n -group python-insert python-insert-on-new-line
     hook window InsertChar \n -group python-indent python-indent-on-new-line
     # cleanup trailing whitespaces on current line insert end
     hook window ModeChange pop:insert:.* -group python-trim-indent %{ try %{ execute-keys -draft <semicolon> <a-x> s ^\h+$ <ret> d } }
     hook -once -always window WinSetOption filetype=.* %{ remove-hooks window python-.+ }
+
+    try {
+        check-cmd pipenv
+        set buffer formatcmd "pipenv run black --stdin-filename '%val{buffile}' -"
+    }
 }
 
 hook -group python-highlight global WinSetOption filetype=python %{
