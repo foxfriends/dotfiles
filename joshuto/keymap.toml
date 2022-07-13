@@ -1,180 +1,231 @@
-[keymaps]
-# backspace = 263
+[default_view]
 
-[[mapcommand]]
+[[default_view.keymap]]
 command = "new_tab"
 keys = [ "T" ]
-
-[[mapcommand]]
+[[default_view.keymap]]
 command = "new_tab"
 keys = [ "ctrl+t" ]
-[[mapcommand]]
+[[default_view.keymap]]
 command = "close_tab"
 keys = [ "W" ]
-[[mapcommand]]
+[[default_view.keymap]]
 command = "close_tab"
 keys = [ "ctrl+w" ]
-[[mapcommand]]
+[[default_view.keymap]]
 command = "close_tab"
 keys = [ "q" ]
-[[mapcommand]]
-command = "force_quit"
+[[default_view.keymap]]
+command = "quit --output-current-directory"
 keys = [ "Q" ]
-[[mapcommand]]
+[[default_view.keymap]]
 command = "reload_dirlist"
 keys = [ "R" ]
-[[mapcommand]]
+[[default_view.keymap]]
 command = "toggle_hidden"
 keys = [ "z", "h" ]
 
-[[mapcommand]]
+[[default_view.keymap]]
 command = "tab_switch 1"
 keys = [ "\t" ]
-[[mapcommand]]
+[[default_view.keymap]]
 command = "tab_switch -1"
 keys = [ "backtab" ]
 
-[[mapcommand]]
+[[default_view.keymap]]
 command = "cursor_move_up"
 keys = [ "arrow_up" ]
-[[mapcommand]]
+[[default_view.keymap]]
 command = "cursor_move_up"
 keys = [ "k" ]
-[[mapcommand]]
+[[default_view.keymap]]
 command = "cursor_move_down"
 keys = [ "arrow_down" ]
-[[mapcommand]]
+[[default_view.keymap]]
 command = "cursor_move_down"
 keys = [ "j" ]
-[[mapcommand]]
+[[default_view.keymap]]
 command = "cursor_move_end"
 keys = [ "end" ]
-[[mapcommand]]
+[[default_view.keymap]]
 command = "cursor_move_end"
 keys = [ "G" ]
-[[mapcommand]]
+[[default_view.keymap]]
 command = "cursor_move_home"
 keys = [ "home" ]
-[[mapcommand]]
+[[default_view.keymap]]
 command = "cursor_move_home"
 keys = [ "g", "g" ]
-[[mapcommand]]
+[[default_view.keymap]]
 command = "cursor_move_page_up"
 keys = [ "page_up" ]
-[[mapcommand]]
+[[default_view.keymap]]
 command = "cursor_move_page_down"
 keys = [ "page_down" ]
 
-[[mapcommand]]
+[[default_view.keymap]]
 command = "open"
 keys = [ "arrow_right" ]
-[[mapcommand]]
+filetype = "directory"
+[[default_view.keymap]]
 command = "open"
 keys = [ "l" ]
-[[mapcommand]]
+filetype = "directory"
+[[default_view.keymap]]
+command = "quit --output-selected-files"
+keys = [ "arrow_right" ]
+filetype = "file"
+[[default_view.keymap]]
+command = "quit --output-selected-files"
+keys = [ "l" ]
+filetype = "file"
+
+[[default_view.keymap]]
 command = "open"
 keys = [ "\n" ]
-[[mapcommand]]
+filetype = "directory"
+[[default_view.keymap]]
+command = "quit --output-selected-files"
+keys = [ "\n" ]
+filetype = "file"
+
+[[default_view.keymap]]
 command = "open_with"
 keys = [ "r" ]
 
-[[mapcommand]]
+[[default_view.keymap]]
 command = ":cd"
 keys = [ "c", "d" ]
-[[mapcommand]]
+[[default_view.keymap]]
 command = "cd .."
 keys = [ "arrow_left" ]
-[[mapcommand]]
+[[default_view.keymap]]
 command = "cd .."
 keys = [ "h" ]
 
-[[mapcommand]]
+[[default_view.keymap]]
 command = "cut_files"
 keys = [ "d", "d" ]
-[[mapcommand]]
+[[default_view.keymap]]
 command = "copy_files"
 keys = [ "y", "y" ]
-[[mapcommand]]
+[[default_view.keymap]]
 command = "paste_files"
 keys = [ "p", "p" ]
-[[mapcommand]]
+[[default_view.keymap]]
 command = "paste_files --overwrite=true"
 keys = [ "p", "o" ]
-[[mapcommand]]
+[[default_view.keymap]]
 command = "delete_files"
 keys = [ "d", "D" ]
-[[mapcommand]]
+[[default_view.keymap]]
 command = "delete_files"
 keys = [ "delete" ]
 
-[[mapcommand]]
+[[default_view.keymap]]
 command = ":touch "
 keys = [ "insert" ]
 
-[[mapcommand]]
+[[default_view.keymap]]
 command = ":touch "
 keys = [ "f", "t" ]
 
-[[mapcommand]]
+[[default_view.keymap]]
 command = "rename_append"
 keys = [ "a" ]
-[[mapcommand]]
+[[default_view.keymap]]
 command = "rename_prepend"
 keys = [ "A" ]
 
-[[mapcommand]]
+[[default_view.keymap]]
 command = "select --toggle=true"
 keys = [ " " ]
-[[mapcommand]]
+[[default_view.keymap]]
 command = "select --toggle=true --all=true"
 keys = [ "t" ]
 
-[[mapcommand]]
+[[default_view.keymap]]
 command = ":search "
 keys = [ "/" ]
-[[mapcommand]]
+[[default_view.keymap]]
 command = "search_next"
 keys = [ "n" ]
-[[mapcommand]]
+[[default_view.keymap]]
 command = "search_prev"
 keys = [ "N" ]
 
-[[mapcommand]]
+[[default_view.keymap]]
 command = "bulk_rename"
 keys = [ "b", "b" ]
-[[mapcommand]]
+[[default_view.keymap]]
 command = "set_mode"
 keys = [ "=" ]
 
-[[mapcommand]]
+[[default_view.keymap]]
 command = ":"
 keys = [ ";" ]
-[[mapcommand]]
+[[default_view.keymap]]
 command = ":"
 keys = [ ":" ]
-[[mapcommand]]
+[[default_view.keymap]]
 command = ":mkdir "
 keys = [ "m", "k" ]
-[[mapcommand]]
+[[default_view.keymap]]
 command = ":rename "
 keys = [ "c", "w" ]
 
-[[mapcommand]]
+[[default_view.keymap]]
 command = "sort lexical"
 keys = [ "s", "l" ]
-[[mapcommand]]
+[[default_view.keymap]]
 command = "sort mtime"
 keys = [ "s", "m" ]
-[[mapcommand]]
+[[default_view.keymap]]
 command = "sort natural"
 keys = [ "s", "n" ]
-[[mapcommand]]
+[[default_view.keymap]]
 command = "sort reverse"
 keys = [ "s", "r" ]
 
-[[mapcommand]]
+[[default_view.keymap]]
 command = "cd /"
 keys = [ "g", "/" ]
-[[mapcommand]]
+[[default_view.keymap]]
 command = "cd /etc"
 keys = [ "g", "e" ]
+
+[task_view]
+keymap = [
+	# arrow keys
+	{ keys = [ "arrow_up" ],	command = "cursor_move_up" },
+	{ keys = [ "arrow_down" ],	command = "cursor_move_down" },
+	{ keys = [ "home" ],		command = "cursor_move_home" },
+	{ keys = [ "end" ],		command = "cursor_move_end" },
+
+	# vim-like keybindings
+	{ keys = [ "j" ],		command = "cursor_move_down" },
+	{ keys = [ "k" ],		command = "cursor_move_up" },
+	{ keys = [ "g", "g" ],		command = "cursor_move_home" },
+	{ keys = [ "G" ],		command = "cursor_move_end" },
+
+	{ keys = [ "w" ],		command = "show_tasks" },
+	{ keys = [ "escape" ],		command = "show_tasks" },
+]
+
+[help_view]
+keymap = [
+	# arrow keys
+	{ keys = [ "arrow_up" ],	command = "cursor_move_up" },
+	{ keys = [ "arrow_down" ],	command = "cursor_move_down" },
+	{ keys = [ "home" ],		command = "cursor_move_home" },
+	{ keys = [ "end" ],		command = "cursor_move_end" },
+
+	# vim-like keybindings
+	{ keys = [ "j" ],		command = "cursor_move_down" },
+	{ keys = [ "k" ],		command = "cursor_move_up" },
+	{ keys = [ "g", "g" ],		command = "cursor_move_home" },
+	{ keys = [ "G" ],		command = "cursor_move_end" },
+
+	{ keys = [ "w" ],		command = "show_tasks" },
+	{ keys = [ "escape" ],		command = "show_tasks" },
+]
