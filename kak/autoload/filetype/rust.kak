@@ -99,7 +99,7 @@ provide-module rust %§
             try %{ execute-keys -draft k <a-x> s ^\h*\K//[!/]?\h* <ret> y gh j P }
             # preserve previous line indent
             try %{ execute-keys -draft <semicolon> K <a-&> }
-            
+
             # filter previous line
             try %{ execute-keys -draft k : rust-trim-indent <ret> }
             # indent after lines ending with { or (
