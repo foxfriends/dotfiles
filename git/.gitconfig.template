@@ -1,6 +1,7 @@
 [user]
 	email = cameldridge@gmail.com
 	name = Cameron Eldridge
+	signingkey = "${GPG_KEY_ID}"
 [core]
 	editor = kak
 	pager = delta
@@ -31,3 +32,5 @@
 	defaultBranch = main
 [merge]
     conflictstyle = diff3
+[commit]
+	gpgsign = true

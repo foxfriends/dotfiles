@@ -26,7 +26,8 @@ fi
 variables=$(cat "themes/$SKIN" | grep '^export' | sed 's/^export \([^=]*\).*/$\1/ ; P ; s/theme_/theme_rgb_/')
 for file in $(find . -name '*.template' -type f); do
     cd "$(dirname "$file")"
-    envsubst "$variables \$PWD \$FONT_SIZE" < "$(basename "$file")" > "$(basename "${file%.template}")"
+    export GPG_KEY_ID=$(git config user.signingkey)
+    envsubst "$variables \$PWD \$FONT_SIZE \$GPG_KEY_ID" < "$(basename "$file")" > "$(basename "${file%.template}")"
     cd - >/dev/null
 done
 
