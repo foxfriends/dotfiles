@@ -15,7 +15,7 @@ hook global BufCreate .*[.](ts)x? %{
 }
 
 define-command -hidden js-set-deno %{
-    try {
+    try %{
         check-cmd deno
         find-in-parent run.json %sh{dirname "$kak_buffile"}
         set buffer formatcmd "%val{config}/scripts/deno-fmt %val{buffile}"
@@ -25,11 +25,11 @@ define-command -hidden js-set-deno %{
 }
 
 define-command -hidden js-set-node %{
-    try {
+    try %{
         check-cmd prettier
         set buffer formatcmd "prettier --stdin-filepath '%val{buffile}'"
     }
-    try {
+    try %{
         check-cmd eslint
         check-file %sh{echo "$(npm root -g)/eslint-formatter-kakoune/index.js"}
         find-in-parent package.json %sh{dirname "$kak_buffile"}

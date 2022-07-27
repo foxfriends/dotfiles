@@ -47,7 +47,7 @@ provide-module detection %{
             here="$2"
             while [ "$here" != '/' -a "$here" != '.' ]; do
                 if [ -f "$here/$target" ]; then
-                    return
+                    exit
                 fi
                 here=$(dirname "$here")
             done
