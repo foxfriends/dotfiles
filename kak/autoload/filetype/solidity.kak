@@ -42,7 +42,7 @@ provide-module solidity %§
 
     define-command -hidden solidity-trim-indent %{
         # remove trailing white spaces
-        try %{ execute-keys -draft -itersel <a-x> s \h+$ <ret> d }
+        try %{ execute-keys -draft -itersel x s \h+$ <ret> d }
     }
 
     define-command -hidden solidity-indent-on-char %<
@@ -59,7 +59,7 @@ provide-module solidity %§
             # filter previous line
             try %{ execute-keys -draft k : solidity-trim-indent <ret> }
             # indent after lines beginning / ending with opener token
-            try %_ execute-keys -draft k <a-x> <a-k> ^\h*[[{]|[[{]$ <ret> j <a-gt> _
+            try %_ execute-keys -draft k x <a-k> ^\h*[[{]|[[{]$ <ret> j <a-gt> _
         >
     >
 §

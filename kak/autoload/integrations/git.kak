@@ -32,7 +32,7 @@ hook global WinSetOption filetype=git-status %{
 define-command -hidden git-status-jump %{
     evaluate-commands %{ # use evaluate-commands to ensure jumps are collapsed
         try %{
-            execute-keys '<a-x>s^(?:\t(?:new file|modified):\s+)(\S[^\n]*)$<ret>'
+            execute-keys 'xs^(?:\t(?:new file|modified):\s+)(\S[^\n]*)$<ret>'
             evaluate-commands -try-client %opt{workclient} -verbatim -- edit -existing %reg{1}
             try %{ focus %opt{workclient} }
         }
@@ -42,7 +42,7 @@ define-command -hidden git-status-jump %{
 define-command -hidden git-status-add %{
     evaluate-commands %{
         try %{
-            execute-keys '<a-x>s^(?:\t(?:new file|modified|deleted):\s+)(\S[^\n]*)$<ret>'
+            execute-keys 'xs^(?:\t(?:new file|modified|deleted):\s+)(\S[^\n]*)$<ret>'
             evaluate-commands git add %reg{1}
             evaluate-commands git status
         }

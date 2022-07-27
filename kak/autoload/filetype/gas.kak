@@ -84,7 +84,7 @@ provide-module gas %{
 
     define-command -hidden gas-trim-indent %{
         evaluate-commands -draft -itersel %{
-            execute-keys <a-x>
+            execute-keys x
             # remove trailing white spaces
             try %{ execute-keys -draft s \h+$ <ret> d }
         }
@@ -97,7 +97,7 @@ provide-module gas %{
             # filter previous line
             try %{ execute-keys -draft k : gas-trim-indent <ret> }
             # indent after label
-            try %[ execute-keys -draft k <a-x> <a-k> :$ <ret> j <a-gt> ]
+            try %[ execute-keys -draft k x <a-k> :$ <ret> j <a-gt> ]
         >
     ~
 }
