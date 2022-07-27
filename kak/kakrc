@@ -23,11 +23,6 @@ set-option global tabstop 4
 set-option global indentwidth 4
 map global insert <s-tab> '<esc><i'
 
-# swap leader to <space>
-map global normal , <space>
-map global normal <space> ,
-map global insert <c-space> '<esc>,'
-
 # get hover info
 map global insert <c-a> '<a-;>: lsp-hover<ret>'
 map global normal <c-a> ': lsp-hover<ret>'
