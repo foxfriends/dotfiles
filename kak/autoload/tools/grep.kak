@@ -47,7 +47,7 @@ hook global WinSetOption filetype=grep %{
 define-command -hidden grep-jump %{
     evaluate-commands %{ # use evaluate-commands to ensure jumps are collapsed
         try %{
-            execute-keys '<a-x>s^((?:\w:)?[^:]+):(\d+):(\d+)?<ret>'
+            execute-keys 'xs^((?:\w:)?[^:]+):(\d+):(\d+)?<ret>'
             set-option buffer grep_current_line %val{cursor_line}
             evaluate-commands -try-client %opt{workclient} -verbatim -- edit -existing %reg{1} %reg{2} %reg{3}
             try %{ focus %opt{workclient} }
