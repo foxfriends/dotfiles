@@ -112,6 +112,12 @@ name = "julia"
 library = "tree-sitter-julia"
 extensions = ["jl"]
 
+[kotlin]
+source = "https://github.com/fwcd/tree-sitter-kotlin"
+name = "kotlin"
+library = "tree-sitter-kotlin"
+extensions = ["kt"]
+
 [lua]
 source = "https://github.com/Azganoth/tree-sitter-lua"
 name = "lua"
