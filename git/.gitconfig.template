@@ -11,7 +11,7 @@
 [interactive]
 	diffFilter = delta --color-only
 [delta]
-    navigate = true
+	navigate = true
 	features = side-by-side line-numbers decorations
 	plus-style = "syntax #${theme_git_addition_background}"
 	plus-emph-style = "syntax #${theme_git_addition_foreground}"
@@ -24,13 +24,13 @@
 	rebase = false
 [alias]
 	graph = "log --graph --oneline"
-    c = "!${PWD}/fuzzy-checkout"
+	c = "!${PWD}/fuzzy-checkout"
 [fetch]
 	prune = true
 	pruneTags = true
 [init]
 	defaultBranch = main
 [merge]
-    conflictstyle = diff3
+	conflictstyle = diff3
 [commit]
 	gpgsign = true
