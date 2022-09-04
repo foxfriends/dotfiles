@@ -53,6 +53,7 @@ check nvim && dot_config nvim
 check ranger && dot_config ranger
 check rofi && dot_config rofi
 check sway && dot_config sway
+check hx && dot_config helix
 check tig && dot_config tig
 check topgrade && dot_config topgrade
 if [ "$(uname)" == 'Darwin' ]; then

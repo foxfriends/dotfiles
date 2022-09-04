@@ -1,0 +1,118 @@
+"attribute" = { fg = "attribute" }
+"comment" = { fg = "comment", modifiers = ["italic"] }
+"constant" = { fg = "constant" }
+"constant.numeric" = { fg = "constant" }
+"constant.builtin" = { fg = "constant" }
+"constant.character.escape" = { fg = "meta" }
+"constructor" = { fg = "type" }
+"function" = { fg = "function" }
+"function.builtin" = { fg = "builtin" }
+"function.macro" = { fg = "meta" }
+"keyword" = { fg = "keyword" }
+"keyword.control" = { fg = "keyword" }
+"keyword.control.import" = { fg = "keyword" }
+"keyword.directive" = { fg = "keyword" }
+"label" = { fg = "module" }
+"namespace" = { fg = "module" }
+"operator" = { fg = "operator" }
+"keyword.operator" = { fg = "operator" }
+"special" = { fg = "meta" }
+"string" = { fg = "string" }
+"type" = { fg = "type" }
+"variable" = { fg = "variable" }
+"variable.builtin" = { fg = "variable" }
+"variable.parameter" = { fg = "variable" }
+"variable.other.member" = { fg = "field" }
+
+"markup.heading" = { fg = "title" }
+"markup.raw.inline" = { fg = "meta" }
+"markup.bold" = { fg = "strong", modifiers = ["bold"] }
+"markup.italic" = { fg = "emphasis", modifiers = ["italic"] }
+"markup.list" = { fg = "list" }
+"markup.quote" = { fg = "block" }
+"markup.link.url" = { fg = "link", modifiers = ["underlined"]}
+"markup.link.text" = { fg = "link" }
+
+"diff.plus" = "addition"
+"diff.delta" = "modification"
+"diff.minus" = "deletion"
+
+diagnostic = { modifiers = ["underlined"] }
+"info" = { fg = "success" }
+"hint" = { fg = "success" }
+"warning" = { fg = "warning" }
+"error" = { fg = "error" }
+
+"ui.background" = { bg = "#${theme_color_bgdefault}" }
+"ui.virtual" = { fg = "invisible" }
+"ui.virtual.indent-guide" = { fg = "invisible" }
+"ui.virtual.whitespace" = { fg = "invisible" }
+"ui.virtual.ruler" = { bg = "invisible" }
+
+"ui.cursor" = { bg = "#${theme_color_bghighlight2}" }
+"ui.cursor.primary" = { bg = "#${theme_color_bghighlight}" }
+"ui.cursor.insert" = { bg = "#${theme_color_bgcursor}" }
+"ui.cursor.match" = { bg = "#${theme_color_bghighlight}" }
+
+"ui.selection" = { bg = "#${theme_color_bghighlight2}", modifies = ["italic"] }
+"ui.selection.primary" = { bg = "#${theme_color_bghighlight2}", modifiers = ["bold"] }
+"ui.cursorline.primary" = {}
+
+"ui.linenr" = { fg = "placeholder" }
+"ui.linenr.selected" = { fg = "#${theme_color_highlight}" }
+
+"ui.statusline" = { fg = "white", bg = "light-black" }
+"ui.statusline.inactive" = { fg = "light-gray", bg = "light-black" }
+"ui.statusline.normal" = { fg = "light-black", bg = "blue" }
+"ui.statusline.insert" = { fg = "light-black", bg = "green" }
+"ui.statusline.select" = { fg = "light-black", bg = "purple" }
+
+"ui.text" = { fg = "default" }
+"ui.text.focus" = { fg = "default" }
+
+"ui.help" = { fg = "white", bg = "gray" }
+"ui.popup" = { fg = "#${theme_color_highlight}", bg = "#${theme_color_bghighlight}" }
+"ui.window" = { fg = "#${theme_color_highlight}", bg = "#${theme_color_bghighlight}" }
+"ui.menu" = { fg = "#${theme_color_bgdefault}", bg = "#${theme_color_default}" }
+"ui.menu.selected" = { fg = "#${theme_color_highlight}", bg = "#${theme_color_bghighlight}" }
+"ui.menu.scroll" = { fg = "#${theme_color_highlight}", bg = "#${theme_color_bghighlight}" }
+
+[palette]
+constant = "#${theme_color_constant}"
+type = "#${theme_color_type}"
+variable = "#${theme_color_variable}"
+identifier = "#${theme_color_variable}"
+field = "#${theme_color_variable}"
+interpolation = "#${theme_color_interpolation}"
+string = "#${theme_color_string}"
+keyword = "#${theme_color_keyword}"
+operator = "#${theme_color_operator}"
+attribute = "#${theme_color_attribute}"
+comment = "#${theme_color_comment}"
+doc_comment = "#${theme_color_comment}"
+meta = "#${theme_color_meta}"
+builtin = "#${theme_color_builtin}"
+function = "#${theme_color_function}"
+module = "#${theme_color_module}"
+
+success = "#${theme_color_success}"
+warning = "#${theme_color_warning}"
+error = "#${theme_color_error}"
+
+title = "#${theme_color_title}"
+header = "#${theme_color_header}"
+bold = "#${theme_color_strong}"
+italic = "#${theme_color_emphasis}"
+mono = "#${theme_color_string}"
+block = "#${theme_color_builtin}"
+link = "#${theme_color_link}"
+list = "#${theme_color_keyword}"
+
+addition = "#${theme_color_addition}"
+deletion = "#${theme_color_deletion}"
+modification = "#${theme_color_modification}"
+
+invisible = "#${theme_color_invisible}"
+placeholder = "#${theme_color_placeholder}"
+
+text = "#${theme_color_default}"
