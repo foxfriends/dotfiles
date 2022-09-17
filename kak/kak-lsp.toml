@@ -61,3 +61,9 @@ filetypes = ["haskell", "literate-haskell"]
 roots = ["Setup.hs", "stack.yaml", "*.cabal"]
 command = "haskell-language-server-wrapper"
 args = ["--lsp"]
+
+[language.solidity]
+filetypes = ["solidity"]
+roots = []
+command = "solc"
+args = ["--lsp"]
