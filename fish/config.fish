@@ -39,6 +39,7 @@ if status --is-interactive
   if command -q fnm
     source (fnm completions |psub)
     source (fnm env |psub)
+    source (fnm env --use-on-cd |psub)
   end
   if command -q fd
     set -x FZF_DEFAULT_COMMAND 'fd --type f'
