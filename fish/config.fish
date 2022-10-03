@@ -36,6 +36,7 @@ if status --is-interactive
   command -q deno; and source (deno completions fish |psub)
   command -q rustup; and source (rustup completions fish |psub)
   command -q gh; and source (gh completion -s fish |psub)
+  command -q kak; and set -x EDITOR (which kak)
   if command -q fnm
     source (fnm completions |psub)
     source (fnm env |psub)
