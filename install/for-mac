@@ -1,7 +1,9 @@
 #!/bin/bash
 cd $(dirname $0)
+./asdf
 ./brew
 ./broot
+./deno
 ./exa
 ./fd
 ./fish

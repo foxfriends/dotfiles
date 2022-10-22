@@ -15,9 +15,11 @@ addpath "$HOME/.deno/bin"
 addpath "$HOME/.cabal/bin"
 addpath "$HOME/.ghcup/bin"
 addpath "$HOME/.rbenv/bin"
+addpath "$HOME/.gem/bin"
 addpath "$HOME/.pyenv/bin"
 addpath "$HOME/.pyenv/shims"
-addpath "$HOME/.gem/bin"
+addpath "$HOME/.asdf/bin"
+addpath "$HOME/.asdf/shims"
 
 if test -x /opt/homebrew/bin/brew
   eval (/opt/homebrew/bin/brew shellenv)

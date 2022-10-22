@@ -1,0 +1,7 @@
+#!/bin/bash
+set -e
+check asdf || ./asdf
+asdf plugin-add deno
+latest=$(asdf list all deno | grep '^ *[0-9.]*$' | tail -n 1 | sed 's/ *//')
+asdf install deno "$latest"
+asdf global "$latest"
