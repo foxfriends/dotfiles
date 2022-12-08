@@ -8,23 +8,38 @@ function addpath --description "add a directory to the PATH"
   test -d "$argv[1]"; and fish_add_path "$argv[1]"
 end
 
-addpath "$HOME/.bin"
+if test -x /opt/homebrew/bin/brew
+  # NOTE: Don't use `brew shellenv` because it sets variables nastily.
+  # We can just reimplement it manually here but better
+  # eval (/opt/homebrew/bin/brew shellenv)
+
+  # These are all the same 
+  set -gx HOMEBREW_PREFIX "/opt/homebrew"
+  set -gx HOMEBREW_CELLAR "/opt/homebrew/Cellar"
+  set -gx HOMEBREW_REPOSITORY "/opt/homebrew"
+  set -q MANPATH; or set MANPATH ''; set -gx MANPATH "/opt/homebrew/share/man" $MANPATH;
+  set -q INFOPATH; or set INFOPATH ''; set -gx INFOPATH "/opt/homebrew/share/info" $INFOPATH;
+
+  # but use custom add path so that homebrew doesn't get top priority.
+  addpath "/opt/homebrew/sbin"
+  addpath "/opt/homebrew/bin"
+
+  # and also this :shrug:
+  set -ax LD_LIBRARY_PATH "/opt/homebrew/lib"
+end
+
+addpath "$HOME/.asdf/bin"
+addpath "$HOME/.asdf/shims"
+addpath "$HOME/.pyenv/bin"
+addpath "$HOME/.pyenv/shims"
+addpath "$HOME/.rbenv/bin"
 addpath "$HOME/.cargo/bin"
-addpath "$HOME/.local/bin"
 addpath "$HOME/.deno/bin"
 addpath "$HOME/.cabal/bin"
 addpath "$HOME/.ghcup/bin"
-addpath "$HOME/.rbenv/bin"
 addpath "$HOME/.gem/bin"
-addpath "$HOME/.pyenv/bin"
-addpath "$HOME/.pyenv/shims"
-addpath "$HOME/.asdf/bin"
-addpath "$HOME/.asdf/shims"
-
-if test -x /opt/homebrew/bin/brew
-  eval (/opt/homebrew/bin/brew shellenv)
-  set -ax LD_LIBRARY_PATH "/opt/homebrew/lib"
-end
+addpath "$HOME/.local/bin"
+addpath "$HOME/.bin"
 
 set -x GEM_HOME "$HOME/.gem"
 set -ax LD_LIBRARY_PATH "/usr/local/lib"
