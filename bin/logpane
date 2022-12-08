@@ -1,0 +1,14 @@
+#!/bin/bash
+
+where=$1
+tmppipe=$(mktemp -u)
+mkfifo -m 600 "$tmppipe"
+
+case $1 in
+    t)   tmux split-window -vb "cat '$tmppipe'; rm '$tmppipe'" ;;
+    b)   tmux split-window -v  "cat '$tmppipe'; rm '$tmppipe'" ;;
+    l)   tmux split-window -hb "cat '$tmppipe'; rm '$tmppipe'" ;;
+    r|*) tmux split-window -h  "cat '$tmppipe'; rm '$tmppipe'" ;;
+esac
+
+echo "$tmppipe"
