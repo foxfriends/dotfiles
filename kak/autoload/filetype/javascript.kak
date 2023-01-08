@@ -17,7 +17,7 @@ hook global BufCreate .*[.](ts)x? %{
 define-command -hidden js-set-deno %{
     try %{
         check-cmd deno
-        find-in-parent run.json %sh{dirname "$kak_buffile"}
+        find-in-parent deno.json %sh{dirname "$kak_buffile"}
         set buffer formatcmd "%val{config}/scripts/deno-fmt %val{buffile}"
         set buffer lintcmd "%val{config}/scripts/deno-lint"
         lint-enable
