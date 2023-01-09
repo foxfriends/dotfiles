@@ -1,5 +1,5 @@
 declare-option -docstring "modules which provide a copy command" \
-    str-list clipboard_providers "clipboard-wl-copy" "clipboard-pbcopy" "clipboard-xclip"
+    str-list clipboard_providers "clipboard-bp" "clipboard-wl-copy" "clipboard-pbcopy" "clipboard-xclip"
 declare-option -docstring "command to copy text to the system clipboard" \
     str clipboardcmd
 
