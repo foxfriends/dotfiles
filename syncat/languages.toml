@@ -179,7 +179,7 @@ library = "tree-sitter-scala"
 extensions = ["scala"]
 
 [sql]
-source = "https://github.com/m-novikov/tree-sitter-sql"
+source = "https://github.com/foxfriends/tree-sitter-sql"
 name = "sql"
 library = "tree-sitter-sql"
 extensions = ["sql"]
