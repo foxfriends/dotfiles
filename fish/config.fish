@@ -54,6 +54,7 @@ if status --is-interactive
   command -q rustup; and source (rustup completions fish |psub)
   command -q gh; and source (gh completion -s fish |psub)
   command -q kak; and set -x EDITOR (which kak)
+  command -q pack; and source (pack completion --shell fish)
   if command -q fnm
     source (fnm completions |psub)
     source (fnm env |psub)
