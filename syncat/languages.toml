@@ -178,6 +178,12 @@ name = "scala"
 library = "tree-sitter-scala"
 extensions = ["scala"]
 
+[sql]
+source = "https://github.com/m-novikov/tree-sitter-sql"
+name = "sql"
+library = "tree-sitter-sql"
+extensions = ["sql"]
+
 [syncat-stylesheet]
 source = "https://github.com/foxfriends/syncat"
 path = "tree-sitter-syncat-stylesheet"
