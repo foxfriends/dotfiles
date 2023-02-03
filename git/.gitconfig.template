@@ -22,6 +22,8 @@
 	syntax-theme = ${theme_git_syntax_theme}
 [pull]
 	rebase = false
+[push]
+	autoSetupRemote = true
 [alias]
 	graph = "log --graph --oneline"
 	c = "!${PWD}/fuzzy-checkout"
