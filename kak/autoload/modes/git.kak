@@ -2,6 +2,8 @@ declare-user-mode git
 map global git a ': git add<ret>' -docstring 'add current file'
 map global git A ': git add --all<ret>' -docstring 'add all files'
 map global git c ': git commit<ret>' -docstring 'commit'
+map global git C ': git add --all<ret>: git commit<ret>' -docstring 'add all and commit'
+map global git p ': git push<ret>' -docstring 'push'
 map global git s ': git status<ret>' -docstring 'status'
 map global git j ': git next-hunk<ret>' -docstring 'goto next hunk'
 map global git k ': git prev-hunk<ret>' -docstring 'goto previous hunk'

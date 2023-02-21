@@ -305,6 +305,9 @@ Available commands:\n  add\n  rm\n  blame\n  commit\n  checkout\n  diff\n  hide-
         reset|checkout)
             run_git_cmd "$@"
             ;;
+        push)
+            run_git_cmd "$@"
+            ;;
         *)
             printf "fail unknown git command '%s'\n" "$1"
             exit
