@@ -70,6 +70,7 @@ export theme_color_link=$theme_cyan
 export theme_file_directory=$theme_blue
 export theme_file_executable=$theme_green
 export theme_file_link=$theme_cyan
+export theme_file_link_invalid=$theme_red
 export theme_file_socket=$theme_magenta
 export theme_file_image=$theme_yellow
 export theme_file_media=$theme_magenta
