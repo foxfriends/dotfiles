@@ -1,6 +1,12 @@
 [default_view]
 
 [[default_view.keymap]]
+command = "escape"
+keys = [ "escape" ]
+[[default_view.keymap]]
+command = "toggle_visual"
+keys = [ "V" ]
+[[default_view.keymap]]
 command = "new_tab"
 keys = [ "T" ]
 [[default_view.keymap]]

@@ -48,7 +48,7 @@ if status --is-interactive
   command -q pazi; and source (pazi init fish |psub)
   command -q rbenv; and source (rbenv init -|psub)
   command -q pyenv; and source (pyenv init -|psub)
-  command -q kitty; and source (kitty + complete setup fish |psub)
+  # command -q kitty; and source (kitty + complete setup fish |psub)
   command -q diesel; and source (diesel completions fish |psub)
   command -q deno; and source (deno completions fish |psub)
   command -q rustup; and source (rustup completions fish |psub)

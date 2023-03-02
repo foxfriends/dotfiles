@@ -11,7 +11,7 @@ provide-module joshuto %{
                 dirname "${kak_buffile}"
             fi
         }
-        evaluate-result "run() { ""%val{config}/scripts/joshuto"" ""$1"" --path '%reg{i}'; } && run"
+        evaluate-result "run() { ""%val{config}/scripts/joshuto"" ""$1"" '%reg{i}'; } && run"
     }
 }
 

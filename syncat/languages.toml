@@ -184,11 +184,11 @@ name = "sql"
 library = "tree-sitter-sql"
 extensions = ["sql"]
 
-# [swift]
-# source = "https://github.com/alex-pinkus/tree-sitter-swift"
-# name = "swift"
-# library = "tree-sitter-swift"
-# extensions = ["swift"]
+[swift]
+source = "https://github.com/alex-pinkus/tree-sitter-swift"
+name = "swift"
+library = "tree-sitter-swift"
+extensions = ["swift"]
 
 [syncat-stylesheet]
 source = "https://github.com/foxfriends/syncat"
