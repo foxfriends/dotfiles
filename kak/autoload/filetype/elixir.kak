@@ -8,14 +8,14 @@ hook global BufCreate .*[.](ex|exs) %{
     set-option buffer filetype elixir
     set buffer tabstop 2
     set buffer indentwidth 2
-    set-option buffer formatcmd 'mix format'
+    set-option buffer formatcmd "mix format - --stdin-filename '%val{buffile}'"
 }
 
 hook global BufCreate .*[.]html[.][hl]?eex %{
     set-option buffer filetype eex
     set buffer tabstop 2
     set buffer indentwidth 2
-    set-option buffer formatcmd 'mix format'
+    set-option buffer formatcmd "mix format - --stdin-filename '%val{buffile}'"
 }
 
 # Initialization
