@@ -67,3 +67,12 @@ filetypes = ["solidity"]
 roots = []
 command = "solc"
 args = ["--lsp"]
+
+[language.elixir]
+filetypes = ["elixir"]
+roots = ["mix.exs"]
+command = "elixir-ls"
+settings_section = "elixirLS"
+[language.elixir.settings.elixirLS]
+# See https://github.com/elixir-lsp/elixir-ls/blob/master/apps/language_server/lib/language_server/server.ex
+# dialyzerEnable = true
