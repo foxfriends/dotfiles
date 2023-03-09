@@ -53,7 +53,7 @@ require-module elixir
 
 add-highlighter shared/eex regions
 add-highlighter shared/eex/html default-region ref html
-add-highlighter shared/eex/comment region '<%#' '%>' fill comment
+add-highlighter shared/eex/comment region '<%#' '%>' ref comment
 add-highlighter shared/eex/quote region '<%%' '%>' ref html
 add-highlighter shared/eex/code region '<%=?' '%>' ref elixir
 }
@@ -67,7 +67,7 @@ add-highlighter shared/elixir regions
 add-highlighter shared/elixir/code default-region group
 add-highlighter shared/elixir/double_string region -match-capture ("""|") (?<!\\)(?:\\\\)*("""|") regions
 add-highlighter shared/elixir/single_string region "'" "(?<!\\)(?:\\\\)*'" fill string
-add-highlighter shared/elixir/comment region '#' '$' fill comment
+add-highlighter shared/elixir/comment region '#' '$' ref comment
 
 add-highlighter shared/elixir/leex region -match-capture '~L("""|")' '(?<!\\)(?:\\\\)*("""|")' ref eex
 
