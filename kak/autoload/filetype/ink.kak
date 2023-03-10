@@ -68,9 +68,7 @@ provide-module ink %§
     define-command -hidden ink-indent-on-new-line %{
         evaluate-commands -draft -itersel %{
             # preserve previous line indent
-            try %{ execute-keys -draft <semicolon> K <a-&> }
-            # remove trailing white spaces
-            try %{ execute-keys -draft -itersel %{ kx s \h+$ <ret> d } }
+            try %{ execute-keys -draft <semicolon> kx s ^\h+ <ret> yjgiP }
         }
     }
 §
