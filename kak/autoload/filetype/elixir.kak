@@ -86,7 +86,7 @@ add-highlighter shared/elixir/code/ regex \b(require|alias|use|import)\b 0:keywo
 add-highlighter shared/elixir/code/ regex \b(__MODULE__|__DIR__|__ENV__|__CALLER__)\b 0:field
 add-highlighter shared/elixir/code/ regex (&\d+)\b 0:field
 add-highlighter shared/elixir/code/ regex (\^)([\w_]+)\b 1:keyword 2:field
-add-highlighter shared/elixir/code/ regex '%[A-Z][\w_]+\b' 0:type
+add-highlighter shared/elixir/code/ regex '%[_A-Z][\w_]+\b' 0:type
 add-highlighter shared/elixir/code/ regex '(?<!%)\b[A-Z][\w_]+\b' 0:module
 add-highlighter shared/elixir/code/ regex '(:[\w_]+)(\.)' 1:module
 add-highlighter shared/elixir/code/ regex '\b_\b' 0:default+d
