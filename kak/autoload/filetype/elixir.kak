@@ -81,7 +81,8 @@ add-highlighter shared/elixir/code/ regex '([\w_]+):' 1:builtin 0:operator
 add-highlighter shared/elixir/code/ regex '~[a-zA-Z]\(.*?[^\\]\)' 0:string
 add-highlighter shared/elixir/code/ regex '\b\d+[\d_]*\b' 0:value
 add-highlighter shared/elixir/code/ regex \b(true|false|nil)\b 0:value
-add-highlighter shared/elixir/code/ regex (->|<-|<<|>>|=>|\|>|::|=|&|%?\{|\}|\+\+?|-|\*|/|not|and|or|<>|&&|\|\||==|===|!=|<=|>=) 0:operator
+add-highlighter shared/elixir/code/ regex (->|<-|<<|>>|=>|\|>|::|=|&|%?\{|\}|\+\+?|-|\*|/|<>|&&|\|\||==|===|!=|<=|>=) 0:operator
+add-highlighter shared/elixir/code/ regex \b(not|or|and)\b 1:operator
 add-highlighter shared/elixir/code/ regex \b(require|alias|use|import)\b 0:keyword
 add-highlighter shared/elixir/code/ regex \b(__MODULE__|__DIR__|__ENV__|__CALLER__)\b 0:field
 add-highlighter shared/elixir/code/ regex (&\d+)\b 0:field
