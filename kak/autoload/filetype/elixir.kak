@@ -9,6 +9,7 @@ hook global BufCreate .*[.](ex|exs) %{
     set buffer tabstop 2
     set buffer indentwidth 2
     set-option buffer formatcmd "mix format - --stdin-filename '%val{buffile}'"
+    set-option window lintcmd "mix credo list --config-file=.credo.exs --format=flycheck --ignore-checks='Elixir.CredoNaming.Check.Consistency.ModuleFilename'"
 }
 
 hook global BufCreate .*[.]html[.][hl]?eex %{
