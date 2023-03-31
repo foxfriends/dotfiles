@@ -46,7 +46,7 @@ plug 'kakounedotcom/prelude.kak' %{
 
     define-command lsp-restart -docstring 'restart lsp server' %{ lsp-stop; lsp-start }
 
-    hook global WinSetOption filetype=(rust|haskell|literate-haskell|javascript|typescript|html|python|solidity) %{
+    hook global WinSetOption filetype=(rust|haskell|literate-haskell|javascript|typescript|html|python|solidity|elixir) %{
         echo -debug "Enabling LSP for %opt{filetype}"
         lsp-enable-window
     }
