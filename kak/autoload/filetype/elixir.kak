@@ -68,6 +68,7 @@ add-highlighter shared/elixir regions
 add-highlighter shared/elixir/code default-region group
 add-highlighter shared/elixir/double_string region -match-capture ("""|") (?<!\\)(?:\\\\)*("""|") regions
 add-highlighter shared/elixir/single_string region "'" "(?<!\\)(?:\\\\)*'" fill string
+add-highlighter shared/elixir/regex         region ~r/    (?<!\\)(\\\\)*/[gimuy]* fill meta
 add-highlighter shared/elixir/comment region '#' '$' ref comment
 
 add-highlighter shared/elixir/leex region -match-capture '~L("""|")' '(?<!\\)(?:\\\\)*("""|")' ref eex
