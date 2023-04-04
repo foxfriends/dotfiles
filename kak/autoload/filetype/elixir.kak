@@ -82,6 +82,9 @@ add-highlighter shared/elixir/code/ regex ':[\w_]+\b' 0:builtin
 add-highlighter shared/elixir/code/ regex '([\w_]+):' 1:builtin 0:operator
 add-highlighter shared/elixir/code/ regex '~[a-zA-Z]\(.*?[^\\]\)' 0:string
 add-highlighter shared/elixir/code/ regex '\b\d+[\d_]*\b' 0:value
+add-highlighter shared/elixir/code/ regex \b(0x[0-9A-Fa-f]+)\b 1:value
+add-highlighter shared/elixir/code/ regex \b(0o[0-7]+)\b 1:value
+add-highlighter shared/elixir/code/ regex \b(0b[01]+)\b 1:value
 add-highlighter shared/elixir/code/ regex \b(true|false|nil)\b 0:value
 add-highlighter shared/elixir/code/ regex (->|<-|<<|>>|=>|\|>|::|=|&|%?\{|\}|\+\+?|-|\*|/|<>|&&|\|\||==|===|!=|<=|>=) 0:operator
 add-highlighter shared/elixir/code/ regex \b(not|or|and)\b 1:operator

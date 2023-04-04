@@ -45,6 +45,7 @@ provide-module html %[
     try %{
         require-module css
         require-module javascript
+        require-module typescript
     }
 
     # Highlighters
@@ -59,7 +60,7 @@ provide-module html %[
         (?=\}) \
         regions
     add-highlighter shared/html/style   region <style\b.*?>\K  (?=</style>)   ref css
-    add-highlighter shared/html/typescript region %{<script\b.*lang=['"]?typescript['"].*>\K} (?=</script>) ref typescript
+    add-highlighter shared/html/typescript region %{<script\b.*lang=['"]?(typescript|ts)['"].*>\K} (?=</script>) ref typescript
     add-highlighter shared/html/javascript region <script\b[^>]*>\K (?=</script>)  ref javascript
 
     add-highlighter shared/html/svelte/base default-region group
