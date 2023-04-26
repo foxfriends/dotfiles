@@ -179,13 +179,14 @@ provide-module javascript_impl %§
 
         add-highlighter "shared/%arg{1}/code/" regex \b(Array|Boolean|Date|Function|Number|Object|RegExp|String|Symbol)\b 0:meta
         add-highlighter "shared/%arg{1}/code/" regex [<>*/+\-=%^!~~|&?:]+ 0:keyword
-        add-highlighter "shared/%arg{1}/code/" regex (#?[$a-zA-Z_][$a-zA-Z0-9_]*)\b: 1:field
+        add-highlighter "shared/%arg{1}/code/" regex ([$a-zA-Z_][$a-zA-Z0-9_]*)\b\??: 1:field
+        add-highlighter "shared/%arg{1}/code/" regex (#[$a-zA-Z_][$a-zA-Z0-9_]*)\b 1:field
 
         # Keywords are collected at
         # https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords
         # https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get
         # https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/set
-        add-highlighter "shared/%arg{1}/code/" regex (^|[^.$]|\.\.\.)\b(async|await|break|case|catch|class|const|continue|debugger|default|delete|do|else|export|extends|finally|for|from|function|get|if|import|in|instanceof|let|new|of|return|set|static|super|switch|throw|try|typeof|var|void|while|with|yield)\b 2:keyword
+        add-highlighter "shared/%arg{1}/code/" regex (^|[^.$]|\.\.\.)\b(async|await|break|case|catch|class|const|continue|debugger|default|delete|do|else|export|extends|finally|for|from|function|get|if|import|in|instanceof|let|new|of|return|set|static|super|switch|throw|try|typeof|var|void|while|with|yield|satisfies|infer|never)\b 2:keyword
     ~
 
     define-command -hidden javascript-load-languages %{
