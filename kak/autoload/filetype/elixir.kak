@@ -82,6 +82,9 @@ add-highlighter shared/elixir/code/ regex ':[\w_]+\b' 0:builtin
 add-highlighter shared/elixir/code/ regex '([\w_]+):' 1:builtin 0:operator
 add-highlighter shared/elixir/code/ regex '~[a-zA-Z]\(.*?[^\\]\)' 0:string
 add-highlighter shared/elixir/code/ regex '\b\d+[\d_]*\b' 0:value
+add-highlighter shared/elixir/code/ regex \b(0x[0-9A-Fa-f]+)\b 1:value
+add-highlighter shared/elixir/code/ regex \b(0o[0-7]+)\b 1:value
+add-highlighter shared/elixir/code/ regex \b(0b[01]+)\b 1:value
 add-highlighter shared/elixir/code/ regex \b(true|false|nil)\b 0:value
 add-highlighter shared/elixir/code/ regex (->|<-|<<|>>|=>|\|>|::|=|&|%?\{|\}|\+\+?|-|\*|/|<>|&&|\|\||==|===|!=|<=|>=) 0:operator
 add-highlighter shared/elixir/code/ regex \b(not|or|and)\b 1:operator
@@ -97,7 +100,7 @@ add-highlighter shared/elixir/code/ regex '\b_[a-zA-Z0-9][\w_]*\b' 0:default+d
 add-highlighter shared/elixir/code/ regex '@[\w_]+\b' 0:+d@keyword
 add-highlighter shared/elixir/code/ regex \b([a-z_][a-zA-Z_0-9]*[!?]?)\s*(?=\() 1:function
 add-highlighter shared/elixir/code/ regex \b(assert|dbg|__using__|__before_compile__|__after_compile__)\b 0:builtin
-add-highlighter shared/elixir/code/ regex \b(def|defp|defmacro|defmacrop|defstruct|defmodule|defimpl|defprotocol|defoverridable)\b 0:keyword
+add-highlighter shared/elixir/code/ regex \b(def|defp|defmacro|defmacrop|defstruct|defmodule|defimpl|defprotocol|defoverridable|defguard|defguardp)\b 0:keyword
 add-highlighter shared/elixir/code/ regex \b(fn|do:?|end|when|case|if|else|unless|var!|for|cond|quote|unquote|receive|with|raise|reraise|try|catch|rescue|after)\b 0:keyword
 
 # Commands
