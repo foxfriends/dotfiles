@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+ARGF.each do |line|
+    puts line.chomp().gsub('""', '"')[1...-1]
+end
