@@ -22,8 +22,7 @@ plug 'kakounedotcom/prelude.kak' %{
     }
 } config %{
     powerline-start
-} plug "andreyorst/smarttab.kak" defer smarttab %{
-    # when `backspace' is pressed, 4 spaces are deleted at once
+} plug "foxfriends/smarttab.kak" defer smarttab %{
     set-option global softtabstop 4
 } config %{
     hook global WinSetOption filetype=(.*) expandtab
@@ -43,14 +42,11 @@ plug 'kakounedotcom/prelude.kak' %{
     cargo install --locked --force --path .
 } config %{
     set-option global lsp_diagnostic_line_warning_sign "⚠"
-
     define-command lsp-restart -docstring 'restart lsp server' %{ lsp-stop; lsp-start }
-
     hook global WinSetOption filetype=(rust|haskell|literate-haskell|javascript|typescript|html|python|solidity|elixir) %{
         echo -debug "Enabling LSP for %opt{filetype}"
         lsp-enable-window
     }
-
     hook global KakEnd .* lsp-exit
 } \
 plug 'https://gitlab.com/Screwtapello/kakoune-cargo' \
