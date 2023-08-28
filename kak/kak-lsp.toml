@@ -25,6 +25,8 @@ settings_section = "rust-analyzer"
 [language.rust.settings.rust-analyzer]
 # See https://rust-analyzer.github.io/manual.html#configuration
 hoverActions.enable = false # kak-lsp doesn't support this at the moment
+procMacro.enable = true
+cargo.loadOutDirsFromCheck = true
 
 [language.deno]
 filetypes = ["typescript", "javascript"]
