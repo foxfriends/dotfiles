@@ -78,3 +78,12 @@ settings_section = "elixirLS"
 [language.elixir.settings.elixirLS]
 # See https://github.com/elixir-lsp/elixir-ls/blob/master/apps/language_server/lib/language_server/server.ex
 # dialyzerEnable = true
+
+[language.terraform]
+filetypes = ["terraform"]
+roots = ["*.tf"]
+command = "terraform-ls"
+args = ["serve"]
+[language.terraform.settings.terraform-ls]
+# See https://github.com/hashicorp/terraform-ls/blob/main/docs/SETTINGS.md
+# rootModulePaths = []
