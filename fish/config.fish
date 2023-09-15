@@ -13,7 +13,7 @@ if test -x /opt/homebrew/bin/brew
   # We can just reimplement it manually here but better
   # eval (/opt/homebrew/bin/brew shellenv)
 
-  # These are all the same 
+  # These are all the same
   set -gx HOMEBREW_PREFIX "/opt/homebrew"
   set -gx HOMEBREW_CELLAR "/opt/homebrew/Cellar"
   set -gx HOMEBREW_REPOSITORY "/opt/homebrew"
@@ -40,6 +40,7 @@ addpath "$HOME/.ghcup/bin"
 addpath "$HOME/.gem/bin"
 addpath "$HOME/.local/bin"
 addpath "$HOME/.bin"
+addpath "$HOME/.bun/bin"
 
 set -x GEM_HOME "$HOME/.gem"
 set -ax LD_LIBRARY_PATH "/usr/local/lib"
@@ -63,6 +64,9 @@ if status --is-interactive
   if command -q fd
     set -x FZF_DEFAULT_COMMAND 'fd --type f'
     set -x SKIM_DEFAULT_COMMAND "fd --type f -E '*.snap'"
+  end
+  if command -q bun
+    set -x BUN_INSTALL "$HOME/.bun"
   end
 
   command -q aws aws-mfa-secure; and alias aws="aws-mfa-secure session"

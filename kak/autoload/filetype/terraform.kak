@@ -3,6 +3,7 @@ hook global BufCreate .*[.](tf|tfvars) %{
     set-option buffer filetype terraform
     set buffer tabstop 2
     set buffer indentwidth 2
+    set-option buffer formatcmd 'terraform fmt -'
 }
 
 # Initialization
