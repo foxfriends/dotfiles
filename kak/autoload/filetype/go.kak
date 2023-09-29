@@ -51,6 +51,7 @@ add-highlighter shared/go/comment region /\* \*/ fill comment
 add-highlighter shared/go/comment_line region '//' $ fill comment
 
 add-highlighter shared/go/code/ regex %{-?([0-9]*\.(?!0[xX]))?\b([0-9]+|0[xX][0-9a-fA-F]+)\.?([eE][+-]?[0-9]+)?i?\b} 0:value
+add-highlighter shared/go/code/ regex \b([a-zA-Z_][a-zA-Z_0-9]*)\s*(?=\() 1:function
 
 evaluate-commands %sh{
     # Grammar

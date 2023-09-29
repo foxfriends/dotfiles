@@ -8,6 +8,10 @@ hook global BufCreate .*[.](json) %{
     set-option buffer filetype json
     set buffer tabstop 2
     set buffer indentwidth 2
+    try %{
+        check-cmd prettier
+        set buffer formatcmd "prettier --stdin-filepath '%val{buffile}'"
+    } catch %{ echo -debug %val{error} }
 }
 
 # Initialization

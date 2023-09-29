@@ -28,6 +28,15 @@ hoverActions.enable = false # kak-lsp doesn't support this at the moment
 procMacro.enable = true
 cargo.loadOutDirsFromCheck = true
 
+[language.go]
+filetypes = ["go"]
+roots = ["Gopkg.toml", "go.mod", ".git", ".hg"]
+command = "gopls"
+settings_section = "gopls"
+[language.go.settings.gopls]
+# See https://github.com/golang/tools/blob/master/gopls/doc/settings.md
+# "build.buildFlags" = []
+
 [language.deno]
 filetypes = ["typescript", "javascript"]
 roots = ["deno.json"]
