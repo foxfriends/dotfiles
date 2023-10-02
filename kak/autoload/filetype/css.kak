@@ -46,7 +46,7 @@ provide-module css %[
     add-highlighter shared/css/declaration region -recurse [{] [{]        [}]  regions
     add-highlighter shared/css/comment     region /[*]       [*]/ ref comment
     add-highlighter shared/css/import      region (@import\b)  ";"  regions
-    add-highlighter shared/css/media       region (@media\b)   [{]  regions
+    add-highlighter shared/css/media       region (@media|@container)\b   [{]  regions
 
     add-highlighter shared/css/import/base          default-region group
     add-highlighter shared/css/import/double_string region '"' (?<!\\)(\\\\)*" fill string
@@ -88,8 +88,8 @@ provide-module css %[
     add-highlighter shared/css/media/single_string region "'" "'"             fill string
     add-highlighter shared/css/media/comment       region /[*] [*]/           ref comment
 
-    add-highlighter shared/css/media/base/ regex      "@media"  0:keyword
-    add-highlighter shared/css/media/base/ regex      "and"  0:keyword
+    add-highlighter shared/css/media/base/ regex      (@media|@container)\b  1:keyword
+    add-highlighter shared/css/media/base/ regex      \b(and|or)\b  1:keyword
     add-highlighter shared/css/media/base/ regex (#[0-9A-Fa-f]+)|((\d*\.)?\d+(ch|cm|em|ex|mm|pc|pt|px|rem|vh|vmax|vmin|vw|%|s|ms|fr|deg)?) 0:value
 
     add-highlighter shared/css/selector/ regex         [*+>~&\[\]=$]       0:keyword

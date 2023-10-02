@@ -8,6 +8,10 @@ hook global BufCreate .*\.(html?|svelte|vue) %{
     set-option buffer filetype html
     set-option buffer tabstop 2
     set-option buffer indentwidth 2
+    try %{
+        check-cmd prettier
+        set buffer formatcmd "prettier --stdin-filepath '%val{buffile}'"
+    } catch %{ echo -debug %val{error} }
 }
 
 hook global BufCreate .*\.svelte %{
