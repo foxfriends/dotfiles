@@ -43,7 +43,7 @@ plug 'kakounedotcom/prelude.kak' %{
 } config %{
     set-option global lsp_diagnostic_line_warning_sign "⚠"
     define-command lsp-restart -docstring 'restart lsp server' %{ lsp-stop; lsp-start }
-    hook global WinSetOption filetype=(rust|haskell|literate-haskell|javascript|typescript|html|python|solidity|elixir|hcl|terraform|go) %{
+    hook global WinSetOption filetype=(rust|haskell|literate-haskell|javascript|typescript|html|css|svelte|python|solidity|elixir|hcl|terraform|go) %{
         echo -debug "Enabling LSP for %opt{filetype}"
         lsp-enable-window
     }

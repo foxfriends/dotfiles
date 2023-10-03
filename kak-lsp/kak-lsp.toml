@@ -52,10 +52,24 @@ roots = ["package.json", "tsconfig.json"]
 command = "typescript-language-server"
 args = ["--stdio"]
 
+[language.svelte]
+filetypes = ["svelte"]
+roots = ["package.json", "svelte.config.js"]
+command = "svelteserver"
+args = ["--stdio"]
+settings_section = "_"
+[language.svelte.settings._]
+
 [language.html]
 filetypes = ["html"]
 roots = ["package.json"]
-command = "svelteserver"
+command = "vscode-html-languageserver"
+args = ["--stdio"]
+
+[language.css]
+filetypes = ["css"]
+roots = ["package.json"]
+command = "vscode-css-languageserver"
 args = ["--stdio"]
 
 [language.python]
