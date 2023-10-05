@@ -76,9 +76,9 @@ provide-module html %[
     add-highlighter shared/html/javascript region <script\b[^>]*>\K (?=</script>)  ref javascript
 
     add-highlighter shared/html/svelte/base default-region group
-    add-highlighter shared/html/svelte/base/  regex '[#/](if|each|await|key)\b'        0:keyword
+    add-highlighter shared/html/svelte/base/  regex '[#/](if|each|await|key)\b'    0:keyword
     add-highlighter shared/html/svelte/base/  regex ':(then|else(\s+if)?|catch)\b' 0:keyword
-    add-highlighter shared/html/svelte/base/  regex "@(html|debug)\b"              0:keyword
+    add-highlighter shared/html/svelte/base/  regex "@(html|debug|const)\b"        0:keyword
     add-highlighter shared/html/svelte/base/  regex "\b(as|then)\b"                0:keyword
     add-highlighter shared/html/svelte/ region '#each\b\K' '\b(?=as)' ref javascript
     add-highlighter shared/html/svelte/ region '#(key|if)\b\K' '(?=\})' ref javascript
