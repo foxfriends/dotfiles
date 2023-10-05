@@ -68,7 +68,7 @@ provide-module html %[
     add-highlighter shared/html/tag     region <     (?<!=)>                   regions
     add-highlighter shared/html/svelte  region \
         -recurse '\{\K' \
-        '\{\K(@debug|@html|#key|#each|#if|#await|:else(\s+if)?|:catch|:then|/if|/each|/await|/key)' \
+        '\{\K(@debug|@html|@const|#key|#each|#if|#await|:else(\s+if)?|:catch|:then|/if|/each|/await|/key)' \
         (?=\}) \
         regions
     add-highlighter shared/html/style   region <style\b.*?>\K  (?=</style>)   ref css
