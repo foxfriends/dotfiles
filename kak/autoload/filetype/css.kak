@@ -98,6 +98,7 @@ provide-module css %[
     add-highlighter shared/css/selector/ regex      [.][A-Za-z0-9_-]+      0:type
     add-highlighter shared/css/selector/ regex      [:]{1,2}[a-zA-Z0-9_-]+ 0:value
     add-highlighter shared/css/selector/ regex         '@keyframes\b'      0:keyword
+    add-highlighter shared/css/selector/ regex         '@font-face\b'      0:keyword
 
     # Commands
     # ‾‾‾‾‾‾‾‾
