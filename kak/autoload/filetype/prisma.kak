@@ -8,6 +8,7 @@ hook global BufCreate .*[.](prisma) %{
     set-option buffer filetype prisma
     set buffer tabstop 2
     set buffer indentwidth 2
+    set buffer formatcmd "%val{config}/scripts/prisma-fmt"
 }
 
 # Initialization

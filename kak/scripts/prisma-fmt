@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+src = ARGF.read
+temp = `mktemp`.chomp
+File.open temp, "w" do |f|
+    f.write src
+end
+STDERR.puts `npx prisma format --schema="#{temp}"`
+puts File.read(temp)
+File.delete temp
