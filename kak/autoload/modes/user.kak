@@ -24,3 +24,4 @@ map global user ` ':toggle-relative-lines<ret>' -docstring 'toggle relative line
 map global user y ':clipsel<ret>' -docstring 'copy to clipboard'
 map global user + '|fend "${kak_selection} + 1" | tr -d "\n"<ret>' -docstring 'increment'
 map global user = '|fend "${kak_selection} - 1" | tr -d "\n"<ret>' -docstring 'increment'
+map global user <space> ': set global jumpclient %val{client}<ret>' -docstring 'set jumpclient'
