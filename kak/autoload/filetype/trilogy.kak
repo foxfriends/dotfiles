@@ -60,6 +60,7 @@ provide-module trilogy %§
     add-highlighter shared/trilogy/code/    regex ('[A-Za-z_][A-Za-z_0-9]*)[^'] 1:value
 
     add-highlighter shared/trilogy/code/    regex \b([a-z_][a-zA-Z_0-9]*!?)\s*(?=\() 1:function
+    add-highlighter shared/trilogy/code/    regex \bfunc\b\s([a-z_][a-zA-Z_0-9]*) 1:function
 
     add-highlighter shared/trilogy/code/    regex \b(and|assert|as|at|break|cancel|continue|case|do|else|end|exit|export|fn|for|from|func|if|invert|in|is|let|match|module|mut|not|or|pass|proc|resume|return|rule|test|then|when|while|with|yield)\b 1:keyword
     add-highlighter shared/trilogy/code/    regex \b(async|await|catch|class|const|data|defer|enum|except|extends|implements|import|inline|instanceof|interface|lazy|lens|loop|macro|next|oper|prec|protocol|static|struct|super|switch|tag|trait|try|type|typeof|unless|until|use|var|where)\b 1:keyword
