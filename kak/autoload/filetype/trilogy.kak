@@ -57,9 +57,9 @@ provide-module trilogy %§
 
     add-highlighter shared/trilogy/code/    regex \b(([0-9][0-9_]*(\.[0-9_]*)?)|(0x[0-9A-Fa-f_]+)|(0o[0-7_]+)|(0b[01_]+))(i([0-9][0-9_]*(\.[0-9_]*)?)|(0x[0-9A-Fa-f_]+)|(0o[0-7_]+)|(0b[01_]+))?\b 0:value
 
-    add-highlighter shared/trilogy/code/    regex \b(0xb[0-9A-Fa-f_]+)\b 1:value
-    add-highlighter shared/trilogy/code/    regex \b(0ob[0-7_]+)\b 1:value
-    add-highlighter shared/trilogy/code/    regex \b(0bb[01_]+)\b 1:value
+    add-highlighter shared/trilogy/code/    regex \b(0xb[0-9A-Fa-f_]*)\b 1:value
+    add-highlighter shared/trilogy/code/    regex \b(0ob[0-7_]*)\b 1:value
+    add-highlighter shared/trilogy/code/    regex \b(0bb[01_]*)\b 1:value
 
     add-highlighter shared/trilogy/code/    regex ('([^'\\]|\\'|\\\\|\\u\{[0-9a-fA-F]{1,4}\})') 1:value
     add-highlighter shared/trilogy/code/    regex \b(true|false)\b 1:value
@@ -67,8 +67,8 @@ provide-module trilogy %§
     add-highlighter shared/trilogy/code/    regex \b([a-z_][a-zA-Z_0-9]*!?)*(?=\() 1:function
     add-highlighter shared/trilogy/code/    regex \bfunc\b\s([a-z_][a-zA-Z_0-9]*) 1:function
 
-    add-highlighter shared/trilogy/code/    regex \b(and|assert|as|at|break|cancel|const|continue|case|do|else|end|exit|export|fn|for|func|if|invert|in|is|let|match|module|mut|not|or|pass|proc|resume|return|rule|test|then|when|while|with|yield)\b 1:keyword
-    add-highlighter shared/trilogy/code/    regex \b(async|await|catch|class|data|defer|enum|except|extends|implements|import|inline|instanceof|interface|lazy|lens|loop|macro|next|oper|prec|protocol|static|struct|super|switch|tag|trait|try|type|typeof|unless|until|use|var|where)\b 1:error
+    add-highlighter shared/trilogy/code/    regex \b(and|assert|as|at|break|cancel|const|continue|case|do|else|end|exit|export|fn|for|func|if|invert|in|is|let|match|module|mut|not|or|pass|proc|resume|return|rule|super|test|then|use|when|while|with|yield)\b 1:keyword
+    add-highlighter shared/trilogy/code/    regex \b(async|await|catch|class|data|defer|enum|except|extends|implements|import|inline|instanceof|interface|lazy|lens|loop|macro|next|oper|prec|protocol|static|struct|switch|tag|trait|try|type|typeof|unless|until|var|where)\b 1:error
     add-highlighter shared/trilogy/code/    regex ('[A-Za-z_][A-Za-z_0-9]*)[^'] 1:type
 
     # Commands
