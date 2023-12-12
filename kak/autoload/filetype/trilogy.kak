@@ -34,7 +34,7 @@ provide-module trilogy %§
     add-highlighter shared/trilogy/    region %{(?<!')"} (?<!\\)(\\\\)*"  fill string
     add-highlighter shared/trilogy/    region -recurse "#-" "#-" "-#"     ref comment
     add-highlighter shared/trilogy/    region "#[#!]" "$"                 ref doc_comment
-    add-highlighter shared/trilogy/    region "#" "$"                     ref comment
+    add-highlighter shared/trilogy/    region %{(?<!['"])#} "$"                     ref comment
 
     add-highlighter shared/trilogy/template    region %{\$"} (?<!\\)(\\\\)*"       regions
     add-highlighter shared/trilogy/template/string   default-region group
@@ -67,7 +67,7 @@ provide-module trilogy %§
     add-highlighter shared/trilogy/code/    regex \b([a-z_][a-zA-Z_0-9]*!?)*(?=\() 1:function
     add-highlighter shared/trilogy/code/    regex \bfunc\b\s([a-z_][a-zA-Z_0-9]*) 1:function
 
-    add-highlighter shared/trilogy/code/    regex \b(and|assert|as|at|break|cancel|const|continue|case|do|else|end|exit|export|fn|for|func|if|invert|in|is|let|match|module|mut|not|or|pass|proc|resume|return|rule|super|test|then|typeof|use|when|while|with|yield)\b 1:keyword
+    add-highlighter shared/trilogy/code/    regex \b(and|assert|as|at|break|cancel|const|continue|case|do|else|end|exit|export|fn|for|func|if|invert|in|is|let|match|module|mut|not|or|pass|proc|qy|resume|return|rule|super|test|then|typeof|use|when|while|with|yield)\b 1:keyword
     add-highlighter shared/trilogy/code/    regex \b(async|await|catch|class|data|defer|enum|except|extends|implements|import|inline|instanceof|interface|lazy|lens|loop|macro|next|oper|prec|protocol|static|struct|switch|tag|trait|try|type|unless|until|var|where)\b 1:error
     add-highlighter shared/trilogy/code/    regex ('[A-Za-z_][A-Za-z_0-9]*)[^'] 1:type
 
