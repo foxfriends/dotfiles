@@ -29,13 +29,13 @@ define-command -hidden js-set-node %{
         check-cmd prettier
         set buffer formatcmd "prettier --stdin-filepath '%val{buffile}'"
     } catch %{ echo -debug %val{error} }
-    try %{
-        check-cmd eslint
-        check-file %sh{echo "$(npm root -g)/eslint-formatter-kakoune/index.js"}
-        find-in-parent package.json %sh{dirname "$kak_buffile"}
-        set buffer lintcmd 'run() { cat "$1" | eslint -f "$(npm root -g)/eslint-formatter-kakoune/index.js" --stdin --stdin-filename "$kak_buffile"; } && run'
-        lint-enable
-    } catch %{ echo -debug %val{error} }
+    # try %{
+    #     check-cmd eslint
+    #     check-file %sh{echo "$(npm root -g)/eslint-formatter-kakoune/index.js"}
+    #     find-in-parent package.json %sh{dirname "$kak_buffile"}
+    #     set buffer lintcmd 'run() { cat "$1" | eslint -f "$(npm root -g)/eslint-formatter-kakoune/index.js" --stdin --stdin-filename "$kak_buffile"; } && run'
+    #     lint-enable
+    # } catch %{ echo -debug %val{error} }
 }
 
 # Initialization
