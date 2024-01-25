@@ -31,8 +31,8 @@ hook global WinSetOption filetype=python %{
     hook -once -always window WinSetOption filetype=.* %{ remove-hooks window python-.+ }
 
     try {
-        check-cmd pipenv
-        set buffer formatcmd "pipenv run black --stdin-filename '%val{buffile}' -"
+        check-cmd poetry
+        set buffer formatcmd "poetry run ruff format --stdin-filename '%val{buffile}' -"
     }
 }
 
