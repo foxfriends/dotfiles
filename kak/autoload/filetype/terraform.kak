@@ -22,9 +22,9 @@ hook -group terraform-highlight global WinSetOption filetype=terraform %{
 provide-module terraform %~
     add-highlighter shared/terraformstring                    regions
     add-highlighter shared/terraformstring/                       default-region fill string
-    add-highlighter shared/terraformstring/interpolation          region -recurse \{ \$\{   \}  regions
+    add-highlighter shared/terraformstring/interpolation          region -recurse \{ (?<!\$)\$\{   \}  regions
     add-highlighter shared/terraformstring/interpolation/             default-region fill interpolation
-    add-highlighter shared/terraformstring/interpolation/content      region -recurse \{ \$\{\K   (?=\})  ref terraform
+    add-highlighter shared/terraformstring/interpolation/content      region -recurse \{ (?<!\$)\$\{\K   (?=\})  ref terraform
 
     # Highlighters
     add-highlighter shared/terraform    regions
