@@ -30,7 +30,7 @@ provide-module terraform %~
     add-highlighter shared/terraform    regions
     add-highlighter shared/terraform/       region "^\s*#" "$"              ref comment
     add-highlighter shared/terraform/       region '"'  (?<!\\)(\\\\)*"     ref terraformstring
-    add-highlighter shared/terraform/       region -match-capture '<<-?\h*''?(\w+)''?' '^\t*(\w+)$'  ref terraformstring
+    add-highlighter shared/terraform/       region -match-capture '<<-?\h*''?(\w+)''?' '^\s*(\w+)$'  ref terraformstring
     add-highlighter shared/terraform/props  default-region group
     add-highlighter shared/terraform/props/     regex \b([a-z_A-Z][\w-]*)\s*(?=\() 1:function
     add-highlighter shared/terraform/props/     regex \b([a-z_A-Z][\w-]*)\s*(?=[{"]) 1:meta
