@@ -46,7 +46,7 @@ provide-module typst %§
         latex lisp lua makefile typst moon objc perl pug python ragel
         ruby rust sass scala scss sh swift toml tupfile typescript yaml sql
         sml scheme graphql
-      "
+    "
       for lang in ${languages}; do
         printf 'add-highlighter shared/typst/%s region -match-capture ```%s\\b   ``` regions\n' "${lang}" "${lang}"
         printf 'add-highlighter shared/typst/%s/ default-region fill meta\n' "${lang}"
@@ -69,17 +69,35 @@ provide-module typst %§
     add-highlighter shared/typst/math/inner/ regex \\. 0:meta
     add-highlighter shared/typst/math/inner/ regex (#)\w+\b 0:variable
 
-    add-highlighter shared/typst/text default-region group
-    add-highlighter shared/typst/text/ regex ^\s*([-+/])\s 1:bullet
-    add-highlighter shared/typst/text/ regex (?S)^(=+)\s+(.*)$ 1:operator 2:title
-    add-highlighter shared/typst/text/ regex <\w+> 0:meta
-    add-highlighter shared/typst/text/ regex @(\w+)\b 0:meta
-    add-highlighter shared/typst/text/ regex \\. 0:meta
-    add-highlighter shared/typst/text/ regex (#[a-z_][a-zA-Z0-9_]*)\b(?:\s*\() 1:function
+    add-highlighter shared/typst/content default-region group
+    add-highlighter shared/typst/content/ regex ^\s*([-+/])\s 1:bullet
+    add-highlighter shared/typst/content/ regex (?S)^(=+)\s+(.*)$ 1:operator 2:title
+    add-highlighter shared/typst/content/ regex <\w+> 0:meta
+    add-highlighter shared/typst/content/ regex @(\w+)\b 0:meta
+    add-highlighter shared/typst/content/ regex \\. 0:meta
+    add-highlighter shared/typst/content/ regex (?<!_)(_([^\s_]|([^\s_](\n?[^\n_])*[^\s_]))_)(?!_) 1:italic
+    add-highlighter shared/typst/content/ regex (?<!\*)(\*([^\s\*]|([^\s\*](\n?[^\n\*])*[^\s\*]))\*)(?!\*) 1:bold
+    add-highlighter shared/typst/content/ regex (https?://.*?) 0:link
 
-    add-highlighter shared/typst/text/ regex (?<!_)(_([^\s_]|([^\s_](\n?[^\n_])*[^\s_]))_)(?!_) 1:italic
-    add-highlighter shared/typst/text/ regex (?<!\*)(\*([^\s\*]|([^\s\*](\n?[^\n\*])*[^\s\*]))\*)(?!\*) 1:bold
-    add-highlighter shared/typst/text/ regex (https?://.*?) 0:link
+    add-highlighter shared/typst/code region -recurse \{ (#\{) (\}) regions
+    add-highlighter shared/typst/code/ default-region fill interpolation
+    add-highlighter shared/typst/code/inner region (#\{)\K (?=\}) ref typstscript
+
+    add-highlighter shared/typst/expr region (#) "(;|$)" regions
+    add-highlighter shared/typst/expr/ default-region fill interpolation
+    add-highlighter shared/typst/expr/inner region (#\K) $ ref typstscript
+
+    add-highlighter shared/typstscript regions
+    add-highlighter shared/typstscript/content region -recurse \[ \[ \] ref shared/typst/content
+    add-highlighter shared/typstscript/string  region %{"} (?<!\\)(\\\\)*"              fill string
+    add-highlighter shared/typstscript/code default-region group
+    add-highlighter shared/typstscript/code/ regex \b(show|set|let|if|for|while|in|break|continue|import|not|or|and)\b 1:keyword
+    add-highlighter shared/typstscript/code/ regex [+\-*/<>!=] 0:operator
+    add-highlighter shared/typstscript/code/ regex \b([\w]+)(?=[(\[]) 1:function
+    add-highlighter shared/typstscript/code/ regex ((\d*\.)?(\d*e(\d*\.)?)?\d+((px|pt|cm|mm|in|pc)\b|%)?) 0:value
+    add-highlighter shared/typstscript/code/ regex \b(true|false|none)\b 0:value
+    # NOTE: Very loose list of builtins... better find a real list, this is a pain to locate all by hand.
+    add-highlighter shared/typstscript/code/ regex \b(datetime|type|repr|float|int|regex|version|eval|duration|str|table|align|read|calc|label|panic|locate|style|pagebreak)\b 1:builtin
 
     # Commands
     # ‾‾‾‾‾‾‾‾
