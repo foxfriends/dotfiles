@@ -25,9 +25,9 @@ hook -group latex-highlight global WinSetOption filetype=latex %{
     hook -once -always window WinSetOption filetype=.* %{ remove-highlighter window/latex }
 }
 
-hook global BufSetOption filetype=latex %{
-    set-option buffer buildcmd "pdflatex %val{buffile}"
-}
+# hook global BufSetOption filetype=latex %{
+#     set-option buffer buildcmd "pdflatex %val{buffile}"
+# }
 
 provide-module latex %~
     # Highlighters
