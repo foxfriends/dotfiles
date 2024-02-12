@@ -34,7 +34,7 @@ plug 'kakounedotcom/prelude.kak' %{
     trigger-user-hook plugin-loaded=delapouite/kakoune-text-objects
 } plug 'delapouite/kakoune-mirror' %{
     map global normal "'" ': enter-user-mode -lock mirror<ret>'
-    hook global BufSetOption filetype=markdown %{
+    hook global BufSetOption filetype=(markdown|typst) %{
         map buffer mirror * 'a*<esc>i*<esc>H<a-;>' -docstring '*surround*'
         map buffer mirror _ 'a_<esc>i_<esc>H<a-;>' -docstring '_surround_'
     }
