@@ -4,7 +4,7 @@
 # Detection
 # ‾‾‾‾‾‾‾‾‾
 
-hook global BufCreate .*\.(html?|vue) %{
+hook global BufCreate .*\.(html?|vue|eta) %{
     set-option buffer filetype html
     set-option buffer tabstop 2
     set-option buffer indentwidth 2

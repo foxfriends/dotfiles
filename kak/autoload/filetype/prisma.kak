@@ -42,7 +42,7 @@ provide-module prisma %§
     add-highlighter shared/prisma/line_comment     region "//" "$"                                ref comment
 
 
-    add-highlighter shared/prisma/code/ regex \b(model|view|generator|datasource)\b 0:keyword
+    add-highlighter shared/prisma/code/ regex \b(model|view|generator|datasource|enum)\b 0:keyword
     add-highlighter shared/prisma/code/ regex \b([a-z_][a-zA-Z_0-9]*)\s*(?=\() 1:function
     add-highlighter shared/prisma/code/ regex @@?(id|ignore|unique|relation|default|map|index|schema)\b 0:keyword
     add-highlighter shared/prisma/code/ regex (@db\.|\b)([A-Z]\w*)\b 0:type

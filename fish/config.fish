@@ -41,6 +41,7 @@ addpath "$HOME/.gem/bin"
 addpath "$HOME/.local/bin"
 addpath "$HOME/.bin"
 addpath "$HOME/.bun/bin"
+addpath "$HOME/.rye/shims"
 
 set -x GEM_HOME "$HOME/.gem"
 set -ax LD_LIBRARY_PATH "/usr/local/lib"
