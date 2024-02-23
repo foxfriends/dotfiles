@@ -31,8 +31,10 @@ hook global WinSetOption filetype=python %{
     hook -once -always window WinSetOption filetype=.* %{ remove-hooks window python-.+ }
 
     try {
-        check-cmd poetry
-        set buffer formatcmd "poetry run ruff format --stdin-filename '%val{buffile}' -"
+        check-cmd rye
+        set buffer formatcmd "rye format -- --stdin-filename '%val{buffile}' -"
+        set buffer lintcmd "rye lint"
+        lint-enable
     }
 }
 
