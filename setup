@@ -56,6 +56,7 @@ check rofi && dot_config rofi
 check sway && dot_config sway
 check hx && dot_config helix
 check tig && dot_config tig
+check zellij && dot_config zellij
 check topgrade && dot_config topgrade
 if [ "$(uname)" == 'Darwin' ]; then
     check syncat && $lndir "$(pwd)/syncat" "$HOME/Library/Preferences/com.cameldridge.syncat"

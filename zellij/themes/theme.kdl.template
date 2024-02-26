@@ -1,0 +1,15 @@
+themes {
+    default {
+        fg "#${theme_light_white}"
+        bg "#${theme_black}"
+        black "#${theme_black}"
+        red "#${theme_red}"
+        green "#${theme_green}"
+        yellow "#${theme_yellow}"
+        blue "#${theme_blue}"
+        magenta "#${theme_magenta}"
+        cyan "#${theme_cyan}"
+        white "#${theme_white}"
+        orange "#${theme_light_yellow}"
+    }
+}
