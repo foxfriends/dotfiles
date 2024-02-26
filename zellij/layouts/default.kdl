@@ -6,7 +6,7 @@ layout {
         plugin location="file:/Users/cam/.dotfiles/zellij/layouts/../plugins/zjstatus.wasm" {
             format_left   "{mode}#[bg=black,fg=magenta] {session}  {tabs}"
             format_center ""
-            format_right  "{command_git_branch}{datetime}"
+            format_right  "{datetime}"
             format_space  ""
 
             border_enabled  "false"
@@ -21,11 +21,6 @@ layout {
 
             tab_normal   "#[fg=#abb2bf] {name} "
             tab_active   "#[fg=#98c378] {name} "
-
-            command_git_branch_command     "git rev-parse --abbrev-ref HEAD"
-            command_git_branch_format      "#[fg=#d19a66] {stdout} "
-            command_git_branch_interval    "10"
-            command_git_branch_rendermode  "static"
 
             datetime        "#[fg=cyan] {format} "
             datetime_format "%A, %d %b %Y %H:%M"
