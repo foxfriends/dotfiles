@@ -24,7 +24,7 @@ layout {
 
             datetime        "#[fg=cyan] {format} "
             datetime_format "%A, %d %b %Y %H:%M"
-            datetime_timezone "Canada/Toronto"
+            datetime_timezone "America/Toronto"
         }
     }
 }
