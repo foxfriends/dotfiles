@@ -139,6 +139,10 @@ keybinds clear-defaults=true {
         bind "l" "Right" { MoveFocus "Right"; SwitchToMode "Normal"; }
         bind "j" "Down" { MoveFocus "Down"; SwitchToMode "Normal"; }
         bind "k" "Up" { MoveFocus "Up"; SwitchToMode "Normal"; }
+        bind "H" { MovePane "Left"; SwitchToMode "Normal"; }
+        bind "L" { MovePane "Right"; SwitchToMode "Normal"; }
+        bind "J" { MovePane "Down"; SwitchToMode "Normal"; }
+        bind "K" { MovePane "Up"; SwitchToMode "Normal"; }
         bind "d" { Detach; }
         bind "Space" { NextSwapLayout; SwitchToMode "Normal"; }
         bind "x" { CloseFocus; SwitchToMode "Normal"; }
