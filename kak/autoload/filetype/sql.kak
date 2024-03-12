@@ -52,7 +52,7 @@ provide-module sql %{
         keywords="${keywords}|IMMUTABLE|STABLE|VOLATILE"
         keywords="${keywords}|POLICY|RENAME|USING|TO|PERFORM"
         keywords="${keywords}|GRANT( USAGE)?|REVOKE|SCHEMA|ALL TABLES|ALTER DEFAULT PRIVILEGES|ALL PRIVILIGES"
-        keywords="${keywords}|ENABLE ROW LEVEL SECURITY"
+        keywords="${keywords}|ENABLE ROW LEVEL SECURITY|WITH"
 
         # Operators
         operators="ALL|AND|ANY|BETWEEN|EXISTS|IN|IS|LIKE|NOT|OR|SOME"

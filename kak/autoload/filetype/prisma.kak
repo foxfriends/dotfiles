@@ -17,7 +17,6 @@ hook global BufCreate .*[.](prisma) %{
 hook global WinSetOption filetype=prisma %{
     require-module prisma
 
-    hook window InsertChar .* -group prisma-indent prisma-indent-on-char
     hook window InsertChar \n -group prisma-insert prisma-insert-on-new-line
     hook window InsertChar \n -group prisma-indent prisma-indent-on-new-line
 
