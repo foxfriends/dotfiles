@@ -28,6 +28,8 @@ exec_always "systemctl --user import-environment"
 exec mako
 # needs a dbus-daemon for mako to work? is this really the right way to run it?
 exec dbus-daemon --session --address=unix:path=$XDG_RUNTIME_DIR/bus
+# we also want this keyring daemon running
+exec gnome-keyring-daemon --replace -l
 
 # start the audio
 exec pulseaudio --daemonize
