@@ -17,6 +17,8 @@ hook global WinSetOption filetype=typst %~
     hook window InsertChar [)] -group typst-indent typst-indent-on-closing
     hook window ModeChange pop:insert:.* -group typst-indent typst-trim-indent
     hook -once -always window WinSetOption filetype=.* %{ remove-hooks typst-indent }
+    set buffer tabstop 2
+    set buffer indentwidth 2
 ~
 
 hook -group typst-load-languages global WinSetOption filetype=typst %{
@@ -78,8 +80,8 @@ provide-module typst %§
     add-highlighter shared/typst/content default-region group
     add-highlighter shared/typst/content/ regex ^\s*([-+/])\s 1:bullet
     add-highlighter shared/typst/content/ regex (?S)^(=+)\h+(.*)$ 1:operator 2:title
-    add-highlighter shared/typst/content/ regex <\w+> 0:meta
-    add-highlighter shared/typst/content/ regex @(\w+)\b 0:meta
+    add-highlighter shared/typst/content/ regex <[\w\d-_]+> 0:meta
+    add-highlighter shared/typst/content/ regex @([\w\d-_]+)\b 0:meta
     add-highlighter shared/typst/content/ regex \\. 0:meta
     add-highlighter shared/typst/content/ regex (?<!_)(_([^\s_]|([^\s_](\n?[^\n_])*[^\s_]))_)(?!_) 1:italic
     add-highlighter shared/typst/content/ regex (?<!\*)(\*([^\s\*]|([^\s\*](\n?[^\n\*])*[^\s\*]))\*)(?!\*) 1:bold
@@ -105,6 +107,7 @@ provide-module typst %§
     add-highlighter shared/typstscript/code/ regex \b([\w]+)(?=[(\[]) 1:function
     add-highlighter shared/typstscript/code/ regex ((\d*\.)?(\d*e(\d*\.)?)?\d+((px|pt|cm|mm|in|pc|em)\b|%)?) 0:value
     add-highlighter shared/typstscript/code/ regex \b(true|false|none)\b 0:value
+    add-highlighter shared/typstscript/code/ regex <[\w\d-_]+> 0:meta
     # NOTE: Very loose list of builtins... better find a real list, this is a pain to locate all by hand.
     add-highlighter shared/typstscript/code/ regex \b(datetime|type|repr|float|int|regex|version|eval|duration|str|table|align|read|calc|label|panic|locate|style|pagebreak)\b 1:builtin
 
