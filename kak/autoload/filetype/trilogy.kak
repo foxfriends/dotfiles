@@ -6,6 +6,8 @@
 
 hook global BufCreate .*[.](tri) %{
     set-option buffer filetype trilogy
+    set buffer tabstop 2
+    set buffer indentwidth 2
 }
 
 # Initialization
