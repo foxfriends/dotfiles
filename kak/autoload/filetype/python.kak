@@ -19,6 +19,20 @@ hook global BufCreate .*Pipfile.lock %{
 # Initialization
 # ‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 
+hook global BufSetOption filetype=python %{
+    require-module detection
+
+    try {
+        check-cmd python
+        set-option buffer runcmd 'python'
+    } catch {
+        try {
+            check-cmd python3
+            set-option buffer runcmd 'python3'
+        }
+    }
+}
+
 hook global WinSetOption filetype=python %{
     require-module python
 
