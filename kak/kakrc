@@ -57,3 +57,10 @@ hook -group kks global KakBegin .* %{
     check-cmd kks
     eval %sh{ kks init }
 }
+
+hook -group env global KakBegin .* %{
+    require-module detection
+    require-module dotenv
+    check-file .env
+    dotenv-load
+}
