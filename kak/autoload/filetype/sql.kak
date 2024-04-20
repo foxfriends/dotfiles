@@ -6,6 +6,11 @@
 
 hook global BufCreate .*/?(?i)sql %{
     set-option buffer filetype sql
+    evaluate-commands %sh{
+        if [ -n "$kak_opt_dotenv_DATABASE_URL" ]; then
+            echo "set-option buffer runcmd 'psql $kak_opt_dotenv_DATABASE_URL -f'"
+        fi
+    }
 }
 
 # Initialization
