@@ -19,10 +19,14 @@ define-command run -docstring 'run the current selection' %{
             exit 1
         fi
 
+        file=$(basename "${kak_buffile}")
+        ext=${file##*.}
         dir=$(mktemp -d "${TMPDIR:-/tmp}"/kak-run.XXXXXXXX)
-        printf '%s\n' "$kak_selection" > "$dir/script"
-        mkfifo "$dir/output"
-        ( ${kak_opt_runcmd} "${dir}/script" > "$dir/output" 2>&1 & ) > /dev/null 2>&1 < /dev/null
+        input="$dir/script.${ext}"
+        output="$dir/output"
+        printf '%s\n' "$kak_selection" > $input
+        mkfifo "$output"
+        ( ${kak_opt_runcmd} "$input" > "$output" 2>&1 & ) > /dev/null 2>&1 < /dev/null
         printf %s\\n "evaluate-commands -try-client '${kak_opt_runclient}' %{
             edit! -fifo '${dir}/output' '${kak_opt_runbuf}'
             hook -always -once buffer BufCloseFifo .* %{ nop %sh{ rm -r $dir } }

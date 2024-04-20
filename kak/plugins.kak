@@ -11,6 +11,7 @@ plug 'kakounedotcom/prelude.kak' %{
     map global normal <a-Q> <a-B>
     map global normal b ': enter-buffers-mode<ret>' -docstring 'buffers'
     map global normal B ': enter-user-mode -lock buffers<ret>' -docstring 'buffers (lock)'
+    map global buffers '#' ': edit -scratch "*script output*"<ret>' -docstring '*script output*'
 } plug "andreyorst/powerline.kak" demand powerline %{
     set-option global powerline_format 'mode_info buffername filetype line_column unicode bettergit client session'
     set-option -add global powerline_themes 'custom'

@@ -55,6 +55,18 @@ hook global WinSetOption filetype=(javascript|typescript) %{
     "
 }
 
+hook global BufSetOption filetype=(javascript) %{
+    require-module detection
+    check-cmd node
+    set buffer runcmd 'node'
+}
+
+hook global BufSetOption filetype=(typescript) %{
+    require-module detection
+    check-cmd npx
+    set buffer runcmd 'npx tsx'
+}
+
 hook -group javascript-load-languages global WinSetOption filetype=javascript %{
     hook -group javascript-load-languages window NormalIdle .* javascript-load-languages
     hook -group javascript-load-languages window InsertIdle .* javascript-load-languages
