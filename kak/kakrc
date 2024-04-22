@@ -37,6 +37,7 @@ map global normal v ':enter-user-mode modes<ret>'
 map global normal <a-right> 'w'
 map global normal <a-left> 'b'
 map global normal '#' ': run<ret>'
+map global normal = '|fend "${kak_selection}" | tr -d "\n"<ret>' -docstring 'calculate'
 map global insert <a-right> '<a-;>w'
 map global insert <a-left> '<a-;>b'
 
