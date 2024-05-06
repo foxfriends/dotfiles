@@ -69,6 +69,7 @@ fi
 check waybar && dot_config waybar
 check alacritty && dot_config alacritty
 check tmux && ln -sf "$(pwd)/tmux/.tmux.conf" "$HOME/.tmux.conf"
+$lndir "$(pwd)/terminfo" "$HOME/.terminfo"
 
 ln -sf "$(pwd)/git/.gitconfig" "$HOME/.gitconfig"
 ln -sf "$(pwd)/bash/.bashrc" "$HOME/.bashrc"
