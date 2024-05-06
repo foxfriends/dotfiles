@@ -58,11 +58,14 @@ check hx && dot_config helix
 check tig && dot_config tig
 check zellij && dot_config zellij
 check topgrade && dot_config topgrade
+check wezterm && dot_config wezterm
+
 if [ "$(uname)" == 'Darwin' ]; then
     check syncat && $lndir "$(pwd)/syncat" "$HOME/Library/Preferences/com.cameldridge.syncat"
 else
     check syncat && dot_config syncat
 fi
+
 check waybar && dot_config waybar
 check alacritty && dot_config alacritty
 check tmux && ln -sf "$(pwd)/tmux/.tmux.conf" "$HOME/.tmux.conf"
