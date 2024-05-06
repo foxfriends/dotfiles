@@ -5,7 +5,7 @@ local config = {}
 
 config.term = 'wezterm'
 config.font = wezterm.font_with_fallback {
-  'JetBrainsMono Nerd Font',
+  {family='JetBrainsMono Nerd Font', weight=500},
   'Fira Code',
 }
 
