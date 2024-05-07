@@ -16,6 +16,11 @@ config.use_fancy_tab_bar = false
 config.hide_mouse_cursor_when_typing = false
 config.hide_tab_bar_if_only_one_tab = true
 config.default_cursor_style = 'SteadyBar'
+config.use_dead_keys = false
+config.enable_kitty_keyboard = true
+config.allow_win32_input_mode = false
+config.send_composed_key_when_left_alt_is_pressed = false
+config.send_composed_key_when_right_alt_is_pressed = false
 
 config.window_decorations = "RESIZE"
 config.window_padding = {
