@@ -305,13 +305,9 @@ command = "pls" # https://github.com/lasorda/protobuf-language-server
 
 [language.python]
 filetypes = ["python"]
-roots = ["requirements.txt", "setup.py", ".git", ".hg", "Pipfile"]
-command = "pylsp"
+roots = ["pyproject.toml"]
+command = "rye run ruff server --preview"
 settings_section = "_"
-[language.python.settings._]
-# See https://github.com/python-lsp/python-lsp-server#configuration
-pylsp.configurationSources = ["flake8"]
-pylsp.plugins.jedi_completion.include_params = true
 
 [language.r]
 filetypes = ["r"]
