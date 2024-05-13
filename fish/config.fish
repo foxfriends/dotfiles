@@ -21,6 +21,7 @@ if test -x /opt/homebrew/bin/brew
   set -q INFOPATH; or set INFOPATH ''; set -gx INFOPATH "/opt/homebrew/share/info" $INFOPATH;
 
   # but use custom add path so that homebrew doesn't get top priority.
+  addpath "/opt/homebrew/opt/postgresql@15/bin"
   addpath "/opt/homebrew/sbin"
   addpath "/opt/homebrew/bin"
 
