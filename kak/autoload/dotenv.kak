@@ -4,7 +4,7 @@ provide-module dotenv %{
             file=${1:-.env}
             n=0
             while read p; do
-                if echo "$p" | grep '[\w\d_]+=.*' -P -q ; then
+                if echo "$p" | grep '[\w\d_]+=.*' -q ; then
                     echo "$p" | while IFS== read -r name value; do 
                         echo "declare-option str %{dotenv_${name}}"
                         echo "set-option global %{dotenv_${name}} %{${value}}"
