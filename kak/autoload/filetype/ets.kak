@@ -34,6 +34,6 @@ provide-module ets %§
     add-highlighter shared/ets/interpolation    region "<%%[=|]?" "%%>"       regions
     add-highlighter shared/ets/interpolation/   default-region              fill interpolation
     add-highlighter shared/ets/interpolation/   region "<%%[=|]?\K" "(?=%%>)" ref typescript
-    add-highlighter shared/ets/text             default-region
+    add-highlighter shared/ets/text             default-region group
     add-highlighter shared/ets/text/glue        regex <>             0:keyword
 §
