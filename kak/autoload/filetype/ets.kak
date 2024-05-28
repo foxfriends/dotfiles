@@ -6,6 +6,8 @@
 
 hook global BufCreate .*[.](ets) %{
     set-option buffer filetype ets
+    set buffer tabstop 2
+    set buffer indentwidth 2
 }
 
 # Initialization
