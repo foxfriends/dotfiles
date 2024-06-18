@@ -198,7 +198,7 @@ provide-module javascript_impl %§
         # https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords
         # https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get
         # https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/set
-        add-highlighter "shared/%arg{1}/code/" regex (^|[^.$]|\.\.\.)\b(async|await|break|case|catch|class|const|continue|debugger|default|delete|do|else|export|extends|finally|for|from|function|get|if|import|in|instanceof|let|new|of|return|set|static|super|switch|throw|try|typeof|var|void|while|with|yield|satisfies|infer|is|never)\b 2:keyword
+        add-highlighter "shared/%arg{1}/code/" regex (^|[^.$]|\.\.\.)\b(async|await|break|case|catch|class|const|continue|debugger|default|delete|do|else|export|extends|finally|for|from|function|get|if|import|in|instanceof|let|new|of|return|set|static|super|switch|throw|try|typeof|var|void|while|with|yield)\b 2:keyword
     ~
 
     define-command -hidden javascript-load-languages %{
@@ -219,10 +219,10 @@ provide-module typescript %{
 
     # Highlighting specific to TypeScript
     # ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
-    add-highlighter shared/typescript/code/ regex \b(array|boolean|date|number|object|regexp|string|symbol|bigint|unknown)\b 0:type
+    add-highlighter shared/typescript/code/ regex \b(array|boolean|date|number|object|regexp|string|symbol|bigint|unknown|never)\b 0:type
 
     # Keywords grabbed from https://github.com/Microsoft/TypeScript/issues/2536
-    add-highlighter shared/typescript/code/ regex \b(abstract|as|constructor|declare|enum|from|implements|interface|module|namespace|package|private|protected|public|readonly|static|type)\b 0:keyword
+    add-highlighter shared/typescript/code/ regex \b(abstract|as|constructor|declare|enum|from|implements|interface|module|namespace|package|private|protected|public|readonly|static|type|satisfies|infer|is|never|override)\b 0:keyword
 }
 
 provide-module javascript %{
