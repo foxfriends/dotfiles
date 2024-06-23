@@ -1,1 +1,3 @@
-check rbenv && eval "$(rbenv init - bash)"
+if check rbenv; then
+    eval "$(rbenv init - bash)"
+fi

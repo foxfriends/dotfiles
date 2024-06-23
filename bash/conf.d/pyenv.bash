@@ -1,1 +1,3 @@
-check pyenv && eval "$(pyenv init - bash)"
+if check pyenv; then
+    eval "$(pyenv init - bash)"
+fi

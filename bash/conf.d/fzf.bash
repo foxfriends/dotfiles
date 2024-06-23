@@ -1,1 +1,3 @@
-[ -f "$HOME/.fzf.bash" ] && . "$HOME/.fzf.bash"
+if [ -f "$HOME/.fzf.bash" ]; then
+    . "$HOME/.fzf.bash"
+fi
