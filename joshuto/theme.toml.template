@@ -1,13 +1,10 @@
 [selection]
 fg = "${theme_rgb_color_highlight}"
 bold = true
+prefix = "* "
 
 [visual_mode_selection]
 fg = "${theme_rgb_color_highlight}"
-
-[selection.prefix]
-prefix = "* "
-size = 2
 
 [executable]
 fg = "${theme_rgb_file_executable}"

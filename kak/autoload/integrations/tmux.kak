@@ -42,7 +42,7 @@ provide-module tmux %{
     define-command tmux-popup -params 1.. -shell-completion -docstring '
     tmux-popup <program> [<arguments>]: create a new terminal as a tmux popup
     The program passed as argument will be executed in the new terminal' %{
-        tmux popup -w 80% -h 80% -E "%sh{""$kak_config/scripts/quote-all"" ""$@""}"
+        tmux popup -w 80% -h 80% -E -E "%sh{""$kak_config/scripts/quote-all"" ""$@""}"
     }
 
     define-command tmux-new -params 1.. -shell-completion -docstring '

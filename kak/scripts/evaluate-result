@@ -1,4 +1,6 @@
-#!/usr/bin/env bash
+#!/usr/bin/env -S bash -l
+
+set -e
 
 session="$1"
 client="$2"
