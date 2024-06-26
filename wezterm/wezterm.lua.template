@@ -30,6 +30,8 @@ config.window_padding = {
   bottom = "0.5cell",
 }
 
+config.selection_word_boundary = " \t\n{}[]()\"'`│"
+
 config.colors = {
   foreground = '#${theme_color_default}',
   background = '#${theme_color_bgdefault}',
@@ -119,7 +121,7 @@ config.keys = {
   },
   {
     key = 'u',
-    mods = 'SUPER',
+    mods = 'LEADER',
     action = wezterm.action.CharSelect{ copy_on_select = true, copy_to =  'ClipboardAndPrimarySelection' },
   },
   {
