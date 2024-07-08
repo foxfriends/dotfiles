@@ -22,6 +22,7 @@ if test -x /opt/homebrew/bin/brew
 
   # but use custom add path so that homebrew doesn't get top priority.
   addpath "/opt/homebrew/opt/postgresql@15/bin"
+  addpath "/opt/homebrew/opt/postgresql@16/bin"
   addpath "/opt/homebrew/sbin"
   addpath "/opt/homebrew/bin"
 
