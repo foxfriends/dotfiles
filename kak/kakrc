@@ -33,7 +33,7 @@ map global insert <a-del> '<esc>w<a-d>i'
 
 map global normal v ':enter-user-mode modes<ret>'
 
-map global normal <ret> ':enter-user-mode user<ret>'
+# map global normal <ret> ':enter-user-mode user<ret>'
 
 # word movement with arrow keys in insert mode
 map global normal <a-right> 'w'
