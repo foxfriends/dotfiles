@@ -26,7 +26,6 @@ hook global WinSetOption filetype=rust %[
         require-module detection
         check-cmd clippy-driver
         set-option buffer lintcmd 'cargo clippy'
-        lint-enable
     }
 
     hook window ModeChange pop:insert:.* -group rust-trim-indent rust-trim-indent

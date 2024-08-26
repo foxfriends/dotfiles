@@ -20,7 +20,6 @@ hook global WinSetOption filetype=css %[
         require-module detection
         check-cmd stylelint
         set buffer lintcmd 'run() { cat "$1" | stylelint --formatter json --stdin --stdin-filename "$kak_buffile" | "${kak_config}/scripts/stylelint-format"; } && run'
-        lint-enable
     }
 
     hook window ModeChange pop:insert:.* -group css-trim-indent  css-trim-indent

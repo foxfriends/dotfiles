@@ -48,7 +48,6 @@ hook global WinSetOption filetype=python %{
         check-cmd rye
         set buffer formatcmd "rye format -- --stdin-filename '%val{buffile}' -"
         set buffer lintcmd "rye lint"
-        lint-enable
     }
 }
 
