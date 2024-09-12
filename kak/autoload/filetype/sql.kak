@@ -57,7 +57,7 @@ provide-module sql %{
         keywords="${keywords}|IMMUTABLE|STABLE|VOLATILE"
         keywords="${keywords}|POLICY|RENAME|USING|TO|PERFORM"
         keywords="${keywords}|GRANT( USAGE)?|REVOKE|SCHEMA|ALL TABLES|ALTER DEFAULT PRIVILEGES|ALL PRIVILIGES"
-        keywords="${keywords}|ENABLE ROW LEVEL SECURITY|WITH|CASE|WHEN|THEN|ELSE"
+        keywords="${keywords}|ENABLE ROW LEVEL SECURITY|WITH|CASE|WHEN|THEN|ELSE|NULLS FIRST"
 
         # Operators
         operators="ALL|AND|ANY|BETWEEN|EXISTS|IN|IS|LIKE|NOT|OR|SOME"
@@ -74,7 +74,7 @@ provide-module sql %{
         data_types_fn="${data_types_fn}|binary|char|decimal|float|numeric|nvarchar|varbinary|varchar|varchar"
 
         # PostgreSQL data types
-        data_types="${data_types}|UUID|TIMESTAMP(\s+WITH(OUT)?\s+TIME\s+ZONE)?|CITEXT|BOOLEAN|ENUM"
+        data_types="${data_types}|UUID|TIMESTAMP(\s+WITH(OUT)?\s+TIME\s+ZONE|TZ)?|CITEXT|BOOLEAN|ENUM|DOUBLE\s+PRECISION"
         data_types="${data_types}|JSON|JSONB"
 
         # MS Access data types
