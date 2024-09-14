@@ -41,7 +41,7 @@ add-highlighter shared/perl/code default-region group
 add-highlighter shared/perl/command        region (?<!\$)(?<!\\)`   (?<!\\)(\\\\)*` fill meta
 add-highlighter shared/perl/double_string  region (?<!\$)"          (?<!\\)(\\\\)*" fill string
 add-highlighter shared/perl/single_string  region (?<!\$)(?<!\\\\)' (?<!\\)(\\\\)*' fill string
-add-highlighter shared/perl/comment        region (?<!\$)(?<!\\)#   $               fill comment
+add-highlighter shared/perl/comment        region (?<!\$)(?<!\\)#   $               ref comment
 
 add-highlighter shared/perl/regex          region m?(?<!/)(?<!qr)/[^/\n]+(?=/)  /\w*   fill meta
 add-highlighter shared/perl/sregex         region s/[^/\n]+/[^/\n]+(?=/)        /\w*   fill meta

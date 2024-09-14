@@ -46,6 +46,7 @@ provide-module css %[
     add-highlighter shared/css/comment     region /[*]       [*]/ ref comment
     add-highlighter shared/css/import      region (@import\b)  ";"  regions
     add-highlighter shared/css/media       region (@media|@container)\b   [{]  regions
+    add-highlighter shared/css/supports    region (@supports)\b [{] regions
 
     add-highlighter shared/css/import/base          default-region group
     add-highlighter shared/css/import/double_string region '"' (?<!\\)(\\\\)*" fill string
@@ -91,13 +92,20 @@ provide-module css %[
     add-highlighter shared/css/media/base/ regex      \b(and|or)\b  1:keyword
     add-highlighter shared/css/media/base/ regex (#[0-9A-Fa-f]+)|((\d*\.)?\d+(ch|cm|em|ex|mm|pc|pt|px|rem|vh|vmax|vmin|vw|%|s|ms|fr|deg)?) 0:value
 
+    add-highlighter shared/css/supports/base          default-region group
+    add-highlighter shared/css/supports/double_string region '"' (?<!\\)(\\\\)*" fill string
+    add-highlighter shared/css/supports/single_string region "'" "'"             fill string
+    add-highlighter shared/css/supports/comment       region /[*] [*]/           ref comment
+    add-highlighter shared/css/supports/base/ regex      (@supports)\b  1:keyword
+
     add-highlighter shared/css/selector/ regex         [*+>~&\[\]=$]       0:keyword
     add-highlighter shared/css/selector/ regex         [A-Za-z0-9_-]+      0:variable
     add-highlighter shared/css/selector/ regex      [#][A-Za-z0-9_-]+      0:function
     add-highlighter shared/css/selector/ regex      [.][A-Za-z0-9_-]+      0:type
     add-highlighter shared/css/selector/ regex      [:]{1,2}[a-zA-Z0-9_-]+ 0:value
-    add-highlighter shared/css/selector/ regex         '@keyframes\b'      0:keyword
-    add-highlighter shared/css/selector/ regex         '@font-face\b'      0:keyword
+    add-highlighter shared/css/selector/ regex '@(charset|color-profile|counter-style|font-feature-values|font-palette-values|keyframes|layer|property|font-face|namespace|page|scope|starting-style|view-transition)\b'      0:keyword
+    add-highlighter shared/css/selector/ regex '@document\b'      0:error
+    add-highlighter shared/css/selector/ regex '@tailwind\b'      0:meta
 
     # Commands
     # ‾‾‾‾‾‾‾‾
