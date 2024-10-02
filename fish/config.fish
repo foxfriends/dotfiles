@@ -3,6 +3,7 @@
 set -x SHELL (status fish-path)
 set -q skin; or set -Ux skin onedark
 set -x GPG_TTY (tty)
+set -x COLORTERM truecolor
 
 function addpath --description "add a directory to the PATH"
   test -d "$argv[1]"; and fish_add_path "$argv[1]"
