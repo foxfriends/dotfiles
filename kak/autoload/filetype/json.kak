@@ -40,6 +40,9 @@ provide-module json %(
     add-highlighter shared/json/code default-region group
     add-highlighter shared/json/string region '"' (?<!\\)(\\\\)*" fill string
 
+    add-highlighter shared/json/line_comment     region "//" "$"                                ref comment
+    add-highlighter shared/json/block_comment    region -recurse "/\*" "/\*" "\*/"              ref comment
+
     add-highlighter shared/json/code/ regex \b(true|false|null|\d+(?:\.\d+)?(?:[eE][+-]?\d*)?)\b 0:value
 
     # Commands

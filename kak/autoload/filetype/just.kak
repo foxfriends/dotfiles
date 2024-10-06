@@ -60,6 +60,7 @@ add-highlighter shared/justfile/content default-region group
 add-highlighter shared/justfile/content/recipe regex '^@?([\w-]+)([^\n]*):(?!=)([^\n]*)' 1:function 2:variable 3:keyword
 add-highlighter shared/justfile/content/assignments regex ^([\w-]+\h*:=\h*[^\n]*) 1:meta
 add-highlighter shared/justfile/content/operator regex '((^@|:=|=|\+|\(|\)))' 1:operator
+add-highlighter shared/justfile/content/set regex '\bset\b' 0:keyword
 add-highlighter shared/justfile/content/strings regions
 add-highlighter shared/justfile/content/strings/double region '"' (?<!\\)(\\\\)*" fill string
 add-highlighter shared/justfile/content/strings/single region "'" (?<!\\)(\\\\)*' fill string
