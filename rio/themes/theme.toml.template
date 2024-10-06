@@ -1,0 +1,58 @@
+[colors]
+# Regular colors
+background = '#${theme_color_bgdefault}'
+black = '#${theme_black}'
+blue = '#${theme_blue}'
+cyan = '#${theme_cyan}'
+foreground  = '#${theme_color_default}'
+green = '#${theme_green}'
+magenta = '#${theme_magenta}'
+red = '#${theme_red}'
+white = '#${theme_white}'
+yellow = '#${theme_yellow}'
+
+# Cursor
+cursor = '#${theme_color_default}'
+vi-cursor = '#${theme_color_default}'
+
+# Navigation
+tabs = '#${theme_color_bgdefault}'
+tabs-foreground = '#${theme_color_default}'
+tabs-active = '#${theme_color_bgdefault}'
+tabs-active-highlight = '#${theme_yellow}'
+tabs-active-foreground = '#${theme_green}'
+bar = '#${theme_color_bgdefault}'
+
+# Search
+search-match-background = '#${theme_color_bghighlight2}'
+search-match-foreground = '#${theme_white}'
+search-focused-match-background = '#${theme_color_bghighlight}'
+search-focused-match-foreground = '#${theme_white}'
+
+# Selection
+selection-foreground = '#${theme_white}'
+selection-background = '#${theme_color_bghighlight2}'
+
+# Dim colors
+dim-black = '#${theme_black}'
+dim-blue = '#${theme_blue}'
+dim-cyan = '#${theme_cyan}'
+dim-green = '#${theme_green}'
+dim-magenta = '#${theme_magenta}'
+dim-red = '#${theme_red}'
+dim-white = '#${theme_white}'
+dim-yellow = '#${theme_yellow}'
+
+dim-foreground = '#${theme_color_default}'
+
+# Light colors
+light-black = '#${theme_light_black}'
+light-blue = '#${theme_light_blue}'
+light-cyan = '#${theme_light_cyan}'
+light-green = '#${theme_light_green}'
+light-magenta = '#${theme_light_magenta}'
+light-red = '#${theme_light_red}'
+light-white = '#${theme_light_white}'
+light-yellow = '#${theme_light_yellow}'
+
+light-foreground = '#${theme_color_default}'

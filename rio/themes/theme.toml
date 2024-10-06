@@ -1,0 +1,58 @@
+[colors]
+# Regular colors
+background = '#282c34'
+black = '#282c34'
+blue = '#61afef'
+cyan = '#56b6c2'
+foreground  = '#abb2bf'
+green = '#98c378'
+magenta = '#c678dd'
+red = '#e06c75'
+white = '#abb2bf'
+yellow = '#e5c07b'
+
+# Cursor
+cursor = '#abb2bf'
+vi-cursor = '#abb2bf'
+
+# Navigation
+tabs = '#282c34'
+tabs-foreground = '#abb2bf'
+tabs-active = '#282c34'
+tabs-active-highlight = '#e5c07b'
+tabs-active-foreground = '#98c378'
+bar = '#282c34'
+
+# Search
+search-match-background = '#2f383b'
+search-match-foreground = '#abb2bf'
+search-focused-match-background = '#3e4452'
+search-focused-match-foreground = '#abb2bf'
+
+# Selection
+selection-foreground = '#abb2bf'
+selection-background = '#2f383b'
+
+# Dim colors
+dim-black = '#282c34'
+dim-blue = '#61afef'
+dim-cyan = '#56b6c2'
+dim-green = '#98c378'
+dim-magenta = '#c678dd'
+dim-red = '#e06c75'
+dim-white = '#abb2bf'
+dim-yellow = '#e5c07b'
+
+dim-foreground = '#abb2bf'
+
+# Light colors
+light-black = '#3e4452'
+light-blue = '#61afef'
+light-cyan = '#56b6c2'
+light-green = '#98c379'
+light-magenta = '#c678dd'
+light-red = '#be5046'
+light-white = '#5c6370'
+light-yellow = '#d19a66'
+
+light-foreground = '#abb2bf'
