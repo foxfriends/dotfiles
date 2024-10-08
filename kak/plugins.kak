@@ -1,8 +1,15 @@
-source "%val{config}/plugins/plug.kak/rc/plug.kak"
-plug-chain "andreyorst/plug.kak" noload \
-plug 'kakounedotcom/prelude.kak' %{
-    require-module prelude
-} plug 'delapouite/kakoune-buffers' %{
+evaluate-commands %sh{
+  # We're assuming the default bundle_path here...
+  plugins="$kak_config/bundle"
+  mkdir -p "$plugins"
+  [ ! -e "$plugins/kak-bundle" ] && \
+    git clone -q https://codeberg.org/jdugan6240/kak-bundle "$plugins/kak-bundle"
+  printf "%s\n" "source '$plugins/kak-bundle/rc/kak-bundle.kak'"
+}
+
+bundle-noload kak-bundle https://codeberg.org/jdugan6240/kak-bundle
+
+bundle kakoune-buffers https://github.com/Delapouite/kakoune-buffers %{
     map global normal ^ q
     map global normal <a-^> Q
     map global normal q b
@@ -12,43 +19,73 @@ plug 'kakounedotcom/prelude.kak' %{
     map global normal b ': enter-buffers-mode<ret>' -docstring 'buffers'
     map global normal B ': enter-user-mode -lock buffers<ret>' -docstring 'buffers (lock)'
     map global buffers '#' ': edit -scratch "*script output*"<ret>' -docstring '*script output*'
-} plug "andreyorst/powerline.kak" demand powerline %{
+}
+
+bundle smarttab.kak https://github.com/foxfriends/smarttab.kak
+
+hook global ModuleLoaded smarttab %{
+    set-option global softtabstop 4
+}
+
+hook global WinSetOption filetype=(.*) expandtab
+hook global WinSetOption filetype=(makefile|gas) noexpandtab
+
+hook global ModuleLoaded powerline %{
     set-option global powerline_format 'mode_info buffername filetype line_column unicode bettergit client session'
     set-option -add global powerline_themes 'custom'
     powerline-separator curve
     powerline-theme custom
+
     hook global WinCreate (.*) %{
         powerline-theme custom
         powerline-separator curve
     }
-} config %{
+}
+
+bundle powerline.kak https://github.com/andreyorst/powerline.kak %{
     powerline-start
-} plug "foxfriends/smarttab.kak" defer smarttab %{
-    set-option global softtabstop 4
-} config %{
-    hook global WinSetOption filetype=(.*) expandtab
-    hook global WinSetOption filetype=(makefile|gas) noexpandtab
-} plug 'delapouite/kakoune-text-objects' %{
+}
+
+bundle kakoune-text-objects https://github.com/delapouite/kakoune-text-objects %{
     map global modes s ':enter-user-mode selectors<ret>' -docstring 'selectors'
     map global insert <a-s> '<esc>:enter-user-mode selectors<ret>' -docstring 'selectors'
     map global normal <a-s> '<esc>:enter-user-mode selectors<ret>' -docstring 'selectors'
     trigger-user-hook plugin-loaded=delapouite/kakoune-text-objects
-} plug 'delapouite/kakoune-mirror' %{
+}
+
+bundle kakoune-mirror https://github.com/delapouite/kakoune-mirror %{
     map global normal "'" ': enter-user-mode -lock mirror<ret>'
     hook global BufSetOption filetype=(markdown|typst) %{
         map buffer mirror * 'a*<esc>i*<esc>H<a-;>' -docstring '*surround*'
         map buffer mirror _ 'a_<esc>i_<esc>H<a-;>' -docstring '_surround_'
     }
-} plug "kak-lsp/kak-lsp" do %{
-    cargo install --locked --force --path .
-} config %{
+}
+
+bundle kakoune-lsp 'git clone -b v17.1.2 https://github.com/kakoune-lsp/kakoune-lsp' %{
+    set-option global lsp_diagnostic_line_error_sign '║'
     set-option global lsp_diagnostic_line_warning_sign "⚠"
-    define-command lsp-restart -docstring 'restart lsp server' %{ lsp-stop; lsp-start }
+
+    define-command ne -docstring 'go to next error/warning from lsp' %{ lsp-find-error --include-warnings }
+    define-command pe -docstring 'go to previous error/warning from lsp' %{ lsp-find-error --previous --include-warnings }
+    define-command ee -docstring 'go to current error/warning from lsp' %{ lsp-find-error --include-warnings; lsp-find-error --previous --include-warnings }
+
     hook global WinSetOption filetype=(rust|haskell|literate-haskell|javascript|typescript|html|css|svelte|python|solidity|elixir|hcl|terraform|go) %{
+        set-option window lsp_auto_highlight_references true
+        set-option window lsp_hover_anchor false
+        # lsp-auto-hover-enable
         echo -debug "Enabling LSP for %opt{filetype}"
         lsp-enable-window
     }
+
+    hook global WinSetOption filetype=(rust|haskell|literate-haskell|javascript|typescript|html|css|svelte|python|solidity|elixir|hcl|terraform|go) %{
+        set-option window lsp_server_configuration rust.clippy_preference="on"
+    }
+
     hook global KakEnd .* lsp-exit
-} \
-plug 'https://gitlab.com/Screwtapello/kakoune-cargo' \
-plug 'occivink/kakoune-vertical-selection'
+}
+
+bundle-install-hook kakoune-lsp %{
+    cargo install --locked --force --path .
+}
+
+bundle kakoune-vertical-selection https://github.com/occivink/kakoune-vertical-selection

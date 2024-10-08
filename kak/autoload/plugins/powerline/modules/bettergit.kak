@@ -1,5 +1,3 @@
-hook global ModuleLoaded powerline %{ require-module powerline_bettergit }
-
 provide-module powerline_bettergit %§
 
 set-option -add global powerline_modules 'bettergit'
@@ -42,3 +40,5 @@ define-command -hidden powerline-toggle-bettergit -params ..1 %{ evaluate-comman
 }}
 
 §
+
+hook global ModuleLoaded powerline %{ require-module powerline_bettergit }

@@ -1,5 +1,3 @@
-hook global ModuleLoaded powerline %{ require-module powerline_icon_filetype }
-
 provide-module powerline_icon_filetype %§
 
 declare-option -hidden bool powerline_module_icon_filetype true
@@ -60,3 +58,5 @@ define-command -hidden powerline-determine-icon-filetype %{ set-option buffer po
 }}
 
 §
+
+hook global ModuleLoaded powerline %{ require-module powerline_icon_filetype }

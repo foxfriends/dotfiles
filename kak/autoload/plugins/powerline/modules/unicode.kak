@@ -1,7 +1,5 @@
 # unicode: the unicode codepoint of the character under the cursor
 
-hook global ModuleLoaded powerline %{ require-module powerline_unicode }
-
 provide-module powerline_unicode %§
 
 declare-option -hidden bool powerline_module_unicode true
@@ -32,3 +30,5 @@ define-command -hidden powerline-toggle-unicode -params ..1 %{ evaluate-commands
 }}
 
 §
+
+hook global ModuleLoaded powerline %{ require-module powerline_unicode }

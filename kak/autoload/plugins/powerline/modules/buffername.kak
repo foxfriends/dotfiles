@@ -2,8 +2,6 @@
 # Notably, the context info is spaced from the file name, and may be disabled using the
 # powerline_buffername_contextinfo option.
 
-hook global ModuleLoaded powerline %{ require-module powerline_buffername }
-
 provide-module powerline_buffername %§
 
 declare-option -hidden bool powerline_module_buffername true
@@ -68,3 +66,5 @@ define-command -hidden powerline-toggle-buffername -params ..1 %{ evaluate-comma
 }}
 
 §
+
+hook global ModuleLoaded powerline_bufname %{ require-module powerline_buffername }
