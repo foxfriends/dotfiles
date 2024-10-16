@@ -55,11 +55,12 @@ provide-module sql %{
         keywords="${keywords}|UPDATE|VALUES|VIEW|WHERE"
         keywords="${keywords}|COMMENT|EXTENSION|IF|COLUMN|CASCADE|RESTRICT"
         keywords="${keywords}|FUNCTION|TRIGGER|RETURNS|LANGUAGE|RETURN|BEGIN|END|DECLARE|TYPE"
-        keywords="${keywords}|(AFTER|BEFORE|INSTEAD OF) (INSERT|UPDATE|DELETE)|FOR EACH (ROW|STATEMENT)|EXECUTE PROCEDURE"
+        keywords="${keywords}|AFTER|BEFORE|INSTEAD OF|INSERT|UPDATE|DELETE|FOR|EACH|ROW|STATEMENT|EXECUTE|PROCEDURE"
         keywords="${keywords}|IMMUTABLE|STABLE|VOLATILE"
         keywords="${keywords}|POLICY|RENAME|USING|TO|PERFORM"
-        keywords="${keywords}|GRANT( USAGE)?|REVOKE|SCHEMA|ALL TABLES|ALTER DEFAULT PRIVILEGES|ALL PRIVILIGES"
+        keywords="${keywords}|GRANT|USAGE|REVOKE|SCHEMA|ALL TABLES|PRIVILEGES|ALL PRIVILIGES"
         keywords="${keywords}|ENABLE ROW LEVEL SECURITY|WITH|CASE|WHEN|THEN|ELSE|NULLS FIRST"
+        keywords="${keywords}|GENERATED|ALWAYS|STORED|IDENTITY"
 
         # Operators
         operators="ALL|AND|ANY|BETWEEN|EXISTS|IN|IS|LIKE|NOT|OR|SOME"
@@ -77,7 +78,7 @@ provide-module sql %{
 
         # PostgreSQL data types
         data_types="${data_types}|UUID|TIMESTAMP(\s+WITH(OUT)?\s+TIME\s+ZONE|TZ)?|CITEXT|BOOLEAN|ENUM|DOUBLE\s+PRECISION"
-        data_types="${data_types}|JSON|JSONB"
+        data_types="${data_types}|JSONB?|VECTOR|HSTORE"
 
         # MS Access data types
         data_types="${data_types}|Text|Memo|Byte|Integer|Long|Single|Double|Currency|AutoNumber|Date"
