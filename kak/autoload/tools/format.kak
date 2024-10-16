@@ -1,21 +1,23 @@
 # reformat the current selection or buffer
 
-declare-option -docstring "command to perform formatting" str formatcmd
+declare-option -docstring "shell command used for the 'format-selections' and 'format-buffer' commands" \
+    str formatcmd
 
-define-command format-buffer -docstring "Format the current buffer" %{
+define-command format-buffer -docstring "Format the contents of the buffer" %{
     evaluate-commands -draft %{
         execute-keys '%'
         format-selections
     }
 }
 
-define-command format-selections -docstring "Format the current selection" %{
+define-command format-selections -docstring "Format the selections individually" %{
     evaluate-commands %sh{
         if [ -z "${kak_opt_formatcmd}" ]; then
             echo "fail 'The option ''formatcmd'' must be set'"
         fi
     }
-    evaluate-commands -draft -no-hooks -save-regs '|' %{
+    evaluate-commands -draft -no-hooks -save-regs 'e|' %{
+        set-register e nop
         set-register '|' %{
             format_in="$(mktemp "${TMPDIR:-/tmp}"/kak-formatter.XXXXXX)"
             format_out="$(mktemp "${TMPDIR:-/tmp}"/kak-formatter.XXXXXX)"
@@ -25,12 +27,13 @@ define-command format-selections -docstring "Format the current selection" %{
             if [ $? -eq 0 ]; then
                 cat "$format_out"
             else
-                printf 'eval -client %s %%{ fail formatter returned an error %s }\n' "$kak_client" "$?" | kak -p "$kak_session"
+                echo "set-register e fail formatter returned an error (exit code $?)" >"$kak_command_fifo"
                 cat "$format_in"
             fi
             rm -f "$format_in" "$format_out"
         }
         execute-keys '|<ret>'
+        %reg{e}
     }
 }
 
