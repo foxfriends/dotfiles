@@ -100,7 +100,7 @@ add-highlighter shared/elixir/code/ regex '\b_[a-zA-Z0-9][\w_]*\b' 0:default+d
 add-highlighter shared/elixir/code/ regex '@[\w_]+\b' 0:+d@keyword
 add-highlighter shared/elixir/code/ regex \b([a-z_][a-zA-Z_0-9]*[!?]?)\s*(?=\() 1:function
 add-highlighter shared/elixir/code/ regex \b(assert|dbg|__using__|__before_compile__|__after_compile__)\b 0:builtin
-add-highlighter shared/elixir/code/ regex \b(def|defp|defmacro|defmacrop|defstruct|defmodule|defimpl|defprotocol|defoverridable|defguard|defguardp)\b 0:keyword
+add-highlighter shared/elixir/code/ regex \b(def|defp|defmacro|defmacrop|defstruct|defmodule|defimpl|defprotocol|defoverridable|defguard|defguardp|defdelegate)\b 0:keyword
 add-highlighter shared/elixir/code/ regex \b(fn|do:?|end|when|case|if|else|unless|var!|for|cond|quote|unquote|receive|with|raise|reraise|try|catch|rescue|after)\b 0:keyword
 
 # Commands
