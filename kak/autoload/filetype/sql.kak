@@ -59,7 +59,7 @@ provide-module sql %{
         keywords="${keywords}|IMMUTABLE|STABLE|VOLATILE"
         keywords="${keywords}|POLICY|RENAME|USING|TO|PERFORM"
         keywords="${keywords}|GRANT|USAGE|REVOKE|SCHEMA|ALL TABLES|PRIVILEGES|ALL PRIVILIGES"
-        keywords="${keywords}|ENABLE ROW LEVEL SECURITY|WITH|CASE|WHEN|THEN|ELSE|NULLS FIRST"
+        keywords="${keywords}|(ENABLE|DISABLE) ROW LEVEL SECURITY|WITH|CASE|WHEN|THEN|ELSE|NULLS FIRST"
         keywords="${keywords}|GENERATED|ALWAYS|STORED|IDENTITY"
 
         # Operators
