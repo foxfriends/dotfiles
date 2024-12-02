@@ -32,7 +32,9 @@ provide-module graphql %§
     add-highlighter shared/graphql/code/ regex \b(SCHEMA|SCALAR|OBJECT|FIELD_DEFINITION|ARGUMENT_DEFINITION|INTERFACE|UNION|ENUM|ENUM_VALUE|INPUT_OBJECT|INPUT_FIELD_DEFINITION)\b 1:value
 
     add-highlighter shared/graphql/code/ regex \b([_A-Z][_0-9A-Za-z]*)\b 1:type
+    add-highlighter shared/graphql/code/ regex \b([_a-z][_0-9A-Za-z]*)\s*: 1:identifier
     add-highlighter shared/graphql/code/ regex \b([_a-z][_0-9A-Za-z]*)\s*\( 1:function
+    add-highlighter shared/graphql/code/ regex (!|:) 1:operator
 
     add-highlighter shared/graphql/code/ regex \b(true|false)\b 1:value
     add-highlighter shared/graphql/code/ regex \b(null)\b 1:value

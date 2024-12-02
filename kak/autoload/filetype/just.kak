@@ -1,7 +1,7 @@
 # Detection
 # ‾‾‾‾‾‾‾‾‾
 
-hook global BufCreate .*/[.]?[jJ]ustfile %{
+hook global BufCreate .*/([.]?[jJ]ustfile|.*\.[jJ]ust(file)?) %{
     set-option buffer filetype justfile
 }
 

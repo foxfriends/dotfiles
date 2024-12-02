@@ -203,7 +203,11 @@ provide-module javascript_impl %§
         evaluate-commands -draft %{
             try %{
                 execute-keys '%s\b\K\w+(?=`)<ret>'
-                evaluate-commands -itersel %{ require-module %val{selection} }
+                evaluate-commands -itersel %{
+                    try %{
+                        require-module %val{selection}
+                    }
+                }
             }
         }
     }
