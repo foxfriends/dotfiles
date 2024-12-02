@@ -19,6 +19,12 @@ hook global WinSetOption filetype=haskell %{
     hook window InsertChar \n -group haskell-indent haskell-indent-on-new-line
 
     hook -once -always window WinSetOption filetype=.* %{ remove-hooks window haskell-.+ }
+
+    try %{
+        require-module detection
+        check-cmd ormolu
+        set-option buffer formatcmd 'ormolu --stdin-input-file %val{buffile}'
+    }
 }
 
 hook -group haskell-highlight global WinSetOption filetype=haskell %{
