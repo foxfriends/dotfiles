@@ -126,8 +126,8 @@ args = ["--lsp"]
 settings_section = "_"
 [language.haskell.settings._]
 # See https://haskell-language-server.readthedocs.io/en/latest/configuration.html
-# haskell.formattingProvider = "ormolu"
-#
+haskell.formattingProvider = "ormolu"
+
 [language.html]
 filetypes = ["html"]
 roots = ["package.json"]

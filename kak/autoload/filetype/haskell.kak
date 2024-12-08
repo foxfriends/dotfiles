@@ -17,6 +17,8 @@ hook global WinSetOption filetype=haskell %{
     set-option buffer extra_word_chars '_' "'"
     hook window ModeChange pop:insert:.* -group haskell-trim-indent  haskell-trim-indent
     hook window InsertChar \n -group haskell-indent haskell-indent-on-new-line
+    set buffer tabstop 2
+    set buffer indentwidth 2
 
     hook -once -always window WinSetOption filetype=.* %{ remove-hooks window haskell-.+ }
 
@@ -24,6 +26,11 @@ hook global WinSetOption filetype=haskell %{
         require-module detection
         check-cmd ormolu
         set-option buffer formatcmd 'ormolu --stdin-input-file %val{buffile}'
+    }
+    try %{
+        require-module detection
+        check-cmd hlint
+        set-option window lintcmd "hlint %val{buffile}"
     }
 }
 
@@ -67,7 +74,7 @@ provide-module haskell %[
 
     # matches infix identifier: `mod` `Apa._T'M`
     add-highlighter shared/haskell/code/ regex `\b([A-Z]['\w]*\.)*[\w]['\w]*` 0:operator
-    # matches imported identifiers: 
+    # matches imported identifiers:
     add-highlighter shared/haskell/code/ regex \b(([A-Z]['\w]*\.)+)([a-z]['\w]*)+ 1:module 3:function
     # matches imported module
     add-highlighter shared/haskell/code/ regex \bimport\h+([A-Z]['\w]*(\.[A-Z]['\w]*)*) 1:module
