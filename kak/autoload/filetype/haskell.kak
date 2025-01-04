@@ -53,6 +53,8 @@ provide-module haskell %[
     add-highlighter shared/haskell/line_comment region --(?:[^!#$%&*+./<>?@\\\^|~=]|$) $                ref comment
 
     add-highlighter shared/haskell/code/ regex (?<!')\b0x+[A-Fa-f0-9]+ 0:value
+    add-highlighter shared/haskell/code/ regex (?<!')\b0b+[10]+ 0:value
+    add-highlighter shared/haskell/code/ regex (?<!')\b0o+[0-7]+ 0:value
     add-highlighter shared/haskell/code/ regex (?<!')\b\d+([.]\d+)? 0:value
 
     add-highlighter shared/haskell/code/ regex (?<!')\b(import|hiding|qualified|module)(?!')\b 0:keyword
