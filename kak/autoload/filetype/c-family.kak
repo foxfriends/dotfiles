@@ -139,7 +139,6 @@ define-command -hidden c-family-insert-on-closing-curly-brace %[
     # add a semicolon after a closing brace if part of a class, union or struct definition
     evaluate-commands -itersel -draft -verbatim try %[
         execute-keys -draft hmh <a-?>\b(class|struct|union|enum)\b<ret> <a-K>\{<ret> <a-K>\)(\s+\w+)*\s*\z<ret>
-        execute-keys -draft ';i;<esc>'
     ]
 ]
 
@@ -393,7 +392,7 @@ declare-option -docstring %{
     Can be one of the following:
         ifdef: old style ifndef/define guard
         pragma: newer type of guard using "pragma once"
-} str c_include_guard_style "ifdef"
+} str c_include_guard_style "pragma"
 
 define-command -hidden c-family-insert-include-guards %{
     evaluate-commands %sh{
