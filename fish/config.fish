@@ -31,6 +31,7 @@ if test -x /opt/homebrew/bin/brew
   set -ax LD_LIBRARY_PATH "/opt/homebrew/lib"
 end
 
+addpath "$HOME/.orbstack/bin"
 addpath "$HOME/.asdf/bin"
 addpath "$HOME/.asdf/shims"
 addpath "$HOME/.pyenv/bin"
