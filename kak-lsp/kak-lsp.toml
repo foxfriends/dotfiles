@@ -411,8 +411,12 @@ filetypes = ["svelte"]
 roots = ["package.json", "svelte.config.js"]
 command = "svelteserver"
 args = ["--stdio"]
-settings_section = "_"
-[language.svelte.settings._]
+
+[language.gleam]
+filetypes = ["gleam"]
+roots = ["gleam.toml"]
+command = "gleam"
+args = ["lsp"]
 
 # Semantic tokens support
 # See https://microsoft.github.io/language-server-protocol/specifications/specification-current/#textDocument_semanticTokens
