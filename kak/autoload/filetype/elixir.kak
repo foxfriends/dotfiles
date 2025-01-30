@@ -84,7 +84,7 @@ add-highlighter shared/elixir/code/ regex \b(0x[0-9A-Fa-f]+)\b 1:value
 add-highlighter shared/elixir/code/ regex \b(0o[0-7]+)\b 1:value
 add-highlighter shared/elixir/code/ regex \b(0b[01]+)\b 1:value
 add-highlighter shared/elixir/code/ regex \b(true|false|nil)\b 0:value
-add-highlighter shared/elixir/code/ regex (->|<-|<<|>>|=>|\|>|::|=|&|%?\{|\}|\+\+?|-|\*|/|<>|&&|\|\||==|===|!=|<=|>=) 0:operator
+add-highlighter shared/elixir/code/ regex (->|<-|<<|>>|=>|\|>|::|=|&|%?\{|\}|\+\+?|-|\*|/|<>|&&|\|\||==|===|!=|<=|>=|>|<) 0:operator
 add-highlighter shared/elixir/code/ regex \b(not|or|and|in)\b 1:operator
 add-highlighter shared/elixir/code/ regex \b(require|alias|use|import)\b 0:keyword
 add-highlighter shared/elixir/code/ regex \b(__MODULE__|__DIR__|__ENV__|__CALLER__)\b 0:field
