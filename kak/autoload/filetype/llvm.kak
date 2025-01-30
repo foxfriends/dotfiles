@@ -27,9 +27,6 @@ provide-module llvm %{
 
     add-highlighter shared/llvm/code/ regex (0[xX][0-9a-fA-F]+|\b[0-9]+)\b 0:value
     add-highlighter shared/llvm/code/ regex ^\h*([A-Za-z0-9_.\-]+): 0:meta
-    add-highlighter shared/llvm/code/ regex (%[a-zA-Z0-9_.]+)\b 1:variable
-    add-highlighter shared/llvm/code/ regex (#\d+)\b 1:variable
-    add-highlighter shared/llvm/code/ regex (@[a-zA-Z0-9_.]+)\b 1:meta
     add-highlighter shared/llvm/code/ regex \b(i[1-9][0-9]*|ptr|label|void|token|metadata)\b 1:type
     add-highlighter shared/llvm/code/ regex "(<)(\d+) (x) (.*)(>)" 1:keyword 3:keyword 5:keyword
     add-highlighter shared/llvm/code/ regex "(\[)(\d+) (x) (.*)(\])" 1:keyword 3:keyword 5:keyword
@@ -53,9 +50,15 @@ provide-module llvm %{
 
     add-highlighter shared/llvm/code/ regex "\b(ret|br|switch|indirectbr|invoke|callbr|resume|catchswitch|catchret|cleanupret|unreachable|fneg|add|fadd|sub|fsub|mul|fmul|udiv|sdiv|fdiv|urem|srem|frem|shl|lshr|ashr|and|or|xor|extractelement|insertelement|shufflevector|extractvalue|insertvalue|alloca|load|store|fence|cmpxchg|atomicrmw|getelementptr|trunc|zext|sext|fptrunc|fpext|fptoui|fptosi|uitofp|sitofp|ptrtoint|inttoptr|bitcast|addrspacecast|to|icmp|fcmp|phi|select|freeze|call|va_arg|landingpad|catchpad|cleanuppad)\b" 1:function
     add-highlighter shared/llvm/code/ regex "\b(inbounds|nusw|nuw|inrange)\b" 1:keyword
+    add-highlighter shared/llvm/code/ regex "\b(tail|musttail|notail)\b" 1:keyword
+    add-highlighter shared/llvm/code/ regex "\b(eq|ne|ugt|uge|ult|ule|sgt|sge|slt|sle)\b" 1:function
 
     add-highlighter shared/llvm/code/ regex "([!](DICompileUnit|DILocation|DILocalVariable|DISubroutineType|DISubprogram|DILexicalBlock|DIExpression|DICompositeType|DIDerivedType|DISubrange|DIGlobalVariableExpression|DIGlobalVariable|DIFile|DIBasicType|DIEnumerator))\b" 1:meta
     add-highlighter shared/llvm/code/ regex "\b(distinct)\b" 1:keyword
+
+    add-highlighter shared/llvm/code/ regex (%[a-zA-Z0-9_.]+)\b 1:variable
+    add-highlighter shared/llvm/code/ regex (#\d+)\b 1:variable
+    add-highlighter shared/llvm/code/ regex (@[a-zA-Z0-9_.]+)\b 1:meta
 
     define-command -hidden llvm-trim-indent %{
         evaluate-commands -draft -itersel %{
