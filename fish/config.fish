@@ -29,6 +29,20 @@ if test -x /opt/homebrew/bin/brew
 
   # and also this :shrug:
   set -ax LD_LIBRARY_PATH "/opt/homebrew/lib"
+
+  # If we've installed llvm from brew, we need to link up everything.
+  if test -d /opt/homebrew/opt/llvm
+    addpath "/opt/homebrew/opt/llvm/bin"
+    set -gx LDFLAGS "-L/opt/homebrew/opt/llvm/lib/c++ -L/opt/homebrew/opt/llvm/lib/unwind -L/opt/homebrew/opt/llvm/lib -lunwind"
+    set -gx CPPFLAGS "-I/opt/homebrew/opt/llvm/include"
+  end
+
+  if test -d /opt/homebrew/opt/llvm@18
+    set -x LLVM_SYS_180_PREFIX /opt/homebrew/opt/llvm@18/
+  end
+  if test -d /opt/homebrew/opt/llvm@19
+    set -x LLVM_SYS_190_PREFIX /opt/homebrew/opt/llvm@19/
+  end
 end
 
 addpath "$HOME/.orbstack/bin"
