@@ -47,7 +47,7 @@ provide-module rust %§
     add-highlighter shared/rust/code default-region group
 
     add-highlighter shared/rust/string           region %{(?<!')"} (?<!\\)(\\\\)*"              fill string
-    add-highlighter shared/rust/raw_string       region -match-capture %{(?<!')r(#*)"} %{"(#*)} fill string
+    add-highlighter shared/rust/raw_string       region -match-capture %{(?<!')r?(#*)"} %{"(#*)} fill string
     add-highlighter shared/rust/comment          region -recurse "/\*" "/\*" "\*/"              ref comment
     add-highlighter shared/rust/doc_comment      region "//[/!]" "$"                            ref doc_comment
     add-highlighter shared/rust/line_comment     region "//" "$"                                ref comment
@@ -81,7 +81,7 @@ provide-module rust %§
     add-highlighter shared/rust/code/primitive    regex \b(i8|i16|i32|i64|i128|isize|u8|u16|u32|u64|u128|usize|f32|f64|fsize|str|char|bool)\b 1:keyword
     add-highlighter shared/rust/code/identifier   regex \bself\b 0:identifier
 
-    add-highlighter shared/rust/code/keyword      regex \b(?<!r#)(use|mod|struct|enum|union|type|yield|await|async|(?:async\s+)?fn|trait|impl|return|if|match|where|in|as|else|for|while|loop|const|static|let|mut|ref|dyn|box|pub|crate|super|extern|move|break|continue)\b 1:keyword
+    add-highlighter shared/rust/code/keyword      regex \b(?<!r#)(use|mod|struct|enum|union|type|gen|yield|await|async|(?:async\s+)?fn|trait|impl|return|if|match|where|in|as|else|for|while|loop|const|static|let|mut|ref|dyn|box|pub|crate|super|extern|move|break|continue)\b 1:keyword
     add-highlighter shared/rust/code/unsafe       regex \bunsafe\b 0:field
 
     # Commands
