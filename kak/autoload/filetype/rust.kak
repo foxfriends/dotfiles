@@ -19,7 +19,7 @@ hook global WinSetOption filetype=rust %[
     try %{
         require-module detection
         check-cmd rustfmt
-        set-option buffer formatcmd 'rustfmt'
+        set-option buffer formatcmd 'rustfmt --style-edition 2024'
     }
 
     try %{
