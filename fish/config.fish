@@ -33,8 +33,13 @@ if test -x /opt/homebrew/bin/brew
   # If we've installed llvm from brew, we need to link up everything.
   if test -d /opt/homebrew/opt/llvm
     addpath "/opt/homebrew/opt/llvm/bin"
-    set -gx LDFLAGS "-L/opt/homebrew/opt/llvm/lib/c++ -L/opt/homebrew/opt/llvm/lib/unwind -L/opt/homebrew/opt/llvm/lib -lunwind"
-    set -gx CPPFLAGS "-I/opt/homebrew/opt/llvm/include"
+    set -agx LDFLAGS "-L/opt/homebrew/opt/llvm/lib/c++ -L/opt/homebrew/opt/llvm/lib/unwind -L/opt/homebrew/opt/llvm/lib -lunwind"
+    set -agx CPPFLAGS "-I/opt/homebrew/opt/llvm/include"
+  end
+
+  if test -d /opt/homebrew/opt/zstd
+    set -agx LDFLAGS "-L/opt/homebrew/opt/zstd/lib"
+    set -agx CPPFLAGS "-I/opt/homebrew/opt/zstd/include"
   end
 
   if test -d /opt/homebrew/opt/llvm@18
