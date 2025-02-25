@@ -6,8 +6,16 @@
 	editor = kak
 	pager = delta
 	attributesFile = "${PWD}/.gitattributes"
+[branch]
+	sort = committerdate
+[tag]
+	sort = version:refname
 [diff]
 	colorMoved = default
+	algorithm = histogram
+	colorMoved = plain
+	mnemonicPrefix = true
+	renames = true
 [interactive]
 	diffFilter = delta --color-only
 [delta]
@@ -20,10 +28,13 @@
 	minus-emph-style = "syntax #${theme_git_deletion_foreground}"
 	line-numbers-minus-style = #${theme_git_deletion}
 	syntax-theme = ${theme_git_syntax_theme}
+[init]
+	defaultBranch = main
 [pull]
 	rebase = false
 [push]
 	autoSetupRemote = true
+	default = simple
 [alias]
 	graph = log --graph --color --pretty=format:'%C(auto)%h -%d %s %C(cyan)(%cr) %C(green)<%an>%Creset' --abbrev-commit
 	c = "!${PWD}/fuzzy-checkout"
@@ -33,8 +44,16 @@
 [init]
 	defaultBranch = main
 [merge]
-	conflictstyle = diff3
+	conflictstyle = zdiff3
+[rebase]
+	updateRefs = true
+[rerere]
+	enabled = true
+	autoupdate = true
 [commit]
 	gpgsign = true
+	verbose = true
 [advice]
 	addEmptyPathSpec = false
+[grep]
+	patternType = perl
