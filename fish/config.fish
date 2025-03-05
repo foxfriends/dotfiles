@@ -69,6 +69,10 @@ addpath "$HOME/.rye/shims"
 set -x GEM_HOME "$HOME/.gem"
 set -ax LD_LIBRARY_PATH "/usr/local/lib"
 
+if command -q pipenv
+  set -x PIPENV_VENV_IN_PROJECT true
+end
+
 if status --is-interactive
   command -q pazi; and source (pazi init fish |psub)
   command -q rbenv; and source (rbenv init -|psub)
