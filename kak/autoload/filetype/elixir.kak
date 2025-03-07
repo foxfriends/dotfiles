@@ -76,8 +76,6 @@ add-highlighter shared/elixir/double_string/interpolation region -recurse \{ \Q#
 add-highlighter shared/elixir/double_string/interpolation/          default-region fill interpolation
 add-highlighter shared/elixir/double_string/interpolation/content   region -recurse \{ \Q#{\E\K   (?=\})  ref elixir
 
-add-highlighter shared/elixir/code/ regex ':[\w_]+\b' 0:builtin
-add-highlighter shared/elixir/code/ regex '([\w_]+):' 1:builtin 0:operator
 add-highlighter shared/elixir/code/ regex '~[a-zA-Z]\(.*?[^\\]\)' 0:string
 add-highlighter shared/elixir/code/ regex '\b\d+[\d_]*\b' 0:value
 add-highlighter shared/elixir/code/ regex \b(0x[0-9A-Fa-f]+)\b 1:value
@@ -91,7 +89,9 @@ add-highlighter shared/elixir/code/ regex \b(__MODULE__|__DIR__|__ENV__|__CALLER
 add-highlighter shared/elixir/code/ regex (&\d+)\b 0:field
 add-highlighter shared/elixir/code/ regex (\^)([\w_]+)\b 1:keyword 2:field
 add-highlighter shared/elixir/code/ regex '%[_A-Z][\w_]+\b' 0:type
-add-highlighter shared/elixir/code/ regex '(?<!%)\b[A-Z][\w_]+\b' 0:module
+add-highlighter shared/elixir/code/ regex '(?<![%:])\b[A-Z][\w_]+(?!:)\b' 0:module
+add-highlighter shared/elixir/code/ regex ':[\w_]+\b' 0:builtin
+add-highlighter shared/elixir/code/ regex '([\w_]+):' 1:builtin 0:operator
 add-highlighter shared/elixir/code/ regex '(:[\w_]+)(\.)' 1:module
 add-highlighter shared/elixir/code/ regex '\b_\b' 0:default+d
 add-highlighter shared/elixir/code/ regex '\b_[a-zA-Z0-9][\w_]*\b' 0:default+d
