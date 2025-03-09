@@ -32,7 +32,7 @@ provide-module llvm %{
     add-highlighter shared/llvm/code/ regex "(\[)(\d+) (x) (.*)(\])" 1:keyword 3:keyword 5:keyword
     add-highlighter shared/llvm/code/ regex "([!]dbg)\b" 1:keyword
     add-highlighter shared/llvm/code/ regex "([!]\d+)\b" 1:value
-    add-highlighter shared/llvm/code/ regex "\b(zeroinitializer|null)\b" 1:value
+    add-highlighter shared/llvm/code/ regex "\b(zeroinitializer|null|true|false)\b" 1:value
 
     add-highlighter shared/llvm/code/ regex "\b(target datalayout|target triple|source_filename)\b" 1:keyword
     add-highlighter shared/llvm/code/ regex "\b(global|constant|define|declare|type|attributes)\b" 1:keyword
