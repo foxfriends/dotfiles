@@ -60,6 +60,7 @@ check zellij && dot_config zellij
 check topgrade && dot_config topgrade
 check wezterm && dot_config wezterm
 check rio && dot_config rio
+check tv && dot_config television
 
 if [ "$(uname)" == 'Darwin' ]; then
     check syncat && $lndir "$(pwd)/syncat" "$HOME/Library/Preferences/com.cameldridge.syncat"

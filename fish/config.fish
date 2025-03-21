@@ -85,6 +85,7 @@ if status --is-interactive
   command -q kak; and set -x EDITOR (which kak)
   command -q pack; and source (pack completion --shell fish)
   command -q paper; and source (paper --completions fish |psub)
+  command -q tv; and source (tv init fish |psub)
   command -q sk; and set -x JUST_CHOOSER sk
   if command -q fnm
     source (fnm completions |psub)
