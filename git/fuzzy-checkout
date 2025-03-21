@@ -1,6 +1,8 @@
 #!/bin/bash
 
-if check sk; then
+if check tv; then
+    fzfcmd=tv
+elif check sk; then
     fzfcmd=sk
 elif check fzf; then
     fzfcmd=fzf
