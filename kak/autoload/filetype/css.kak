@@ -66,7 +66,10 @@ provide-module css %[
     add-highlighter shared/css/declaration/base/ regex \b(inherit|initial|unset)\b 1:keyword
     add-highlighter shared/css/declaration/base/ regex \b(none|auto)\b 1:keyword
     add-highlighter shared/css/declaration/base/ regex \b(inline-block|inline-flex|inline-grid|block|flex|grid)\b 1:keyword
+    add-highlighter shared/css/declaration/base/ regex \b(flex-end|flex-start)\b 1:keyword
+    add-highlighter shared/css/declaration/base/ regex \b(lowercase|uppercase|titlecase)\b 1:keyword
     add-highlighter shared/css/declaration/base/ regex \b(visible|hidden)\b 1:keyword
+    add-highlighter shared/css/declaration/base/ regex \b(row|column|row-reverse|column-reverse)\b 1:keyword
     add-highlighter shared/css/declaration/base/ regex \b(center|left|right|justify|middle|top|baseline|bottom)\b 1:keyword
     add-highlighter shared/css/declaration/base/ regex \b(sans-serif|serif|cursive|mono|fantasy)\b 1:keyword
     add-highlighter shared/css/declaration/base/ regex \b(border-box|content-box)\b 1:keyword
