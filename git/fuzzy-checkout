@@ -2,10 +2,13 @@
 
 if check tv; then
     fzfcmd=tv
+    fzfone="sk -1 -0 -q"
 elif check sk; then
     fzfcmd=sk
+    fzfone="sk -1 -0 -q"
 elif check fzf; then
     fzfcmd=fzf
+    fzfone="fzf -1 -0 -q"
 fi
 
 if [ "$1" = '-' ]; then
@@ -13,5 +16,5 @@ if [ "$1" = '-' ]; then
 elif [ -z "$@" ]; then
     git branch | sed 's/^[* ]*//' | $fzfcmd | xargs git checkout
 else
-    git branch | sed 's/^[* ]*//' | $fzfcmd -1 -0 -q "$@" | xargs git checkout
+    git branch | sed 's/^[* ]*//' | $fzfone "$@" | xargs git checkout
 fi
