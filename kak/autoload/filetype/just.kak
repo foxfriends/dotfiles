@@ -52,18 +52,19 @@ define-command -hidden just-indent-on-new-line %{
 
 add-highlighter shared/justfile regions
 
-add-highlighter shared/justfile/comment   region '#' '$'  ref doc_comment
-add-highlighter shared/justfile/inline    region '`' '`' ref sh
-add-highlighter shared/justfile/attribute region '\[' '\]' fill meta
+add-highlighter shared/justfile/comment     region '#' '$'  ref doc_comment
+add-highlighter shared/justfile/inline      region '`' '`' ref sh
+add-highlighter shared/justfile/attribute   region '\[' '\]' fill meta
 
 add-highlighter shared/justfile/content default-region group
 add-highlighter shared/justfile/content/recipe regex '^@?([\w-]+)([^\n]*):(?!=)([^\n]*)' 1:function 2:variable 3:keyword
 add-highlighter shared/justfile/content/assignments regex ^([\w-]+\h*:=\h*[^\n]*) 1:meta
 add-highlighter shared/justfile/content/operator regex '((^@|:=|=|\+|\(|\)))' 1:operator
 add-highlighter shared/justfile/content/keywords regex '\b(set|export|unexport)\b' 1:keyword
-add-highlighter shared/justfile/content/strings regions
-add-highlighter shared/justfile/content/strings/double region '"' (?<!\\)(\\\\)*" fill string
-add-highlighter shared/justfile/content/strings/single region "'" (?<!\\)(\\\\)*' fill string
+add-highlighter shared/justfile/content/subregions regions
+add-highlighter shared/justfile/content/subregions/comment region '#' '$' fill comment
+add-highlighter shared/justfile/content/subregions/double  region '"' (?<!\\)(\\\\)*" fill string
+add-highlighter shared/justfile/content/subregions/single  region "'" (?<!\\)(\\\\)*' fill string
 
 add-highlighter shared/justfile/body  region '^\h+' '^(?=[^\h])' group
 add-highlighter shared/justfile/body/interpreters regions
@@ -74,7 +75,7 @@ add-highlighter shared/justfile/body/interpreters/defaultshell/ regex '^\h+(@)' 
 add-highlighter shared/justfile/body/interpreters/bash region '^\h+#!\h?/usr/bin/env bash' '^(?=[^\h])' ref sh
 add-highlighter shared/justfile/body/interpreters/sh region '^\h+#!\h?/usr/bin/env sh' '^(?=[^\h])' ref sh
 
-add-highlighter shared/justfile/body/ regex '(\{\{)([\w-]+(?=\(\))?)(\}\})' 1:operator 2:variable 3:operator
+add-highlighter shared/justfile/body/ regex '(\{\{)([\w-]+(?=\(\)))(\}\})' 1:operator 2:variable 3:operator
 
 
 }
