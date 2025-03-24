@@ -87,8 +87,7 @@ if status --is-interactive
   command -q sk; and set -x JUST_CHOOSER sk
   if command -q tv
     source (tv init fish |psub)
-    # NOTE: just didn't super like tv as chooser, it didn't allow quitting...
-    # set -x JUST_CHOOSER tv
+    set -x JUST_CHOOSER tv
   end
   if command -q fnm
     source (fnm completions |psub)

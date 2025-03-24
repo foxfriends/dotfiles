@@ -1,0 +1,21 @@
+# general
+background = '#${theme_color_bgdefault}'
+border_fg = '#${theme_color_divider}'
+text_fg = '#${theme_color_default}'
+dimmed_text_fg = '#${theme_light_white}'
+# input
+input_text_fg = '#${theme_color_default}'
+result_count_fg = '#${theme_magenta}'
+# results
+result_name_fg = '#${theme_white}'
+result_line_number_fg = '#${theme_color_status}'
+result_value_fg = '#${theme_green}'
+selection_fg = '#${theme_color_highlight}'
+selection_bg = '#${theme_color_bghighlight}'
+match_fg = '#${theme_yellow}'
+# preview
+preview_title_fg = '#${theme_magenta}'
+# modes
+channel_mode_fg = '#${theme_green}'
+remote_control_mode_fg = '#${theme_yellow}'
+send_to_channel_mode_fg = '#${theme_blue}'
