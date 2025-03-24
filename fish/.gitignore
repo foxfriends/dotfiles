@@ -1,6 +1,7 @@
 functions/fzf_key_bindings.fish
 functions/br.fish
 conf.d/theme.fish
+conf.d/rustup.fish
 fish_variables
 completions/docker.fish
 completions/kubectl.fish
