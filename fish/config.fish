@@ -51,7 +51,6 @@ if test -x /opt/homebrew/bin/brew
 end
 
 addpath "$HOME/.orbstack/bin"
-addpath "$HOME/.asdf/bin"
 addpath "$HOME/.asdf/shims"
 addpath "$HOME/.pyenv/bin"
 addpath "$HOME/.pyenv/shims"
