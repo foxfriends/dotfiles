@@ -51,7 +51,6 @@ if test -x /opt/homebrew/bin/brew
 end
 
 addpath "$HOME/.orbstack/bin"
-addpath "$HOME/.asdf/bin"
 addpath "$HOME/.asdf/shims"
 addpath "$HOME/.pyenv/bin"
 addpath "$HOME/.pyenv/shims"
@@ -85,8 +84,11 @@ if status --is-interactive
   command -q kak; and set -x EDITOR (which kak)
   command -q pack; and source (pack completion --shell fish)
   command -q paper; and source (paper --completions fish |psub)
-  command -q tv; and source (tv init fish |psub)
   command -q sk; and set -x JUST_CHOOSER sk
+  if command -q tv
+    source (tv init fish |psub)
+    set -x JUST_CHOOSER tv
+  end
   if command -q fnm
     source (fnm completions |psub)
     source (fnm env |psub)
