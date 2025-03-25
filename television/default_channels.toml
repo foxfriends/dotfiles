@@ -55,3 +55,9 @@ source_command = "fish -c 'history'"
 name = "just"
 source_command = "just --summary | tr ' ' '\n'"
 preview_command = "just --show {}"
+
+# npm
+[[cable_channel]]
+name = "npm-run"
+source_command = "jq -r '.scripts | keys[]' package.json"
+preview_command = "jq -r '.scripts[\"{}\"]' package.json"
