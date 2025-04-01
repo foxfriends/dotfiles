@@ -58,12 +58,15 @@ provide-module hurl %§
       done
     }
 
-    add-highlighter shared/hurl/code/method  regex \b(GET|POST|PATCH|PUT|DELETE|OPTIONS|HEAD|HTTP)\b 1:keyword
-    add-highlighter shared/hurl/code/number  regex \b([0-9]+)\b 1:value
-    add-highlighter shared/hurl/code/section regex (\[(Captures|Options|Query|QueryStringParams|FormParams|Form|MultipartFormData|Multipart|Cookies|Asserts|BasicAuth)\]) 1:meta
-    add-highlighter shared/hurl/code/capture regex \b(status|version|header|cookie|body|bytes|xpath|jsonpath|regex|sha256|md5|url|ip|variable|duration|certificate)\b 1:function
-    add-highlighter shared/hurl/code/field   regex \b^([a-zA-Z0-9_-]+): 1:variable
+    add-highlighter shared/hurl/code/ regex \b(GET|POST|PATCH|PUT|DELETE|OPTIONS|HEAD|HTTP)\b 1:keyword
+    add-highlighter shared/hurl/code/ regex \b([0-9]+)\b 1:value
+    add-highlighter shared/hurl/code/ regex (\[(Captures|Options|Query|QueryStringParams|FormParams|Form|MultipartFormData|Multipart|Cookies|Asserts|BasicAuth)\]) 1:meta
+    add-highlighter shared/hurl/code/ regex \b(status|version|header|cookie|body|bytes|xpath|jsonpath|regex|sha256|md5|url|ip|variable|duration|certificate|base64Decode|base64Encode|count|daysAfterNow|daysBeforeNow|decode|format|htmlEscape|htmlUnescape|nth|regex|replace|split|toDate|toFloat|toInt|toString|urlDecode|urlEncode)\b 1:function
+    add-highlighter shared/hurl/code/ regex (!=|==|<|>|>=|<=) 1:operator
+    add-highlighter shared/hurl/code/ regex \b(contains|startsWith|endsWith|matches|exists|isBoolean|isCollection|isEmpty|isFloat|isInteger|isIsoDate|isNumber|isString|isIpv4|isIpv6)\b: 1:operator
+    add-highlighter shared/hurl/code/ regex ^([a-zA-Z0-9_-]+): 1:variable
 
+        
     # Commands
     # ‾‾‾‾‾‾‾‾
 
