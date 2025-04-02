@@ -306,8 +306,7 @@ command = "pls" # https://github.com/lasorda/protobuf-language-server
 [language.python]
 filetypes = ["python"]
 roots = ["pyproject.toml"]
-command = "rye run ruff server --preview"
-settings_section = "_"
+command = "pylsp"
 
 [language.r]
 filetypes = ["r"]
