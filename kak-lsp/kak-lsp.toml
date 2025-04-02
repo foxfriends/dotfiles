@@ -356,6 +356,8 @@ settings_section = "rust-analyzer"
 hoverActions.enable = false # kak-lsp doesn't support this at the moment
 procMacro.enable = true
 cargo.loadOutDirsFromCheck = true
+cargo.buildScripts.enable = true
+
 
 [language.terraform]
 filetypes = ["terraform"]

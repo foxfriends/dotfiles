@@ -50,6 +50,7 @@ if test -x /opt/homebrew/bin/brew
   end
 end
 
+addpath "$HOME/go/bin"
 addpath "$HOME/.orbstack/bin"
 addpath "$HOME/.asdf/shims"
 addpath "$HOME/.pyenv/bin"
