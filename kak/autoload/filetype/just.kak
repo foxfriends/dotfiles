@@ -7,6 +7,7 @@ hook global BufCreate .*/([.]?[jJ]ustfile|.*\.[jJ]ust(file)?) %{
 
 hook global WinSetOption filetype=justfile %{
     require-module justfile
+    require-module sh
 
     hook window ModeChange pop:insert:.* -group justfile-trim-indent justfile-trim-indent
     hook window InsertChar \n -group justfile-insert just-insert-on-new-line
@@ -52,15 +53,20 @@ define-command -hidden just-indent-on-new-line %{
 
 add-highlighter shared/justfile regions
 
-add-highlighter shared/justfile/comment     region '#' '$'  ref doc_comment
-add-highlighter shared/justfile/inline      region '`' '`' ref sh
-add-highlighter shared/justfile/attribute   region '\[' '\]' fill meta
+add-highlighter shared/justfile/comment     region '#' '$'                  ref doc_comment
+add-highlighter shared/justfile/inline      region '`' '`'                  ref sh
 
 add-highlighter shared/justfile/content default-region group
-add-highlighter shared/justfile/content/recipe regex '^@?([\w-]+)([^\n]*):(?!=)([^\n]*)' 1:function 2:variable 3:keyword
-add-highlighter shared/justfile/content/assignments regex ^([\w-]+\h*:=\h*[^\n]*) 1:meta
-add-highlighter shared/justfile/content/operator regex '((^@|:=|=|\+|\(|\)))' 1:operator
-add-highlighter shared/justfile/content/keywords regex '\b(set|export|unexport)\b' 1:keyword
+add-highlighter shared/justfile/content/recipe regex '^@?([\w-]+)([^\n]*):(?!=)([^\n]*)' 1:function 3:keyword
+add-highlighter shared/justfile/content/assignments regex ^([\w-]+)\h*:= 1:variable
+add-highlighter shared/justfile/content/operator regex '(^@|:=|!=|==|\|\||\+)' 1:operator
+add-highlighter shared/justfile/content/keywords regex '\b(if|else|set|export|unexport)\b' 1:keyword
+add-highlighter shared/justfile/content/constants regex '\b(true|false)\b' 1:keyword
+add-highlighter shared/justfile/content/attribute1 regex '\[\w+\]'  0:meta
+add-highlighter shared/justfile/content/attribute2 regex '(\[[\w-]+:).*(\])'  1:meta 2:meta
+add-highlighter shared/justfile/content/function   regex \b([a-zA-Z_0-9]*)\s*(?=\() 1:function
+add-highlighter shared/justfile/content/argument   regex \b([a-zA-Z_0-9]*)= 1:variable
+
 add-highlighter shared/justfile/content/subregions regions
 add-highlighter shared/justfile/content/subregions/comment region '#' '$' fill comment
 add-highlighter shared/justfile/content/subregions/double  region '"' (?<!\\)(\\\\)*" fill string

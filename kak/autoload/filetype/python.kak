@@ -178,12 +178,25 @@ provide-module python %§
     # Commands
     # ‾‾‾‾‾‾‾‾
 
-    define-command -hidden python-insert-on-new-line %{
-        evaluate-commands -draft -itersel %{
-            # copy '#' comment prefix and following white spaces
-            try %{ execute-keys -draft k x s ^\h*#\h* <ret> y jgh P }
+    define-command -hidden python-insert-on-new-line %{ evaluate-commands -itersel -draft %{
+        execute-keys <semicolon>
+        try %{
+            evaluate-commands -draft -save-regs '/"' %{
+                # copy the commenting prefix
+                execute-keys -save-regs '' k x1s^\h*(#+\h*)<ret> y
+                try %{
+                    # if the previous comment isn't empty, create a new one
+                    execute-keys x<a-K>^\h*#+\h*$<ret> jxs^\h*<ret>P
+                } catch %{
+                    # if there is no text in the previous comment, remove it completely
+                    execute-keys d
+                }
+            }
+
+            # trim trailing whitespace on the previous line
+            try %{ execute-keys -draft k x s\h+$<ret> d }
         }
-    }
+    } }
 
     define-command -hidden python-indent-on-new-line %<
         evaluate-commands -draft -itersel %<
@@ -192,7 +205,7 @@ provide-module python %§
             # cleanup trailing whitespaces from previous line
             try %{ execute-keys -draft k x s \h+$ <ret> d }
             # indent after line ending with :
-            try %{ execute-keys -draft <space> k x <a-k> :$ <ret> <a-K> ^\h*# <ret> j <a-gt> }
+            try %{ execute-keys -draft , k x <a-k> :$ <ret> <a-K> ^\h*# <ret> j <a-gt> }
             # deindent closing brace/bracket when after cursor (for arrays and dictionaries)
             try %< execute-keys -draft x <a-k> ^\h*[}\]] <ret> gh / [}\]] <ret> m <a-S> 1<a-&> >
         >
