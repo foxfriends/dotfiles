@@ -22,14 +22,26 @@ hook global BufCreate .*Pipfile.lock %{
 hook global BufSetOption filetype=python %{
     require-module detection
 
-    try {
+    try %{
         check-cmd python
         set-option buffer runcmd 'python'
-    } catch {
-        try {
+    } catch %{
+        try %{
             check-cmd python3
             set-option buffer runcmd 'python3'
-        }
+        } catch %{ echo -debug %val{error} }
+    }
+
+    try %{
+        check-cmd rye
+        set buffer formatcmd "rye format -- --stdin-filename '%val{buffile}' -"
+        set buffer lintcmd "rye lint"
+    } catch %{
+        try %{
+            check-cmd ruff
+            set buffer formatcmd "ruff format --stdin-filename '%val{buffile}' -"
+            set buffer lintcmd "ruff check"
+        } catch %{ echo -debug %val{error} }
     }
 }
 
@@ -43,12 +55,6 @@ hook global WinSetOption filetype=python %{
     # cleanup trailing whitespaces on current line insert end
     hook window ModeChange pop:insert:.* -group python-trim-indent %{ try %{ execute-keys -draft <semicolon> x s ^\h+$ <ret> d } }
     hook -once -always window WinSetOption filetype=.* %{ remove-hooks window python-.+ }
-
-    try {
-        check-cmd rye
-        set buffer formatcmd "rye format -- --stdin-filename '%val{buffile}' -"
-        set buffer lintcmd "rye lint"
-    }
 }
 
 hook -group python-highlight global WinSetOption filetype=python %{
