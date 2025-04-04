@@ -30,6 +30,10 @@ map global normal <c-a> ': lsp-hover<ret>'
 # insert mode word delete
 map global insert <a-backspace> '<esc>b<a-d>i'
 map global insert <a-del> '<esc>w<a-d>i'
+# terminal line navigation
+map global insert <c-w> '<esc>b<a-d>i'
+map global insert <c-e> '<esc>gla'
+map global insert <c-a> '<esc>ghi'
 
 map global normal v ':enter-user-mode modes<ret>'
 
