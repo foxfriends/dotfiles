@@ -47,6 +47,11 @@ hook global WinSetOption filetype=(c|cpp|objc) %[
 hook -group c-highlight global WinSetOption filetype=c %{
     add-highlighter window/c ref c
     hook -once -always window WinSetOption filetype=.* %{ remove-highlighter window/c }
+    try %{
+        require-module detection
+        check-cmd clang-format
+        set-option buffer formatcmd "clang-format --assume-filename='%val{buffile}'"
+    }
 }
 
 hook -group cpp-highlight global WinSetOption filetype=cpp %{
