@@ -51,6 +51,12 @@ hook -group c-highlight global WinSetOption filetype=c %{
         require-module detection
         check-cmd clang-format
         set-option buffer formatcmd "clang-format --assume-filename='%val{buffile}'"
+    } catch %{
+        try %{
+            require-module detection
+            check-cmd clang-format-18
+            set-option buffer formatcmd "clang-format-18 --assume-filename='%val{buffile}'"
+        }
     }
 }
 
