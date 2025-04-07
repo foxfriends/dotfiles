@@ -47,7 +47,6 @@ check flashfocus && dot_config flashfocus
 check hunter && dot_config hunter
 check joshuto && dot_config joshuto
 check kak && dot_config kak
-check kak && dot_config kak-lsp
 check kitty && dot_config kitty
 check mako && dot_config mako
 check nvim && dot_config nvim
