@@ -42,12 +42,21 @@ if test -x /opt/homebrew/bin/brew
     set -agx CPPFLAGS "-I/opt/homebrew/opt/zstd/include"
   end
 
+  # Chances are, if LLVM is installed, I'm working with llvm-sys
   if test -d /opt/homebrew/opt/llvm@18
     set -x LLVM_SYS_180_PREFIX /opt/homebrew/opt/llvm@18/
   end
   if test -d /opt/homebrew/opt/llvm@19
     set -x LLVM_SYS_190_PREFIX /opt/homebrew/opt/llvm@19/
   end
+end
+
+# If not on Mac, LLVM will likely be here
+if test -d /usr/lib/llvm-18
+  set -x LLVM_SYS_180_PREFIX /usr/lib/llvm-18/
+end
+if test -d /usr/lib/llvm-19
+  set -x LLVM_SYS_190_PREFIX /usr/lib/llvm-19/
 end
 
 addpath "/opt/local/bin"
