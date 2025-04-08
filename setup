@@ -53,6 +53,7 @@ check mako && dot_config mako
 check nvim && dot_config nvim
 check ranger && dot_config ranger
 check rofi && dot_config rofi
+check wofi && dot_config wofi
 check sway && dot_config sway
 check hx && dot_config helix
 check tig && dot_config tig

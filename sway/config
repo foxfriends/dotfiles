@@ -18,14 +18,17 @@ set $term 'wezterm start -- tmux new-session -A -s main'
 # Note: it's recommended that you pass the final command to sway
 # set $menu dmenu_path | dmenu | xargs swaymsg exec --
 # set $menu rofi -combi-modi window,drun -show combi -modi combi
-set $menu 'rofi -combi-modi window,drun -show combi -modi combi,ssh'
+# set $menu 'rofi -combi-modi window,drun -show combi -modi combi,ssh'
+set $menu 'wofi --show drun'
 
 set $nag exec swaynagmode
+
+xwayland enable
 
 ### Startup programs
 
 # not sure why I have this one, but maybe it's good?
-exec_always "systemctl --user import-environment"
+exec_always "systemctl --user import-environment WAYLAND_DISPLAY"
 
 exec mako
 # needs a dbus-daemon for mako to work? is this really the right way to run it?

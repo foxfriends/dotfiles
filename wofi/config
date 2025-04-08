@@ -1,0 +1,10 @@
+allow_images=true
+term=wezterm
+matching=fuzzy
+insensitive=true
+cache_file=/dev/null
+image_size=24
+filter_rate=15
+dynamic_lines=true
+single_click=true
+key_expand=Right

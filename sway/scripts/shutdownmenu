@@ -1,6 +1,6 @@
 #!/bin/sh
 opts="suspend\nlogout\nshutdown\nrestart"
-case $(echo $opts | rofi -dmenu -p 'quit') in
+case $(echo $opts | wofi --dmenu -p 'quit') in
     suspend)
         systemctl suspend
         ;;
