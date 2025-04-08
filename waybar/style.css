@@ -3,15 +3,13 @@
     border-radius: 0;
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: 'JetBrainsMono Nerd Font', mono;
-    font-size: 16px;
+    font-size: 18px;
     min-height: 0;
 }
 
 window#waybar {
-    background-color: rgba(40, 44, 52, 0.5);
+    background-color: rgba(40, 44, 52, 0.8);
     color: #abb2bf;
-    transition-property: box-shadow;
-    transition-duration: .2s;
 }
 
 #workspaces button {

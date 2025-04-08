@@ -1,8 +1,11 @@
 #!/bin/sh
-opts="suspend\nlogout\nshutdown\nrestart"
+opts="suspend\nlock\nlogout\nshutdown\nrestart"
 case $(echo $opts | wofi --dmenu -p 'quit') in
     suspend)
         systemctl suspend
+        ;;
+    lock)
+        ~/.config/sway/scripts/lock
         ;;
     logout)
         swaymsg exit

@@ -1,5 +1,5 @@
 #!/bin/sh
 
 cd
-file=$(fd | rofi -dmenu -p open)
+file=$(fd | wofi -dmenu -p open)
 xdg-open $file

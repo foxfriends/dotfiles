@@ -10,6 +10,8 @@ set $down j
 set $up k
 set $right l
 
+set $lock ~/.config/sway/scripts/lock.sh
+
 # Your preferred terminal emulator
 # set $term 'kitty -1 tmux new-session -A -s main'
 set $term 'wezterm start -- tmux new-session -A -s main'

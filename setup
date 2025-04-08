@@ -54,6 +54,8 @@ check ranger && dot_config ranger
 check rofi && dot_config rofi
 check wofi && dot_config wofi
 check sway && dot_config sway
+check swaylock && dot_config swaylock
+check swayidle && dot_config swayidle
 check hx && dot_config helix
 check tig && dot_config tig
 check zellij && dot_config zellij
@@ -61,6 +63,7 @@ check topgrade && dot_config topgrade
 check wezterm && dot_config wezterm
 check rio && dot_config rio
 check tv && dot_config television
+# check hyprland && dot_config hypr # I never ended up setting this one up
 
 if [ "$(uname)" == 'Darwin' ]; then
     check syncat && $lndir "$(pwd)/syncat" "$HOME/Library/Preferences/com.cameldridge.syncat"
