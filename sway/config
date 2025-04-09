@@ -49,16 +49,16 @@ bindsym $mod+n exec "fish -lC nc_flash_window"
 
 assign [class="obs" title="^Windowed Projector.*"] workspace 
 for_window [class="obs" title="^Windowed Projector.*"] fullscreen enable
-for_window [class="Spotify"] floating enable, resize set width 1920 height 1080, border pixel 2
 
 font pango:JetbrainsMono Nerd Font 12
 focus_follows_mouse no
+mouse_warping none
 smart_borders on
 smart_gaps on
 gaps inner 16
 gaps outer 0
 default_border none
-default_floating_border pixel 2
+default_floating_border none
 
 client.focused #ABB2BF #282C34 #ABB2BF #e5c07b #ABB2BF
 client.unfocused #5C6370 #282C34 #ABB2BF #e5c07b #5C6370
@@ -221,6 +221,15 @@ exec_always ~/.config/sway/scripts/background
     # Show the next scratchpad window or hide the focused scratchpad window.
     # If there are multiple scratchpad windows, this command cycles through them.
     bindsym $mod+minus scratchpad show
+#
+# Multimedia:
+#
+    bindsym --locked XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') +5%
+    bindsym --locked XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') -5%
+    bindsym --locked XF86AudioMute exec --no-startup-id pactl set-sink-mute $(pacmd list-sinks |awk '/* index:/{print $3}') toggle
+    bindsym --locked XF86AudioPlay exec playerctl play-pause
+    bindsym --locked XF86AudioNext exec playerctl next
+    bindsym --locked XF86AudioPrev exec playerctl previous
 #
 # Resizing containers:
 #
