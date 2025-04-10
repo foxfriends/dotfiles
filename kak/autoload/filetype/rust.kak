@@ -62,7 +62,7 @@ provide-module rust %§
     add-highlighter shared/rust/code/hex-int      regex \b(0x[0-9A-Fa-f_]+([ui](8|16|32|64|128|size))?)\b 1:value
     add-highlighter shared/rust/code/octal-int    regex \b(0o[0-7_]+([ui](8|16|32|64|128|size))?)\b 1:value
     add-highlighter shared/rust/code/binary-int   regex \b(0b[01_]+)([ui](8|16|32|64|128|size))?\b 1:value
-    add-highlighter shared/rust/code/character    regex ('([^'\\]|\\'|\\\\|\\n|\\r|\\t|\\0|\\x[0-9A-F]{2}|\\u\{[0-9a-fA-F]{1,4}\})') 1:value
+    add-highlighter shared/rust/code/character    regex ('([^'\\]|\\'|\\"|\\\\|\\n|\\r|\\t|\\0|\\x[0-9A-F]{2}|\\u\{[0-9a-fA-F]{1,6}\})') 1:value
     add-highlighter shared/rust/code/bool         regex \b(true|false)\b 1:value
 
     add-highlighter shared/rust/code/module       regex (?:pub\s+)?mod\s+((r#)?[a-zA-Z_][a-zA-Z0-9_]*) 1:module
