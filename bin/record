@@ -1,0 +1,6 @@
+#!/bin/bash
+if [ $# == 1 ]; then
+    wf-recorder -a -c libx264rgb -g "$1" -f recording.mp4
+else
+    wf-recorder -a -c libx264rgb -g "$(slurp)" -f recording.mp4
+fi
