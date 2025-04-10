@@ -2,7 +2,7 @@
 
 if check tv; then
     fzfcmd=tv
-    fzfone="sk -1 -0 -q"
+    fzfone="tv --select-1 --no-remote --no-help -i"
 elif check sk; then
     fzfcmd=sk
     fzfone="sk -1 -0 -q"
