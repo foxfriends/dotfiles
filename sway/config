@@ -59,6 +59,7 @@ gaps inner 16
 gaps outer 0
 default_border none
 default_floating_border none
+default_orientation horizontal
 
 client.focused #ABB2BF #282C34 #ABB2BF #e5c07b #ABB2BF
 client.unfocused #5C6370 #282C34 #ABB2BF #e5c07b #5C6370
