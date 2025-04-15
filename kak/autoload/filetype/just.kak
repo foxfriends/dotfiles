@@ -63,7 +63,7 @@ add-highlighter shared/justfile/content/operator regex '(^@|:=|!=|==|\|\||\+)' 1
 add-highlighter shared/justfile/content/keywords regex '\b(if|else|set|export|unexport)\b' 1:keyword
 add-highlighter shared/justfile/content/constants regex '\b(true|false)\b' 1:keyword
 add-highlighter shared/justfile/content/attribute1 regex '\[\w+\]'  0:meta
-add-highlighter shared/justfile/content/attribute2 regex '(\[[\w-]+:).*(\])'  1:meta 2:meta
+add-highlighter shared/justfile/content/attribute2 regex '(\[[\w-]+:)[^\]]*(\])'  1:meta 2:meta
 add-highlighter shared/justfile/content/function   regex \b([a-zA-Z_0-9]*)\s*(?=\() 1:function
 add-highlighter shared/justfile/content/argument   regex \b([a-zA-Z_0-9]*)= 1:variable
 
