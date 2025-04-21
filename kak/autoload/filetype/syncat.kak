@@ -2,6 +2,8 @@
 
 hook global BufCreate .*[.](syncat) %{
     set-option buffer filetype syncat-stylesheet
+    set buffer tabstop 2
+    set buffer indentwidth 2
 }
 
 # Initialization
