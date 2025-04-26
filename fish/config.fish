@@ -85,7 +85,11 @@ if command -q pipenv
 end
 
 if status --is-interactive
-  command -q pazi; and source (pazi init fish |psub)
+  if command -q zoxide
+    source (zoxide init fish |psub)
+  else if command -q pazi
+    source (pazi init fish |psub)
+  end
   command -q rbenv; and source (rbenv init -|psub)
   command -q pyenv; and source (pyenv init -|psub)
   # command -q kitty; and source (kitty + complete setup fish |psub)
@@ -96,7 +100,13 @@ if status --is-interactive
   command -q kak; and set -x EDITOR (which kak)
   command -q pack; and source (pack completion --shell fish)
   command -q paper; and source (paper --completions fish |psub)
-  command -q sk; and set -x JUST_CHOOSER sk
+  
+  if command -q sk
+    set -x JUST_CHOOSER sk
+  else if command -q fzf
+    set -x JUST_CHOOSER fzf
+  end
+  
   if command -q tv
     source (tv init fish |psub)
     set -x JUST_CHOOSER tv
@@ -117,7 +127,7 @@ if status --is-interactive
   command -q aws aws-mfa-secure; and alias aws="aws-mfa-secure session"
 
   # replace ls with exa
-  if command -q exa >/dev/null
+  if command -q exa
     alias ls='exa'
     alias ll='exa -alg --git'
     alias lt='exa -T'
