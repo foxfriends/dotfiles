@@ -6,7 +6,11 @@ g="$(mktemp)"
 
 joshuto --output-file "$g" "$@"
 file=$(< "$g")
-if [ -n file ]; then
-    printf "edit! -existing '%s'" "$file" > "$f"
+
+if [ -n "$file" ]; then
+    printf "edit! -existing '%s'\n" "$file" > "$f" &
+else
+    printf 'echo "No file selected"\n' > "$f" &
 fi
+
 rm "$g"

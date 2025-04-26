@@ -1,10 +1,12 @@
 unbind C-b
 set -g prefix C-k
 set -g mouse on
-# set -g default-terminal xterm-256color
-set -g default-terminal rio
+set -g default-terminal xterm-256color
 set -g escape-time 0
 set -g mode-keys vi
+set -g allow-passthrough on
+set -ga update-environment TERM
+set -ga update-environment TERM_PROGRAM
 
 # undercurl support
 set -as terminal-overrides ',*:Smulx=\E[4::%p1%dm'

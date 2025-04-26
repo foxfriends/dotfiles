@@ -1,0 +1,10 @@
+[[manager.prepend_keymap]]
+on = "l"
+run = [
+    'shell -- [ -d "$1" ] && ya emit enter || true',
+    'shell -- [ -f "$1" ] && ya emit open --hovered || true'
+]
+
+[[manager.prepend_keymap]]
+on = ["z", "h"]
+run = "hidden toggle"

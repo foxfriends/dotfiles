@@ -5,12 +5,14 @@ set -e
 session="$1"
 client="$2"
 shift 2
-f=$(mktemp)
-eval $@ $f
+f=$(mktemp -u)
+mkfifo -m 600 "$f"
+eval $@ $f &
+output=$(< $f)
 
 printf %s\\n "
-evaluate-commands -try-client '${client}' %{ 
-    $(< $f)
+evaluate-commands -try-client '${client}' %{
+    $output
 }
 " | kak -p "${session}"
 
