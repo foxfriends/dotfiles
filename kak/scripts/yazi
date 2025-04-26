@@ -5,6 +5,7 @@ shift
 g=$(mktemp)
 
 yazi --chooser-file "$g" "$@"
+echo -e -n "\x1b[\x36 q"
 file=$(< "$g")
 
 if [ -n "$file" ]; then

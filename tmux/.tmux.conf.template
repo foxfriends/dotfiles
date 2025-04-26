@@ -4,7 +4,7 @@ set -g mouse on
 set -g default-terminal xterm-256color
 set -g escape-time 0
 set -g mode-keys vi
-set -g allow-passthrough on
+set -g allow-passthrough all
 set -ga update-environment TERM
 set -ga update-environment TERM_PROGRAM
 
