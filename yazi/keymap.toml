@@ -8,3 +8,7 @@ run = [
 [[manager.prepend_keymap]]
 on = ["z", "h"]
 run = "hidden toggle"
+
+[[manager.prepend_keymap]]
+on = ["m", "k"]
+run = "shell --interactive --block 'mkdir -p '"
