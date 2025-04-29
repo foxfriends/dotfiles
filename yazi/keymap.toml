@@ -19,8 +19,8 @@ run = "search --via=rg"
 on = "S"
 run = "noop"
 [[manager.prepend_keymap]]
-on = "z"
-run = "plugin zoxide"
+on = ["z", "h"]
+run = "hidden --toggle"
 [[manager.prepend_keymap]]
 on = "Z"
 run = "noop"
