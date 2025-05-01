@@ -6,7 +6,7 @@ provide-module tv %{
     check-cmd tv
 
     define-command -docstring "use tv to find and open a file" tv %{
-        evaluate-result "run () { cd '%sh{pwd}'; file=$(%opt{findcmd} | tv --preview ""%opt{previewcmd} {}"" --no-help --no-remote); if [ -n ""$file"" ]; then printf 'edit! -existing ""%%s""' ""$file"" > $1; fi; } && run"
+        evaluate-result "run() { ""%val{config}/scripts/tv"" ""$1"" '%sh{pwd}' ; } && run"
     }
 }
 
