@@ -6,7 +6,7 @@ provide-module broot %{
     check-cmd broot
 
     define-command -docstring "use broot to find and open a file" broot %{
-        evaluate-result "run () { broot --conf ""%val{config}/../broot/conf-kak.toml"" -G --outcmd ""$1"" ""%sh{pwd}""; } && run"
+        evaluate-result "run() { ""%val{config}/scripts/broot"" ""$1"" '%sh{pwd}' ; } && run"
     }
 }
 
