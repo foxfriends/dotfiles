@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+here=$(cd "$(dirname $0)"; pwd)
+set +e
+f="$1"
+shift
+g="$(mktemp)"
+
+broot --conf $here/../../broot/conf-kak.toml -G --outcmd "$g" "$@"
+file=$(< "$g")
+
+if [ -n "$file" ]; then
+    printf "%s" "$file" > "$f" &
+else
+    printf 'echo "No file selected"\n' > "$f" &
+fi
+
+rm "$g"

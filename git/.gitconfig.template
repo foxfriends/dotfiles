@@ -57,3 +57,5 @@
 	addEmptyPathSpec = false
 [grep]
 	patternType = perl
+[credential]
+	helper = store

@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+here=$(cd "$(dirname $0)"; pwd)
+set +e
+f="$1"
+shift
+g="$(mktemp)"
+
+tv files "$@" --no-help --no-remote > $g
+file=$(< "$g")
+
+if [ -n "$file" ]; then
+    printf "edit! -existing '%s'\n" "$file" > "$f" &
+else
+    printf 'echo "No file selected"\n' > "$f" &
+fi
+
+rm "$g"
