@@ -44,7 +44,7 @@ if test -x /opt/homebrew/bin/brew
 
   # Chances are, if LLVM is installed, I'm working with llvm-sys
   if test -d /opt/homebrew/opt/llvm@18
-    set -x LLVM_SYS_180_PREFIX /opt/homebrew/opt/llvm@18/
+    set -x LLVM_SYS_181_PREFIX /opt/homebrew/opt/llvm@18/
   end
   if test -d /opt/homebrew/opt/llvm@19
     set -x LLVM_SYS_190_PREFIX /opt/homebrew/opt/llvm@19/
@@ -53,7 +53,7 @@ end
 
 # If not on Mac, LLVM will likely be here
 if test -d /usr/lib/llvm-18
-  set -x LLVM_SYS_180_PREFIX /usr/lib/llvm-18/
+  set -x LLVM_SYS_181_PREFIX /usr/lib/llvm-18/
 end
 if test -d /usr/lib/llvm-19
   set -x LLVM_SYS_190_PREFIX /usr/lib/llvm-19/
