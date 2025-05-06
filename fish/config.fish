@@ -100,6 +100,7 @@ if status --is-interactive
   command -q kak; and set -x EDITOR (which kak)
   command -q pack; and source (pack completion --shell fish)
   command -q paper; and source (paper --completions fish |psub)
+  command -q mise; and source (mise activate fish |psub)
   
   if command -q sk
     set -x JUST_CHOOSER sk
