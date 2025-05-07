@@ -83,7 +83,7 @@
         "critical-threshold": 80,
         // "format-critical": "{temperatureC}°C {icon}",
         "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
+        "format-icons": ["", "", ""]
     },
     "backlight": {
         // "device": "acpi_video1",
@@ -97,7 +97,7 @@
             "critical": 15
         },
         "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
+        "format-charging": "{capacity}% 󰂄",
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
@@ -109,14 +109,14 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) 直",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "format-linked": "(No IP) ",
-        "format-disconnected": "Disconnected 睊",
+        "format-wifi": "{essid} ({signalStrength}%) 󰖩",
+        "format-ethernet": "{ipaddr}/{cidr} 󰈀",
+        "format-linked": "(No IP) 󰈀",
+        "format-disconnected": "Disconnected 󰖪",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "custom/launcher": {
-        "format": "  ",
+        "format": " 󰆍 ",
         "on-click": "rofi -show drun -modi drun,window,ssh"
     },
     "custom/repr": {
@@ -131,15 +131,15 @@
         "on-click-middle": "pavucontrol",
         "on-click-right": "$HOME/.config/waybar/next-speaker",
         "format-icons": {
-            "headphone": "",
+            "headphone": "󰋋",
             "speaker": "🕨",
-            "hdmi": "",
-            "headset": "",
-            "hands-free": "",
-            "hifi": "﫛",
-            "car": "",
+            "hdmi": "󰍹",
+            "headset": "󰋎",
+            "hands-free": "󰋎",
+            "hifi": "󰗜",
+            "car": "󰄋",
             "phone": "",
-            "default": ""
+            "default": "󰋋"
         }
     }
 }
