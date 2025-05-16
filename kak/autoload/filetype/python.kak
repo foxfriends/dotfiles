@@ -142,7 +142,7 @@ provide-module python %§
         # Keyword list is collected using `keyword.kwlist` from `keyword`
         keywords="and as assert async await break class continue def del elif else except exec
                   finally for global if in is lambda nonlocal not or pass print
-                  raise return try while with yield"
+                  raise return try type while with yield"
 
         # Collected from `keyword.softkwlist`
         soft_keywords="_ case match"
