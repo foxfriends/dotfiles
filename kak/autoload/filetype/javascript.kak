@@ -161,6 +161,8 @@ provide-module javascript_impl %§
         add-highlighter "shared/%arg{1}/code/" regex \b(false|null|true|undefined)\b 1:value
         add-highlighter "shared/%arg{1}/code/" regex "-?\b[0-9_]+([eE][+-]?[0-9_]+)?\b" 0:value
         add-highlighter "shared/%arg{1}/code/" regex "-?\b[0-9_]*\.[0-9_]+([eE][+-]?[0-9_]+)?\b" 0:value
+        add-highlighter "shared/%arg{1}/code/" regex "-?\b[0-9]*n\b" 0:value
+        add-highlighter "shared/%arg{1}/code/" regex "-?\b0x[0-9a-fA-F]*n?\b" 0:value
 
         # jsx: In well-formed xml the number of opening and closing tags match up regardless of tag name.
         #
