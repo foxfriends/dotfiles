@@ -38,6 +38,7 @@
 [alias]
 	graph = log --graph --color --pretty=format:'%C(auto)%h -%d %s %C(cyan)(%cr) %C(green)<%an>%Creset' --abbrev-commit
 	c = "!${PWD}/fuzzy-checkout"
+	fetchlfs = lfs fetch --include "*" --exclude ""
 [fetch]
 	prune = true
 	pruneTags = true
@@ -59,3 +60,10 @@
 	patternType = perl
 [credential]
 	helper = store
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[lfs]
+	fetchexclude = *
