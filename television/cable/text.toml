@@ -1,7 +1,7 @@
 [metadata]
 name = "text"
 description = "A channel to find and select text from files"
-requirements = ["rg", "bat"]
+requirements = ["rg", "syncat"]
 
 [source]
 command = "rg . --no-heading --line-number"
@@ -9,8 +9,7 @@ display = "[{split:\\::..2}]\t{split:\\::2}"
 output = "{split:\\::..2}"
 
 [preview]
-command = 'bat -n --color=always {split:\::0}'
-env = { BAT_THEME = "ansi" }
+command = "syncat -n '{}'"
 offset = '{split:\::1}'
 
 [ui]
