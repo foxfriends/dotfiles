@@ -21,7 +21,8 @@ provide-module kdl %§
     add-highlighter shared/kdl                   regions
     add-highlighter shared/kdl/props             default-region group
     add-highlighter shared/kdl/comment           region "//" "$"                        ref comment
-    add-highlighter shared/kdl/slash_dash        region -recurse "\{" "/-" "\}"         ref comment
+    add-highlighter shared/kdl/slash_dash        region "/-" "$"                        ref comment
+    add-highlighter shared/kdl/slash_dash_child  region -recurse "\{" "/-.*\{$" "\}"    ref comment
     add-highlighter shared/kdl/slash_star        region -recurse "/\*" "/\*" "\*/"      ref comment
     add-highlighter shared/kdl/string            region %{(?<!')"} %{(?<!\\)(\\\\)*"}       fill string
     add-highlighter shared/kdl/raw_string        region -match-capture %{(#*)"} %{"(#*)}    fill string
