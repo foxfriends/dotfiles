@@ -6,7 +6,7 @@ f="$1"
 shift
 g="$(mktemp)"
 
-tv files "$@" --no-help --no-remote > $g
+tv files "$@" --no-help-panel --no-remote > $g
 file=$(< "$g")
 
 if [ -n "$file" ]; then
