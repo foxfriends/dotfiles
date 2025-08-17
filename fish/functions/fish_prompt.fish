@@ -27,9 +27,11 @@ function fish_prompt --description 'Write out the prompt'
       (git branch | grep \* | cut -d ' ' -f2- | sed 's/^foxfriends/🦊/')
   end
 
-  set radicle (rad .)
-  if test $status -eq 0
-    printf ' %s󰯉 ' (set_color $fish_color_vcs)
+  if command -q radicle
+    set radicle (rad .)
+    if test $status -eq 0
+      printf ' %s󰯉 ' (set_color $fish_color_vcs)
+    end
   end
 
   if test (id -u) -eq 0
