@@ -16,7 +16,7 @@ function fish_prompt --description 'Write out the prompt'
       (set_color $fish_color_tab) \
       "$TAB"
   end
-  
+
   printf '%s%s' \
     (set_color $fish_color_host) \
     (prompt_hostname)
@@ -25,6 +25,11 @@ function fish_prompt --description 'Write out the prompt'
     printf ' %s %s' \
       (set_color $fish_color_vcs) \
       (git branch | grep \* | cut -d ' ' -f2- | sed 's/^foxfriends/🦊/')
+  end
+
+  set radicle (rad .)
+  if test $status -eq 0
+    printf ' %s󰯉 ' (set_color $fish_color_vcs)
   end
 
   if test (id -u) -eq 0
