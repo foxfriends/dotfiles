@@ -17,5 +17,8 @@ match_fg = '#${theme_yellow}'
 preview_title_fg = '#${theme_magenta}'
 # modes
 channel_mode_fg = '#${theme_green}'
+channel_mode_bg = '#${theme_color_bgdefault}'
 remote_control_mode_fg = '#${theme_yellow}'
+remote_control_mode_bg = '#${theme_color_bgdefault}'
 send_to_channel_mode_fg = '#${theme_blue}'
+send_to_channel_mode_bg = '#${theme_color_bgdefault}'

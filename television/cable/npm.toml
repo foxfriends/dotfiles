@@ -1,0 +1,10 @@
+[metadata]
+name = "npm-run"
+description = "A channel to select justfile recipes"
+requirements = ["npm", "jq"]
+
+[source]
+command = ["jq -r '.scripts | keys[]' package.json"]
+
+[preview]
+command = "jq -r '.scripts[\"{}\"]' package.json"

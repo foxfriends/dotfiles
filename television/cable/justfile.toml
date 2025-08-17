@@ -1,0 +1,10 @@
+[metadata]
+name = "just"
+description = "A channel to select justfile recipes"
+requirements = ["just"]
+
+[source]
+command = ["just --summary | tr ' ' '\n'"]
+
+[preview]
+command = "just --show {}"

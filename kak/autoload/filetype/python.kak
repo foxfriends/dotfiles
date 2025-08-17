@@ -194,8 +194,7 @@ provide-module python %§
                     # if the previous comment isn't empty, create a new one
                     execute-keys x<a-K>^\h*#+\h*$<ret> jxs^\h*<ret>P
                 } catch %{
-                    # if there is no text in the previous comment, remove it completely
-                    execute-keys d
+                    nop
                 }
             }
 

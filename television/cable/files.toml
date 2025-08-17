@@ -1,0 +1,13 @@
+[metadata]
+name = "files"
+description = "A channel to select files and directories"
+requirements = ["fd", "syncat"]
+
+[source]
+command = ["fd -t f", "fd -t f -H"]
+
+[preview]
+command = "syncat -n '{}'"
+
+[keybindings]
+shortcut = "f1"
