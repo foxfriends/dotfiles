@@ -22,16 +22,21 @@ function fish_prompt --description 'Write out the prompt'
     (prompt_hostname)
 
   if git rev-parse --is-inside-work-tree > /dev/null 2>&1
-    printf ' %s %s' \
-      (set_color $fish_color_vcs) \
-      (git branch | grep \* | cut -d ' ' -f2- | sed 's/^foxfriends/🦊/')
-  end
-
-  if command -q rad
-    set radicle (rad .)
-    if test $status -eq 0
-      printf ' %s󰯉 ' (set_color $fish_color_vcs)
+    printf ' %s' (set_color $fish_color_vcs)
+    
+    for remote in (git remote)
+      set remote_url (git remote show $remote -n | rg 'Fetch URL: (.*)' -or '$1')
+      if echo "$remote_url" | rg 'github.com' -q
+        printf ' '
+      else if echo "$remote_url" | rg 'rad://' -q
+        printf '󰯉 '
+      else if echo "$remote_url" | rg 'knot.eldridge.cam' -q
+        printf ' ' # TODO: tangled.sh doesn't have its own icon, so this is typst because it's similar
+      end
     end
+
+    printf '  %s' \
+      (git branch | grep \* | cut -d ' ' -f2- | sed 's/^foxfriends/🦊/')
   end
 
   if test (id -u) -eq 0
