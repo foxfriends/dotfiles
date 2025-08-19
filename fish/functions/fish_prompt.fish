@@ -22,7 +22,7 @@ function fish_prompt --description 'Write out the prompt'
     (prompt_hostname)
 
   if command -q rad
-    if test (rad inbox) != 'Your inbox is empty.'
+    if test "(rad inbox)" != 'Your inbox is empty.'
       printf ' %s%s 󰯉 %s' (set_color -b yellow) (set_color black) (set_color normal)
     end
   end
