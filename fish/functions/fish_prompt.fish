@@ -21,6 +21,12 @@ function fish_prompt --description 'Write out the prompt'
     (set_color $fish_color_host) \
     (prompt_hostname)
 
+  if command -q rad
+    if test (rad inbox) != 'Your inbox is empty.'
+      printf ' %s%s 󰯉 %s' (set_color -b yellow) (set_color black) (set_color normal)
+    end
+  end
+
   if git rev-parse --is-inside-work-tree > /dev/null 2>&1
     printf ' %s' (set_color $fish_color_vcs)
 
