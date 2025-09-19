@@ -8,7 +8,7 @@ hook global BufCreate .*[.][cm]?(js)x? %{
     set buffer relatedfilecmd "%val{config}/scripts/js-related-file"
 }
 
-hook global BufCreate .*[.](ts)x? %{
+hook global BufCreate .*[.][cm]?(ts)x? %{
     set-option buffer filetype typescript
     set buffer tabstop 2
     set buffer indentwidth 2
