@@ -21,6 +21,13 @@ function fish_prompt --description 'Write out the prompt'
     (set_color $fish_color_host) \
     (prompt_hostname)
 
+  if command -q rad
+    set inbox_output (rad inbox)
+    if test "$inbox_output" != 'Your inbox is empty.'
+      printf ' %s%s 󰯉 %s' (set_color -b yellow) (set_color black) (set_color normal)
+    end
+  end
+
   if git rev-parse --is-inside-work-tree > /dev/null 2>&1
     printf ' %s' (set_color $fish_color_vcs)
 
@@ -34,7 +41,7 @@ function fish_prompt --description 'Write out the prompt'
       else if echo "$remote_url" | rg 'rad://' -q
         set remote_rad '󰯉 '
       else if echo "$remote_url" | rg 'knot.eldridge.cam' -q
-        set remote_tangled ' ' # TODO: tangled.sh doesn't have its own icon, so this is typst because it's similar
+        set remote_tangled '󰳆 '
       end
     end
 
