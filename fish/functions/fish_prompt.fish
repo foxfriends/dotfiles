@@ -41,7 +41,7 @@ function fish_prompt --description 'Write out the prompt'
       else if echo "$remote_url" | rg 'rad://' -q
         set remote_rad '󰯉 '
       else if echo "$remote_url" | rg 'knot.eldridge.cam' -q
-        set remote_tangled ' ' # TODO: tangled.sh doesn't have its own icon, so this is typst because it's similar
+        set remote_tangled '󰳆 '
       end
     end
 
