@@ -1,0 +1,9 @@
+[metadata]
+name = "bw"
+description = "A channel to select credentials from bitwarden CLI"
+requirements = ["bw"]
+
+[source]
+command = ["bw list items | jq '.[] | \"\\(.login.username)---\\(.name)---\\(.login.password)\"' -r -c"]
+display = "{split:---:0} @ {split:---:1}"
+output = "{split:---:2}"
