@@ -47,7 +47,7 @@ if test -x /opt/homebrew/bin/brew
     set -x LLVM_SYS_181_PREFIX /opt/homebrew/opt/llvm@18/
   end
   if test -d /opt/homebrew/opt/llvm@19
-    set -x LLVM_SYS_190_PREFIX /opt/homebrew/opt/llvm@19/
+    set -x LLVM_SYS_191_PREFIX /opt/homebrew/opt/llvm@19/
   end
 end
 
