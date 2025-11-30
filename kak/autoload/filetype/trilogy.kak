@@ -33,12 +33,11 @@ provide-module trilogy %§
     add-highlighter shared/trilogy regions
     add-highlighter shared/trilogy/code default-region group
 
-    add-highlighter shared/trilogy/    region %{(?<!')"} (?<!\\)(\\\\)*"  fill string
     add-highlighter shared/trilogy/    region -recurse "#-" "#-" "-#"     ref comment
     add-highlighter shared/trilogy/    region "#[#!]" "$"                 ref doc_comment
     add-highlighter shared/trilogy/    region %{(?<!['"])#} "$"                     ref comment
 
-    add-highlighter shared/trilogy/template    region %{\$"} (?<!\\)(\\\\)*"       regions
+    add-highlighter shared/trilogy/template    region %{"} (?<!\\)(\\\\)*"       regions
     add-highlighter shared/trilogy/template/string   default-region group
     add-highlighter shared/trilogy/template/string/  fill string
 
