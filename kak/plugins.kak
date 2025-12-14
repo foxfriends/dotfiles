@@ -61,7 +61,7 @@ bundle kakoune-mirror https://github.com/delapouite/kakoune-mirror %{
     }
 }
 
-bundle kakoune-lsp 'git clone -b v17.1.2 https://github.com/kakoune-lsp/kakoune-lsp' %{
+bundle kakoune-lsp 'git clone -b v19.0.1 https://github.com/kakoune-lsp/kakoune-lsp' %{
     set-option global lsp_diagnostic_line_error_sign '║'
     set-option global lsp_diagnostic_line_warning_sign "⚠"
 

@@ -75,3 +75,11 @@ hook -group env global KakBegin .* %{
     check-file .env
     dotenv-load
 }
+
+hook global BufSetOption filetype=gleam %{
+    set-option buffer lsp_servers %{
+        [gleam]
+        root_globs = ["gleam.toml"]
+        args = ["lsp"]
+    }
+}
