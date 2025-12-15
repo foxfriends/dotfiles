@@ -77,10 +77,6 @@ bundle kakoune-lsp 'git clone -b v19.0.1 https://github.com/kakoune-lsp/kakoune-
         lsp-enable-window
     }
 
-    hook global WinSetOption filetype=(rust|haskell|literate-haskell|javascript|typescript|html|css|svelte|python|solidity|elixir|hcl|terraform|go|gleam) %{
-        set-option window lsp_server_configuration rust.clippy_preference="on"
-    }
-
     hook global KakEnd .* lsp-exit
 }
 

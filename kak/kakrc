@@ -21,7 +21,9 @@ add-highlighter global/ show-whitespaces -lf '¬' -spc '·' -nbsp '␣' -tab '�
 # tabulation
 set-option global tabstop 4
 set-option global indentwidth 4
+
 map global insert <s-tab> '<esc><i'
+map global insert <tab> '<a-;>:try lsp-snippets-select-next-placeholders catch %{ execute-keys -with-hooks <lt>tab> }<ret>' -docstring 'Select next snippet placeholder'
 
 # get hover info
 map global insert <c-a> '<a-;>: lsp-hover<ret>'
@@ -58,6 +60,8 @@ alias global WQ write-quit
 alias global Wqa write-all-quit
 alias global WQa write-all-quit
 alias global WQA write-all-quit
+
+set-option global modelinefmt "%opt{lsp_modeline} %opt{modelinefmt}"
 
 define-command -docstring 'set-option buffer filetype <type>' -params 1 sf %{
     set-option buffer filetype %arg{1}
