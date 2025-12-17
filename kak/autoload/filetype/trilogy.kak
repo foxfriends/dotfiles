@@ -58,8 +58,8 @@ provide-module trilogy %§
 
     add-highlighter shared/trilogy/code/    regex \b(([0-9][0-9_]*(\.[0-9_]*)?)|(0x[0-9A-Fa-f_]+)|(0o[0-7_]+)|(0b[01_]+))(i([0-9][0-9_]*(\.[0-9_]*)?)|(0x[0-9A-Fa-f_]+)|(0o[0-7_]+)|(0b[01_]+))?\b 0:value
 
-    add-highlighter shared/trilogy/code/    regex \b(0xb[0-9A-Fa-f_]*)\b 1:value
-    add-highlighter shared/trilogy/code/    regex \b(0ob[0-7_]*)\b 1:value
+    add-highlighter shared/trilogy/code/    regex \b(0bx[0-9A-Fa-f_]*)\b 1:value
+    add-highlighter shared/trilogy/code/    regex \b(0bo[0-7_]*)\b 1:value
     add-highlighter shared/trilogy/code/    regex \b(0bb[01_]*)\b 1:value
 
     add-highlighter shared/trilogy/code/    regex ('([^'\\]|\\'|\\\\|\\u\{[0-9a-fA-F]{1,4}\})') 1:value
