@@ -8,7 +8,7 @@ function password --description "Get password from bitwarden"
     exit 1
   end
 
-  if ! bw unlock --check > /dev/null 2>&1
+  while ! bw unlock --check > /dev/null 2>&1
     set -xg BW_SESSION (bw unlock --raw)
   end
 
