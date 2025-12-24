@@ -18,7 +18,7 @@ hook global WinSetOption filetype=ruby %{
 
     # hook window InsertChar .* -group ruby-indent ruby-indent-on-char
     hook window InsertChar \n -group ruby-indent ruby-indent-on-new-line
-    hook window InsertChar \n -group ruby-insert ruby-insert-on-new-line
+    # hook window InsertChar \n -group ruby-insert ruby-insert-on-new-line
 
     alias window alt ruby-alternative-file
 
@@ -141,11 +141,8 @@ provide-module ruby %§
     }}
 
     define-command -hidden ruby-trim-indent %{
-        evaluate-commands -no-hooks -draft -itersel %{
-            execute-keys x
-            # remove trailing white spaces
-            try %{ execute-keys -draft s \h + $ <ret> d }
-        }
+        # remove trailing white spaces
+        try %{ execute-keys -draft -itersel x s \h+$ <ret> d }
     }
 
     # define-command -hidden ruby-indent-on-char %{
@@ -162,7 +159,8 @@ provide-module ruby %§
     define-command -hidden ruby-indent-on-new-line %{
         evaluate-commands -no-hooks -draft -itersel %{
             # preserve previous line indent
-            try %{ execute-keys -draft K <a-&> }
+            try %{ execute-keys -draft k x s ^\h*\K#[#]?\h* <ret> y gh j P }
+            try %{ execute-keys -draft <semicolon> K <a-&> }
             # filter previous line
             try %{ execute-keys -draft k : ruby-trim-indent <ret> }
             # indent after start structure
@@ -170,23 +168,23 @@ provide-module ruby %§
         }
     }
 
-    define-command -hidden ruby-insert-on-new-line %[
-        evaluate-commands -no-hooks -draft -itersel %[
-            # copy _#_ comment prefix and following white spaces
-            try %{ execute-keys -draft k x s '^\h*\K#\h*' <ret> y j x<semicolon> P }
-            # wisely add end structure
-            # evaluate-commands -save-regs x %[
-            #     try %{ execute-keys -draft k x s ^ \h + <ret> \" x y } catch %{ reg x '' }
-            #     try %[
-            #         evaluate-commands -draft %[
-            #             # Check if previous line opens a block
-            #             execute-keys -draft kx <a-k>^<c-r>x(begin|case|class|def|for|if|module|unless|until|while|.+\bdo$|.+\bdo\h\|.+(?=\|))[^0-9A-Za-z_!?]<ret>
-            #             # Check that we do not already have an end for this indent level which is first set via `ruby-indent-on-new-line` hook
-            #             execute-keys -draft }i J x <a-K> ^<c-r>x(end|else|elsif|rescue|when)[^0-9A-Za-z_!?]<ret>
-            #         ]
-            #         execute-keys -draft o<c-r>xend<esc> # insert a new line with containing end
-            #     ]
-            # ]
-        ]
-    ]
+    # define-command -hidden ruby-insert-on-new-line %[
+    #     evaluate-commands -no-hooks -draft -itersel %[
+    #         # copy _#_ comment prefix and following white spaces
+    #         try %{ execute-keys -draft k x s '^\h*\K#\h*' <ret> y j x<semicolon> P }
+    #         # wisely add end structure
+    #         # evaluate-commands -save-regs x %[
+    #         #     try %{ execute-keys -draft k x s ^ \h + <ret> \" x y } catch %{ reg x '' }
+    #         #     try %[
+    #         #         evaluate-commands -draft %[
+    #         #             # Check if previous line opens a block
+    #         #             execute-keys -draft kx <a-k>^<c-r>x(begin|case|class|def|for|if|module|unless|until|while|.+\bdo$|.+\bdo\h\|.+(?=\|))[^0-9A-Za-z_!?]<ret>
+    #         #             # Check that we do not already have an end for this indent level which is first set via `ruby-indent-on-new-line` hook
+    #         #             execute-keys -draft }i J x <a-K> ^<c-r>x(end|else|elsif|rescue|when)[^0-9A-Za-z_!?]<ret>
+    #         #         ]
+    #         #         execute-keys -draft o<c-r>xend<esc> # insert a new line with containing end
+    #         #     ]
+    #         # ]
+    #     ]
+    # ]
 §
