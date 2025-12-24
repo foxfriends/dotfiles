@@ -6,6 +6,8 @@
 
 hook global BufCreate .*([.]rb|irbrc|pryrc|Brewfile|Capfile|[.]cap|Gemfile|[.]gemspec|Guardfile|Rakefile|[.]rake|Thorfile|[.]thor|Vagrantfile|Podfile) %{
     set-option buffer filetype ruby
+    set buffer tabstop 2
+    set buffer indentwidth 2
 }
 
 # Initialization
@@ -26,6 +28,11 @@ hook global WinSetOption filetype=ruby %{
         remove-hooks window ruby-.+
         unalias window alt ruby-alternative-file
     }
+
+    try %{
+        check-cmd rufo
+        set buffer formatcmd "rufo -x --filename='%val{buffile}'"
+    } catch %{}
 }
 
 hook -group ruby-highlight global WinSetOption filetype=ruby %{

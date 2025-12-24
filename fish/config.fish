@@ -85,6 +85,8 @@ addpath "$HOME/.rye/shims"
 addpath "$HOME/.radicle/bin"
 
 set -x GEM_HOME "$HOME/.gem"
+addpath "$GEM_HOME/bin"
+
 set -ax LD_LIBRARY_PATH "/usr/local/lib"
 
 if command -q pipenv
