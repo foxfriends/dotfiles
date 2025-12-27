@@ -83,6 +83,7 @@ provide-module rust %§
 
     add-highlighter shared/rust/code/keyword      regex \b(?<!r#)(use|mod|struct|enum|union|type|gen|yield|await|async|(?:async\s+)?fn|trait|impl|return|if|match|where|in|as|else|for|while|loop|const|static|let|mut|ref|dyn|box|pub|crate|super|extern|move|break|continue)\b 1:keyword
     add-highlighter shared/rust/code/unsafe       regex \bunsafe\b 0:field
+    add-highlighter shared/rust/code/reserved     regex \b(?<!r#)(abstract|become|do|final|macro|override|priv|try|typeof|unsized|virtual)\b 0:error
 
     # Commands
     # ‾‾‾‾‾‾‾‾
