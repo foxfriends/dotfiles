@@ -68,7 +68,7 @@ provide-module trilogy %§
     add-highlighter shared/trilogy/code/    regex \b([a-z_][a-zA-Z_0-9]*!?)*(?=\() 1:function
     add-highlighter shared/trilogy/code/    regex \bfunc\b\s([a-z_][a-zA-Z_0-9]*) 1:function
 
-    add-highlighter shared/trilogy/code/    regex \b(and|assert|as|become|break|cancel||continue|case|defer|do|else|end|exit|export|extern|fn|for|func|if|import|in|is|let|match|mut|not|or|pass|proc|qy|resume|return|rule|slot|super|test|then|type|typeof|use|when|while|with|yield)\b 1:keyword
+    add-highlighter shared/trilogy/code/    regex \b(and|assert|as|become|break|cancel||continue|case|defer|do|else|end|exit|export|extern|fn|for|func|if|import|in|is|let|match|mut|not|or|pass|proc|qy|resume|return|rule|slot|super|test|then|type|typeof|use|using|when|while|with|yield)\b 1:keyword
     add-highlighter shared/trilogy/code/    regex \b(async|await|catch|class|const|data|enum|except|extends|implements|inline|instanceof|interface|iter|lazy|lens|loop|macro|module|next|oper|prec|protocol|static|struct|switch|tag|trait|try|unless|until|where)\b 1:error
     add-highlighter shared/trilogy/code/    regex ('[A-Za-z_][A-Za-z_0-9]*)(?!') 1:type
 
