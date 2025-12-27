@@ -56,7 +56,7 @@ provide-module markdown %{
         gas go haml haskell html ini java javascript json julia kak kickstart
         kotlin latex lisp lua makefile markdown moon objc perl pug python ragel
         ruby rust sass scala scss sh swift toml tupfile typescript yaml sql
-        sml scheme graphql
+        sml scheme graphql trilogy
       "
       for lang in ${languages}; do
         printf 'add-highlighter shared/markdown/%s region -match-capture ^(\\h*)```\\h*%s\\b   ^(\\h*)``` regions\n' "${lang}" "${lang}"
