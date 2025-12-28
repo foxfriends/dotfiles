@@ -55,7 +55,6 @@ add-highlighter shared/gleam/code/ regex (&&|\|\|) 0:operator
 add-highlighter shared/gleam/code/ regex \b(True|False|Nil)\b 0:value
 add-highlighter shared/gleam/code/ regex \b(Bool|Int|String|Float|BitArray)\b 0:builtin
 add-highlighter shared/gleam/code/ regex \b([A-Z][a-zA-Z0-9_]*)\b 1:type
-add-highlighter shared/gleam/code/ regex \b(@[a-zA-Z][a-zA-Z0-9_]*)\b 0:meta
 
 add-highlighter shared/gleam/code/ regex (\.\.|\|>|\|) 0:operator
 add-highlighter shared/gleam/code/ regex (:|->) 0:operator
@@ -63,6 +62,7 @@ add-highlighter shared/gleam/code/ regex (<<|>>) 0:operator
 
 add-highlighter shared/gleam/code/ regex \b([a-z_][a-zA-Z_0-9]*)\s*(?=\() 1:function
 add-highlighter shared/gleam/code/ regex \b(as|assert|case|const|fn|if|import|let|opaque|panic|pub|todo|type|use)\b 0:keyword
+add-highlighter shared/gleam/code/ regex (@[a-zA-Z][a-zA-Z0-9_]*)\b 1:meta
 
 
 # Commands
