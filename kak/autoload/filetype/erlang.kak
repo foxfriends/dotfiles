@@ -21,6 +21,7 @@ hook global WinSetOption filetype=erlang %{
 hook -group erlang-highlight global WinSetOption filetype=erlang %{
     add-highlighter window/erlang ref erlang
     hook -once -always window WinSetOption filetype=.* %{ remove-highlighter window/erlang }
+    set-option window comment_line '%'
 }
 
 provide-module erlang %[
