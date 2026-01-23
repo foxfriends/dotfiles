@@ -76,8 +76,8 @@ define-command -hidden gleam-trim-indent %{
 
 define-command -hidden gleam-insert-on-new-line %[
     evaluate-commands -no-hooks -draft -itersel %[
-        # copy '#' comment prefix and following white spaces
-        try %{ execute-keys -draft k x s ^\h*\K#\h* <ret> y jgi P }
+        # copy '//' comment prefix and following white spaces
+        try %{ execute-keys -draft k x s ^\h*\K///?\h* <ret> y jgi P }
         # wisely add end structure
         # evaluate-commands -save-regs x %[
         #     try %{ execute-keys -draft k x s ^ \h + <ret> \" x y } catch %{ reg x '' }
