@@ -50,8 +50,11 @@ add-highlighter "shared/csharp/comment_line"  region //   '$'                   
 add-highlighter "shared/csharp/comment"       region /\*  \*/                     fill comment
 add-highlighter shared/csharp/code/ regex %{\b(this|true|false|null)\b} 0:value
 add-highlighter shared/csharp/code/ regex "\b(var|void|dynamic|string|int|char|decimal|bool|double|float|List|IList|Enumerable|IEnumerable)\b" 0:type
-add-highlighter shared/csharp/code/ regex "\b(while|for|if|else|do|static|readonly|switch|case|default|class|interface|enum|break|continue|return|async|await|using|namespace|try|catch|throw|new|extends|implements|throws|instanceof|finally|as|get|set)\b" 0:keyword
+add-highlighter shared/csharp/code/ regex "\b(while|for|foreach|in|if|else|do|static|readonly|switch|case|default|class|interface|enum|break|continue|return|async|await|using|namespace|try|catch|throw|new|extends|implements|throws|instanceof|finally|as|get|set)\b" 0:keyword
 add-highlighter shared/csharp/code/ regex "\b(final|public|protected|private|abstract)\b" 0:attribute
+add-highlighter shared/csharp/code/ regex "#(if|endif)\b" 0:meta
+add-highlighter shared/csharp/code/ regex ([a-zA-Z_][a-zA-Z0-9_]*)\b(?:\s*\() 1:function
+add-highlighter shared/csharp/code/ regex (\[|\]|=|==|!=|\+=|-=|\*=|/=|%=|<|>|<=|>=|\+|-|/|\*|%|~|\||\|\||&|&&|!|\^|\?|<<|>>|<<=|>>=|\.) 1:operator
 
 # Commands
 # ‾‾‾‾‾‾‾‾
