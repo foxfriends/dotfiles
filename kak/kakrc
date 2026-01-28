@@ -92,6 +92,10 @@ hook global BufSetOption filetype=csharp %{
     set-option buffer lsp_servers %{
         [csharp-language-server]
         root_globs = ["*.sln", "*.csproj"]
-        args = []
+        command = 'bash'
+        args = [
+            "-c",
+            "csharp-language-server -s *.sln"
+        ]
     }
 }
