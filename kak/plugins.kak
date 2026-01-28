@@ -69,7 +69,7 @@ bundle kakoune-lsp 'git clone -b v19.0.1 https://github.com/kakoune-lsp/kakoune-
     define-command pe -docstring 'go to previous error/warning from lsp' %{ lsp-find-error --previous --include-warnings }
     define-command ee -docstring 'go to current error/warning from lsp' %{ lsp-find-error --include-warnings; lsp-find-error --previous --include-warnings }
 
-    hook global WinSetOption filetype=(rust|haskell|literate-haskell|javascript|typescript|html|css|svelte|python|solidity|elixir|hcl|terraform|go|gleam) %{
+    hook global WinSetOption filetype=(rust|haskell|literate-haskell|javascript|typescript|html|css|svelte|python|solidity|elixir|hcl|terraform|go|gleam|csharp) %{
         set-option window lsp_auto_highlight_references true
         set-option window lsp_hover_anchor false
         # lsp-auto-hover-enable

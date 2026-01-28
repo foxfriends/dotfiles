@@ -87,3 +87,11 @@ hook global BufSetOption filetype=gleam %{
         args = ["lsp"]
     }
 }
+
+hook global BufSetOption filetype=csharp %{
+    set-option buffer lsp_servers %{
+        [csharp-language-server]
+        root_globs = ["*.sln", "*.csproj"]
+        args = []
+    }
+}
