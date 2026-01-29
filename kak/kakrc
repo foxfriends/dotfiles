@@ -95,7 +95,7 @@ hook global BufSetOption filetype=csharp %{
         command = 'bash'
         args = [
             "-c",
-            "csharp-language-server -s *.sln"
+            "mise x dotnet@10 -- csharp-language-server -s *.sln"
         ]
     }
 }
