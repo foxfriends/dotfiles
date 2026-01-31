@@ -61,7 +61,7 @@ add-highlighter shared/gleam/code/ regex (:|->) 0:operator
 add-highlighter shared/gleam/code/ regex (<<|>>) 0:operator
 
 add-highlighter shared/gleam/code/ regex \b([a-z_][a-zA-Z_0-9]*)\s*(?=\() 1:function
-add-highlighter shared/gleam/code/ regex \b(as|assert|case|const|fn|if|import|let|opaque|panic|pub|todo|type|use)\b 0:keyword
+add-highlighter shared/gleam/code/ regex \b(as|assert|case|const|fn|if|import|let|opaque|panic|pub|todo|type|use|echo)\b 0:keyword
 add-highlighter shared/gleam/code/ regex \b(delegate)\b 0:error
 add-highlighter shared/gleam/code/ regex (@[a-zA-Z][a-zA-Z0-9_]*)\b 1:meta
 
