@@ -93,30 +93,32 @@ if command -q pipenv
   set -x PIPENV_VENV_IN_PROJECT true
 end
 
+command -q mise; and source (mise activate fish |psub)
+command -q rbenv; and source (rbenv init -|psub)
+command -q pyenv; and source (pyenv init -|psub)
+command -q kak; and set -x EDITOR (which kak)
+
 if status --is-interactive
   if command -q zoxide
     source (zoxide init fish |psub)
   else if command -q pazi
     source (pazi init fish |psub)
   end
-  command -q rbenv; and source (rbenv init -|psub)
-  command -q pyenv; and source (pyenv init -|psub)
   # command -q kitty; and source (kitty + complete setup fish |psub)
   command -q diesel; and source (diesel completions fish |psub)
   command -q deno; and source (deno completions fish |psub)
   command -q rustup; and source (rustup completions fish |psub)
   command -q gh; and source (gh completion -s fish |psub)
-  command -q kak; and set -x EDITOR (which kak)
   command -q pack; and source (pack completion --shell fish)
   command -q paper; and source (paper --completions fish |psub)
-  command -q mise; and source (mise activate fish |psub)
-  
+  command -q aws aws-mfa-secure; and alias aws="aws-mfa-secure session"
+
   if command -q sk
     set -x JUST_CHOOSER sk
   else if command -q fzf
     set -x JUST_CHOOSER fzf
   end
-  
+
   if command -q tv
     source (tv init fish |psub)
     set -x JUST_CHOOSER tv
@@ -133,8 +135,6 @@ if status --is-interactive
   if command -q bun
     set -x BUN_INSTALL "$HOME/.bun"
   end
-
-  command -q aws aws-mfa-secure; and alias aws="aws-mfa-secure session"
 
   # replace ls with exa
   if command -q exa
