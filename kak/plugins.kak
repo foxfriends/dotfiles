@@ -85,3 +85,11 @@ bundle-install-hook kakoune-lsp %{
 }
 
 bundle kakoune-vertical-selection https://github.com/occivink/kakoune-vertical-selection
+
+bundle shadow.kak https://github.com/ftonneau/shadow.kak %{
+    shadow-set csharp \
+        conditional "#if" "#endif" nofirst nolast section
+
+    shadow-decorate csharp \
+        conditional_border "#(if|else|endif)" sectionborder
+}

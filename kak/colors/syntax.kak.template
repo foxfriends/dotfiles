@@ -28,6 +28,9 @@ set-face global link rgb:${theme_color_link}
 set-face global bullet rgb:${theme_color_keyword}
 set-face global list rgb:${theme_color_keyword}
 
+set-face global section default,rgb:${theme_color_bgdark}
+set-face global sectionborder default,rgb:${theme_color_bgborder}
+
 ## Cursor
 set-face global NormalCursor default,rgb:${theme_color_bghighlight}+b
 set-face global InsertCursor rgb:${theme_color_bgcursor},rgb:${theme_color_cursor}+b
