@@ -56,7 +56,7 @@ add-highlighter shared/csharp/code/ regex %{\b(this|true|false|null)\b} 0:value
 add-highlighter shared/csharp/code/ regex "-?\b[0-9_]+([eE][+-]?[0-9_]+)?\b" 0:value
 add-highlighter shared/csharp/code/ regex "-?\b[0-9_]*\.[0-9_]+([eE][+-]?[0-9_]+)?\b" 0:value
 add-highlighter shared/csharp/code/ regex "\b(void|dynamic|string|int|char|decimal|bool|double|float|List|IList|Enumerable|IEnumerable)\b" 0:type
-add-highlighter shared/csharp/code/ regex "\b(while|for|foreach|in|if|else|do|static|readonly|switch|case|default|class|interface|enum|break|continue|return|async|await|using|namespace|try|catch|throw|new|extends|implements|throws|instanceof|finally|as|get|set|var|yield)\b" 0:keyword
+add-highlighter shared/csharp/code/ regex "\b(while|for|foreach|in|if|else|do|static|readonly|switch|case|default|class|interface|enum|break|continue|return|async|await|using|namespace|try|catch|throw|new|extends|implements|throws|instanceof|finally|as|get|set|var|yield|const)\b" 0:keyword
 add-highlighter shared/csharp/code/ regex "\b(final|public|protected|private|abstract|override)\b" 0:attribute
 add-highlighter shared/csharp/code/ regex "#(if|endif)\b" 0:meta
 add-highlighter shared/csharp/code/ regex (\[|\]|=|==|!=|\+=|-=|\*=|/=|%=|<|>|<=|>=|\+|-|/|\*|%|~|\||\|\||&|&&|!|\^|\?|<<|>>|<<=|>>=|\.) 1:operator
