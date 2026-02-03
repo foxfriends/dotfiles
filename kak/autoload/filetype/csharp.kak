@@ -60,7 +60,7 @@ add-highlighter shared/csharp/code/ regex "\b(void|dynamic|string|int|char|decim
 add-highlighter shared/csharp/code/ regex "\b(while|for|foreach|in|out|if|else|do|static|readonly|switch|case|default|class|interface|enum|break|continue|return|async|await|using|namespace|try|catch|throw|new|extends|implements|throws|instanceof|finally|as|get|set|var|yield|const|is|nnot)\b" 0:keyword
 add-highlighter shared/csharp/code/ regex "\b(final|public|protected|private|abstract|override)\b" 0:attribute
 add-highlighter shared/csharp/code/ regex "#(if|else|endif)\b" 0:meta
-add-highlighter shared/csharp/code/ regex (\[|\]|=|==|!=|\+=|-=|\*=|/=|%=|<|>|<=|>=|\+|-|/|\*|%|~|\||\|\||&|&&|!|\^|\?|<<|>>|<<=|>>=|\.) 1:operator
+add-highlighter shared/csharp/code/ regex (\[|\]|=|==|!=|\+=|-=|\*=|/=|%=|<|>|<=|>=|\+|-|/|\*|%|~|\||\|\||&|&&|!|\^|\?|:|<<|>>|<<=|>>=|\.) 1:operator
 
 # Commands
 # ‾‾‾‾‾‾‾‾
