@@ -42,12 +42,13 @@ provide-module csharp %§
 # Highlighting for C#
 # ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 
-add-highlighter shared/csharp               regions
-add-highlighter shared/csharp/code          default-region group
-add-highlighter shared/csharp/shebang       region ^#!  $                       fill meta
-add-highlighter shared/csharp/double_string region '\$?"'  (?<!\\)(\\\\)*"      fill string
-add-highlighter shared/csharp/comment_line  region //   '$'                     fill comment
-add-highlighter shared/csharp/comment       region /\*  \*/                     fill comment
+add-highlighter shared/csharp                   regions
+add-highlighter shared/csharp/code              default-region group
+add-highlighter shared/csharp/shebang           region ^#!  $                    fill meta
+add-highlighter shared/csharp/double_string     region '\$?"'  (?<!\\)(\\\\)*"   fill string
+add-highlighter shared/csharp/comment_line      region //   '$'                  ref comment
+add-highlighter shared/csharp/doc_comment_line  region ///   '$'                 ref doc_comment
+add-highlighter shared/csharp/comment           region /\*  \*/                  ref comment
 
 add-highlighter shared/csharp/code/ regex ([a-zA-Z_][a-zA-Z0-9_]*)\b(?:\s*\() 1:function
 add-highlighter shared/csharp/code/ regex \bnew\s+([a-zA-Z_][a-zA-Z0-9_]*)\b(?:\s*\() 1:type
@@ -59,7 +60,7 @@ add-highlighter shared/csharp/code/ regex "-?\b[0-9_]*\.[0-9_]+([eE][+-]?[0-9_]+
 add-highlighter shared/csharp/code/ regex "\b(void|dynamic|string|int|char|decimal|bool|double|float|List|IList|Enumerable|IEnumerable)\b" 0:type
 add-highlighter shared/csharp/code/ regex "\b(while|for|foreach|in|out|if|else|do|static|readonly|switch|case|default|class|interface|enum|break|continue|return|async|await|using|namespace|try|catch|throw|new|extends|implements|throws|instanceof|finally|as|get|set|var|yield|const|is|nnot)\b" 0:keyword
 add-highlighter shared/csharp/code/ regex "\b(final|public|protected|private|abstract|override)\b" 0:attribute
-add-highlighter shared/csharp/code/ regex "#(if|else|endif)\b" 0:meta
+add-highlighter shared/csharp/code/ regex "#(if|else|endif|region|endregion|define)\b" 0:meta
 add-highlighter shared/csharp/code/ regex (\[|\]|=|==|!=|\+=|-=|\*=|/=|%=|<|>|<=|>=|\+|-|/|\*|%|~|\||\|\||&|&&|!|\^|\?|:|<<|>>|<<=|>>=|\.) 1:operator
 
 # Commands

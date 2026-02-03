@@ -91,5 +91,5 @@ bundle shadow.kak https://github.com/ftonneau/shadow.kak %{
         conditional "#if" "#endif" nofirst nolast section
 
     shadow-decorate csharp \
-        conditional_border "#(if|else|endif)" sectionborder
+        conditional_border "#(if|else|endif|region|endregion)" sectionborder
 }
