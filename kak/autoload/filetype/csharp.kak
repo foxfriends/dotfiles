@@ -54,6 +54,7 @@ add-highlighter shared/csharp/code/ regex ([a-zA-Z_][a-zA-Z0-9_]*)\b(?:\s*\() 1:
 add-highlighter shared/csharp/code/ regex \bnew\s+([a-zA-Z_][a-zA-Z0-9_]*)\b(?:\s*\() 1:type
 
 add-highlighter shared/csharp/code/ regex %{\b(true|false|null)\b} 0:value
+add-highlighter shared/csharp/code/ regex ('([^'\\]|\\'|\\"|\\\\|\\n|\\r|\\t|\\0|\\x[0-9A-F]{2}|\\u\{[0-9a-fA-F]{1,6}\})') 1:value
 add-highlighter shared/csharp/code/ regex %{\b(this|base)\b} 0:variable
 add-highlighter shared/csharp/code/ regex "-?\b[0-9_]+([eE][+-]?[0-9_]+)?\b" 0:value
 add-highlighter shared/csharp/code/ regex "-?\b[0-9_]*\.[0-9_]+([eE][+-]?[0-9_]+)?\b" 0:value
