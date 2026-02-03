@@ -44,10 +44,10 @@ add-highlighter shared/gleam/string         region %{(?<!')"} (?<!\\)(\\\\)*"   
 add-highlighter shared/gleam/comment        region '//'     '$' ref comment
 add-highlighter shared/gleam/doc_comment    region "///"    "$" ref doc_comment
 
-add-highlighter shared/gleam/code/ regex \b([0-9]+)\b 1:value
-add-highlighter shared/gleam/code/ regex \b(0x[0-9A-Fa-f]+)\b 1:value
-add-highlighter shared/gleam/code/ regex \b(0o[0-7]+)\b 1:value
-add-highlighter shared/gleam/code/ regex \b(0b[01]+)\b 1:value
+add-highlighter shared/gleam/code/ regex \b([0-9_]+)\b 1:value
+add-highlighter shared/gleam/code/ regex \b(0x[0-9A-Fa-f_]+)\b 1:value
+add-highlighter shared/gleam/code/ regex \b(0o[0-7_]+)\b 1:value
+add-highlighter shared/gleam/code/ regex \b(0b[01_]+)\b 1:value
 add-highlighter shared/gleam/code/ regex ([+\-*/%<>]|>=|<=)[.]? 0:operator
 add-highlighter shared/gleam/code/ regex (==|!=) 0:operator
 add-highlighter shared/gleam/code/ regex (<>) 0:operator
