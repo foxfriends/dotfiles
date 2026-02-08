@@ -62,6 +62,7 @@ check zellij && dot_config zellij
 check topgrade && dot_config topgrade
 check wezterm && dot_config wezterm
 check rio && dot_config rio
+check fd && dot_config fd
 check tv && dot_config television
 check yazi && dot_config yazi
 # check hyprland && dot_config hypr # I never ended up setting this one up
