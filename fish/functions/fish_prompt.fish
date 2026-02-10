@@ -53,7 +53,7 @@ function fish_prompt --description 'Write out the prompt'
       $remote_rad \
       $remote_tangled \
       $remote_natto \
-      (git branch | grep \* | cut -d ' ' -f2- | sed 's/^foxfriends/🦊/')
+      (git branch | grep \* | cut -d ' ' -f2- | sed 's/[[:<:]]foxfriends[[:>:]]/🦊/')
   end
 
   if test (id -u) -eq 0
