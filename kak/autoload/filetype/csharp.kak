@@ -63,7 +63,7 @@ add-highlighter shared/csharp/code/ regex "\b(while|for|foreach|out|if|else|do|s
 add-highlighter shared/csharp/code/ regex "\b(global|final|public|protected|private|partial|abstract|sealed|internal|virtual|override|file|required)\b" 0:attribute
 add-highlighter shared/csharp/code/ regex "\b(select|from|where|in|groupby|orderby|into|let|by|join|on|equals)\b" 0:keyword
 add-highlighter shared/csharp/code/ regex (\[|\]|=|==|!=|\+=|-=|\*=|/=|%=|<|>|<=|>=|\+|-|/|\*|%|~|\||\|\||&|&&|!|\^|\?|:|<<|>>|<<=|>>=|\.) 1:operator
-add-highlighter shared/csharp/code/ regex "(#(?:if|else|endif|region|endregion|define|warning)\b)((?S).*)" 1:meta 2:default
+add-highlighter shared/csharp/code/ regex "(#(?:if|else|endif|region|endregion|define|warning)\b)((?S).*)" 1:meta 2:string
 
 # Commands
 # ‾‾‾‾‾‾‾‾
