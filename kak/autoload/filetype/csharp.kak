@@ -46,8 +46,8 @@ add-highlighter shared/csharp                   regions
 add-highlighter shared/csharp/code              default-region group
 add-highlighter shared/csharp/shebang           region ^#!  $                    fill meta
 add-highlighter shared/csharp/double_string     region '\$?"'  (?<!\\)(\\\\)*"   fill string
-add-highlighter shared/csharp/comment_line      region //   '$'                  ref comment
 add-highlighter shared/csharp/doc_comment_line  region ///   '$'                 ref doc_comment
+add-highlighter shared/csharp/comment_line      region //   '$'                  ref comment
 add-highlighter shared/csharp/comment           region /\*  \*/                  ref comment
 
 add-highlighter shared/csharp/code/ regex ([a-zA-Z_][a-zA-Z0-9_]*)\b(?:\s*\() 1:function
