@@ -48,12 +48,17 @@ function fish_prompt --description 'Write out the prompt'
       end
     end
 
+    set sed_pattern 's/\bfoxfriends\b/🦊/'
+    if test (uname) = 'Darwin'
+      set sed_pattern 's/[[:<:]]foxfriends[[:>:]]/🦊/'
+    end
+
     printf '%s%s%s%s %s' \
       $remote_github \
       $remote_rad \
       $remote_tangled \
       $remote_natto \
-      (git branch | grep \* | cut -d ' ' -f2- | sed 's/[[:<:]]foxfriends[[:>:]]/🦊/')
+      (git branch | grep \* | cut -d ' ' -f2- | sed $sed_pattern)
   end
 
   if test (id -u) -eq 0
