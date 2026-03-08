@@ -60,7 +60,7 @@ provide-module sql %{
         keywords="${keywords}|REFERENCES|RIGHT JOIN|RIGHT OUTER JOIN|SELECT|SELECT TOP|SET|TABLE|TRUNCATE|UNION|UNIQUE|RETURNING"
         keywords="${keywords}|UPDATE|VALUES|VIEW|WHERE"
         keywords="${keywords}|COMMENT|EXTENSION|IF|COLUMN|CASCADE|RESTRICT"
-        keywords="${keywords}|FUNCTION|TRIGGER|RETURNS|LANGUAGE|RETURN|BEGIN|END|DECLARE|TYPE"
+        keywords="${keywords}|FUNCTION|TRIGGER|RETURNS|LANGUAGE|RETURN|BEGIN|END|DECLARE|TYPE|COMMIT|ROLLBACK"
         keywords="${keywords}|AFTER|BEFORE|INSTEAD OF|INSERT|UPDATE|DELETE|FOR|EACH|ROW|STATEMENT|EXECUTE|PROCEDURE"
         keywords="${keywords}|IMMUTABLE|STABLE|VOLATILE"
         keywords="${keywords}|POLICY|RENAME|USING|TO|PERFORM"
@@ -68,6 +68,7 @@ provide-module sql %{
         keywords="${keywords}|(ENABLE|DISABLE) ROW LEVEL SECURITY|WITH|CASE|WHEN|THEN|ELSE|NULLS FIRST|NULLS"
         keywords="${keywords}|GENERATED|ALWAYS|STORED|IDENTITY"
         keywords="${keywords}|OVER|PARTITION BY|RAISE EXCEPTION|LISTEN|NOTIFY"
+        keywords="${keywords}|EXPLAIN|ANALYZE|PREPARE"
 
         # Operators
         operators="ALL|AND|ANY|BETWEEN|EXISTS|IN|IS|LIKE|NOT|OR|SOME"
