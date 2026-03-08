@@ -20,6 +20,12 @@ hook global BufCreate .*/?(?i)sql %{
 
 hook global WinSetOption filetype=sql %{
     require-module sql
+
+    # try %{
+    #     require-module detection
+    #     check-cmd sqruff
+    #     set-option buffer formatcmd 'sqruff fix -'
+    # }
 }
 
 hook -group sql-highlight global WinSetOption filetype=sql %{
@@ -51,7 +57,7 @@ provide-module sql %{
         keywords="ALTER|AS|ASC|AUTO_INCREMENT|CHECK|CONSTRAINT|CREATE OR REPLACE|CREATE|DATABASE|DEFAULT|DELETE|DESC|DISTINCT|DROP"
         keywords="${keywords}|EXISTS|FOREIGN KEY|FROM|FULL JOIN|FULL OUTER JOIN|GROUP BY|HAVING|INDEX|INNER JOIN"
         keywords="${keywords}|INSERT INTO|INTO|JOIN|LEFT JOIN|LEFT OUTER JOIN|LIMIT|MODIFY|NOT NULL|ON|ORDER BY|PRIMARY KEY"
-        keywords="${keywords}|REFERENCES|RIGHT JOIN|RIGHT OUTER JOIN|SELECT|SELECT TOP|SET|TABLE|TRUNCATE|UNION|UNIQUE"
+        keywords="${keywords}|REFERENCES|RIGHT JOIN|RIGHT OUTER JOIN|SELECT|SELECT TOP|SET|TABLE|TRUNCATE|UNION|UNIQUE|RETURNING"
         keywords="${keywords}|UPDATE|VALUES|VIEW|WHERE"
         keywords="${keywords}|COMMENT|EXTENSION|IF|COLUMN|CASCADE|RESTRICT"
         keywords="${keywords}|FUNCTION|TRIGGER|RETURNS|LANGUAGE|RETURN|BEGIN|END|DECLARE|TYPE"
@@ -61,6 +67,7 @@ provide-module sql %{
         keywords="${keywords}|GRANT|USAGE|REVOKE|SCHEMA|ALL TABLES|PRIVILEGES|ALL PRIVILIGES"
         keywords="${keywords}|(ENABLE|DISABLE) ROW LEVEL SECURITY|WITH|CASE|WHEN|THEN|ELSE|NULLS FIRST|NULLS"
         keywords="${keywords}|GENERATED|ALWAYS|STORED|IDENTITY"
+        keywords="${keywords}|OVER|PARTITION BY|RAISE EXCEPTION|LISTEN|NOTIFY"
 
         # Operators
         operators="ALL|AND|ANY|BETWEEN|EXISTS|IN|IS|LIKE|NOT|OR|SOME"
