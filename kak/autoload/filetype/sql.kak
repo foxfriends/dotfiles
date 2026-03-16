@@ -76,17 +76,15 @@ provide-module sql %{
 
         # MySQL data types
         data_types="LONGBLOB|LONGTEXT|MEDIUMBLOB|MEDIUMTEXT|SET|TEXT|TINYTEXT"
-        data_types_fn="BIGINT|BLOB|CHAR|DATE|DATETIME|DECIMAL|DOUBLE|ENUM|FLOAT|INT"
-        data_types_fn="${data_types_fn}|MEDIUMINT|SMALLINT|TIME|TIMESTAMP|TINYINT|VARCHAR|YEAR"
 
         # SQL Server data types
         data_types="${data_types}|bigint|bit|cursor|date|datetime|datetime2|datetimeoffset|image|int|money|nchar|ntext"
         data_types="${data_types}|nvarchar|real|smalldatetime|smallint|smallmoney|sql_variant|table|text|time"
         data_types="${data_types}|timestamp|tinyint|uniqueidentifier|varbinary|xml"
-        data_types_fn="${data_types_fn}|binary|char|decimal|float|numeric|nvarchar|varbinary|varchar|varchar"
 
         # PostgreSQL data types
-        data_types="${data_types}|UUID|TIMESTAMP(\s+WITH(OUT)?\s+TIME\s+ZONE|TZ)?|CITEXT|BOOLEAN|ENUM|DOUBLE\s+PRECISION"
+        data_types="${data_types}|UUID|CITEXT|BOOLEAN|ENUM|DOUBLE PRECISION|INTERVAL"
+        data_types="${data_types}|TIMESTAMP(TZ)?|TIMESTAMP WITH TIME ZONE|TIMESTAMP WITHOUT TIME ZONE"
         data_types="${data_types}|JSONB?|VECTOR|HSTORE"
 
         # MS Access data types
@@ -95,12 +93,11 @@ provide-module sql %{
 
         # Set the highlighters
         printf %s "
-            add-highlighter shared/sql/code/ regex '(?i)\b(${data_types_fn})\(.*?\)' 1:type
             add-highlighter shared/sql/code/ regex '(?i)\b(${data_types})\b'         1:type
             add-highlighter shared/sql/code/ regex '(?i)\b(${keywords})\b'           1:keyword
             add-highlighter shared/sql/code/ regex '(?i)\b(${operators})\b'          1:operator
         "
     }
-    add-highlighter shared/sql/code/ regex '(?i)\b(NEW|OLD)\b'               1:field
+    add-highlighter shared/sql/code/ regex '(?i)\b(NEW|OLD|EXCLUDED)\b'      1:field
     add-highlighter shared/sql/code/ regex (\$[0-9]+)\b                      1:field
 }
