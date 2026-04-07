@@ -47,7 +47,7 @@ provide-module sql %{
     add-highlighter shared/sql/comment2 region '#' '$'     ref comment
     add-highlighter shared/sql/comment3 region '/\*' '\*/' ref comment
 
-    add-highlighter shared/sql/code/ regex '\+|-|\*|/|%|&|\||^|=|>|<|>=|<=|<>|\+=|-=|\*=|/=|%=|&=|^-=|\|\*=' 0:operator
+    add-highlighter shared/sql/code/ regex '\+|-|\*|/|%|&|\||^|=|>|<|>=|<=|<>|\+=|-=|\*=|/=|%=|&=|^-=|\|\*=|:=' 0:operator
     add-highlighter shared/sql/code/ regex '(?i)\bNULL|FALSE|TRUE\b'    0:value
     add-highlighter shared/sql/code/ regex \b\d+(?:\.\d+)?\b            0:value
     add-highlighter shared/sql/code/ regex \b([a-zA-Z0-9_]+)(?=\()      1:function
@@ -100,4 +100,5 @@ provide-module sql %{
     }
     add-highlighter shared/sql/code/ regex '(?i)\b(NEW|OLD|EXCLUDED)\b'      1:field
     add-highlighter shared/sql/code/ regex (\$[0-9]+)\b                      1:field
+    add-highlighter shared/sql/code/ regex (\$[\w\d_]*\$)                    1:meta
 }
