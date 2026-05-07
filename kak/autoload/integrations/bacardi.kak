@@ -31,8 +31,8 @@ provide-module bacardi %{
         }
     }
 
-    hook global BufWritePost .* "bacardi-detect"
-    hook global BufCreate .* "bacardi-detect"
+    # hook global BufWritePost .* "bacardi-detect"
+    # hook global BufCreate .* "bacardi-detect"
 }
 
 hook -group bacardi global KakBegin .* %{
