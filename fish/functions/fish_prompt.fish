@@ -34,6 +34,7 @@ function fish_prompt --description 'Write out the prompt'
     set remote_github ""
     set remote_rad ""
     set remote_tangled ""
+    set remote_codeberg ""
     set remote_natto ""
     for remote in (git remote)
       set remote_url (git remote show $remote -n | rg 'Fetch URL: (.*)' -or '$1')
@@ -43,6 +44,8 @@ function fish_prompt --description 'Write out the prompt'
         set remote_natto ' '
       else if echo "$remote_url" | rg 'rad://' -q
         set remote_rad '󰯉 '
+      else if echo "$remote_url" | rg 'codeberg.org' -q
+        set remote_codeberg ' '
       else if echo "$remote_url" | rg 'knot.eldridge.cam' -q
         set remote_tangled '󰳆 '
       end
@@ -53,10 +56,11 @@ function fish_prompt --description 'Write out the prompt'
       set sed_pattern 's/[[:<:]]foxfriends[[:>:]]/🦊/'
     end
 
-    printf '%s%s%s%s %s' \
+    printf '%s%s%s%s%s %s' \
       $remote_github \
       $remote_rad \
       $remote_tangled \
+      $remote_codeberg \
       $remote_natto \
       (git branch | grep \* | cut -d ' ' -f2- | sed $sed_pattern)
   end
