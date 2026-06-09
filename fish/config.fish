@@ -163,3 +163,4 @@ if set -q fish_user_configs
 end
 
 set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME
+source ~/.orbstack/shell/init2.fish 2>/dev/null || :
