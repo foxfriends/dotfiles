@@ -79,6 +79,16 @@ bundle kakoune-lsp 'git clone -b v19.0.1 https://github.com/kakoune-lsp/kakoune-
         }
     }
 
+    hook -group lsp-filetype-python global BufSetOption filetype=python %{
+        set-option buffer lsp_servers %{
+            [ty]
+            root_globs = ["pyproject.toml", "setup.py", "poetry.lock", ".git", ".hg"]
+            args = ["server"]
+            settings_section = "_"
+            [ty.settings._]
+        }
+    }
+
     hook global WinSetOption filetype=(rust|haskell|literate-haskell|javascript|typescript|html|css|svelte|python|solidity|elixir|hcl|terraform|go|gleam|csharp) %{
         set-option window lsp_auto_highlight_references true
         set-option window lsp_hover_anchor false

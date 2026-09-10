@@ -1,5 +1,5 @@
 [user]
-	email = cameldridge@gmail.com
+	email = "${GIT_EMAIL}"
 	name = Cameron Eldridge
 	signingkey = "${GPG_KEY_ID}"
 [core]
