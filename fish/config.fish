@@ -111,7 +111,6 @@ if status --is-interactive
   command -q gh; and source (gh completion -s fish |psub)
   command -q pack; and source (pack completion --shell fish)
   command -q paper; and source (paper --completions fish |psub)
-  command -q aws aws-mfa-secure; and alias aws="aws-mfa-secure session"
 
   if command -q sk
     set -x JUST_CHOOSER sk
@@ -163,3 +162,4 @@ if set -q fish_user_configs
 end
 
 set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME
+source ~/.orbstack/shell/init2.fish 2>/dev/null || :

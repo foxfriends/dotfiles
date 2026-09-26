@@ -1,48 +1,45 @@
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = "d"
 run = "noop"
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = "<C-->"
 run = "noop"
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = "_"
 run = "noop"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = "<C-p>"
 run = "link --relative"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = "s"
 run = "search --via=rg"
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = "S"
 run = "noop"
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = ["z", "h"]
 run = "hidden --toggle"
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = "Z"
 run = "noop"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = "l"
-run = [
-    'shell -- [ -d "$1" ] && ya emit enter || true',
-    'shell -- [ -f "$1" ] && ya emit open --hovered || true'
-]
+run = "plugin smart-enter"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = ["m", "k"]
 run = "shell --interactive --block 'mkdir -p '"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = "-"
 run = """
 shell --block 'git reset "$1"'
 """
 
-[[manager.append_keymap]]
+[[mgr.append_keymap]]
 on = "+"
 run = """
 shell --block 'git add "$1"'

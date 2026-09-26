@@ -70,6 +70,7 @@ provide-module sql %{
         keywords="${keywords}|OVER|PARTITION BY|RAISE EXCEPTION|LISTEN|NOTIFY"
         keywords="${keywords}|EXPLAIN|ANALYZE|PREPARE"
         keywords="${keywords}|DEFERRABLE|INITIALLY DEFERRED|INITIALLY IMMEDIATE|ENFORCED"
+        keywords="${keywords}|EXCLUDE|INHERITS|GIST"
 
         # Operators
         operators="ALL|AND|ANY|BETWEEN|EXISTS|IN|IS|LIKE|NOT|OR|SOME"
