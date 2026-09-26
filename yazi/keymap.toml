@@ -20,7 +20,7 @@ on = "S"
 run = "noop"
 [[mgr.prepend_keymap]]
 on = ["z", "h"]
-run = "hidden --toggle"
+run = "hidden toggle"
 [[mgr.prepend_keymap]]
 on = "Z"
 run = "noop"
