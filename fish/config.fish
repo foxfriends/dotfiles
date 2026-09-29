@@ -135,8 +135,14 @@ if status --is-interactive
     set -x BUN_INSTALL "$HOME/.bun"
   end
 
-  # replace ls with exa
-  if command -q exa
+  # replace ls with eza
+  if command -q eza
+    alias ls='eza'
+    alias ll='eza -alg --git'
+    alias lt='eza -T'
+    alias llt='eza -lT'
+    alias l='eza'
+  else if command -q exa
     alias ls='exa'
     alias ll='exa -alg --git'
     alias lt='exa -T'
