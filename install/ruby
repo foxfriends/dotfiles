@@ -1,7 +1,0 @@
-#!/bin/bash
-set -e
-check asdf || ./asdf
-asdf plugin-add ruby
-latest=$(asdf list all ruby | grep '^ *[0-9.]*$' | tail -n 1 | sed 's/ *//')
-asdf install ruby "$latest"
-asdf global "$latest"
