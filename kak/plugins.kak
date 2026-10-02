@@ -89,7 +89,18 @@ bundle kakoune-lsp 'git clone -b v19.0.1 https://github.com/kakoune-lsp/kakoune-
         }
     }
 
-    hook global WinSetOption filetype=(rust|haskell|literate-haskell|javascript|typescript|html|css|svelte|python|solidity|elixir|hcl|terraform|go|gleam|csharp) %{
+    hook -group lsp-filetype-python global BufSetOption filetype=astro %{
+        set-option buffer lsp_servers %{
+            [astro-ls]
+            root_globs = ["astro.config.{js,mjs,cjs,ts,mts,cts}"]
+            args = ["--stdio"]
+            settings_section = "_"
+            [astro-ls.settings._]
+            typescript.tsdk = "node_modules/typescript/lib"
+        }
+    }
+
+    hook global WinSetOption filetype=(astro|rust|haskell|literate-haskell|javascript|typescript|html|css|svelte|python|solidity|elixir|hcl|terraform|go|gleam|csharp) %{
         set-option window lsp_auto_highlight_references true
         set-option window lsp_hover_anchor false
         # lsp-auto-hover-enable
