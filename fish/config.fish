@@ -52,6 +52,12 @@ if test -x /opt/homebrew/bin/brew
   if test -d /opt/homebrew/opt/llvm@21
     set -x LLVM_SYS_211_PREFIX /opt/homebrew/opt/llvm@21/
   end
+  if test -d /opt/homebrew/opt/llvm@22
+    set -x LLVM_SYS_221_PREFIX /opt/homebrew/opt/llvm@22/
+  end
+  if test -d /opt/homebrew/opt/llvm@23
+    set -x LLVM_SYS_231_PREFIX /opt/homebrew/opt/llvm@23/
+  end
 end
 
 # If not on Mac, LLVM will likely be here
@@ -63,6 +69,12 @@ if test -d /usr/lib/llvm-19
 end
 if test -d /usr/lib/llvm-21
   set -x LLVM_SYS_211_PREFIX /usr/lib/llvm-21/
+end
+if test -d /usr/lib/llvm-22
+  set -x LLVM_SYS_221_PREFIX /usr/lib/llvm-22/
+end
+if test -d /usr/lib/llvm-23
+  set -x LLVM_SYS_231_PREFIX /usr/lib/llvm-23/
 end
 
 addpath "/opt/local/bin"
