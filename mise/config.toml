@@ -1,31 +1,34 @@
 [tools]
-"cargo:cargo-binstall" = "latest"
+cargo-binstall = "latest"
 "cargo:eza" = "latest"
-"cargo:fd-find" = "latest"
-"cargo:fend" = "latest"
+"cargo:fd-find" = { version = "latest", lazy = true, lazy_bins = ["fd"] }
+"cargo:fend" = { version = "latest", lazy = true, lazy_bins = ["fend"] }
 "cargo:git-delta" = "latest"
-"cargo:https://github.com/foxfriends/trilogy" = "branch:main"
-"cargo:https://github.com/ms-jpq/sad" = "branch:senpai"
-"cargo:paper-terminal" = "latest"
+"cargo:https://github.com/foxfriends/trilogy" = { version = "branch:main", lazy = true, lazy_bins = ["trilogy"] }
+"cargo:https://github.com/ms-jpq/sad" = { version = "branch:senpai", lazy = true, lazy_bins = ["sad"] }
+"cargo:paper-terminal" = { version = "latest", lazy = true, lazy_bins = ["paper"] }
 "cargo:pastel" = "latest"
 "cargo:ripgrep" = "latest"
-"cargo:syncat" = "latest"
-"cargo:tealdeer" = "latest"
+"cargo:syncat" = { version = "latest", lazy = true, lazy_bins = ["syncat"] }
+"cargo:tealdeer" = { version = "latest", lazy = true, lazy_bins = ["tldr"] }
 "cargo:zoxide" = "latest"
-"go:github.com/pdfrg/must/cmd/must" = "latest"
-"npm:oxfmt" = "latest"
-"npm:oxlint" = "latest"
-"npm:prettier" = "latest"
-"npm:typescript" = "latest"
-go = "latest"
+"go:github.com/pdfrg/must/cmd/must" = { version = "latest", lazy = true, lazy_bins = ["must"] }
+"npm:oxfmt" = { version = "latest", lazy = true, lazy_bins = ["oxfmt"] }
+"npm:oxlint" = { version = "latest", lazy = true, lazy_bins = ["oxlint"] }
+"npm:prettier" = { version = "latest", lazy = true, lazy_bins = ["prettier"] }
+"npm:typescript" = { version = "latest", lazy = true, lazy_bins = ["tsc"] }
+go = { version = "latest", lazy = true }
 node = "latest"
-opentofu = "latest"
-python = "latest"
+opentofu = { version = "latest", lazy = true }
+python = { version = "latest", lazy = true }
 rust = "latest"
 television = "latest"
 usage = "latest"
-uv = "latest"
+uv = { version = "latest", lazy = true }
 yazi = "latest"
 
 [settings]
 idiomatic_version_file_enable_tools = ["node", "yarn", "python", "pnpm", "npm"]
+
+[settings.cargo]
+binstall_quickinstall = true
