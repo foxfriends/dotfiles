@@ -1,5 +1,5 @@
 [user]
-	email = cameldridge@gmail.com
+	email = "${GIT_EMAIL}"
 	name = Cameron Eldridge
 	signingkey = "${GPG_KEY_ID}"
 [core]
@@ -66,5 +66,5 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
-[lfs]
-	fetchexclude = *
+[gpg]
+	format = ssh

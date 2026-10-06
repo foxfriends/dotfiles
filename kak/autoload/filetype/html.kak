@@ -9,13 +9,34 @@ hook global BufCreate .*\.(html?|vue|eta) %{
     set-option buffer tabstop 2
     set-option buffer indentwidth 2
     try %{
-        check-cmd prettier
-        set buffer formatcmd "prettier --stdin-filepath '%val{buffile}'"
-    } catch %{ echo -debug %val{error} }
+        check-cmd oxfmt
+        set buffer formatcmd "oxfmt --stdin-filepath '%val{buffile}'"
+    } catch %{
+        try %{
+            check-cmd prettier
+            set buffer formatcmd "prettier --stdin-filepath '%val{buffile}'"
+        } catch %{ echo -debug %val{error} }
+    }
 }
 
 hook global BufCreate .*\.svelte %{
     set-option buffer filetype svelte
+    set-option buffer tabstop 2
+    set-option buffer indentwidth 2
+    set-option buffer comment_line '//'
+    try %{
+        check-cmd oxfmt
+        set buffer formatcmd "oxfmt --stdin-filepath '%val{buffile}'"
+    } catch %{
+        try %{
+            check-cmd prettier
+            set buffer formatcmd "prettier --stdin-filepath '%val{buffile}'"
+        } catch %{ echo -debug %val{error} }
+    }
+}
+
+hook global BufCreate .*\.astro %{
+    set-option buffer filetype astro
     set-option buffer tabstop 2
     set-option buffer indentwidth 2
     set-option buffer comment_line '//'
@@ -34,7 +55,7 @@ hook global BufCreate .*\.xml %{
 # Initialization
 # ‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 
-hook global WinSetOption filetype=(html|xml|svelte) %{
+hook global WinSetOption filetype=(html|xml|svelte|astro) %{
     require-module html
 
     hook window ModeChange pop:insert:.* -group "%val{hook_param_capture_1}-trim-indent"  html-trim-indent
@@ -46,7 +67,7 @@ hook global WinSetOption filetype=(html|xml|svelte) %{
     "
 }
 
-hook -group html-highlight global WinSetOption filetype=(svelte|html|xml) %{
+hook -group html-highlight global WinSetOption filetype=(svelte|html|xml|astro) %{
     add-highlighter "window/%val{hook_param_capture_1}" ref html
     hook -once -always window WinSetOption "filetype=.*" "
         remove-highlighter ""window/%val{hook_param_capture_1}""
@@ -66,6 +87,7 @@ provide-module html %[
     add-highlighter shared/html regions
     add-highlighter shared/html/comment region <!--     -->                   ref comment
     add-highlighter shared/html/tag     region <     (?<!=)>                   regions
+    add-highlighter shared/html/astro  region ^---$\K ^(?=---) ref typescript
     add-highlighter shared/html/svelte  region \
         -recurse '\{\K' \
         '\{\K(@debug|@html|@const|@render|#key|#each|#if|#await|#snippet|:else(\s+if)?|:catch|:then|/if|/each|/await|/snippet|/key)' \

@@ -6,6 +6,7 @@
 [ -d "$HOME/.ghcup/bin" ] && PATH="$PATH:$HOME/.ghcup/bin"
 [ -d "$HOME/.rbenv/bin" ] && PATH="$PATH:$HOME/.rbenv/bin"
 [ -d "$HOME/.pyenv/bin" ] && PATH="$PATH:$HOME/.pyenv/bin"
+[ -d "$HOME/.config/mise" ] && eval "$(mise activate bash)"
 
 # If not running interactively, don't do the rest
 case $- in

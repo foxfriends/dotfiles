@@ -52,6 +52,12 @@ if test -x /opt/homebrew/bin/brew
   if test -d /opt/homebrew/opt/llvm@21
     set -x LLVM_SYS_211_PREFIX /opt/homebrew/opt/llvm@21/
   end
+  if test -d /opt/homebrew/opt/llvm@22
+    set -x LLVM_SYS_221_PREFIX /opt/homebrew/opt/llvm@22/
+  end
+  if test -d /opt/homebrew/opt/llvm@23
+    set -x LLVM_SYS_231_PREFIX /opt/homebrew/opt/llvm@23/
+  end
 end
 
 # If not on Mac, LLVM will likely be here
@@ -63,6 +69,12 @@ if test -d /usr/lib/llvm-19
 end
 if test -d /usr/lib/llvm-21
   set -x LLVM_SYS_211_PREFIX /usr/lib/llvm-21/
+end
+if test -d /usr/lib/llvm-22
+  set -x LLVM_SYS_221_PREFIX /usr/lib/llvm-22/
+end
+if test -d /usr/lib/llvm-23
+  set -x LLVM_SYS_231_PREFIX /usr/lib/llvm-23/
 end
 
 addpath "/opt/local/bin"
@@ -93,30 +105,31 @@ if command -q pipenv
   set -x PIPENV_VENV_IN_PROJECT true
 end
 
+command -q mise; and source (mise activate fish |psub)
+command -q rbenv; and source (rbenv init -|psub)
+command -q pyenv; and source (pyenv init -|psub)
+command -q kak; and set -x EDITOR (which kak)
+
 if status --is-interactive
   if command -q zoxide
     source (zoxide init fish |psub)
   else if command -q pazi
     source (pazi init fish |psub)
   end
-  command -q rbenv; and source (rbenv init -|psub)
-  command -q pyenv; and source (pyenv init -|psub)
   # command -q kitty; and source (kitty + complete setup fish |psub)
   command -q diesel; and source (diesel completions fish |psub)
   command -q deno; and source (deno completions fish |psub)
   command -q rustup; and source (rustup completions fish |psub)
   command -q gh; and source (gh completion -s fish |psub)
-  command -q kak; and set -x EDITOR (which kak)
   command -q pack; and source (pack completion --shell fish)
   command -q paper; and source (paper --completions fish |psub)
-  command -q mise; and source (mise activate fish |psub)
-  
+
   if command -q sk
     set -x JUST_CHOOSER sk
   else if command -q fzf
     set -x JUST_CHOOSER fzf
   end
-  
+
   if command -q tv
     source (tv init fish |psub)
     set -x JUST_CHOOSER tv
@@ -134,10 +147,14 @@ if status --is-interactive
     set -x BUN_INSTALL "$HOME/.bun"
   end
 
-  command -q aws aws-mfa-secure; and alias aws="aws-mfa-secure session"
-
-  # replace ls with exa
-  if command -q exa
+  # replace ls with eza
+  if command -q eza
+    alias ls='eza'
+    alias ll='eza -alg --git'
+    alias lt='eza -T'
+    alias llt='eza -lT'
+    alias l='eza'
+  else if command -q exa
     alias ls='exa'
     alias ll='exa -alg --git'
     alias lt='exa -T'
@@ -163,3 +180,4 @@ if set -q fish_user_configs
 end
 
 set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME
+source ~/.orbstack/shell/init2.fish 2>/dev/null || :

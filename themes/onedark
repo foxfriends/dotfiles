@@ -25,6 +25,8 @@ export theme_ansi_fg=37
 # UI
 export theme_color_default=$theme_white
 export theme_color_bgdefault=$theme_black
+export theme_color_bgdark=1d1f24
+export theme_color_bgborder=00282e
 export theme_color_divider=$theme_light_black
 export theme_color_highlight=$theme_yellow
 export theme_color_bghighlight=$theme_light_black

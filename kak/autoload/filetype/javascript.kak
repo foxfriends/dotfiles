@@ -25,9 +25,14 @@ define-command -hidden js-set-deno %{
 
 define-command -hidden js-set-node %{
     try %{
-        check-cmd prettier
-        set buffer formatcmd "prettier --stdin-filepath '%val{buffile}'"
-    } catch %{ echo -debug %val{error} }
+        check-cmd oxfmt
+        set buffer formatcmd "oxfmt --stdin-filepath '%val{buffile}'"
+    } catch %{
+        try %{
+            check-cmd prettier
+            set buffer formatcmd "prettier --stdin-filepath '%val{buffile}'"
+        } catch %{ echo -debug %val{error} }
+    }
     try %{
         check-cmd eslint
         check-file %sh{echo "$(npm root -g)/eslint-formatter-kakoune/index.js"}
@@ -157,7 +162,7 @@ provide-module javascript_impl %§
         add-highlighter "shared/%arg{1}/literal/interpolation"   region -recurse \{ (?<!\\)(\\\\)*\$\{   \}  regions
         add-highlighter "shared/%arg{1}/literal/interpolation/"          default-region fill interpolation
         add-highlighter "shared/%arg{1}/literal/interpolation/content"   region -recurse \{ (?<!\\)(\\\\)*\$\{\K   (?=\})  ref %arg{1}
-        add-highlighter "shared/%arg{1}/code/" regex \b(document|this|window|global|module)\b 1:field
+        add-highlighter "shared/%arg{1}/code/" regex \b(document|this|window|global|globalThis|module)\b 1:field
         add-highlighter "shared/%arg{1}/code/" regex \b(false|null|true|undefined)\b 1:value
         add-highlighter "shared/%arg{1}/code/" regex "-?\b[0-9_]+([eE][+-]?[0-9_]+)?\b" 0:value
         add-highlighter "shared/%arg{1}/code/" regex "-?\b[0-9_]*\.[0-9_]+([eE][+-]?[0-9_]+)?\b" 0:value

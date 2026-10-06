@@ -1,7 +1,0 @@
-#!/bin/bash
-set -e
-check asdf || ./asdf
-asdf plugin-add python
-latest=$(asdf list all python | grep '^ *[0-9.]*$' | tail -n 1 | sed 's/ *//')
-asdf install python "$latest"
-asdf global "$latest"

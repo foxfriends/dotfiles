@@ -9,9 +9,14 @@ hook global BufCreate .*[.](json) %{
     set buffer tabstop 2
     set buffer indentwidth 2
     try %{
-        check-cmd prettier
-        set buffer formatcmd "prettier --stdin-filepath '%val{buffile}'"
-    } catch %{ echo -debug %val{error} }
+        check-cmd oxfmt
+        set buffer formatcmd "oxfmt --stdin-filepath '%val{buffile}'"
+    } catch %{
+        try %{
+            check-cmd prettier
+            set buffer formatcmd "prettier --stdin-filepath '%val{buffile}'"
+        } catch %{ echo -debug %val{error} }
+    }
 }
 
 # Initialization

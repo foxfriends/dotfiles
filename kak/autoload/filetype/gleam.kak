@@ -44,10 +44,10 @@ add-highlighter shared/gleam/string         region %{(?<!')"} (?<!\\)(\\\\)*"   
 add-highlighter shared/gleam/comment        region '//'     '$' ref comment
 add-highlighter shared/gleam/doc_comment    region "///"    "$" ref doc_comment
 
-add-highlighter shared/gleam/code/ regex \b([0-9]+)\b 1:value
-add-highlighter shared/gleam/code/ regex \b(0x[0-9A-Fa-f]+)\b 1:value
-add-highlighter shared/gleam/code/ regex \b(0o[0-7]+)\b 1:value
-add-highlighter shared/gleam/code/ regex \b(0b[01]+)\b 1:value
+add-highlighter shared/gleam/code/ regex \b([0-9_]+)\b 1:value
+add-highlighter shared/gleam/code/ regex \b(0x[0-9A-Fa-f_]+)\b 1:value
+add-highlighter shared/gleam/code/ regex \b(0o[0-7_]+)\b 1:value
+add-highlighter shared/gleam/code/ regex \b(0b[01_]+)\b 1:value
 add-highlighter shared/gleam/code/ regex ([+\-*/%<>]|>=|<=)[.]? 0:operator
 add-highlighter shared/gleam/code/ regex (==|!=) 0:operator
 add-highlighter shared/gleam/code/ regex (<>) 0:operator
@@ -61,7 +61,8 @@ add-highlighter shared/gleam/code/ regex (:|->) 0:operator
 add-highlighter shared/gleam/code/ regex (<<|>>) 0:operator
 
 add-highlighter shared/gleam/code/ regex \b([a-z_][a-zA-Z_0-9]*)\s*(?=\() 1:function
-add-highlighter shared/gleam/code/ regex \b(as|assert|case|const|fn|if|import|let|opaque|panic|pub|todo|type|use)\b 0:keyword
+add-highlighter shared/gleam/code/ regex \b(as|assert|case|const|fn|if|import|let|opaque|panic|pub|todo|type|use|echo)\b 0:keyword
+add-highlighter shared/gleam/code/ regex \b(delegate)\b 0:error
 add-highlighter shared/gleam/code/ regex (@[a-zA-Z][a-zA-Z0-9_]*)\b 1:meta
 
 
@@ -75,8 +76,8 @@ define-command -hidden gleam-trim-indent %{
 
 define-command -hidden gleam-insert-on-new-line %[
     evaluate-commands -no-hooks -draft -itersel %[
-        # copy '#' comment prefix and following white spaces
-        try %{ execute-keys -draft k x s ^\h*\K#\h* <ret> y jgi P }
+        # copy '//' comment prefix and following white spaces
+        try %{ execute-keys -draft k x s ^\h*\K///?\h* <ret> y jgi P }
         # wisely add end structure
         # evaluate-commands -save-regs x %[
         #     try %{ execute-keys -draft k x s ^ \h + <ret> \" x y } catch %{ reg x '' }
