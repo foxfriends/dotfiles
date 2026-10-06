@@ -54,6 +54,7 @@
 [commit]
 	gpgsign = true
 	verbose = true
+	format = ssh
 [advice]
 	addEmptyPathSpec = false
 [grep]
