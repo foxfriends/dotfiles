@@ -125,7 +125,7 @@ if status --is-interactive
     source (pazi init fish |psub)
   end
   # command -q kitty; and source (kitty + complete setup fish |psub)
-  command -q diesel; and source (diesel completions fish |psub)
+  exists diesel; and source (diesel completions fish |psub)
   command -q deno; and source (deno completions fish |psub)
   command -q rustup; and source (rustup completions fish |psub)
   command -q gh; and source (gh completion -s fish |psub)
@@ -138,7 +138,7 @@ if status --is-interactive
     set -x JUST_CHOOSER fzf
   end
 
-  if command -q tv
+  if exists tv
     source (tv init fish |psub)
     set -x JUST_CHOOSER tv
   end
@@ -147,7 +147,7 @@ if status --is-interactive
     source (fnm env |psub)
     source (fnm env --use-on-cd |psub)
   end
-  if command -q fd
+  if exists fd
     set -x FZF_DEFAULT_COMMAND 'fd --type f'
     set -x SKIM_DEFAULT_COMMAND "fd --type f -E '*.snap'"
   end
@@ -156,13 +156,13 @@ if status --is-interactive
   end
 
   # replace ls with eza
-  if command -q eza
+  if exists eza
     alias ls='eza'
     alias ll='eza -alg --git'
     alias lt='eza -T'
     alias llt='eza -lT'
     alias l='eza'
-  else if command -q exa
+  else if exists exa
     alias ls='exa'
     alias ll='exa -alg --git'
     alias lt='exa -T'
