@@ -23,6 +23,7 @@ opentofu = { version = "latest", lazy = true }
 python = { version = "latest", lazy = true }
 rust = "latest"
 television = "latest"
+typst = "latest"
 usage = "latest"
 uv = { version = "latest", lazy = true }
 yazi = "latest"
