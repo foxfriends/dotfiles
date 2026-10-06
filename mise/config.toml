@@ -1,5 +1,6 @@
 [tools]
 cargo-binstall = "latest"
+"cargo:dust" = { version = "latest", lazy = true, lazy_bins = ["dust"] }
 "cargo:eza" = "latest"
 "cargo:fd-find" = { version = "latest", lazy = true, lazy_bins = ["fd"] }
 "cargo:fend" = { version = "latest", lazy = true, lazy_bins = ["fend"] }
@@ -23,7 +24,7 @@ opentofu = { version = "latest", lazy = true }
 python = { version = "latest", lazy = true }
 rust = "latest"
 television = "latest"
-typst = "latest"
+typst = { version = "latest", lazy = true }
 usage = "latest"
 uv = { version = "latest", lazy = true }
 yazi = "latest"

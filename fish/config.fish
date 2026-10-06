@@ -9,6 +9,14 @@ function addpath --description "add a directory to the PATH"
   test -d "$argv[1]"; and fish_add_path "$argv[1]"
 end
 
+function exists --description "does command exist"
+  if command -q mise
+    mise which "$argv[1]" > /dev/null 2>&1
+  else
+    command -q "$argv[1]"
+  end
+end
+
 if test -x /opt/homebrew/bin/brew
   # NOTE: Don't use `brew shellenv` because it sets variables nastily.
   # We can just reimplement it manually here but better
@@ -122,7 +130,7 @@ if status --is-interactive
   command -q rustup; and source (rustup completions fish |psub)
   command -q gh; and source (gh completion -s fish |psub)
   command -q pack; and source (pack completion --shell fish)
-  command -q paper; and source (paper --completions fish |psub)
+  exists paper; and source (paper --completions fish |psub)
 
   if command -q sk
     set -x JUST_CHOOSER sk
