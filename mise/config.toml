@@ -1,6 +1,6 @@
 [tools]
 cargo-binstall = "latest"
-"cargo:dust" = { version = "latest", lazy = true, lazy_bins = ["dust"] }
+"cargo:du-dust" = { version = "latest", lazy = true, lazy_bins = ["dust"] }
 "cargo:eza" = "latest"
 "cargo:fd-find" = { version = "latest", lazy = true, lazy_bins = ["fd"] }
 "cargo:fend" = { version = "latest", lazy = true, lazy_bins = ["fend"] }
