@@ -43,6 +43,11 @@ provide-module yaml %{
     add-highlighter shared/yaml/code/ regex \b(true|false|null)\b 0:value
     add-highlighter shared/yaml/code/ regex ^\h*-?\h*(\S+): 1:attribute
 
+    add-highlighter shared/yaml/code/ regex '\b0b[01]+\b' 0:value
+    add-highlighter shared/yaml/code/ regex '\b0x[\da-f]+\b' 0:value
+    add-highlighter shared/yaml/code/ regex '\b0o?[0-7]+\b' 0:value
+    add-highlighter shared/yaml/code/ regex '\b([1-9]\d*|0)\b' 0:value
+
     # Commands
     # ‾‾‾‾‾‾‾‾
 

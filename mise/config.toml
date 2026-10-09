@@ -25,6 +25,7 @@ python = { version = "latest", lazy = true }
 rust = "latest"
 television = "latest"
 typst = { version = "latest", lazy = true }
+kubectl = { version = "latest", lazy = true }
 usage = "latest"
 uv = { version = "latest", lazy = true }
 yazi = "latest"

@@ -87,7 +87,11 @@ provide-module html %[
     add-highlighter shared/html regions
     add-highlighter shared/html/comment region <!--     -->                   ref comment
     add-highlighter shared/html/tag     region <     (?<!=)>                   regions
-    add-highlighter shared/html/astro  region ^---$\K ^(?=---) ref typescript
+
+    add-highlighter shared/html/astro region ^---$ ^---$ regions
+    add-highlighter shared/html/astro/ default-region fill meta
+    add-highlighter shared/html/astro/ region \A---$\K ^(?=---)\z ref typescript
+
     add-highlighter shared/html/svelte  region \
         -recurse '\{\K' \
         '\{\K(@debug|@html|@const|@render|#key|#each|#if|#await|#snippet|:else(\s+if)?|:catch|:then|/if|/each|/await|/snippet|/key)' \

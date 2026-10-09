@@ -71,16 +71,15 @@ provide-module markdown %{
         ^(\h*)```\h*$ \
         fill meta
 
-    add-highlighter shared/markdown/frontmatter region -match-capture \
-        ^---\h*$ \
-        ^---\h*$ \
-        ref yaml
+    add-highlighter shared/markdown/frontmatter region ^---$ ^---$ regions
+    add-highlighter shared/markdown/frontmatter/ default-region fill meta
+    add-highlighter shared/markdown/frontmatter/ region \A---$\K ^(?=---)\z ref yaml
 
     add-highlighter shared/markdown/listblock region ^\h*[-*]\s ^\h*((?=[-*])|$) regions
     add-highlighter shared/markdown/listblock/marker region \A [-*]\s fill bullet
     add-highlighter shared/markdown/listblock/content default-region ref markdown/inline
 
-    add-highlighter shared/markdown/inline/code region -match-capture (`) (`) fill mono
+    add-highlighter shared/markdown/inline/code region (`) (`) fill mono
 
     # Setext-style header
     add-highlighter shared/markdown/inline/text/ regex (\A|\n\n)[^\n]+\n={2,}\h*\n\h*$ 0:title
