@@ -73,7 +73,7 @@ provide-module markdown %{
 
     add-highlighter shared/markdown/frontmatter region ^---$ ^---$ regions
     add-highlighter shared/markdown/frontmatter/ default-region fill meta
-    add-highlighter shared/markdown/frontmatter/ region \A---$\K ^(?=---)\z ref yaml
+    add-highlighter shared/markdown/frontmatter/ region \A---$\K ^(?=---) ref yaml
 
     add-highlighter shared/markdown/listblock region ^\h*[-*]\s ^\h*((?=[-*])|$) regions
     add-highlighter shared/markdown/listblock/marker region \A [-*]\s fill bullet

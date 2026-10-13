@@ -2,309 +2,271 @@
 
 lockfile_version = 3
 
-[[tools.bun]]
-version = "1.4.2"
-backend = "core:bun"
+[[tools."cargo:lychee"]]
+version = "0.24.2"
+backend = "cargo:lychee"
 specifiers = ["latest"]
 
-[tools.bun."platforms.linux-arm64"]
-checksum = "sha256:54328bbc2d9c8e0c9f892c544d66c57a83b84139e34909e5ee81758f1ac8fda7"
-url = "https://github.com/oven-sh/bun/releases/download/bun-v1.4.2/bun-linux-aarch64.zip"
-
-[tools.bun."platforms.linux-arm64-musl"]
-checksum = "sha256:71760b6c8ea30623b81a4907cb815d48e2ea266f2e73e751534a44a0607950df"
-url = "https://github.com/oven-sh/bun/releases/download/bun-v1.4.2/bun-linux-aarch64-musl.zip"
-
-[tools.bun."platforms.linux-x64"]
-checksum = "sha256:36368faef7527875d5ffa52e53cd48021741f2a83eb6208a8dd64068d422a913"
-url = "https://github.com/oven-sh/bun/releases/download/bun-v1.4.2/bun-linux-x64.zip"
-
-[tools.bun."platforms.linux-x64-baseline"]
-checksum = "sha256:c678040f14fe0440eb839d37cbd0ce4c051a32da72806ac97de6a6aab6bf728f"
-url = "https://github.com/oven-sh/bun/releases/download/bun-v1.4.2/bun-linux-x64-baseline.zip"
-
-[tools.bun."platforms.linux-x64-musl"]
-checksum = "sha256:4835eca59d6da70f4674f5642f6e459dcadab773695b2ed9922d131057989742"
-url = "https://github.com/oven-sh/bun/releases/download/bun-v1.4.2/bun-linux-x64-musl.zip"
-
-[tools.bun."platforms.linux-x64-musl-baseline"]
-checksum = "sha256:76e1db84e98f22f78de0a87e309bfbbf297732847f9720db36750646c85c8c18"
-url = "https://github.com/oven-sh/bun/releases/download/bun-v1.4.2/bun-linux-x64-musl-baseline.zip"
-
-[tools.bun."platforms.macos-arm64"]
-checksum = "sha256:90987a3a16d7db556d886ac3d551e7b6d3edf0a1cf43acaed622e8676be1d12f"
-url = "https://github.com/oven-sh/bun/releases/download/bun-v1.4.2/bun-darwin-aarch64.zip"
-
-[tools.bun."platforms.macos-x64"]
-checksum = "sha256:80520d7e17526308c9185d261679ac6d27798d3803a0e9f7ff9121ab8affb012"
-url = "https://github.com/oven-sh/bun/releases/download/bun-v1.4.2/bun-darwin-x64.zip"
-
-[tools.bun."platforms.macos-x64-baseline"]
-checksum = "sha256:bad5bbd6cf14d0980d115f5954c9ff904df619d5e994d2da1ffccd3f316300b0"
-url = "https://github.com/oven-sh/bun/releases/download/bun-v1.4.2/bun-darwin-x64-baseline.zip"
-
-[tools.bun."platforms.windows-x64"]
-checksum = "sha256:ce4c17497b2f29712a99d3d53f028de28cd42e3bacb8589599e7f000e49b6405"
-url = "https://github.com/oven-sh/bun/releases/download/bun-v1.4.2/bun-windows-x64.zip"
-
-[tools.bun."platforms.windows-x64-baseline"]
-checksum = "sha256:78c221c2376f79731ccf4e4af0b3bb46d81fefa3296c5abee09ad8a1b21e68c6"
-url = "https://github.com/oven-sh/bun/releases/download/bun-v1.4.2/bun-windows-x64-baseline.zip"
-
-[[tools.clojure]]
-version = "1.12.6.1673"
-backend = "asdf:clojure"
+[[tools."npm:@astrojs/language-server"]]
+version = "2.17.1"
+aube = { path = ".mise/locks/mise.local/npm-astrojs-language-server/2.17.1", digest = "sha256:34859c455980add6cbbe660a084922a4e4fce450fc85b51a92bad9be7ceb4f0e" }
+backend = "npm:@astrojs/language-server"
 specifiers = ["latest"]
 
-[[tools.crystal]]
-version = "1.21.1"
-backend = "asdf:crystal"
+[[tools."npm:@stripe/cli"]]
+version = "1.51.0"
+aube = { path = ".mise/locks/mise.local/npm-stripe-cli/1.51.0", digest = "sha256:7b053dbfbef59355404e91159b015c3da60245491f1c22c651e65a7689ac4f8a" }
+backend = "npm:@stripe/cli"
 specifiers = ["latest"]
 
-[[tools.erlang]]
-version = "29.1.1"
-backend = "core:erlang"
+[[tools."npm:git-format-staged"]]
+version = "4.0.2"
+aube = { path = ".mise/locks/mise.local/npm-git-format-staged/4.0.2", digest = "sha256:d67eb2380d028c11243f5473edef78311c7133d477ee874fae1f69d140e15391" }
+backend = "npm:git-format-staged"
 specifiers = ["latest"]
 
-[tools.erlang."platforms.linux-arm64"]
-checksum = "sha256:054e0143e39c780e091107fc9b345792a9c1a55f6bac1eca1c1101510fc06bf6"
-url = "https://github.com/erlang/otp/releases/download/OTP-29.1.1/otp_src_29.1.1.tar.gz"
-url_api = "https://api.github.com/repos/erlang/otp/releases/assets/581114879"
-install = "source"
-
-[tools.erlang."platforms.linux-arm64-musl"]
-checksum = "sha256:054e0143e39c780e091107fc9b345792a9c1a55f6bac1eca1c1101510fc06bf6"
-url = "https://github.com/erlang/otp/releases/download/OTP-29.1.1/otp_src_29.1.1.tar.gz"
-url_api = "https://api.github.com/repos/erlang/otp/releases/assets/581114879"
-install = "source"
-
-[tools.erlang."platforms.linux-x64"]
-checksum = "sha256:054e0143e39c780e091107fc9b345792a9c1a55f6bac1eca1c1101510fc06bf6"
-url = "https://github.com/erlang/otp/releases/download/OTP-29.1.1/otp_src_29.1.1.tar.gz"
-url_api = "https://api.github.com/repos/erlang/otp/releases/assets/581114879"
-install = "source"
-
-[tools.erlang."platforms.linux-x64-baseline"]
-checksum = "sha256:054e0143e39c780e091107fc9b345792a9c1a55f6bac1eca1c1101510fc06bf6"
-url = "https://github.com/erlang/otp/releases/download/OTP-29.1.1/otp_src_29.1.1.tar.gz"
-url_api = "https://api.github.com/repos/erlang/otp/releases/assets/581114879"
-install = "source"
-
-[tools.erlang."platforms.linux-x64-musl"]
-checksum = "sha256:054e0143e39c780e091107fc9b345792a9c1a55f6bac1eca1c1101510fc06bf6"
-url = "https://github.com/erlang/otp/releases/download/OTP-29.1.1/otp_src_29.1.1.tar.gz"
-url_api = "https://api.github.com/repos/erlang/otp/releases/assets/581114879"
-install = "source"
-
-[tools.erlang."platforms.linux-x64-musl-baseline"]
-checksum = "sha256:054e0143e39c780e091107fc9b345792a9c1a55f6bac1eca1c1101510fc06bf6"
-url = "https://github.com/erlang/otp/releases/download/OTP-29.1.1/otp_src_29.1.1.tar.gz"
-url_api = "https://api.github.com/repos/erlang/otp/releases/assets/581114879"
-install = "source"
-
-[tools.erlang."platforms.macos-arm64"]
-checksum = "sha256:0e80f209b06d9d13cf3b5f7c07228d9561aff983e6e55ea9c8ebda085db286cc"
-url = "https://github.com/erlef/otp_builds/releases/download/OTP-29.1.1/otp-aarch64-apple-darwin.tar.gz"
-url_api = "https://api.github.com/repos/erlef/otp_builds/releases/assets/580922715"
-
-[tools.erlang."platforms.macos-x64"]
-checksum = "sha256:474373887e7a3395bbe033353be74113a59cfc9f3d1565ca740972c3b7c02aa0"
-url = "https://github.com/erlef/otp_builds/releases/download/OTP-29.1.1/otp-x86_64-apple-darwin.tar.gz"
-url_api = "https://api.github.com/repos/erlef/otp_builds/releases/assets/580936007"
-
-[tools.erlang."platforms.macos-x64-baseline"]
-checksum = "sha256:474373887e7a3395bbe033353be74113a59cfc9f3d1565ca740972c3b7c02aa0"
-url = "https://github.com/erlef/otp_builds/releases/download/OTP-29.1.1/otp-x86_64-apple-darwin.tar.gz"
-url_api = "https://api.github.com/repos/erlef/otp_builds/releases/assets/580936007"
-
-[tools.erlang."platforms.windows-x64"]
-checksum = "sha256:337480af988eca993c2e98b68850f00fc6724d366346565e38941ac0d1b7c56b"
-url = "https://github.com/erlang/otp/releases/download/OTP-29.1.1/otp_win64_29.1.1.zip"
-url_api = "https://api.github.com/repos/erlang/otp/releases/assets/581038947"
-
-[tools.erlang."platforms.windows-x64-baseline"]
-checksum = "sha256:337480af988eca993c2e98b68850f00fc6724d366346565e38941ac0d1b7c56b"
-url = "https://github.com/erlang/otp/releases/download/OTP-29.1.1/otp_win64_29.1.1.zip"
-url_api = "https://api.github.com/repos/erlang/otp/releases/assets/581038947"
-
-[[tools.gleam]]
-version = "1.19.0"
-backend = "aqua:gleam-lang/gleam"
+[[tools.pnpm]]
+version = "12.9.1"
+backend = "aqua:pnpm/pnpm"
 specifiers = ["latest"]
 
-[tools.gleam."platforms.linux-arm64"]
-checksum = "sha256:b7677e3763eb7a6752e37f9a7f6f9451419cab5ccdbf4a41814a81356c58cc1d"
-url = "https://github.com/gleam-lang/gleam/releases/download/v1.19.0/gleam-v1.19.0-aarch64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/gleam-lang/gleam/releases/assets/612145176"
+[tools.pnpm."platforms.linux-arm64"]
+checksum = "sha256:468294b77633d29889c6e4a79cefb1277eba30cd62e7d6a754218cb85a1d730d"
+url = "https://github.com/pnpm/pnpm/releases/download/v12.9.1/pnpm-linux-arm64.tar.gz"
+url_api = "https://api.github.com/repos/pnpm/pnpm/releases/assets/608496442"
 provenance = "github-attestations"
 
-[tools.gleam."platforms.linux-arm64-musl"]
-checksum = "sha256:b7677e3763eb7a6752e37f9a7f6f9451419cab5ccdbf4a41814a81356c58cc1d"
-url = "https://github.com/gleam-lang/gleam/releases/download/v1.19.0/gleam-v1.19.0-aarch64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/gleam-lang/gleam/releases/assets/612145176"
+[tools.pnpm."platforms.linux-arm64-musl"]
+checksum = "sha256:11de22634b9eb543d2f6ae9ccbc728274fb9a7ee81ee1bc7e5e45bec876ebca8"
+url = "https://github.com/pnpm/pnpm/releases/download/v12.9.1/pnpm-linux-arm64-musl.tar.gz"
+url_api = "https://api.github.com/repos/pnpm/pnpm/releases/assets/608496446"
 provenance = "github-attestations"
 
-[tools.gleam."platforms.linux-x64"]
-checksum = "sha256:6083148cb404460810afe35e7878527e58fd2512dd79a76b47d59723815753be"
-url = "https://github.com/gleam-lang/gleam/releases/download/v1.19.0/gleam-v1.19.0-x86_64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/gleam-lang/gleam/releases/assets/612145284"
+[tools.pnpm."platforms.linux-x64"]
+checksum = "sha256:b4f58449ac02d9d24023ac89e17e05e8331f8ddc12ca1f489cf231bc2bb2bce1"
+url = "https://github.com/pnpm/pnpm/releases/download/v12.9.1/pnpm-linux-x64.tar.gz"
+url_api = "https://api.github.com/repos/pnpm/pnpm/releases/assets/608496438"
 provenance = "github-attestations"
 
-[tools.gleam."platforms.linux-x64-baseline"]
-checksum = "sha256:6083148cb404460810afe35e7878527e58fd2512dd79a76b47d59723815753be"
-url = "https://github.com/gleam-lang/gleam/releases/download/v1.19.0/gleam-v1.19.0-x86_64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/gleam-lang/gleam/releases/assets/612145284"
+[tools.pnpm."platforms.linux-x64-baseline"]
+checksum = "sha256:b4f58449ac02d9d24023ac89e17e05e8331f8ddc12ca1f489cf231bc2bb2bce1"
+url = "https://github.com/pnpm/pnpm/releases/download/v12.9.1/pnpm-linux-x64.tar.gz"
+url_api = "https://api.github.com/repos/pnpm/pnpm/releases/assets/608496438"
 provenance = "github-attestations"
 
-[tools.gleam."platforms.linux-x64-musl"]
-checksum = "sha256:6083148cb404460810afe35e7878527e58fd2512dd79a76b47d59723815753be"
-url = "https://github.com/gleam-lang/gleam/releases/download/v1.19.0/gleam-v1.19.0-x86_64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/gleam-lang/gleam/releases/assets/612145284"
+[tools.pnpm."platforms.linux-x64-musl"]
+checksum = "sha256:7c52e6db59c9cd3837ae1ec0b96ab3209d3c42cb0e3a77f5db8cbe86661d85a6"
+url = "https://github.com/pnpm/pnpm/releases/download/v12.9.1/pnpm-linux-x64-musl.tar.gz"
+url_api = "https://api.github.com/repos/pnpm/pnpm/releases/assets/608496441"
 provenance = "github-attestations"
 
-[tools.gleam."platforms.linux-x64-musl-baseline"]
-checksum = "sha256:6083148cb404460810afe35e7878527e58fd2512dd79a76b47d59723815753be"
-url = "https://github.com/gleam-lang/gleam/releases/download/v1.19.0/gleam-v1.19.0-x86_64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/gleam-lang/gleam/releases/assets/612145284"
+[tools.pnpm."platforms.linux-x64-musl-baseline"]
+checksum = "sha256:7c52e6db59c9cd3837ae1ec0b96ab3209d3c42cb0e3a77f5db8cbe86661d85a6"
+url = "https://github.com/pnpm/pnpm/releases/download/v12.9.1/pnpm-linux-x64-musl.tar.gz"
+url_api = "https://api.github.com/repos/pnpm/pnpm/releases/assets/608496441"
 provenance = "github-attestations"
 
-[tools.gleam."platforms.macos-arm64"]
-checksum = "sha256:7abff14c1acc7eb725ef4883539c6b48de72b58593b331cac0ff23e0a5f068c7"
-url = "https://github.com/gleam-lang/gleam/releases/download/v1.19.0/gleam-v1.19.0-aarch64-apple-darwin.tar.gz"
-url_api = "https://api.github.com/repos/gleam-lang/gleam/releases/assets/612145107"
+[tools.pnpm."platforms.macos-arm64"]
+checksum = "sha256:4dcea94654bc8f2189dfd591aea7af4adddd29243e4bfcc8d4c8b4289e7983ba"
+url = "https://github.com/pnpm/pnpm/releases/download/v12.9.1/pnpm-darwin-arm64.tar.gz"
+url_api = "https://api.github.com/repos/pnpm/pnpm/releases/assets/608496449"
 provenance = "github-attestations"
 
-[tools.gleam."platforms.macos-x64"]
-checksum = "sha256:28bd942b47da84b8b870d4ed56e31972375b4c8f7455716086dfba5be7f3e687"
-url = "https://github.com/gleam-lang/gleam/releases/download/v1.19.0/gleam-v1.19.0-x86_64-apple-darwin.tar.gz"
-url_api = "https://api.github.com/repos/gleam-lang/gleam/releases/assets/612145227"
+[tools.pnpm."platforms.macos-x64"]
+checksum = "sha256:e8b47f538f95167c57fdeacffc9cb3af82261217f31eb764151aaf500b76f1b3"
+url = "https://github.com/pnpm/pnpm/releases/download/v12.9.1/pnpm-darwin-x64.tar.gz"
+url_api = "https://api.github.com/repos/pnpm/pnpm/releases/assets/608496437"
 provenance = "github-attestations"
 
-[tools.gleam."platforms.macos-x64-baseline"]
-checksum = "sha256:28bd942b47da84b8b870d4ed56e31972375b4c8f7455716086dfba5be7f3e687"
-url = "https://github.com/gleam-lang/gleam/releases/download/v1.19.0/gleam-v1.19.0-x86_64-apple-darwin.tar.gz"
-url_api = "https://api.github.com/repos/gleam-lang/gleam/releases/assets/612145227"
+[tools.pnpm."platforms.macos-x64-baseline"]
+checksum = "sha256:e8b47f538f95167c57fdeacffc9cb3af82261217f31eb764151aaf500b76f1b3"
+url = "https://github.com/pnpm/pnpm/releases/download/v12.9.1/pnpm-darwin-x64.tar.gz"
+url_api = "https://api.github.com/repos/pnpm/pnpm/releases/assets/608496437"
 provenance = "github-attestations"
 
-[tools.gleam."platforms.windows-x64"]
-checksum = "sha256:47cc9eed05ec44526ee610c40f3103d48a4b558a442b5c5e085d21386ab8bb23"
-url = "https://github.com/gleam-lang/gleam/releases/download/v1.19.0/gleam-v1.19.0-x86_64-pc-windows-msvc.zip"
-url_api = "https://api.github.com/repos/gleam-lang/gleam/releases/assets/612145260"
+[tools.pnpm."platforms.windows-x64"]
+checksum = "sha256:2b30f6bc53228187881aeae604cc6cedf092641df30d3be1cf4cd3d17bf630f5"
+url = "https://github.com/pnpm/pnpm/releases/download/v12.9.1/pnpm-win32-x64.zip"
+url_api = "https://api.github.com/repos/pnpm/pnpm/releases/assets/608496448"
 provenance = "github-attestations"
 
-[tools.gleam."platforms.windows-x64-baseline"]
-checksum = "sha256:47cc9eed05ec44526ee610c40f3103d48a4b558a442b5c5e085d21386ab8bb23"
-url = "https://github.com/gleam-lang/gleam/releases/download/v1.19.0/gleam-v1.19.0-x86_64-pc-windows-msvc.zip"
-url_api = "https://api.github.com/repos/gleam-lang/gleam/releases/assets/612145260"
+[tools.pnpm."platforms.windows-x64-baseline"]
+checksum = "sha256:2b30f6bc53228187881aeae604cc6cedf092641df30d3be1cf4cd3d17bf630f5"
+url = "https://github.com/pnpm/pnpm/releases/download/v12.9.1/pnpm-win32-x64.zip"
+url_api = "https://api.github.com/repos/pnpm/pnpm/releases/assets/608496448"
 provenance = "github-attestations"
 
-[[tools.java]]
-version = "27.0.0"
-backend = "core:java"
+[[tools.python]]
+version = "3.10.19"
+backend = "core:python"
+specifiers = ["3.10"]
+
+[tools.python."platforms.linux-arm64"]
+checksum = "sha256:f2916a20f3de5500df5129e37dd0a213281dea29e226ec1ffe7fecdb10955533"
+url = "https://github.com/astral-sh/python-build-standalone/releases/download/20260211/cpython-3.10.19+20260211-aarch64-unknown-linux-gnu-install_only_stripped.tar.gz"
+provenance = "github-attestations"
+
+[tools.python."platforms.linux-arm64-musl"]
+checksum = "sha256:5bdd824b001243f2f0b45d8b28c87664e2ddc15a6aa3f0a5e2cb3b4c55c30299"
+url = "https://github.com/astral-sh/python-build-standalone/releases/download/20260211/cpython-3.10.19+20260211-aarch64-unknown-linux-musl-install_only_stripped.tar.gz"
+provenance = "github-attestations"
+
+[tools.python."platforms.linux-x64"]
+checksum = "sha256:d71df61d1cdb59af4443912da8eeca744a52e782ff5deefa966ead893235a39e"
+url = "https://github.com/astral-sh/python-build-standalone/releases/download/20260211/cpython-3.10.19+20260211-x86_64-unknown-linux-gnu-install_only_stripped.tar.gz"
+provenance = "github-attestations"
+
+[tools.python."platforms.linux-x64-baseline"]
+checksum = "sha256:d71df61d1cdb59af4443912da8eeca744a52e782ff5deefa966ead893235a39e"
+url = "https://github.com/astral-sh/python-build-standalone/releases/download/20260211/cpython-3.10.19+20260211-x86_64-unknown-linux-gnu-install_only_stripped.tar.gz"
+provenance = "github-attestations"
+
+[tools.python."platforms.linux-x64-musl"]
+checksum = "sha256:f1bb94673159fd4dc8f1b4ed5b05df1390f3ccd60224e1ec450c6d0b378dad86"
+url = "https://github.com/astral-sh/python-build-standalone/releases/download/20260211/cpython-3.10.19+20260211-x86_64-unknown-linux-musl-install_only_stripped.tar.gz"
+provenance = "github-attestations"
+
+[tools.python."platforms.linux-x64-musl-baseline"]
+checksum = "sha256:f1bb94673159fd4dc8f1b4ed5b05df1390f3ccd60224e1ec450c6d0b378dad86"
+url = "https://github.com/astral-sh/python-build-standalone/releases/download/20260211/cpython-3.10.19+20260211-x86_64-unknown-linux-musl-install_only_stripped.tar.gz"
+provenance = "github-attestations"
+
+[tools.python."platforms.macos-arm64"]
+checksum = "sha256:e6634b06afa2ae79e664cf34174dad5d31b30117f90a01d533de3f4e9db6974e"
+url = "https://github.com/astral-sh/python-build-standalone/releases/download/20260211/cpython-3.10.19+20260211-aarch64-apple-darwin-install_only_stripped.tar.gz"
+provenance = "github-attestations"
+
+[tools.python."platforms.macos-x64"]
+checksum = "sha256:8d08ff2d9bb20566223f20307c8d9c31bdf020b1f1a237c2aa6efd1de651bf7b"
+url = "https://github.com/astral-sh/python-build-standalone/releases/download/20260211/cpython-3.10.19+20260211-x86_64-apple-darwin-install_only_stripped.tar.gz"
+provenance = "github-attestations"
+
+[tools.python."platforms.macos-x64-baseline"]
+checksum = "sha256:8d08ff2d9bb20566223f20307c8d9c31bdf020b1f1a237c2aa6efd1de651bf7b"
+url = "https://github.com/astral-sh/python-build-standalone/releases/download/20260211/cpython-3.10.19+20260211-x86_64-apple-darwin-install_only_stripped.tar.gz"
+provenance = "github-attestations"
+
+[tools.python."platforms.windows-x64"]
+checksum = "sha256:b892f2c7eb0a04611688d6df7567a2745a204aac694d6d1c56c75b0717dab2d6"
+url = "https://github.com/astral-sh/python-build-standalone/releases/download/20260211/cpython-3.10.19+20260211-x86_64-pc-windows-msvc-install_only_stripped.tar.gz"
+provenance = "github-attestations"
+
+[tools.python."platforms.windows-x64-baseline"]
+checksum = "sha256:b892f2c7eb0a04611688d6df7567a2745a204aac694d6d1c56c75b0717dab2d6"
+url = "https://github.com/astral-sh/python-build-standalone/releases/download/20260211/cpython-3.10.19+20260211-x86_64-pc-windows-msvc-install_only_stripped.tar.gz"
+provenance = "github-attestations"
+
+[[tools.uv]]
+version = "0.12.7"
+backend = "aqua:astral-sh/uv"
 specifiers = ["latest"]
 
-[tools.java.options]
-shorthand_vendor = "openjdk"
-
-[tools.java."platforms.linux-arm64"]
-checksum = "sha256:da4e9dde1fff90204739e969187bab4751bd59a2a1c479672e1a1810f7dd23ea"
-url = "https://download.java.net/java/GA/jdk27/55ce5470a6294008af0057ff4626d0e5/35/GPL/openjdk-27_linux-aarch64_bin.tar.gz"
-
-[tools.java."platforms.linux-x64"]
-checksum = "sha256:95fc37eb3a18a27a26d5904c2d89d52bace8dafa9a078ca27f4747fbc4bf070b"
-url = "https://download.java.net/java/GA/jdk27/55ce5470a6294008af0057ff4626d0e5/35/GPL/openjdk-27_linux-x64_bin.tar.gz"
-
-[tools.java."platforms.linux-x64-baseline"]
-checksum = "sha256:95fc37eb3a18a27a26d5904c2d89d52bace8dafa9a078ca27f4747fbc4bf070b"
-url = "https://download.java.net/java/GA/jdk27/55ce5470a6294008af0057ff4626d0e5/35/GPL/openjdk-27_linux-x64_bin.tar.gz"
-
-[tools.java."platforms.macos-arm64"]
-checksum = "sha256:ff42134c1bc5ac81c5a91a95fd4df87479db5d0499ba875d6adb5bda5626c3e8"
-url = "https://download.java.net/java/GA/jdk27/55ce5470a6294008af0057ff4626d0e5/35/GPL/openjdk-27_macos-aarch64_bin.tar.gz"
-
-[tools.java."platforms.windows-x64"]
-checksum = "sha256:41172837168dd25a8d9fe5eb253ac1efc568c5f9ff608144bcacadfdf50f876c"
-url = "https://download.java.net/java/GA/jdk27/55ce5470a6294008af0057ff4626d0e5/35/GPL/openjdk-27_windows-x64_bin.zip"
-
-[tools.java."platforms.windows-x64-baseline"]
-checksum = "sha256:41172837168dd25a8d9fe5eb253ac1efc568c5f9ff608144bcacadfdf50f876c"
-url = "https://download.java.net/java/GA/jdk27/55ce5470a6294008af0057ff4626d0e5/35/GPL/openjdk-27_windows-x64_bin.zip"
-
-[[tools.kotlin]]
-version = "2.4.20"
-backend = "asdf:kotlin"
-specifiers = ["latest"]
-
-[[tools.nim]]
-version = "2.2.12"
-backend = "asdf:nim"
-specifiers = ["latest"]
-
-[[tools.ruby]]
-version = "4.0.7"
-backend = "core:ruby"
-specifiers = ["latest"]
-
-[tools.ruby."platforms.windows-x64"]
-checksum = "sha256:7a9be96d3448ecbd9a81eccae1f619131dfcc761f2c98dded03ece6c05d0474f"
-url = "https://github.com/oneclick/rubyinstaller2/releases/download/RubyInstaller-4.0.7-1/rubyinstaller-4.0.7-1-x64.7z"
-
-[tools.ruby."platforms.windows-x64-baseline"]
-checksum = "sha256:7a9be96d3448ecbd9a81eccae1f619131dfcc761f2c98dded03ece6c05d0474f"
-url = "https://github.com/oneclick/rubyinstaller2/releases/download/RubyInstaller-4.0.7-1/rubyinstaller-4.0.7-1-x64.7z"
-
-[[tools.ruby]]
-version = "4.0.7"
-backend = "core:ruby"
-specifiers = ["latest"]
-
-[tools.ruby.options]
-compile = "false"
-precompiled_url = "jdx/ruby"
-ruby_build_repo = "https://github.com/rbenv/ruby-build.git"
-ruby_install = "false"
-
-[tools.ruby."platforms.linux-arm64"]
-checksum = "sha256:ed4a403f5cd7eb5941cb96e52e4382eaa81660715e4ce7c9c5dbb4bf77fcde37"
-url = "https://github.com/jdx/ruby/releases/download/4.0.7-2/ruby-4.0.7.arm64_linux.tar.gz"
+[tools.uv."platforms.linux-arm64"]
+checksum = "sha256:66393193038dd7eb108abd7a218d9cec04ac70ab98242b0720fa94de19223b7c"
+url = "https://github.com/astral-sh/uv/releases/download/0.12.7/uv-aarch64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/532935189"
 provenance = "github-attestations"
 
-[tools.ruby."platforms.linux-arm64-musl"]
-checksum = "sha256:911ace20f90d068ca0e4dda6d0e4f0f81e52e52f2dd4f4004c721e253412e82d"
-url = "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.7.tar.gz"
-
-[tools.ruby."platforms.linux-x64"]
-checksum = "sha256:659c4c80138145f3be439b3e4275b616cc87022e9488b823d708ab75a77558a9"
-url = "https://github.com/jdx/ruby/releases/download/4.0.7-2/ruby-4.0.7.x86_64_linux.tar.gz"
+[tools.uv."platforms.linux-arm64-musl"]
+checksum = "sha256:6dcf60e3c085de88ace3671b949ca99f0652be561ff5627f0d21394140f041db"
+url = "https://github.com/astral-sh/uv/releases/download/0.12.7/uv-aarch64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/532935192"
 provenance = "github-attestations"
 
-[tools.ruby."platforms.linux-x64-baseline"]
-checksum = "sha256:659c4c80138145f3be439b3e4275b616cc87022e9488b823d708ab75a77558a9"
-url = "https://github.com/jdx/ruby/releases/download/4.0.7-2/ruby-4.0.7.x86_64_linux.tar.gz"
+[tools.uv."platforms.linux-x64"]
+checksum = "sha256:788f18abea7c5f55d6216e4f5613fd89d4d59b631efeec117b2b07fe72f1da21"
+url = "https://github.com/astral-sh/uv/releases/download/0.12.7/uv-x86_64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/532935280"
 provenance = "github-attestations"
 
-[tools.ruby."platforms.linux-x64-musl"]
-checksum = "sha256:911ace20f90d068ca0e4dda6d0e4f0f81e52e52f2dd4f4004c721e253412e82d"
-url = "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.7.tar.gz"
-
-[tools.ruby."platforms.linux-x64-musl-baseline"]
-checksum = "sha256:911ace20f90d068ca0e4dda6d0e4f0f81e52e52f2dd4f4004c721e253412e82d"
-url = "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.7.tar.gz"
-
-[tools.ruby."platforms.macos-arm64"]
-checksum = "sha256:6ad0acc5b0c437a2514679ff9a0f925e8b66ad4e96357e9ae2764b622f5d88d4"
-url = "https://github.com/jdx/ruby/releases/download/4.0.7-2/ruby-4.0.7.macos.tar.gz"
+[tools.uv."platforms.linux-x64-baseline"]
+checksum = "sha256:788f18abea7c5f55d6216e4f5613fd89d4d59b631efeec117b2b07fe72f1da21"
+url = "https://github.com/astral-sh/uv/releases/download/0.12.7/uv-x86_64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/532935280"
 provenance = "github-attestations"
 
-[tools.ruby."platforms.macos-x64"]
-checksum = "sha256:911ace20f90d068ca0e4dda6d0e4f0f81e52e52f2dd4f4004c721e253412e82d"
-url = "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.7.tar.gz"
+[tools.uv."platforms.linux-x64-musl"]
+checksum = "sha256:3d64d44ed67da7908dc7f5c4d64ebb44bad326fa17f8a0a52fc9a7793017bbe1"
+url = "https://github.com/astral-sh/uv/releases/download/0.12.7/uv-x86_64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/532935287"
+provenance = "github-attestations"
 
-[tools.ruby."platforms.macos-x64-baseline"]
-checksum = "sha256:911ace20f90d068ca0e4dda6d0e4f0f81e52e52f2dd4f4004c721e253412e82d"
-url = "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.7.tar.gz"
+[tools.uv."platforms.linux-x64-musl-baseline"]
+checksum = "sha256:3d64d44ed67da7908dc7f5c4d64ebb44bad326fa17f8a0a52fc9a7793017bbe1"
+url = "https://github.com/astral-sh/uv/releases/download/0.12.7/uv-x86_64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/532935287"
+provenance = "github-attestations"
 
-[[tools.scala]]
-version = "3.9.0"
-backend = "asdf:scala"
+[tools.uv."platforms.macos-arm64"]
+checksum = "sha256:127ebdda7ad953cdf198e964b570ea5771b85467ea93eb7cb6d6f8e6f55408f3"
+url = "https://github.com/astral-sh/uv/releases/download/0.12.7/uv-aarch64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/532935178"
+provenance = "github-attestations"
+
+[tools.uv."platforms.macos-x64"]
+checksum = "sha256:06b8ae1da8c2661c5434507a66f8c2b0b835933bf955b5958a9ac357a37d1959"
+url = "https://github.com/astral-sh/uv/releases/download/0.12.7/uv-x86_64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/532935264"
+provenance = "github-attestations"
+
+[tools.uv."platforms.macos-x64-baseline"]
+checksum = "sha256:06b8ae1da8c2661c5434507a66f8c2b0b835933bf955b5958a9ac357a37d1959"
+url = "https://github.com/astral-sh/uv/releases/download/0.12.7/uv-x86_64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/532935264"
+provenance = "github-attestations"
+
+[tools.uv."platforms.windows-x64"]
+checksum = "sha256:bf1518af459a3915511a11fdc6e2f43ef9a2afa138b9d498eeb9642fe9d85218"
+url = "https://github.com/astral-sh/uv/releases/download/0.12.7/uv-x86_64-pc-windows-msvc.zip"
+url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/532935273"
+provenance = "github-attestations"
+
+[tools.uv."platforms.windows-x64-baseline"]
+checksum = "sha256:bf1518af459a3915511a11fdc6e2f43ef9a2afa138b9d498eeb9642fe9d85218"
+url = "https://github.com/astral-sh/uv/releases/download/0.12.7/uv-x86_64-pc-windows-msvc.zip"
+url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/532935273"
+provenance = "github-attestations"
+
+[[tools.vp]]
+version = "1.0.0"
+aube = { path = ".mise/locks/mise.local/vp/1.0.0", digest = "sha256:0c90b4a19a69ba0d954d69f89fae1308811c0dfcda6ce98b77818695f07c6f41" }
+backend = "npm:vite-plus"
 specifiers = ["latest"]
+
+[[tools.yarn]]
+version = "1.22.22"
+backend = "vfox:jdx/vfox-yarn"
+specifiers = ["1.22"]
+
+[tools.yarn."platforms.linux-arm64"]
+url = "https://classic.yarnpkg.com/downloads/1.22.22/yarn-v1.22.22.tar.gz"
+
+[tools.yarn."platforms.linux-arm64-musl"]
+url = "https://classic.yarnpkg.com/downloads/1.22.22/yarn-v1.22.22.tar.gz"
+
+[tools.yarn."platforms.linux-x64"]
+url = "https://classic.yarnpkg.com/downloads/1.22.22/yarn-v1.22.22.tar.gz"
+
+[tools.yarn."platforms.linux-x64-baseline"]
+url = "https://classic.yarnpkg.com/downloads/1.22.22/yarn-v1.22.22.tar.gz"
+
+[tools.yarn."platforms.linux-x64-musl"]
+url = "https://classic.yarnpkg.com/downloads/1.22.22/yarn-v1.22.22.tar.gz"
+
+[tools.yarn."platforms.linux-x64-musl-baseline"]
+url = "https://classic.yarnpkg.com/downloads/1.22.22/yarn-v1.22.22.tar.gz"
+
+[tools.yarn."platforms.macos-arm64"]
+url = "https://classic.yarnpkg.com/downloads/1.22.22/yarn-v1.22.22.tar.gz"
+
+[tools.yarn."platforms.macos-x64"]
+url = "https://classic.yarnpkg.com/downloads/1.22.22/yarn-v1.22.22.tar.gz"
+
+[tools.yarn."platforms.macos-x64-baseline"]
+url = "https://classic.yarnpkg.com/downloads/1.22.22/yarn-v1.22.22.tar.gz"
+
+[tools.yarn."platforms.windows-x64"]
+url = "https://classic.yarnpkg.com/downloads/1.22.22/yarn-v1.22.22.tar.gz"
+
+[tools.yarn."platforms.windows-x64-baseline"]
+url = "https://classic.yarnpkg.com/downloads/1.22.22/yarn-v1.22.22.tar.gz"

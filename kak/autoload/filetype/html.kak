@@ -90,7 +90,7 @@ provide-module html %[
 
     add-highlighter shared/html/astro region ^---$ ^---$ regions
     add-highlighter shared/html/astro/ default-region fill meta
-    add-highlighter shared/html/astro/ region \A---$\K ^(?=---)\z ref typescript
+    add-highlighter shared/html/astro/ region \A---$\K ^(?=---) ref typescript
 
     add-highlighter shared/html/svelte  region \
         -recurse '\{\K' \
@@ -117,7 +117,8 @@ provide-module html %[
     add-highlighter shared/html/tag/              region "'" "'"                  fill string
 
     add-highlighter shared/html/tag/base/ regex \b([a-zA-Z0-9:_-]+)=? 1:value
-    add-highlighter shared/html/tag/base/ regex </?(\w+) 1:variable
+    add-highlighter shared/html/tag/base/ regex </?([A-Z]\w*) 1:type
+    add-highlighter shared/html/tag/base/ regex </?([a-z]\w*) 1:variable
     add-highlighter shared/html/tag/base/ regex <(!DOCTYPE(\h+\w+)+) 1:meta
 
     # Commands
