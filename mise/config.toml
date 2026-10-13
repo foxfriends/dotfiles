@@ -13,24 +13,28 @@ cargo-binstall = "latest"
 "cargo:syncat" = { version = "latest", lazy = true, lazy_bins = ["syncat"] }
 "cargo:tealdeer" = { version = "latest", lazy = true, lazy_bins = ["tldr"] }
 "cargo:zoxide" = "latest"
+go = { version = "latest", lazy = true }
 "go:github.com/pdfrg/must/cmd/must" = { version = "latest", lazy = true, lazy_bins = ["must"] }
+kubectl = { version = "latest", lazy = true }
+node = "latest"
 "npm:oxfmt" = { version = "latest", lazy = true, lazy_bins = ["oxfmt"] }
 "npm:oxlint" = { version = "latest", lazy = true, lazy_bins = ["oxlint"] }
 "npm:prettier" = { version = "latest", lazy = true, lazy_bins = ["prettier"] }
 "npm:typescript" = { version = "latest", lazy = true, lazy_bins = ["tsc"] }
-go = { version = "latest", lazy = true }
-node = "latest"
 opentofu = { version = "latest", lazy = true }
 python = { version = "latest", lazy = true }
-rust = "latest"
+rust = { version = "latest", profile = "default", components = ["rust-analyzer"] }
 television = "latest"
+terraform = { version = "latest", lazy = true }
 typst = { version = "latest", lazy = true }
-kubectl = { version = "latest", lazy = true }
 usage = "latest"
 uv = { version = "latest", lazy = true }
 yazi = "latest"
 
 [settings]
+experimental = true
+locked = true
+locked_scopes = ["global"]
 idiomatic_version_file_enable_tools = ["node", "yarn", "python", "pnpm", "npm"]
 
 [settings.cargo]

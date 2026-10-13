@@ -82,4 +82,5 @@ $lndir "$(pwd)/terminfo" "$HOME/.terminfo"
 
 ln -sf "$(pwd)/git/.gitconfig" "$HOME/.gitconfig"
 ln -sf "$(pwd)/bash/.bashrc" "$HOME/.bashrc"
+ln -sf "$(pwd)/ssh/config" "$HOME/.ssh/config"
 $lndir "$(pwd)/fonts" "$HOME/.fonts"

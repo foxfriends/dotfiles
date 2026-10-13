@@ -57,6 +57,9 @@ if test -x /opt/homebrew/bin/brew
   if test -d /opt/homebrew/opt/llvm@19
     set -x LLVM_SYS_191_PREFIX /opt/homebrew/opt/llvm@19/
   end
+  if test -d /opt/homebrew/opt/llvm@20
+    set -x LLVM_SYS_201_PREFIX /opt/homebrew/opt/llvm@20/
+  end
   if test -d /opt/homebrew/opt/llvm@21
     set -x LLVM_SYS_211_PREFIX /opt/homebrew/opt/llvm@21/
   end
@@ -74,6 +77,9 @@ if test -d /usr/lib/llvm-18
 end
 if test -d /usr/lib/llvm-19
   set -x LLVM_SYS_191_PREFIX /usr/lib/llvm-19/
+end
+if test -d /usr/lib/llvm-20
+  set -x LLVM_SYS_201_PREFIX /usr/lib/llvm-20/
 end
 if test -d /usr/lib/llvm-21
   set -x LLVM_SYS_211_PREFIX /usr/lib/llvm-21/
