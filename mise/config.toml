@@ -15,6 +15,7 @@ cargo-binstall = "latest"
 "cargo:zoxide" = "latest"
 go = { version = "latest", lazy = true }
 "go:github.com/pdfrg/must/cmd/must" = { version = "latest", lazy = true, lazy_bins = ["must"] }
+just = "latest"
 kubectl = { version = "latest", lazy = true }
 node = "latest"
 "npm:oxfmt" = { version = "latest", lazy = true, lazy_bins = ["oxfmt"] }
