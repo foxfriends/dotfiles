@@ -13,6 +13,7 @@ cargo-binstall = "latest"
 "cargo:syncat" = { version = "latest", lazy = true, lazy_bins = ["syncat"] }
 "cargo:tealdeer" = { version = "latest", lazy = true, lazy_bins = ["tldr"] }
 "cargo:zoxide" = "latest"
+doctl = "latest"
 go = { version = "latest", lazy = true }
 "go:github.com/pdfrg/must/cmd/must" = { version = "latest", lazy = true, lazy_bins = ["must"] }
 just = "latest"
