@@ -47,8 +47,8 @@ add-highlighter shared/go/code default-region group
 add-highlighter shared/go/back_string region '`' '`' fill string
 add-highlighter shared/go/double_string region '"' (?<!\\)(\\\\)*" fill string
 add-highlighter shared/go/single_string region "'" (?<!\\)(\\\\)*' fill string
-add-highlighter shared/go/comment region /\* \*/ fill comment
-add-highlighter shared/go/comment_line region '//' $ fill comment
+add-highlighter shared/go/comment region /\* \*/ ref comment
+add-highlighter shared/go/comment_line region '//' $ ref comment
 
 add-highlighter shared/go/code/ regex %{-?([0-9]*\.(?!0[xX]))?\b([0-9]+|0[xX][0-9a-fA-F]+)\.?([eE][+-]?[0-9]+)?i?\b} 0:value
 add-highlighter shared/go/code/ regex \b([a-zA-Z_][a-zA-Z_0-9]*)\s*(?=\() 1:function

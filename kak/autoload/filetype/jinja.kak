@@ -22,7 +22,7 @@ require-module python
 # ‾‾‾‾‾‾‾‾‾‾‾‾
 
 add-highlighter shared/jinja regions
-add-highlighter shared/jinja/comment region '\{#' '#\}' fill comment
+add-highlighter shared/jinja/comment region '\{#' '#\}' ref comment
 
 # TODO: line statements # …
 

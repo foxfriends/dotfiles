@@ -31,7 +31,7 @@ provide-module fluent %§
     # ‾‾‾‾‾‾‾‾‾‾‾‾
 
     add-highlighter shared/fluent regions
-    add-highlighter shared/fluent/comment   region '#'   $            fill comment
+    add-highlighter shared/fluent/comment   region '#'   $            ref comment
 
     add-highlighter shared/fluent/main default-region group
     add-highlighter shared/fluent/main/key              regex "([\w\d_-]+)\s*(=)" 1:meta 2:operator

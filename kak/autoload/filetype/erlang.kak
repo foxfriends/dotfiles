@@ -32,7 +32,7 @@ provide-module erlang %[
 add-highlighter shared/erlang regions
 add-highlighter shared/erlang/default default-region group
 
-add-highlighter shared/erlang/comment region '(?<!\$)%' '$' fill comment
+add-highlighter shared/erlang/comment region '(?<!\$)%' '$' ref comment
 add-highlighter shared/erlang/attribute_atom_single_quoted region %{-'} %{(?<!\\)(?:\\\\)*'(?=[\( \.])} fill builtin
 add-highlighter shared/erlang/attribute region '\b-[a-z][\w@]*(?=[\( \.])' '\K' fill builtin
 add-highlighter shared/erlang/atom_single_quoted region %{'} %{(?<!\\)(?:\\\\)*'} fill type

@@ -68,7 +68,7 @@ add-highlighter shared/justfile/content/function   regex \b([a-zA-Z_0-9]*)\s*(?=
 add-highlighter shared/justfile/content/argument   regex \b([a-zA-Z_0-9]*)= 1:variable
 
 add-highlighter shared/justfile/content/subregions regions
-add-highlighter shared/justfile/content/subregions/comment region '#' '$' fill comment
+add-highlighter shared/justfile/content/subregions/comment region '#' '$' ref comment
 add-highlighter shared/justfile/content/subregions/double  region '"' (?<!\\)(\\\\)*" fill string
 add-highlighter shared/justfile/content/subregions/single  region "'" (?<!\\)(\\\\)*' fill string
 

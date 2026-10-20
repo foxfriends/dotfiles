@@ -36,7 +36,7 @@ provide-module yaml %{
     add-highlighter shared/yaml/code      default-region group
     add-highlighter shared/yaml/double_string region '"' (?<!\\)(\\\\)*"       fill string
     add-highlighter shared/yaml/single_string region "'" "'"                   fill string
-    add-highlighter shared/yaml/comment       region '#' '$'                   fill comment
+    add-highlighter shared/yaml/comment       region '#' '$'                   ref comment
 
     add-highlighter shared/yaml/code/ regex ^(---|\.\.\.)$ 0:meta
     add-highlighter shared/yaml/code/ regex ^(\h*:\w*) 0:keyword

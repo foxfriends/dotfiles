@@ -40,7 +40,7 @@ provide-module kak %§
 
     add-highlighter shared/kakrc regions
     add-highlighter shared/kakrc/code default-region group
-    add-highlighter shared/kakrc/comment region (^|\h)\K# $ fill comment
+    add-highlighter shared/kakrc/comment region (^|\h)\K# $ ref comment
     add-highlighter shared/kakrc/double_string region -recurse %{(?<!")("")+(?!")} %{(^|\h)\K"} %{"(?!")} group
     add-highlighter shared/kakrc/single_string region -recurse %{(?<!')('')+(?!')} %{(^|\h)\K'} %{'(?!')} group
     add-highlighter shared/kakrc/shell1 region -recurse '\{' '(^|\h)\K%?%sh\{' '\}' ref sh
