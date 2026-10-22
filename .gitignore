@@ -1,5 +1,6 @@
 /languages
 .DS_Store
+mise/locks
 mise/config.local.toml
 mise/mise.local.lock
 mise/.mise/locks/mise.local/

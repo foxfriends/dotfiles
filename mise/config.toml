@@ -15,7 +15,7 @@ cargo-binstall = "latest"
 "cargo:zoxide" = "latest"
 doctl = "latest"
 go = { version = "latest", lazy = true }
-"go:github.com/pdfrg/must/cmd/must" = { version = "latest", lazy = true, lazy_bins = ["must"] }
+"go:github.com/pdfrg/must/cmd/must" = { version = "0.4.0", lazy = true, lazy_bins = ["must"] }
 just = "latest"
 kubectl = { version = "latest", lazy = true }
 node = "latest"
@@ -24,7 +24,6 @@ node = "latest"
 "npm:prettier" = { version = "latest", lazy = true, lazy_bins = ["prettier"] }
 "npm:typescript" = { version = "latest", lazy = true, lazy_bins = ["tsc"] }
 opentofu = { version = "latest", lazy = true }
-podman = { version = "latest", rename_exe = "podman-remote" }
 python = { version = "latest", lazy = true }
 rust = { version = "latest", profile = "default", components = ["rust-analyzer"] }
 television = "latest"
