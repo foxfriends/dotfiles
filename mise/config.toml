@@ -24,6 +24,7 @@ node = "latest"
 "npm:prettier" = { version = "latest", lazy = true, lazy_bins = ["prettier"] }
 "npm:typescript" = { version = "latest", lazy = true, lazy_bins = ["tsc"] }
 opentofu = { version = "latest", lazy = true }
+podman = { version = "latest", rename_exe = "podman-remote" }
 python = { version = "latest", lazy = true }
 rust = { version = "latest", profile = "default", components = ["rust-analyzer"] }
 television = "latest"
@@ -38,6 +39,9 @@ experimental = true
 locked = true
 locked_scopes = ["global"]
 idiomatic_version_file_enable_tools = ["node", "yarn", "python", "pnpm", "npm"]
+
+[settings.self_update]
+auto = true
 
 [settings.cargo]
 binstall_quickinstall = true
