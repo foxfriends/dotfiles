@@ -2,5 +2,4 @@ Include ~/.orbstack/ssh/config
 Host knot.eldridge.cam
     Port 2222
 Host forgejo.home.eldridge.cam
-    HostName 192.168.1.6
     Port 2222
