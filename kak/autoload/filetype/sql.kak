@@ -50,6 +50,7 @@ provide-module sql %{
     add-highlighter shared/sql/code/ regex '\+|-|\*|/|%|&|\||^|=|>|<|>=|<=|<>|\+=|-=|\*=|/=|%=|&=|^-=|\|\*=|:=' 0:operator
     add-highlighter shared/sql/code/ regex '(?i)\bNULL|FALSE|TRUE\b'    0:value
     add-highlighter shared/sql/code/ regex \b\d+(?:\.\d+)?\b            0:value
+    add-highlighter shared/sql/code/ regex \b0x[\dA-Fa-f]+\b                    0:value
     add-highlighter shared/sql/code/ regex \b([a-zA-Z0-9_]+)(?=\()      1:function
 
     evaluate-commands %sh{
