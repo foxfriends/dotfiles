@@ -29,7 +29,7 @@ rust = { version = "latest", profile = "default", components = ["rust-analyzer"]
 television = "latest"
 terraform = { version = "latest", lazy = true }
 typst = { version = "latest", lazy = true }
-usage = "latest"
+usage = { version = "latest", workflow = "publish-cli.yml" }
 uv = { version = "latest", lazy = true }
 yazi = "latest"
 
