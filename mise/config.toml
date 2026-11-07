@@ -13,22 +13,23 @@ cargo-binstall = "latest"
 "cargo:syncat" = { version = "latest", lazy = true, lazy_bins = ["syncat"] }
 "cargo:tealdeer" = { version = "latest", lazy = true, lazy_bins = ["tldr"] }
 "cargo:zoxide" = "latest"
-doctl = "latest"
-go = { version = "latest", lazy = true }
+claude = { version = "latest", lazy = true, lazy_bins = ["claude"] }
+doctl = { version = "latest", lazy = true, lazy_bins = ["doctl"] }
+go = { version = "latest", lazy = true, lazy_bins = ["go"]  }
 "go:github.com/pdfrg/must/cmd/must" = { version = "0.4.0", lazy = true, lazy_bins = ["must"] }
-just = "latest"
-kubectl = { version = "latest", lazy = true }
+just = { version = "latest", lazy = true, lazy_bins = ["just"] }
+kubectl = { version = "latest", lazy = true, lazy_bins = ["kubectl"] }
 node = "latest"
 "npm:oxfmt" = { version = "latest", lazy = true, lazy_bins = ["oxfmt"] }
 "npm:oxlint" = { version = "latest", lazy = true, lazy_bins = ["oxlint"] }
 "npm:prettier" = { version = "latest", lazy = true, lazy_bins = ["prettier"] }
 "npm:typescript" = { version = "latest", lazy = true, lazy_bins = ["tsc"] }
-opentofu = { version = "latest", lazy = true }
+opentofu = { version = "latest", lazy = true, lazy_bins = ["tofu"] }
 python = { version = "latest", lazy = true }
 rust = { version = "latest", profile = "default", components = ["rust-analyzer"] }
 television = "latest"
-terraform = { version = "latest", lazy = true }
-typst = { version = "latest", lazy = true }
+terraform = { version = "latest", lazy = true, lazy_bins = ["terraform"] }
+typst = { version = "latest", lazy = true, lazy_bins = ["typst"] }
 usage = { version = "latest", workflow = "publish-cli.yml" }
 uv = { version = "latest", lazy = true }
 yazi = "latest"

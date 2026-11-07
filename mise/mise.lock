@@ -60,7 +60,7 @@ backend = "cargo:eza"
 specifiers = ["latest"]
 
 [[tools."cargo:fd-find"]]
-version = "10.5.0"
+version = "10.5.1"
 backend = "cargo:fd-find"
 specifiers = ["latest"]
 
@@ -114,52 +114,98 @@ version = "0.10.0"
 backend = "cargo:zoxide"
 specifiers = ["latest"]
 
+[[tools.claude]]
+version = "2.1.319"
+backend = "aqua:anthropics/claude-code"
+specifiers = ["latest"]
+
+[tools.claude."platforms.linux-arm64"]
+checksum = "sha256:2e7348ffc96d52ccb20e34c81240ebc92505edc84d7bf29182d62c29bf6fa066"
+checksum_source = "mise-versions"
+url = "https://github.com/anthropics/claude-code/releases/download/v2.1.319/claude-linux-arm64.tar.gz"
+url_api = "https://api.github.com/repos/anthropics/claude-code/releases/assets/715418861"
+
+[tools.claude."platforms.linux-arm64-musl"]
+checksum = "sha256:221b257ed3dc334a2b039730feff2f609677a79b4b589735690cb37438212bed"
+checksum_source = "mise-versions"
+url = "https://github.com/anthropics/claude-code/releases/download/v2.1.319/claude-linux-arm64-musl.tar.gz"
+url_api = "https://api.github.com/repos/anthropics/claude-code/releases/assets/715418857"
+
+[tools.claude."platforms.linux-x64"]
+checksum = "sha256:8cf226393c8eca446d6ca60fa6bbe3fa7b5fa4de82a7b410d1edbd48689cd776"
+checksum_source = "mise-versions"
+url = "https://github.com/anthropics/claude-code/releases/download/v2.1.319/claude-linux-x64.tar.gz"
+url_api = "https://api.github.com/repos/anthropics/claude-code/releases/assets/715419124"
+
+[tools.claude."platforms.linux-x64-musl"]
+checksum = "sha256:bab9ece513740d9bf92a5ca45a2af62a33aa31099448e4a63b07f1c43fb5d625"
+checksum_source = "mise-versions"
+url = "https://github.com/anthropics/claude-code/releases/download/v2.1.319/claude-linux-x64-musl.tar.gz"
+url_api = "https://api.github.com/repos/anthropics/claude-code/releases/assets/715418859"
+
+[tools.claude."platforms.macos-arm64"]
+checksum = "sha256:7ae10919ce40346befabe3c18da4d5ccc860201b6785b3ae726d8961472d0e5d"
+checksum_source = "mise-versions"
+url = "https://github.com/anthropics/claude-code/releases/download/v2.1.319/claude-darwin-arm64.tar.gz"
+url_api = "https://api.github.com/repos/anthropics/claude-code/releases/assets/715418856"
+
+[tools.claude."platforms.macos-x64"]
+checksum = "sha256:e8c5ff7094a30964808485dd31eddfe954ee4f6dc5ac9aed4a35caed3598a4ef"
+checksum_source = "mise-versions"
+url = "https://github.com/anthropics/claude-code/releases/download/v2.1.319/claude-darwin-x64.tar.gz"
+url_api = "https://api.github.com/repos/anthropics/claude-code/releases/assets/715418858"
+
+[tools.claude."platforms.windows-x64"]
+checksum = "sha256:a95b3b296c1cc871894290a21dcca17ce50ea1d13915bccd3faeac534c0b1f4e"
+checksum_source = "mise-versions"
+url = "https://github.com/anthropics/claude-code/releases/download/v2.1.319/claude-win32-x64.zip"
+url_api = "https://api.github.com/repos/anthropics/claude-code/releases/assets/715419137"
+
 [[tools.doctl]]
-version = "2.1.0"
+version = "2.3.0"
 backend = "aqua:digitalocean/doctl"
 specifiers = ["latest"]
 
 [tools.doctl."platforms.linux-arm64"]
-checksum = "sha256:0b4cb4dad8aa54f74bd422367c895c3022e74da80eca6331538024c35d7cf39f"
+checksum = "sha256:5d90101beb19022f04d47af786f9de4019c17da3ffbb6eb1bd251b3e50aa42c9"
 checksum_source = "mise-versions"
-url = "https://github.com/digitalocean/doctl/releases/download/v2.1.0/doctl-2.1.0-linux-arm64.tar.gz"
-url_api = "https://api.github.com/repos/digitalocean/doctl/releases/assets/683932106"
+url = "https://github.com/digitalocean/doctl/releases/download/v2.3.0/doctl-2.3.0-linux-arm64.tar.gz"
+url_api = "https://api.github.com/repos/digitalocean/doctl/releases/assets/710267343"
 
 [tools.doctl."platforms.linux-arm64-musl"]
-checksum = "sha256:0b4cb4dad8aa54f74bd422367c895c3022e74da80eca6331538024c35d7cf39f"
+checksum = "sha256:5d90101beb19022f04d47af786f9de4019c17da3ffbb6eb1bd251b3e50aa42c9"
 checksum_source = "mise-versions"
-url = "https://github.com/digitalocean/doctl/releases/download/v2.1.0/doctl-2.1.0-linux-arm64.tar.gz"
-url_api = "https://api.github.com/repos/digitalocean/doctl/releases/assets/683932106"
+url = "https://github.com/digitalocean/doctl/releases/download/v2.3.0/doctl-2.3.0-linux-arm64.tar.gz"
+url_api = "https://api.github.com/repos/digitalocean/doctl/releases/assets/710267343"
 
 [tools.doctl."platforms.linux-x64"]
-checksum = "sha256:e9d0488c56cfe6369d3310a14e14b0a6cd71a37091503d016d28e31630ee3010"
+checksum = "sha256:782f720843364bfe5e7eaffa561af7685987ec3658510faa64ec330c5ea87a3c"
 checksum_source = "mise-versions"
-url = "https://github.com/digitalocean/doctl/releases/download/v2.1.0/doctl-2.1.0-linux-amd64.tar.gz"
-url_api = "https://api.github.com/repos/digitalocean/doctl/releases/assets/683932092"
+url = "https://github.com/digitalocean/doctl/releases/download/v2.3.0/doctl-2.3.0-linux-amd64.tar.gz"
+url_api = "https://api.github.com/repos/digitalocean/doctl/releases/assets/710267478"
 
 [tools.doctl."platforms.linux-x64-musl"]
-checksum = "sha256:e9d0488c56cfe6369d3310a14e14b0a6cd71a37091503d016d28e31630ee3010"
+checksum = "sha256:782f720843364bfe5e7eaffa561af7685987ec3658510faa64ec330c5ea87a3c"
 checksum_source = "mise-versions"
-url = "https://github.com/digitalocean/doctl/releases/download/v2.1.0/doctl-2.1.0-linux-amd64.tar.gz"
-url_api = "https://api.github.com/repos/digitalocean/doctl/releases/assets/683932092"
+url = "https://github.com/digitalocean/doctl/releases/download/v2.3.0/doctl-2.3.0-linux-amd64.tar.gz"
+url_api = "https://api.github.com/repos/digitalocean/doctl/releases/assets/710267478"
 
 [tools.doctl."platforms.macos-arm64"]
-checksum = "sha256:cc678f1e61eb002025201c9bbfbbef412bfb18dc28b27e246c858590025b476e"
-checksum_source = "mise-versions"
-url = "https://github.com/digitalocean/doctl/releases/download/v2.1.0/doctl-2.1.0-darwin-arm64.tar.gz"
-url_api = "https://api.github.com/repos/digitalocean/doctl/releases/assets/683932095"
+checksum = "sha256:eaa265251dca393059c42864f539316c5add4ffa0990e4e4ffd1b223118ee010"
+url = "https://github.com/digitalocean/doctl/releases/download/v2.3.0/doctl-2.3.0-darwin-arm64.tar.gz"
+url_api = "https://api.github.com/repos/digitalocean/doctl/releases/assets/710267498"
 
 [tools.doctl."platforms.macos-x64"]
-checksum = "sha256:2f0eb4e5b3c7b03fcfd82d9b945fece9346fccdd1f2684a5157e230ce1bdf58c"
+checksum = "sha256:8d36ffde119c41b5fe58445864c78b7ff5da7123906f0736ea805ee18b981673"
 checksum_source = "mise-versions"
-url = "https://github.com/digitalocean/doctl/releases/download/v2.1.0/doctl-2.1.0-darwin-amd64.tar.gz"
-url_api = "https://api.github.com/repos/digitalocean/doctl/releases/assets/683931975"
+url = "https://github.com/digitalocean/doctl/releases/download/v2.3.0/doctl-2.3.0-darwin-amd64.tar.gz"
+url_api = "https://api.github.com/repos/digitalocean/doctl/releases/assets/710267351"
 
 [tools.doctl."platforms.windows-x64"]
-checksum = "sha256:fa2955fcc7b2baec1bf94aa47d68426002e9c4c807926fabf7784f332cec2102"
+checksum = "sha256:1f47f89698623fe5c4d6868047395f272132e85bcb0905fa545a4b944552a637"
 checksum_source = "mise-versions"
-url = "https://github.com/digitalocean/doctl/releases/download/v2.1.0/doctl-2.1.0-windows-amd64.zip"
-url_api = "https://api.github.com/repos/digitalocean/doctl/releases/assets/683931977"
+url = "https://github.com/digitalocean/doctl/releases/download/v2.3.0/doctl-2.3.0-windows-amd64.zip"
+url_api = "https://api.github.com/repos/digitalocean/doctl/releases/assets/710267345"
 
 [[tools.go]]
 version = "1.27.3"
@@ -306,14 +352,14 @@ checksum = "sha256:dcc60d59a0746999f99064a01c020445d54d84228c691cdbf25b49ac3b591
 url = "https://nodejs.org/dist/v26.13.0/node-v26.13.0-win-x64.zip"
 
 [[tools."npm:oxfmt"]]
-version = "0.76.0"
-aube = { path = "locks/npm-oxfmt/0.76.0", digest = "sha256:313fdba84da0438bbd7e107264cd28a393498936d62648223b078a3fdb990dac" }
+version = "0.77.0"
+aube = { path = "locks/npm-oxfmt/0.77.0", digest = "sha256:4739d3f16fce0c69c05833ef7722617f51e3e99182d239b0d5c21b35b579738a" }
 backend = "npm:oxfmt"
 specifiers = ["latest"]
 
 [[tools."npm:oxlint"]]
-version = "1.91.0"
-aube = { path = "locks/npm-oxlint/1.91.0", digest = "sha256:49e61a539a1a0c4672f539481bfc1a52a7ca786ea65b1ba01af4f3716cdb0df1" }
+version = "1.92.0"
+aube = { path = "locks/npm-oxlint/1.92.0", digest = "sha256:682ec3b15e8d418df122de4a6ec7c7184bf513425b7e9a6ae71a510d4118b3ca" }
 backend = "npm:oxlint"
 specifiers = ["latest"]
 
@@ -532,49 +578,49 @@ url = "https://github.com/typst/typst/releases/download/v0.15.1/typst-x86_64-pc-
 url_api = "https://api.github.com/repos/typst/typst/releases/assets/480303335"
 
 [[tools.usage]]
-version = "7.1.1"
+version = "7.3.0"
 backend = "packslip:github.com/jdx/usage"
 specifiers = ["latest"]
 
 [tools.usage."platforms.linux-arm64"]
-checksum = "sha256:596a2a7a2d460d6a80ef4328ffb7c56e4577fe2e4dba942d036f90d14354534d"
-url = "https://github.com/jdx/usage/releases/download/v7.1.1/usage-aarch64-unknown-linux-gnu.tar.gz"
+checksum = "sha256:b845455e5fda89983fe6860066b2f520ba28cb0a265d64f2fde0e950eb9e0d07"
+url = "https://github.com/jdx/usage/releases/download/v7.3.0/usage-aarch64-unknown-linux-gnu.tar.gz"
 signer = "sigstore-oidc:https://github.com/jdx/usage/.github/workflows/publish-cli.yml"
 repository_ids = { repository = "677629099" }
 
 [tools.usage."platforms.linux-arm64-musl"]
-checksum = "sha256:5f5d8ed6295130fb82df9a5ee0fabb226c80a7085eda849c18edb561b76f4d97"
-url = "https://github.com/jdx/usage/releases/download/v7.1.1/usage-aarch64-unknown-linux-musl.tar.gz"
+checksum = "sha256:3bfcf7b5cff0daec5629f54dd15f40001a09bab551663d6e937c99c5716ae094"
+url = "https://github.com/jdx/usage/releases/download/v7.3.0/usage-aarch64-unknown-linux-musl.tar.gz"
 signer = "sigstore-oidc:https://github.com/jdx/usage/.github/workflows/publish-cli.yml"
 repository_ids = { repository = "677629099" }
 
 [tools.usage."platforms.linux-x64"]
-checksum = "sha256:dcc37cb5fb59088bab82e6f5f752c002a526dd9b35909be76d8459f46b4c30ca"
-url = "https://github.com/jdx/usage/releases/download/v7.1.1/usage-x86_64-unknown-linux-gnu.tar.gz"
+checksum = "sha256:78d9d765bb87c9377e95fd816ab436a5001d95d28b3b9bf7e405ed3eccfe025c"
+url = "https://github.com/jdx/usage/releases/download/v7.3.0/usage-x86_64-unknown-linux-gnu.tar.gz"
 signer = "sigstore-oidc:https://github.com/jdx/usage/.github/workflows/publish-cli.yml"
 repository_ids = { repository = "677629099" }
 
 [tools.usage."platforms.linux-x64-musl"]
-checksum = "sha256:afea9fb0636305e011860ce2f3de26b5702c7bc8ffce8eb32aa9c95ff7f5804f"
-url = "https://github.com/jdx/usage/releases/download/v7.1.1/usage-x86_64-unknown-linux-musl.tar.gz"
+checksum = "sha256:9af5d220332a0178c38786eac6deb9fa67b767f4c3d4b2e4c8e6bd5659975e86"
+url = "https://github.com/jdx/usage/releases/download/v7.3.0/usage-x86_64-unknown-linux-musl.tar.gz"
 signer = "sigstore-oidc:https://github.com/jdx/usage/.github/workflows/publish-cli.yml"
 repository_ids = { repository = "677629099" }
 
 [tools.usage."platforms.macos-arm64"]
-checksum = "sha256:50234db60947885bf87cda5ce28ee9c13924b6694528737bf6a7327e980f3bcd"
-url = "https://github.com/jdx/usage/releases/download/v7.1.1/usage-universal-apple-darwin.tar.gz"
+checksum = "sha256:3201ab26da21e11cbbf3b75f81da65a502e7774e014bd77956cab13e61e73b87"
+url = "https://github.com/jdx/usage/releases/download/v7.3.0/usage-universal-apple-darwin.tar.gz"
 signer = "sigstore-oidc:https://github.com/jdx/usage/.github/workflows/publish-cli.yml"
 repository_ids = { repository = "677629099" }
 
 [tools.usage."platforms.macos-x64"]
-checksum = "sha256:50234db60947885bf87cda5ce28ee9c13924b6694528737bf6a7327e980f3bcd"
-url = "https://github.com/jdx/usage/releases/download/v7.1.1/usage-universal-apple-darwin.tar.gz"
+checksum = "sha256:3201ab26da21e11cbbf3b75f81da65a502e7774e014bd77956cab13e61e73b87"
+url = "https://github.com/jdx/usage/releases/download/v7.3.0/usage-universal-apple-darwin.tar.gz"
 signer = "sigstore-oidc:https://github.com/jdx/usage/.github/workflows/publish-cli.yml"
 repository_ids = { repository = "677629099" }
 
 [tools.usage."platforms.windows-x64"]
-checksum = "sha256:75659545f16f84474c32cebb6ee3e304aedf63286c31ec73c3cab695fb56a6aa"
-url = "https://github.com/jdx/usage/releases/download/v7.1.1/usage-x86_64-pc-windows-msvc.zip"
+checksum = "sha256:0156c5ff413cb49275b109a44b0bb388d8aebf4ce2f47db4902333d3fbee46cc"
+url = "https://github.com/jdx/usage/releases/download/v7.3.0/usage-x86_64-pc-windows-msvc.zip"
 signer = "sigstore-oidc:https://github.com/jdx/usage/.github/workflows/publish-cli.yml"
 repository_ids = { repository = "677629099" }
 
